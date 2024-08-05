@@ -1,5 +1,25 @@
 import Image from "next/image";
-export function HeaderSite(){
+export async function HeaderSite(){
+     interface MenuHeader {
+        titles: Button[];
+        button: Button;
+    }
+
+     interface Button {
+        name: string;
+        link: string;
+    }
+
+
+
+    let url="https://creasoft.com.pe/hotelier_api/get-header.json"
+
+
+    let contenido=await fetch(url);
+    let data=await contenido.json();
+
+    let menuHeader:MenuHeader=data.payload['en'];
+
     return(
         <>
                <header className="ui_header-site">
@@ -10,13 +30,14 @@ export function HeaderSite(){
             </div>
             <nav className="ui_nav_site">
                 <ul>
-                    <li><a href="">Inicio</a></li>
-                    <li><a href="">Nosotros</a></li>
-                    <li><a href="">Contacto</a></li>
-                    <li><a href="">Galería</a></li>
-                    <li><a href="">Reseñas</a></li>
-                    <li><a href="">Políticas de sostenibilidad</a></li>
-                    <li className="ui_btn_reserva"><a href="">Reserva ahora</a></li>
+                {
+                    menuHeader.titles.map((item)=>{
+                        return(<li><a href="">{item.name}</a></li>)
+                    })
+                    }
+
+
+                    <li className="ui_btn_reserva"><a href="">{menuHeader.button.name}</a></li>
                 </ul>
             </nav>
         </header>

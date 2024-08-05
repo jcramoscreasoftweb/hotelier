@@ -1,15 +1,24 @@
 import Image from "next/image";
-
-export function ItemBeneficios(){
+interface Props{
+titulo:string,
+icon:string
+}
+export function ItemBeneficios({titulo,icon}:Props ){
     return (
         <>
         <div className="ui_item-beneficio">
-           <Image width={397} height={587} src="/img/terraza_jardin.png" alt=""/>
-           <p className="ui_titulo">Terraza y jardín</p>
+           <Image width={397} height={587} src={icon} alt=""/>
+           <p className="ui_titulo">{titulo}</p>
         </div>
         </>
     )
 }
+
+
+interface PropsResena{
+
+}
+
 export function ItemResena(){
     return (
         <>
@@ -28,4 +37,27 @@ export function ItemResena(){
         </div>
         </>
     )
+}
+
+interface Props2{
+    titulo:string,
+    descripcion:string,
+    image:string
+    }
+
+
+export function ItemServicio({titulo,descripcion,image}:Props2){
+return(
+            <>
+            <div className="ui_item">
+                <div>
+                    <h3>{titulo}</h3>
+                    <p>{descripcion}</p>
+                </div>
+                <div>
+                    <Image width={38} height={60} src={image} alt="" />
+                </div>
+                </div>
+                </>
+)
 }

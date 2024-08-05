@@ -2,134 +2,178 @@ import Image from "next/image";
 import styles from "./page.module.css";
 
 import {HeaderSite , FooterSite} from "./componentes/componentesGenerales"
-import { ItemBeneficios , ItemResena } from "./componentes/componentesPortada";
-
-export default function Home() {
-
-  return (
-<>
-<section className="ui_seccion_top_home">
-<HeaderSite/>
+import { ItemBeneficios , ItemResena , ItemServicio } from "./componentes/componentesPortada";
 
 
 
-
-<div className="ui_texto_intro_home">
-    <h2>Descubre la elegancia y el confort <br/> en el corazón de Cusco</h2>
-</div>
-<div className="ui_marco_opciones_home">
-    <div className="ui_barra_busqueda">
-
-    </div>
-
-</div>
-
-</section>
-<section className="ui_seccion_2_home">
-
-<div className="contenedor">
-        <div className="ui_lyt_seccion_2_home">
-            <div className="ui_seccion_2_home_info">
-                <h2>¡Bienvenidos a <br/> Sacha Hotel!</h2>
-                <p>Donde el lujo y la tradición se entrelazan para ofrecer una experiencia única e inolvidable. Ubicado en una de las ciudades más emblemáticas del mundo, nuestro hotel es un santuario de elegancia y sofisticación.</p>
-
-                    <p>Nos enorgullecemos de ofrecer a nuestros huéspedes un lugar exclusivo, donde cada detalle ha sido cuidadosamente diseñado para reflejar la rica herencia cultural y el esplendor natural de Cusco.
-                    </p>
-            </div>
-            <div className="ui_seccion_2_home_img">
-                <Image width={562} height={581} src="/img/foto_bienvenida.png" alt="Bienvenido"/>
-            </div>
-        </div>
-</div>
-
-</section>
-
-<section  className="ui_seccion_3_home">
-<div className="contenedor">
-    <div className="ui_carousel_beneficios">
-        <ItemBeneficios/>
-        <ItemBeneficios/>
-        <ItemBeneficios/>
-        <ItemBeneficios/>
-
-    </div>
-</div>
-</section>
-
-<section className="ui_seccion_4_home">
-
-<div className="contenedor">
-    <div className="ui_seccion_4_home_left">
-        <Image width={500} height={500} src="/img/info_habitaciones.png" alt=""/>
-        <Image  width={219} height={238}   className="complemento" src="/img/complemento2.png" alt="" />
-    </div>
-    <div className="ui_seccion_4_home_right">
-        <Image width={660} height={660}src="/img/fondo_habitacion_1.png" alt=""/>
-        <Image width={370} height={407} className="complemento" src="/img/complemento.png" alt="" />
-    </div>
-</div>
-</section>
-
-<section className="ui_seccion_info_adicional">
-<div className="contenedor">
-    <div className="ui_seccion_info_adicional_lyt">
-        <div className="ui_titulo">
-            <h2>Reserva el lugar perfecto para ti</h2>
-        </div>
-        <div className="ui_contenido">
-            <div className="ui_item">
-               <div>
-                <h3>Ubicación céntrica</h3>
-                <p>A pocos pasos de los principales lugares turísticos.</p>
-               </div>
-               <div>
-                <Image width={38} height={60} src="/img/ubicacion_icon.png" alt="" />
-               </div>
-            </div>
-            <div className="ui_item">
-                <div>
-                 <h3>Confort excepcional</h3>
-                 <p>Habitaciones modernas y acogedoras.</p>
-                </div>
-                <div>
-                 <Image width={54} height={60} src="/img/confort_icon.png" alt="" />
-                </div>
-             </div>
-             <div className="ui_item">
-                <div>
-                 <h3>Excelentes precios</h3>
-                 <p>Tarifas competitivas y ofertas especiales.</p>
-                </div>
-                <div>
-                 <Image width={66} height={60}  src="/img/precios_icon.png" alt="" />
-                </div>
-             </div>
-        </div>
-    </div>
-</div>
-</section>
-
-<section className="ui_seccion_resenas">
-<div className="contenedor">
-    <div className="ui_marco_titulo">
-        <h2><Image src="/img/adorno_titulo_1.png" width={62} height={60}  alt=""/>Reseñas
-        <Image alt="" src="/img/adorno_titulo_2.png"  width={62} height={60} /></h2>
-    </div>
-    <div className="ui_seccion_resenas_lyt">
-        <ItemResena/>
-        <ItemResena/>
-        <ItemResena/>
-
-
-    </div>
-    <div className="ui_mas_resenas">
-
-        <a href="">Ver más reseñas <Image width={20} height={20}  src="/img/btn_siguiente.png" alt=""/> </a>
-    </div>
-</div>
-</section>
-<FooterSite/>
-
-</>
-  );
+export interface RespuestaPortada {
+    banner_section:    BannerSection;
+    principal_section: PrincipalSection;
+    hotel_section:     HotelSection[];
+    services_section:  ServicesSection;
+    commets_section:   CommetsSection;
 }
+
+export interface BannerSection {
+    title: string;
+    image: string;
+}
+
+export interface CommetsSection {
+    title:            string;
+    text_redirection: string;
+}
+
+export interface HotelSection {
+    title: string;
+    icon:  string;
+}
+
+export interface PrincipalSection {
+    title:       string;
+    description: string;
+    image:       string;
+}
+
+export interface ServicesSection {
+    image_1: string;
+    image_2: string;
+    title:   string;
+    items:   PrincipalSection[];
+}
+
+
+
+
+
+export default async function Home() {
+    console.log("Cargando la portada")
+
+
+    let url="https://creasoft.com.pe/hotelier_api/pages/page-home.json"
+    let contenido=await fetch(url);
+    let data=await contenido.json();
+
+    let contenidoPortada:RespuestaPortada=data.payload['es'];
+
+
+    return (
+    <>
+    <section className="ui_seccion_top_home" style={{  backgroundImage: `url("${contenidoPortada.banner_section.image}")` }}>
+    <HeaderSite/>
+
+    <div className="ui_texto_intro_home">
+        <h2>
+            {contenidoPortada.banner_section.title}
+        </h2>
+    </div>
+    <div className="ui_marco_opciones_home">
+        <div className="ui_barra_busqueda">
+
+        </div>
+
+    </div>
+
+    </section>
+    <section className="ui_seccion_2_home">
+
+    <div className="contenedor">
+            <div className="ui_lyt_seccion_2_home">
+                <div className="ui_seccion_2_home_info">
+                    <h2>    {contenidoPortada.principal_section.title}</h2>
+                    <p>{contenidoPortada.principal_section.description}</p>
+
+
+                </div>
+                <div className="ui_seccion_2_home_img">
+                    <Image width={562} height={581} src={contenidoPortada.principal_section.image} alt="Bienvenido"/>
+                </div>
+            </div>
+    </div>
+
+    </section>
+
+    <section  className="ui_seccion_3_home">
+    <div className="contenedor">
+        <div className="ui_carousel_beneficios">
+
+
+            {
+            contenidoPortada.hotel_section.map((item)=>{
+                console.log(item);
+                return <ItemBeneficios
+                 key={item.title}
+                titulo={item.title}
+                icon={item.icon}
+                 />
+            })
+               // contenidoPortada.hotel_section[0].
+            }
+
+
+        </div>
+    </div>
+    </section>
+
+    <section className="ui_seccion_4_home">
+
+    <div className="contenedor">
+        <div className="ui_seccion_4_home_left">
+            <Image width={500} height={500} src={contenidoPortada.services_section.image_1} alt=""/>
+            <Image  width={219} height={238}   className="complemento" src="/img/complemento2.png" alt="" />
+        </div>
+        <div className="ui_seccion_4_home_right">
+            <Image width={660} height={660}src={contenidoPortada.services_section.image_2} alt=""/>
+            <Image width={370} height={407} className="complemento" src="/img/complemento.png" alt="" />
+        </div>
+    </div>
+    </section>
+
+    <section className="ui_seccion_info_adicional">
+    <div className="contenedor">
+        <div className="ui_seccion_info_adicional_lyt">
+            <div className="ui_titulo">
+                <h2>{contenidoPortada.services_section.title}</h2>
+            </div>
+            <div className="ui_contenido">
+
+                {
+                    contenidoPortada.services_section.items.map((item)=>{
+                return <ItemServicio
+                key={item.title}
+                titulo={item.title}
+                descripcion={item.description}
+                image={item.image}
+                />
+                    })
+                }
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section className="ui_seccion_resenas">
+    <div className="contenedor">
+        <div className="ui_marco_titulo">
+            <h2><Image src="/img/adorno_titulo_1.png" width={62} height={60}  alt=""/>{contenidoPortada.commets_section.title}
+            <Image alt="" src="/img/adorno_titulo_2.png"  width={62} height={60} /></h2>
+        </div>
+        <div className="ui_seccion_resenas_lyt">
+            <ItemResena/>
+            <ItemResena/>
+            <ItemResena/>
+
+
+        </div>
+        <div className="ui_mas_resenas">
+
+            <a href="">{contenidoPortada.commets_section.text_redirection} <Image width={20} height={20}  src="/img/btn_siguiente.png" alt=""/> </a>
+        </div>
+    </div>
+    </section>
+    <FooterSite/>
+
+    </>
+    );
+}
+
