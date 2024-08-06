@@ -1,57 +1,19 @@
-import Image from "next/image";
-
-
-import { HeaderSite, FooterSite } from "./componentes/componentesGenerales";
 import {
+  FooterSite,
+  HeaderSitev1,
   ItemBeneficios,
   ItemResena,
   ItemServicio,
-} from "./componentes/componentesPortada";
-
-export interface RespuestaPortada {
-  banner_section: BannerSection;
-  principal_section: PrincipalSection;
-  hotel_section: HotelSection[];
-  services_section: ServicesSection;
-  commets_section: CommetsSection;
-}
-
-export interface BannerSection {
-  title: string;
-  image: string;
-}
-
-export interface CommetsSection {
-  title: string;
-  text_redirection: string;
-}
-
-export interface HotelSection {
-  title: string;
-  icon: string;
-}
-
-export interface PrincipalSection {
-  title: string;
-  description: string;
-  image: string;
-}
-
-export interface ServicesSection {
-  image_1: string;
-  image_2: string;
-  title: string;
-  items: PrincipalSection[];
-}
+} from "@/components";
+import { PortadaResponse } from "@/interfaces";
+import Image from "next/image";
+import styles from "./page.module.css";
 
 export default async function Home() {
-  console.log("Cargando la portada");
-
   let url = "https://creasoft.com.pe/hotelier_api/pages/page-home.json";
-  let contenido = await fetch(url);
-  let data = await contenido.json();
-
-  let contenidoPortada: RespuestaPortada = data.payload["es"];
+  let requestAPI: any = await fetch(url);
+  requestAPI = await requestAPI.json();
+  let contenidoPortada: PortadaResponse = requestAPI.payload["es"];
 
   return (
     <>
@@ -61,7 +23,7 @@ export default async function Home() {
           backgroundImage: `url("${contenidoPortada.banner_section.image}")`,
         }}
       >
-        <HeaderSite />
+        <HeaderSitev1 />
 
         <div className="ui_texto_intro_home">
           <h2>{contenidoPortada.banner_section.title}</h2>
@@ -88,7 +50,6 @@ export default async function Home() {
           </div>
         </div>
       </section>
-
       <section className="ui_seccion_3_home">
         <div className="contenedor">
           <div className="ui_carousel_beneficios">
@@ -162,44 +123,6 @@ export default async function Home() {
                 );
               })}
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="ui_seccion_resenas">
-        <div className="contenedor">
-          <div className="ui_marco_titulo">
-            <h2>
-              <Image
-                src="/img/adorno_titulo_1.png"
-                width={62}
-                height={60}
-                alt=""
-              />
-              {contenidoPortada.commets_section.title}
-              <Image
-                alt=""
-                src="/img/adorno_titulo_2.png"
-                width={62}
-                height={60}
-              />
-            </h2>
-          </div>
-          <div className="ui_seccion_resenas_lyt">
-            <ItemResena />
-            <ItemResena />
-            <ItemResena />
-          </div>
-          <div className="ui_mas_resenas">
-            <a href="">
-              {contenidoPortada.commets_section.text_redirection}{" "}
-              <Image
-                width={20}
-                height={20}
-                src="/img/btn_siguiente.png"
-                alt=""
-              />{" "}
-            </a>
           </div>
         </div>
       </section>

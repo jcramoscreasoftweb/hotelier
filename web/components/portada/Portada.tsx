@@ -1,9 +1,6 @@
 import Image from "next/image";
-interface Props {
-  titulo: string;
-  icon: string;
-}
-export function ItemBeneficios({ titulo, icon }: Props) {
+
+export const ItemBeneficios = ({ titulo, icon }: any) => {
   return (
     <>
       <div className="ui_item-beneficio">
@@ -12,11 +9,9 @@ export function ItemBeneficios({ titulo, icon }: Props) {
       </div>
     </>
   );
-}
+};
 
-interface PropsResena {}
-
-export function ItemResena() {
+export const ItemResena = () => {
   return (
     <>
       <div className="ui_item_resena">
@@ -39,15 +34,9 @@ export function ItemResena() {
       </div>
     </>
   );
-}
+};
 
-interface Props2 {
-  titulo: string;
-  descripcion: string;
-  image: string;
-}
-
-export function ItemServicio({ titulo, descripcion, image }: Props2) {
+export const ItemServicio = ({ titulo, descripcion, image }: any) => {
   return (
     <>
       <div className="ui_item">
@@ -61,4 +50,4 @@ export function ItemServicio({ titulo, descripcion, image }: Props2) {
       </div>
     </>
   );
-}
+};

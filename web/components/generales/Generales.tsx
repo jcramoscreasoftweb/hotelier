@@ -1,13 +1,12 @@
+import { MenuHeaderResponse } from "@/interfaces";
 import Image from "next/image";
-export async function HeaderSite() {
+import Link from "next/link";
 
+export const HeaderSitev1 = async () => {
   let url = "https://creasoft.com.pe/hotelier_api/get-header.json";
-
   let contenido = await fetch(url);
   let data = await contenido.json();
-
-  //let menuHeader: MenuHeader = data.payload["en"];
-
+  let menuHeader: MenuHeaderResponse = data.payload["es"];
 
   return (
     <>
@@ -27,23 +26,23 @@ export async function HeaderSite() {
             {menuHeader.titles.map((item) => {
               return (
                 <li>
-                  <a href="">{item.name}</a>
+                  <Link href="">{item.name}</Link>
                 </li>
               );
             })}
 
             <li className="ui_btn_reserva">
-              <a href="">{menuHeader.button.name}</a>
+              <Link href="">{menuHeader.button.name}</Link>
             </li>
           </ul>
         </nav>
       </header>
     </>
   );
-}
-function HeaderSitev2() {}
+};
 
-export function FooterSite() {
+export const FooterSite = (data: any) => {
+  console.log(data);
   return (
     <>
       <div className="decoracion_footer">
@@ -165,4 +164,4 @@ export function FooterSite() {
       </div>
     </>
   );
-}
+};
