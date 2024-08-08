@@ -1,4 +1,4 @@
-import { MenuHeaderResponse } from "@/interfaces";
+import { MenuHeaderResponse, FooterResponse } from "@/interfaces";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -6,7 +6,7 @@ export const HeaderSitev1 = async () => {
   let url = "https://creasoft.com.pe/hotelier_api/get-header.json";
   let contenido = await fetch(url);
   let data = await contenido.json();
-  let menuHeader: MenuHeaderResponse = data.payload["es"];
+  let menuHeader: MenuHeaderResponse = data.payload["en"];
 
   return (
     <>
@@ -26,13 +26,13 @@ export const HeaderSitev1 = async () => {
             {menuHeader.titles.map((item) => {
               return (
                 <li>
-                  <Link href="">{item.name}</Link>
+                  <Link href={`${item.link}`}>{item.name}</Link>
                 </li>
               );
             })}
 
             <li className="ui_btn_reserva">
-              <Link href="">{menuHeader.button.name}</Link>
+              <Link href={`${menuHeader.button.link}`}>{menuHeader.button.name}</Link>
             </li>
           </ul>
         </nav>
@@ -41,8 +41,14 @@ export const HeaderSitev1 = async () => {
   );
 };
 
-export const FooterSite = (data: any) => {
-  console.log(data);
+export const FooterSite = async() => {
+
+  let url = "https://creasoft.com.pe/hotelier_api/get-footer.json";
+  let contenido = await fetch(url);
+  let data = await contenido.json();
+  let footer: FooterResponse = data.payload["en"];
+
+  // console.log(footer);
   return (
     <>
       <div className="decoracion_footer">
@@ -63,55 +69,53 @@ export const FooterSite = (data: any) => {
             <div className="ui_info_top">
               <div className="ui_info_col1">
                 <ul>
-                  <li>
-                    <a href="">Inicio</a>
-                  </li>
-                  <li>
-                    <a href="">Nosotros</a>
-                  </li>
-                  <li>
-                    <a href="">Contacto</a>
-                  </li>
+                  {footer.column_1.map((item) => {
+                    return (
+                      <li>
+                        <Link href={`${item.link}`}>{item.name}</Link>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
               <div className="ui_info_col2">
                 <ul>
-                  <li>
-                    <a href="">Galería</a>
-                  </li>
-                  <li>
-                    <a href="">Reseñas</a>
-                  </li>
-                  <li>
-                    <a href="">DESTINO</a>
-                  </li>
+                  {footer.column_2.map((item) => {
+                    return (
+                      <li>
+                        <Link href={`${item.link}`}>{item.name}</Link>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
               <div className="ui_info_col3">
                 <ul>
-                  <li>
-                    <a href="">Políticas de sostenibilidad</a>
-                  </li>
-                  <li>
-                    <a href="">Políticas de privacidad</a>
-                  </li>
-                  <li>
-                    <a href="">Términos y condiciones</a>
-                  </li>
+                  {footer.column_3.map((item) => {
+                    return (
+                      <li>
+                        <Link href={`${item.link}`}>{item.name}</Link>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
               <div className="ui_info_col4">
-                <p>
-                  Libro de <br /> reclamaciones
-                </p>
-                <Image
-                  width={126}
-                  height={55}
-                  src="/img/libro_reclamaciones.png"
-                  alt=""
-                />
+                <a href={`${footer.column_4.link}`}>
+                  <p>
+                    {footer.column_4.name}
+                  </p>
+                  <Image
+                    width={126}
+                    height={55}
+                    src="/img/libro_reclamaciones.png"
+                    alt=""
+                  />
+                </a>
+                
               </div>
             </div>
+
             <div className="ui_info_bottom">
               <div className="ui_info_col1">
                 <span>Calle San Agustín 345, Cusco.Cusco, Perú</span>
@@ -154,7 +158,7 @@ export const FooterSite = (data: any) => {
           </div>
         </div>
         <div className="ui_derechos_reservados">
-          <span>©Hotelier 2024 | Todos los derechos reservados.</span>
+          <span>{footer.rights}</span>
         </div>
       </footer>
       <div className="ui_icono_whatasapp">

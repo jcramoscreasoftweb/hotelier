@@ -55,7 +55,7 @@ export default async function Home() {
           <div className="ui_carousel_beneficios">
             {
               contenidoPortada.hotel_section.map((item) => {
-                console.log(item);
+                // console.log(item);
                 return (
                   <ItemBeneficios
                     key={item.title}
