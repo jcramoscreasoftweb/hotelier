@@ -9,6 +9,15 @@ $(".ui_carousel_beneficios").slick({
 
 })
 
+$(".carousel_fotos_habitacion").slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    nextArrow:'<span class="btn-siguiente"></span>',
+    prevArrow:'<span class="btn-anterior"></span>'
+
+})
+
 $(".ui_info_habitacion_precio .ui_item_precio").click(function(){
 
     $(".ui_info_habitacion_precio .ui_item_precio").removeClass("activo")
