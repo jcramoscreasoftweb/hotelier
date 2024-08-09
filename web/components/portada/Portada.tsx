@@ -11,25 +11,21 @@ export const ItemBeneficios = ({ titulo, icon }: any) => {
   );
 };
 
-export const ItemResena = () => {
+export const ItemResena = ({ score, comment, user, date }: any) => {
+
   return (
     <>
       <div className="ui_item_resena">
         <div className="ui_estrellas">
-          <Image width={17} height={16} src="/img/estrella_icon.png" alt="" />
-          <Image width={17} height={16} src="/img/estrella_icon.png" alt="" />
-          <Image width={17} height={16} src="/img/estrella_icon.png" alt="" />
+          {Array.from({ length: score }, (item_array, index = 0) => (
+              <Image key={index} width={17} height={16} src="/img/estrella_icon.png" alt="" />
+          ))}
         </div>
         <div className="ui_mensaje">
-          <p>
-            Desde el momento en que llegué, el personal me recibió con una
-            cálida bienvenida y un servicio excepcional. Las habitaciones eran
-            amplias, limpias y muy cómodas. Los desayunos en el restaurante del
-            hotel son deliciosos.
-          </p>
+          <p>{comment}</p>
         </div>
         <div className="ui_usuario">
-          <p>- Isabel Coronado, 05 mayo 2024</p>
+          <p>- {user}, {date}</p>
         </div>
       </div>
     </>

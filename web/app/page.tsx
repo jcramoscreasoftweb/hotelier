@@ -15,6 +15,13 @@ export default async function Home() {
   requestAPI = await requestAPI.json();
   let contenidoPortada: PortadaResponse = requestAPI.payload["es"];
 
+  let url_resenas = "https://creasoft.com.pe/hotelier_api/pages/list-comments-pag.json"
+  let requestAPI_resena: any = await fetch(url_resenas);
+  requestAPI_resena = await requestAPI_resena.json();
+  let resenas: PortadaResponse = requestAPI_resena.payload["es"];
+
+  console.log(resenas)
+
   return (
     <>
       <section
@@ -147,9 +154,18 @@ export default async function Home() {
             </h2>
           </div>
           <div className="ui_seccion_resenas_lyt">
-            <ItemResena />
-            <ItemResena />
-            <ItemResena />
+              {resenas.comments.map((card:any) => {
+                return (
+                  <ItemResena 
+                    score={card.score}
+                    comment={card.comment}
+                    user={card.name_user}
+                    date={card.created_at}
+                  />
+                );
+              })}
+
+
           </div>
           <div className="ui_mas_resenas">
             <a href="">

@@ -1,6 +1,5 @@
 
 export interface BusquedaResponse {
-  map(arg0: (item: any) => any): unknown;
   id_tp_room:      number;
   name:            string;
   description:     string;
