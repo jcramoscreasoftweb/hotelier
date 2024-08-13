@@ -26,10 +26,12 @@ $(".ui_info_habitacion_precio .ui_item_precio").click(function(){
     $(this).addClass("activo")
     $(this).parent().find(".ui_btn_item_reservar_habitacion").addClass("activo")
 
-
-
 })
 
+$(".ui_btn_paginacion .ui_item_btn_page").click(function(){
+    $(".ui_btn_paginacion .ui_item_btn_page").removeClass("activo")
+    $(this).addClass("activo")
+})
 
 $(".ui_listado_habitaciones .ui_info_habitacion .ui_ver_mas").click(function (){
 $(".ui_fondo_modal.ui_detalle_reserva").fadeIn();

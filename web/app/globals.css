@@ -301,7 +301,6 @@ cursor: pointer;
   line-height: 88px;
   color: white;
   font-family: "Fertigo-Pro";
-
   text-align: center;
 }
 .ui_marco_opciones_home{
@@ -470,6 +469,8 @@ width: 45%;
 .ui_seccion_resenas_lyt{
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 50px;
 }
 .ui_marco_titulo{
   text-align: center;
@@ -743,3 +744,116 @@ font-weight: 600;
   cursor: pointer;
 }
 /*** END RESULTADO BUSQUEDA ***/
+
+/***** RESENAS ******/
+
+.ui_seccion_top_resenas{
+  width: 100%;
+  height: 300px;
+  position: relative;
+  background-image: url(/img/inicio_banner.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 180px;
+  padding-top: 163px;
+}
+.ui_texto_intro_resena{
+
+  font-size: 50px;
+  line-height: 88px;
+  color: white;
+  font-family: "Fertigo-Pro";
+  text-align: center;
+}
+
+.ui_texto_titulo_filtros {
+  text-align: center;
+  margin-top: 47px;
+  margin-bottom: 54px;
+  font-size: 20px;
+  color: #454545;
+}
+
+.ui_filtros {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 54px;
+}
+
+.ui_filtros .ui_item_filter {
+  display: flex;
+  align-items: center;
+}
+
+.ui_item_filter .ui_tag_filter {
+  display: flex;
+  align-items: center;
+}
+
+.ui_item_filter .ui_tag_filter span {
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.ui_item_filter .ui_select_filter {
+  margin-right: 43px;
+}
+
+.ui_item_filter .ui_select_filter select {
+  padding: 10px 18px;
+  font-size: 16px;
+  border-radius: 30px;
+  border-color: #D7D7D7;
+  width: 271px;
+  height: 50px;
+  outline: none;
+}
+.ui_seccion_resenas_paginacion {
+  margin-top: 51px;
+  margin-bottom: 51px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui_seccion_resenas_paginacion .ui_btn_paginacion{
+  display: flex;
+  gap: 11px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.ui_seccion_resenas_paginacion img{
+  cursor: pointer;
+}
+
+.ui_seccion_resenas_paginacion .ui_btn_paginacion .ui_item_btn_page {
+  width: 52px;
+  height: 52px;
+  border-radius: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #454545;
+  box-shadow: 0px 0px 8px 1px #00000025;
+  font-size: 21px;
+  cursor: pointer;
+}
+
+.ui_seccion_resenas_paginacion .ui_item_btn_page.activo{
+  background-color: #00CFC9;
+  box-shadow: none;
+  color: white;
+}
+
+.ui_seccion_resenas_paginacion button{
+  border: none;
+  background: none;
+}
+
+/*** END RESENAS ***/

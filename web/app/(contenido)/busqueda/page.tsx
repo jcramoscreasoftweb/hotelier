@@ -9,9 +9,6 @@ export const metadata:Metadata={
 }
 export default function Busqueda() {
 
-
-
-
   return (
     <>
       {/* <HeaderSitev1 /> */}

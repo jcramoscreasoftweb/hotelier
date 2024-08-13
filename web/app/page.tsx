@@ -5,7 +5,7 @@ import {
   ItemResena,
   ItemServicio,
 } from "@/components";
-import { PortadaResponse } from "@/interfaces";
+import { PortadaResponse, ResenaResponse } from "@/interfaces";
 import Image from "next/image";
 import styles from "./page.module.css";
 
@@ -18,9 +18,9 @@ export default async function Home() {
   let url_resenas = "https://creasoft.com.pe/hotelier_api/pages/list-comments-pag.json"
   let requestAPI_resena: any = await fetch(url_resenas);
   requestAPI_resena = await requestAPI_resena.json();
-  let resenas: PortadaResponse = requestAPI_resena.payload["es"];
+  let resenas: ResenaResponse = requestAPI_resena.payload["es"];
 
-  console.log(resenas)
+  // console.log(resenas)
 
   return (
     <>
