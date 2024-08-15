@@ -6,7 +6,7 @@ export const HeaderSitev1 = async () => {
   let url = "https://creasoft.com.pe/hotelier_api/get-header.json";
   let contenido = await fetch(url);
   let data = await contenido.json();
-  let menuHeader: MenuHeaderResponse = data.payload["en"];
+  let menuHeader: MenuHeaderResponse = data.payload["es"];
 
   return (
     <>
@@ -46,7 +46,7 @@ export const FooterSite = async() => {
   let url = "https://creasoft.com.pe/hotelier_api/get-footer.json";
   let contenido = await fetch(url);
   let data = await contenido.json();
-  let footer: FooterResponse = data.payload["en"];
+  let footer: FooterResponse = data.payload["es"];
 
   // console.log(footer);
   return (
@@ -126,12 +126,12 @@ export const FooterSite = async() => {
               <div className="ui_info_col3">
                 <span>bookin@sachacusco.com</span>
               </div>
-              <div className="ui_info_col4">
+              <div className="ui_info_col4 social_media">
                 <div>
                   <a href="">
                     <Image
                       width={41}
-                      height={42}
+                      height={41}
                       src="/img/icono_facebook.png"
                       alt=""
                     />
@@ -139,7 +139,7 @@ export const FooterSite = async() => {
                   <a href="">
                     <Image
                       width={41}
-                      height={42}
+                      height={41}
                       src="/img/icono_instagram.png"
                       alt=""
                     />
@@ -147,7 +147,7 @@ export const FooterSite = async() => {
                   <a href="">
                     <Image
                       width={41}
-                      height={42}
+                      height={41}
                       src="/img/icono_linkedin.png"
                       alt=""
                     />
@@ -163,7 +163,7 @@ export const FooterSite = async() => {
       </footer>
       <div className="ui_icono_whatasapp">
         <a href="">
-          <Image width={41} height={42} src="/img/icono_whatsapp.png" alt="" />
+          <Image width={100} height={100} src="/img/icono_whatsapp.png" alt="" />
         </a>
       </div>
     </>

@@ -94,7 +94,8 @@ export default async function Resena(){
                 <div className="contenedor">
                     <div className="ui_seccion_resenas_lyt">
                                 
-                        {resenas.comments.map((item)=>{
+                        {
+                        resenas.comments.map((item)=>{
                             return(
                                 <ItemResena 
                                     score={item.score}
@@ -103,18 +104,8 @@ export default async function Resena(){
                                     date={item.created_at}
                                 />
                             );
-                        })}
-
-                        {/* <ItemResena 
-                            score="4"
-                            comment="Desde el momento en que llegué, el personal me recibió con una cálida bienvenida y un servicio excepcional. Las habitaciones eran amplias, limpias y muy cómodas. Los desayunos en el restaurante del hotel son deliciosos."
-                            user="Isabel Coronado"
-                            date="05 mayo 2024"
-                        /> */}
-
-                        
-
-                        
+                        })
+                        }
 
                     </div>
 

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-// import "@/public/css/reset.css";
 import "@/public/css/slick.css";
 
 import Script from "next/script"

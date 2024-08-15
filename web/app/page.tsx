@@ -48,8 +48,8 @@ export default async function Home() {
             </div>
             <div className="ui_seccion_2_home_img">
               <Image
-                width={562}
-                height={581}
+                width={540}
+                height={540}
                 src={contenidoPortada.principal_section.image}
                 alt="Bienvenido"
               />
@@ -62,7 +62,6 @@ export default async function Home() {
           <div className="ui_carousel_beneficios">
             {
               contenidoPortada.hotel_section.map((item) => {
-                // console.log(item);
                 return (
                   <ItemBeneficios
                     key={item.title}
@@ -71,7 +70,6 @@ export default async function Home() {
                   />
                 );
               })
-              // contenidoPortada.hotel_section[0].
             }
           </div>
         </div>
@@ -81,8 +79,8 @@ export default async function Home() {
         <div className="contenedor">
           <div className="ui_seccion_4_home_left">
             <Image
-              width={500}
-              height={500}
+              width={481}
+              height={481}
               src={contenidoPortada.services_section.image_1}
               alt=""
             />
@@ -96,8 +94,8 @@ export default async function Home() {
           </div>
           <div className="ui_seccion_4_home_right">
             <Image
-              width={660}
-              height={660}
+              width={533}
+              height={533}
               src={contenidoPortada.services_section.image_2}
               alt=""
             />
@@ -137,22 +135,21 @@ export default async function Home() {
       <section className="ui_seccion_resenas">
         <div className="contenedor">
           <div className="ui_marco_titulo">
-            <h2>
-              <Image
-                src="/img/adorno_titulo_1.png"
-                width={62}
-                height={60}
-                alt=""
-              />
-              {contenidoPortada.commets_section.title}
-              <Image
+            <Image
+              src="/img/adorno_titulo_1.png"
+              width={62}
+              height={60}
+              alt=""
+            />
+            <h2>{contenidoPortada.commets_section.title}</h2>
+            <Image
                 alt=""
                 src="/img/adorno_titulo_2.png"
                 width={62}
                 height={60}
               />
-            </h2>
           </div>
+
           <div className="ui_seccion_resenas_lyt">
               {resenas.comments.map((card:any) => {
                 return (
@@ -164,8 +161,6 @@ export default async function Home() {
                   />
                 );
               })}
-
-
           </div>
           <div className="ui_mas_resenas">
             <a href="">
