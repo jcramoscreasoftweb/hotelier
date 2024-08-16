@@ -130,7 +130,8 @@ font-family: "Open Sans", sans-serif;
 }
 
 .contenedor{
-  width: 1250px;
+  width: 100%;
+  max-width: 1250px;
   margin:0 auto;
 }
 
@@ -351,7 +352,9 @@ width: 45%;
   width: 540px;
   height: auto;
 }
-
+.ui_seccion_3_home .contenedor{
+ padding-left: 58px;
+}
 .ui_seccion_3_home{
   background-color:#FCF9F4;
   padding-top: 95px;
@@ -382,7 +385,8 @@ width: 45%;
   margin-top: 16px;
 }
 .ui_seccion_4_home .contenedor{
-  width: 950px;
+  
+  max-width: 950px;
   height: 700px;
   position: relative
 }
@@ -536,6 +540,166 @@ padding-right: 23px;
   text-decoration: underline 1px;
 }
 /****** END HOME ******/
+
+/***** NOSOTROS ******/
+
+.ui_seccion_top_banner{
+  width: 100%;
+  height: 300px;
+  position: relative;
+  background-image: url(/img/banner_nosotros.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 153px;
+}
+
+.ui_texto_title_banner{
+  font-size: 50px;
+  line-height: 67px;
+  color: white;
+  font-family: "Fertigo-Pro";
+  text-align: center;
+  width: 998px;
+}
+.contenedor.page_nosotros{
+  max-width: 1215px;
+}
+.contenedor.page_nosotros.valores {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ui_seccion_1_nosotros{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: #454545;
+}
+
+.ui_seccion_1_nosotros h2{
+  text-align: justify;
+  font-size: 20px;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.5;
+  line-height: normal;
+}
+
+.ui_seccion_2_nosotros {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 87px;
+  
+}
+
+.ui_seccion_2_nosotros .item_valor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 500px;
+}
+
+.item_valor .valor_left{
+  position: absolute;
+  left: 170px;
+  z-index: 100;
+}
+
+.item_valor .valor_right{
+  position: absolute;
+  right: 15%;
+  z-index: 50;
+}
+
+.item_valor .valor_right.important{
+  position: absolute;
+  right: 15%;
+  z-index: 150;
+}
+
+.item_valor .item_valor_text {
+  color: white;
+  width: 400px;
+  height: 400px;
+  text-align: center;
+  background-color: #D5B470;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 35px;
+
+}
+
+.item_valor .item_valor_image {
+}
+
+
+
+.item_valor .item_valor_text h1{
+  font-size: 44px;
+  margin-bottom: 25px;
+  font-family: "Fertigo-Pro";
+}
+
+.item_valor .item_valor_text p{
+  font-size: 22px;
+  font-family: "Open Sans";
+  line-height: normal;
+}
+
+.ui_seccion_3_nosotros{
+  background-color: #FCF9F4;
+  padding-top: 40px;
+  padding-bottom: 200px;
+}
+
+.ui_seccion_3_nosotros .title_seccion_3{
+  color: #512B17;
+  font-size: 44px;
+  margin-bottom: 42px;
+  text-align: center;
+  font-family: "Fertigo-pro";
+}
+
+.seccion_3_items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  row-gap: 30px;
+}
+
+.seccion_3_items .item_beneficio {
+  width: 350px;
+  text-align: center;
+}
+
+.seccion_3_items .item_beneficio img{
+  margin-left: -45px;
+}
+.seccion_3_items .item_beneficio h2{
+  color: #512B17;
+  font-size: 20px;
+  margin-top: 35px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.seccion_3_items .item_beneficio p{
+  color: #512B17;
+  font-size: 16px;
+  line-height: 1.2;
+}
+/***** END NOSOTROS ******/
+
 
 /*** RESULTADO BUSQUEDA ***/
 .ui_info_resultado{

@@ -5,5 +5,6 @@ export type {FooterResponse} from "@/interfaces/menu-footer-response";
 export type {BusquedaResponse} from "@/interfaces/busqueda-response";
 export type {ResenaResponse} from "@/interfaces/resenas-response";
 export type {PageResenaResponse} from "@/interfaces/page-resenas-response";
+export type {NosotrosResponse} from "@/interfaces/nosotros-response";
 
 
