@@ -784,10 +784,6 @@ padding-right: 23px;
   background-image: url(/img/banner_politicas_privacidad.png);
 }
 
-.contenedor.page_privacidad{
-  max-width: 1215px;
-}
-
 .ui_seccion_1_privacidad {
   margin-top: 50px;
   margin-bottom: 50px;
@@ -818,6 +814,81 @@ padding-right: 23px;
   font-weight: 500;
 }
 /***** END POLITICAS PRIVACIDAD ******/
+
+/***** DESTINO ******/
+.ui_seccion_top_banner.destino{
+  background-image: url(/img/banner_destino.png);
+}
+
+.ui_seccion_1_destino {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: #454545;
+}
+
+.ui_seccion_1_destino .contenedor {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ui_seccion_1_destino p{
+  margin-top: 36px;
+  margin-bottom: 36px;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.ui_seccion_1_destino .ui_images_seccion_1{
+  display: flex;
+    align-items: center;
+    width: 810px;
+    justify-content: space-around;
+}
+
+.ui_seccion_2_destino .item_atraccion{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 50px;
+}
+.ui_seccion_2_destino .item_atraccion.reverse{
+  flex-direction: row-reverse;
+}
+
+.ui_seccion_2_destino .item_atraccion .atraccion_informacion{
+  width: 540px;
+}
+
+.ui_seccion_2_destino .item_atraccion .atraccion_informacion h2{
+  color: #D2AD62;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.ui_seccion_2_destino .item_atraccion .atraccion_informacion p{
+  color: #454545;
+  font-size: 16px;
+  margin-bottom: 27px;
+  text-align: justify;
+  line-height: 1.2;
+}
+.ui_seccion_2_destino .item_atraccion .atraccion_informacion p:last-child{
+ margin-top: 27px;
+}
+
+.ui_seccion_2_destino .item_atraccion .atraccion_informacion span{
+  margin-left: 15px;
+  font-weight: 500;
+}
+
+.ui_seccion_1_destino .ui_marco_titulo{
+  margin-bottom: 0px;
+}
+
+/***** END DESTINO ******/
 
 
 

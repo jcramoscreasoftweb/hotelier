@@ -32,20 +32,20 @@ export default async function PoliticaPrivacidad(){
             </section>
 
             <section className="ui_seccion_1_privacidad">
-            <div className="contenedor">
-                <p>{contenidoPrivacidad.first_section.text_1}</p>
-                <ul>
-                    {contenidoPrivacidad.first_section.text_2}
-                </ul>
-                <p>{contenidoPrivacidad.first_section.text_3}</p>
-                <p>
-                    Correo electrónico: <span>{contenidoPrivacidad.first_section.email}</span><br/>      
-                    Teléfono: <span>{contenidoPrivacidad.first_section.phone}</span>
-                </p>
-                <p>{contenidoPrivacidad.first_section.text_4}</p>
+                <div className="contenedor">
+                    <p>{contenidoPrivacidad.first_section.text_1}</p>
+                    <ul>
+                        {contenidoPrivacidad.first_section.text_2}
+                    </ul>
+                    <p>{contenidoPrivacidad.first_section.text_3}</p>
+                    <p>
+                        Correo electrónico: <span>{contenidoPrivacidad.first_section.email}</span><br/>      
+                        Teléfono: <span>{contenidoPrivacidad.first_section.phone}</span>
+                    </p>
+                    <p>{contenidoPrivacidad.first_section.text_4}</p>
 
-            </div>
-        </section>
+                </div>
+            </section>
 
         <FooterSite/>
         </>

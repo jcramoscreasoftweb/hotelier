@@ -8,5 +8,4 @@ export type {PageResenaResponse} from "@/interfaces/page-resenas-response";
 export type {NosotrosResponse} from "@/interfaces/nosotros-response";
 export type {SostenibilidadResponse} from "@/interfaces/sostenibilidad-response";
 export type {PrivacidadResponse} from "@/interfaces/privacidad-response";
-
-
+export type {DestinoResponse} from "@/interfaces/destino-response";
