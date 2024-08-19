@@ -890,6 +890,72 @@ padding-right: 23px;
 
 /***** END DESTINO ******/
 
+/***** GALERIA ******/
+.ui_seccion_top_banner.destino{
+  background-image: url(/img/banner_galeria.png);
+}
+
+.ui_seccion_1_galeria{
+  margin-top: 45px;
+  margin-bottom: 45px;
+  text-align: center;
+}
+
+.ui_seccion_1_galeria p{
+  color: #454545;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.ui_seccion_2_galeria .ui_marco_titulo{
+  margin-bottom: 0px;
+}
+
+.ui_seccion_2_galeria .ui_row_item_galeria:last-child{
+  margin-bottom: 60px;
+}
+
+.ui_seccion_2_galeria p{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 45px;
+  color: #454545;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.ui_carrusel_item_galeria .slick-dots {
+  margin: 0 auto;
+  width: max-content;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  margin-top: 20px;
+  padding-right: 40px;
+}
+
+.ui_carrusel_item_galeria .slick-dots li button {
+  appearance: none;
+  -webkit-appearance: none;
+  display: none;
+}
+
+.ui_carrusel_item_galeria  .slick-dots li {
+  cursor: pointer;
+  background: #ffff;
+  border: 4px solid #00CFC9;
+  border-radius: 100%;
+  margin: 5px;
+  width: 25px;
+  height: 25px;
+}
+
+.ui_carrusel_item_galeria  .slick-dots li.slick-active {
+  background: #00CFC9;
+}
+
+/***** END GALERIA ******/
+
 
 
 /*** RESULTADO BUSQUEDA ***/

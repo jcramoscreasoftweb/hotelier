@@ -15,8 +15,18 @@ $(".carousel_fotos_habitacion").slick({
     slidesToScroll: 1,
     nextArrow:'<span class="btn-siguiente"></span>',
     prevArrow:'<span class="btn-anterior"></span>'
-
 })
+
+$(".ui_carrusel_item_galeria").slick({
+    infinite: true,
+    dots: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    nextArrow:'<span class="btn-siguiente"></span>',
+    prevArrow:'<span class="btn-anterior"></span>'
+})
+
+
 
 $(".ui_info_habitacion_precio .ui_item_precio").click(function(){
 

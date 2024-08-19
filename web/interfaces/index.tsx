@@ -9,3 +9,4 @@ export type {NosotrosResponse} from "@/interfaces/nosotros-response";
 export type {SostenibilidadResponse} from "@/interfaces/sostenibilidad-response";
 export type {PrivacidadResponse} from "@/interfaces/privacidad-response";
 export type {DestinoResponse} from "@/interfaces/destino-response";
+export type {GaleriaResponse} from "@/interfaces/galeria-response";
