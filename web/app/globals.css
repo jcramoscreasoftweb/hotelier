@@ -198,7 +198,7 @@ font-family: "Open Sans", sans-serif;
   line-height: 18px;
 }
 
-.ui_info_col4 .social_media {
+.ui_info_col4.social_media {
   display: flex;
   gap: 20px;
 }
@@ -594,7 +594,6 @@ padding-right: 23px;
   justify-content: center;
   align-items: center;
   margin-bottom: 87px;
-  
 }
 
 .ui_seccion_2_nosotros .item_valor {
@@ -638,11 +637,6 @@ padding-right: 23px;
 
 }
 
-.item_valor .item_valor_image {
-}
-
-
-
 .item_valor .item_valor_text h1{
   font-size: 44px;
   margin-bottom: 25px;
@@ -658,7 +652,6 @@ padding-right: 23px;
 .ui_seccion_3_nosotros{
   background-color: #FCF9F4;
   padding-top: 40px;
-  padding-bottom: 200px;
 }
 
 .ui_seccion_3_nosotros .title_seccion_3{
@@ -675,6 +668,7 @@ padding-right: 23px;
   align-items: flex-start;
   justify-content: space-evenly;
   row-gap: 30px;
+  margin-bottom: 100px;
 }
 
 .seccion_3_items .item_beneficio {
@@ -699,6 +693,132 @@ padding-right: 23px;
   line-height: 1.2;
 }
 /***** END NOSOTROS ******/
+
+
+/***** POLITICAS SOSTENIBILIDAD ******/
+.ui_seccion_top_banner.sostenibilidad{
+  background-image: url(/img/banner_sostenibilidad.png);
+}
+
+.contenedor.page_sostenibilidad{
+  max-width: 1215px;
+}
+
+.ui_seccion_1_sostenibilidad{
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.ui_seccion_1_sostenibilidad p{
+  font-size: 20px;
+  line-height: 1.2;
+  text-align: justify;
+}
+
+.ui_seccion_2_sostenibilidad .ui_marco_titulo{
+  margin-bottom: 20px;
+}
+
+.ui_seccion_2_sostenibilidad .row_seccion_sostenibilidad {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 50px;
+}
+
+.row_seccion_sostenibilidad .row_information {
+  width: 100%;
+  max-width: 475px;
+}
+
+.row_seccion_sostenibilidad .row_information h2{
+  color: #D2AD62;
+  margin-bottom: 25px;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Open Sans";
+}
+
+.row_seccion_sostenibilidad .row_information ul{
+  color: #454545;
+  margin-bottom: 16px;
+  text-align: justify;
+  list-style: disc;
+  line-height: 1.2;
+}
+
+.row_seccion_sostenibilidad .row_information ul:last-child{
+  margin-bottom: 0px;
+}
+
+.ui_seccion_3_sostenibilidad .row_seccion_sostenibilidad{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 50px;
+}
+
+.row_seccion_sostenibilidad.imagenes{
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 500px;
+}
+
+.row_seccion_sostenibilidad.imagenes .img_sostenibilidad_left{
+  position: absolute;
+  left: 180px;
+  top: 0;
+}
+
+.row_seccion_sostenibilidad.imagenes .img_sostenibilidad_right{
+  position: absolute;
+  right: 8%;
+  top: 80px;
+}
+/***** END POLITICAS SOSTENIBILIDAD ******/
+
+/***** POLITICAS PRIVACIDAD ******/
+.ui_seccion_top_banner.privacidad{
+  background-image: url(/img/banner_politicas_privacidad.png);
+}
+
+.contenedor.page_privacidad{
+  max-width: 1215px;
+}
+
+.ui_seccion_1_privacidad {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: #454545;
+  font-size: 18px;
+  text-align: justify;
+  line-height: 1.2;
+}
+
+.ui_seccion_1_privacidad p{
+  margin-bottom: 40px;
+    line-height: 1.2;
+}
+
+.ui_seccion_1_privacidad ul{
+  list-style: disc;
+  padding-left: 25px;
+  margin-bottom: 30px;
+}
+.ui_seccion_1_privacidad li{
+  margin-bottom: 15px;
+}
+.ui_seccion_1_privacidad li:last-child{
+  margin-bottom: 0px;
+}
+
+.ui_seccion_1_privacidad span{
+  font-weight: 500;
+}
+/***** END POLITICAS PRIVACIDAD ******/
+
 
 
 /*** RESULTADO BUSQUEDA ***/
@@ -926,27 +1046,8 @@ font-weight: 600;
 
 /***** RESENAS ******/
 
-.ui_seccion_top_resenas{
-  width: 100%;
-  height: 300px;
-  position: relative;
-  background-image: url(/img/inicio_banner.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 180px;
-  padding-top: 163px;
-}
-.ui_texto_intro_resena{
-
-  font-size: 50px;
-  line-height: 88px;
-  color: white;
-  font-family: "Fertigo-Pro";
-  text-align: center;
+.ui_seccion_top_banner.sostenibilidad{
+  background-image: url(/img/banner_resenas.png);
 }
 
 .ui_texto_titulo_filtros {

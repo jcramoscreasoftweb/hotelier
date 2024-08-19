@@ -1,6 +1,6 @@
 import  { Metadata } from "next";
 import {
-  FooterSite,
+  FooterSite_SinDecoracion,
   HeaderSitev1,
   ItemBeneficio,
 } from "@/components";
@@ -93,24 +93,25 @@ export default  async function Nosotros() {
 
                 );
               })
-                
               }
-
-             
-
             </div>
           </div>
 
+          <div className="decoracion_footer">
+            <Image
+              className="img-full"
+              width={1677}
+              height={286}
+              src="/img/footer_decoracion.png"
+              alt=""
+            />
+          </div>
         </section>
 
 
-        
-        
 
 
-
-
-        <FooterSite />
+        <FooterSite_SinDecoracion />
     </>
   )
 }

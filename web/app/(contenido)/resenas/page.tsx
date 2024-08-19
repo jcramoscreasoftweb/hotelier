@@ -29,19 +29,18 @@ export default async function Resena(){
 
     return(
         <>
-            <section
-                className="ui_seccion_top_resenas"
+            <section className="ui_seccion_top_banner resenas"
                 style={{
                     backgroundImage: `url("${PageResena.principal_section.image}")`,
                 }}
-            >
-                <div className="ui_texto_intro_resena">
-                    <h2>{PageResena.principal_section.title}</h2>
-                </div>
-               
+            >  
+            <HeaderSitev1 />
+            <div className="ui_texto_title_banner">
+                <h2>{PageResena.principal_section.title}</h2>
+            </div>
             </section>
 
-            <HeaderSitev1 />
+            
 
             <section className="ui_seccion_filters">
                 <div className="contenedor">
