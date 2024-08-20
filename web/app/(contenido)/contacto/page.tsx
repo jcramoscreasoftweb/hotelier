@@ -27,7 +27,7 @@ export default async function Contacto(){
             >  
                 <HeaderSitev1 />
                 <div className="ui_texto_title_banner">
-                    <h2>{contenidoContacto.banner_section.title}</h2>
+                    <h2 dangerouslySetInnerHTML={{ __html:contenidoContacto.banner_section.title}}></h2>
                 </div>
             </section>
 
@@ -37,24 +37,23 @@ export default async function Contacto(){
                         <Image className="ui_image_top" width={99} height={87} src="/img/adorno_contacto_1.png" alt="imagen-contacto"></Image>
                         <div className="item_info">
                             <h2>Teléfono</h2>
-                            <p>{contenidoContacto.info_section.phone}</p>
+                            <p dangerouslySetInnerHTML={{ __html:contenidoContacto.info_section.phone}}></p>
                         </div>
                         <div className="item_info">
                             <h2>Correo electrónico</h2>
-                            <p>{contenidoContacto.info_section.email}</p>
+                            <p dangerouslySetInnerHTML={{ __html:contenidoContacto.info_section.email}}></p>
                         </div>
                         <div className="item_info">
                             <h2>Dirección</h2>
-                            <p>{contenidoContacto.info_section.address}</p>
+                            <p dangerouslySetInnerHTML={{ __html:contenidoContacto.info_section.address}}></p>
                         </div>
                         <Image className="ui_image_bottom" width={71} height={83} src="/img/adorno_contacto_2.png" alt="imagen-contacto"></Image>
-                        
                     </div>
 
                     <div className="ui_seccion_form">
                         <form action="">
-                            <h2>{contenidoContacto.form_section.title}</h2>
-                            <p>{contenidoContacto.form_section.subtitle}</p>
+                            <h2 dangerouslySetInnerHTML={{ __html:contenidoContacto.form_section.title}}></h2>
+                            <p dangerouslySetInnerHTML={{ __html:contenidoContacto.form_section.subtitle}}></p>
 
                             <div className="ui_input_form">
                                 <span>Nombres y apellidos</span>
@@ -103,7 +102,7 @@ export default async function Contacto(){
                         height={60}
                         alt=""
                         />
-                        <h2>{contenidoContacto.map_section.title}</h2>
+                        <h2 dangerouslySetInnerHTML={{ __html:contenidoContacto.map_section.title}}></h2>
                         <Image
                             alt=""
                             src="/img/adorno_titulo_2.png"
@@ -112,10 +111,7 @@ export default async function Contacto(){
                         />
                     </div>
 
-                    <div className="ui_iframe_map">
-                        {/* {contenidoContacto.map_section.iframe} */}
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1939.6390205340806!2d-71.975219!3d-13.518521!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x916dd60b49c33447%3A0xcf7823c6c7d3904!2sC.%20San%20Agustin%20345%2C%20Cusco%2008002!5e0!3m2!1ses!2spe!4v1724175191179!5m2!1ses!2spe" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        
+                    <div className="ui_iframe_map" dangerouslySetInnerHTML={{ __html:contenidoContacto.map_section.iframe}}>
                     </div>
 
                 </div>

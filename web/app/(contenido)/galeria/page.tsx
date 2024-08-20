@@ -27,13 +27,13 @@ export default async function Galeria(){
             >  
                 <HeaderSitev1 />
                 <div className="ui_texto_title_banner">
-                    <h2>{contenidoGaleria.pincipal_section.title}</h2>
+                    <h2 dangerouslySetInnerHTML={{ __html:contenidoGaleria.pincipal_section.title}}></h2>
                 </div>
             </section>
 
             <section className="ui_seccion_1_galeria">
                 <div className="contenedor">
-                    <p>{contenidoGaleria.pincipal_section.subtitle}</p>
+                    <p dangerouslySetInnerHTML={{ __html:contenidoGaleria.pincipal_section.subtitle}}></p>
                 </div>
             </section>
 
@@ -43,11 +43,11 @@ export default async function Galeria(){
                     <div className="ui_row_item_galeria">
                         <div className="ui_marco_titulo">
                             <Image width={62} height={60} src="/img/adorno_titulo_1.png" alt=""/>
-                            <h2>{contenidoGaleria.areas_section.title}</h2>
+                            <h2 dangerouslySetInnerHTML={{ __html:contenidoGaleria.areas_section.title}}></h2>
                             <Image width={62} height={60} src="/img/adorno_titulo_2.png" alt=""/>
                         </div>
 
-                        <p>{contenidoGaleria.areas_section.description}</p>
+                        <p dangerouslySetInnerHTML={{ __html:contenidoGaleria.areas_section.description}}></p>
                         
                         <div className="ui_carrusel_item_galeria">
                             {
@@ -65,11 +65,11 @@ export default async function Galeria(){
                     <div className="ui_row_item_galeria">
                         <div className="ui_marco_titulo">
                             <Image width={62} height={60} src="/img/adorno_titulo_1.png" alt=""/>
-                            <h2>{contenidoGaleria.rooms_section.title}</h2>
+                            <h2 dangerouslySetInnerHTML={{ __html:contenidoGaleria.rooms_section.title}}></h2>
                             <Image width={62} height={60} src="/img/adorno_titulo_2.png" alt=""/>
                         </div>
 
-                        <p>{contenidoGaleria.rooms_section.description}</p>
+                        <p dangerouslySetInnerHTML={{ __html:contenidoGaleria.rooms_section.description}}></p>
                         
                         <div className="ui_carrusel_item_galeria">
                             {
@@ -87,11 +87,11 @@ export default async function Galeria(){
                     <div className="ui_row_item_galeria">
                         <div className="ui_marco_titulo">
                             <Image width={62} height={60} src="/img/adorno_titulo_1.png" alt=""/>
-                            <h2>{contenidoGaleria.restaurant_section.title}</h2>
+                            <h2 dangerouslySetInnerHTML={{ __html:contenidoGaleria.restaurant_section.title}}></h2>
                             <Image width={62} height={60} src="/img/adorno_titulo_2.png" alt=""/>
                         </div>
 
-                        <p>{contenidoGaleria.restaurant_section.description}</p>
+                        <p dangerouslySetInnerHTML={{ __html:contenidoGaleria.restaurant_section.description}}></p>
                         
                         <div className="ui_carrusel_item_galeria">
                             {
@@ -105,11 +105,8 @@ export default async function Galeria(){
                             }
                         </div>                        
                     </div>
-
                 </div>
             </section>
-
-
         <FooterSite/>
         </>
     );

@@ -28,13 +28,13 @@ export default  async function PoliticaSostenibilidad(){
         >  
           <HeaderSitev1 />
           <div className="ui_texto_title_banner">
-            <h2>{contenidoSostenibilidad.pincipal_section.title}</h2>
+            <h2 dangerouslySetInnerHTML={{ __html:contenidoSostenibilidad.pincipal_section.title}}></h2>
           </div>
         </section>
 
         <section className="ui_seccion_1_sostenibilidad">
             <div className="contenedor">
-                <p>{contenidoSostenibilidad.pincipal_section.description}</p>
+                <p dangerouslySetInnerHTML={{ __html:contenidoSostenibilidad.pincipal_section.description}}></p>
             </div>
         </section>
 
@@ -42,21 +42,16 @@ export default  async function PoliticaSostenibilidad(){
             <div className="contenedor">
                 <div className="ui_marco_titulo">
                     <Image width={62} height={60} src="/img/adorno_titulo_1.png" alt=""/>
-                    <h2>{contenidoSostenibilidad.first_section.title}</h2>
+                    <h2 dangerouslySetInnerHTML={{ __html:contenidoSostenibilidad.first_section.title}}></h2>
                     <Image width={62} height={60} src="/img/adorno_titulo_2.png" alt=""/>
                 </div>
 
                 <div className="row_seccion_sostenibilidad">
                     <div className="row_information">
-                        <h2>{contenidoSostenibilidad.first_section.subtitle_1}</h2>
-                        <ul>
-                            {contenidoSostenibilidad.first_section.content_1}
-                        </ul>
-
-                        <h2>{contenidoSostenibilidad.first_section.subtitle_2}</h2>
-                        <ul>
-                            {contenidoSostenibilidad.first_section.content_2}
-                        </ul>
+                        <h2 dangerouslySetInnerHTML={{ __html:contenidoSostenibilidad.first_section.subtitle_1}}></h2>
+                        <ul dangerouslySetInnerHTML={{ __html:contenidoSostenibilidad.first_section.content_1}}></ul>
+                        <h2 dangerouslySetInnerHTML={{ __html:contenidoSostenibilidad.first_section.subtitle_2}}></h2>
+                        <ul dangerouslySetInnerHTML={{ __html:contenidoSostenibilidad.first_section.content_2}}></ul>
                     </div>
 
                     <div className="row_image">
@@ -71,15 +66,10 @@ export default  async function PoliticaSostenibilidad(){
                     </div>
 
                     <div className="row_information">
-                        <h2>{contenidoSostenibilidad.first_section.subtitle_3}</h2>
-                        <ul>
-                            {contenidoSostenibilidad.first_section.content_3}
-                        </ul>
-
-                        <h2>{contenidoSostenibilidad.first_section.subtitle_4}</h2>
-                        <ul>
-                            {contenidoSostenibilidad.first_section.content_4}
-                        </ul>
+                        <h2 dangerouslySetInnerHTML={{ __html:contenidoSostenibilidad.first_section.subtitle_3}}></h2>
+                        <ul dangerouslySetInnerHTML={{ __html:contenidoSostenibilidad.first_section.content_3}}></ul>
+                        <h2 dangerouslySetInnerHTML={{ __html:contenidoSostenibilidad.first_section.subtitle_4}}></h2>
+                        <ul dangerouslySetInnerHTML={{ __html:contenidoSostenibilidad.first_section.content_4}}></ul>
                     </div>
                 </div>
             </div>
@@ -89,19 +79,19 @@ export default  async function PoliticaSostenibilidad(){
             <div className="contenedor">
                 <div className="ui_marco_titulo">
                     <Image width={62} height={60} src="/img/adorno_titulo_1.png" alt=""/>
-                    <h2>{contenidoSostenibilidad.second_section.title}</h2>
+                    <h2 dangerouslySetInnerHTML={{ __html:contenidoSostenibilidad.second_section.title}}></h2>
                     <Image width={62} height={60} src="/img/adorno_titulo_2.png" alt=""/>
                 </div>
 
                 <div className="row_seccion_sostenibilidad">
                     <div className="row_information">
-                        <h2>{contenidoSostenibilidad.second_section.subtitle_1}</h2>
-                        <ul>{contenidoSostenibilidad.second_section.content_1}</ul>
+                        <h2 dangerouslySetInnerHTML={{ __html:contenidoSostenibilidad.second_section.subtitle_1}}></h2>
+                        <ul dangerouslySetInnerHTML={{ __html:contenidoSostenibilidad.second_section.content_1}}></ul>
                     </div>
 
                     <div className="row_information">
-                        <h2>{contenidoSostenibilidad.second_section.subtitle_2}</h2>
-                        <ul>{contenidoSostenibilidad.second_section.content_2}</ul>
+                        <h2 dangerouslySetInnerHTML={{ __html:contenidoSostenibilidad.second_section.subtitle_2}}></h2>
+                        <ul dangerouslySetInnerHTML={{ __html:contenidoSostenibilidad.second_section.content_2}}></ul>
                     </div>
                 </div>
 

@@ -11,11 +11,11 @@ export const ItemTipoHabitacion = async () => {
 
     return (
       <>
-        {tipoHabitacion.map((item)=> {
+        {tipoHabitacion.map((item:any)=> {
             return(
                 <div className="ui_item_habitacion">
                         <div className="ui_info_habitacion">
-                            <h2 className="ui_titulo_habitacion">{item.name}</h2>
+                            <h2 className="ui_titulo_habitacion" dangerouslySetInnerHTML={{ __html:item.name}}></h2>
                             <div className="marco_carousel_fotos_habitacion">
                                 <div className="carousel_fotos_habitacion">
 

@@ -26,13 +26,13 @@ export const HeaderSitev1 = async () => {
             {menuHeader.titles.map((item) => {
               return (
                 <li>
-                  <Link href={`${item.link}`}>{item.name}</Link>
+                  <Link href={`${item.link}`} dangerouslySetInnerHTML={{ __html: item.name }}></Link>
                 </li>
               );
             })}
 
             <li className="ui_btn_reserva">
-              <Link href={`${menuHeader.button.link}`}>{menuHeader.button.name}</Link>
+              <Link href={`${menuHeader.button.link}`} dangerouslySetInnerHTML={{ __html: menuHeader.button.name }}></Link>
             </li>
           </ul>
         </nav>
@@ -72,7 +72,7 @@ export const FooterSite = async() => {
                   {footer.column_1.map((item) => {
                     return (
                       <li>
-                        <Link href={`${item.link}`}>{item.name}</Link>
+                        <Link href={`${item.link}`} dangerouslySetInnerHTML={{ __html: item.name }}></Link>
                       </li>
                     );
                   })}
@@ -83,7 +83,7 @@ export const FooterSite = async() => {
                   {footer.column_2.map((item) => {
                     return (
                       <li>
-                        <Link href={`${item.link}`}>{item.name}</Link>
+                        <Link href={`${item.link}`} dangerouslySetInnerHTML={{ __html: item.name }}></Link>
                       </li>
                     );
                   })}
@@ -94,7 +94,7 @@ export const FooterSite = async() => {
                   {footer.column_3.map((item) => {
                     return (
                       <li>
-                        <Link href={`${item.link}`}>{item.name}</Link>
+                        <Link href={`${item.link}`} dangerouslySetInnerHTML={{ __html: item.name }}></Link>
                       </li>
                     );
                   })}
@@ -102,9 +102,7 @@ export const FooterSite = async() => {
               </div>
               <div className="ui_info_col4">
                 <a href={`${footer.column_4.link}`}>
-                  <p>
-                    {footer.column_4.name}
-                  </p>
+                  <p dangerouslySetInnerHTML={{ __html: footer.column_4.name }}></p>
                   <Image
                     width={126}
                     height={55}
@@ -112,7 +110,6 @@ export const FooterSite = async() => {
                     alt=""
                   />
                 </a>
-                
               </div>
             </div>
 
@@ -158,7 +155,7 @@ export const FooterSite = async() => {
           </div>
         </div>
         <div className="ui_derechos_reservados">
-          <span>{footer.rights}</span>
+          <span dangerouslySetInnerHTML={{ __html: footer.rights }}></span>
         </div>
       </footer>
       <div className="ui_icono_whatasapp">
@@ -192,7 +189,7 @@ export const FooterSite_SinDecoracion = async() => {
                   {footer.column_1.map((item) => {
                     return (
                       <li>
-                        <Link href={`${item.link}`}>{item.name}</Link>
+                        <Link href={`${item.link}`} dangerouslySetInnerHTML={{ __html: item.name }}></Link>
                       </li>
                     );
                   })}
@@ -203,7 +200,7 @@ export const FooterSite_SinDecoracion = async() => {
                   {footer.column_2.map((item) => {
                     return (
                       <li>
-                        <Link href={`${item.link}`}>{item.name}</Link>
+                        <Link href={`${item.link}`} dangerouslySetInnerHTML={{ __html: item.name }}></Link>
                       </li>
                     );
                   })}
@@ -214,7 +211,7 @@ export const FooterSite_SinDecoracion = async() => {
                   {footer.column_3.map((item) => {
                     return (
                       <li>
-                        <Link href={`${item.link}`}>{item.name}</Link>
+                        <Link href={`${item.link}`} dangerouslySetInnerHTML={{ __html: item.name }}></Link>
                       </li>
                     );
                   })}
@@ -222,9 +219,7 @@ export const FooterSite_SinDecoracion = async() => {
               </div>
               <div className="ui_info_col4">
                 <a href={`${footer.column_4.link}`}>
-                  <p>
-                    {footer.column_4.name}
-                  </p>
+                  <p dangerouslySetInnerHTML={{ __html: footer.column_4.name }}></p>
                   <Image
                     width={126}
                     height={55}
@@ -232,7 +227,6 @@ export const FooterSite_SinDecoracion = async() => {
                     alt=""
                   />
                 </a>
-                
               </div>
             </div>
 
@@ -247,6 +241,7 @@ export const FooterSite_SinDecoracion = async() => {
                 <span>bookin@sachacusco.com</span>
               </div>
               <div className="ui_info_col4 social_media">
+                
                   <a href="">
                     <Image
                       width={41}
@@ -271,12 +266,13 @@ export const FooterSite_SinDecoracion = async() => {
                       alt=""
                     />
                   </a>
+                
               </div>
             </div>
           </div>
         </div>
         <div className="ui_derechos_reservados">
-          <span>{footer.rights}</span>
+          <span dangerouslySetInnerHTML={{ __html: footer.rights }}></span>
         </div>
       </footer>
       <div className="ui_icono_whatasapp">

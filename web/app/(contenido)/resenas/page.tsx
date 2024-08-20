@@ -18,7 +18,7 @@ export default async function Resena(){
     let url = "https://creasoft.com.pe/hotelier_api/pages/page-resena.json";
     let requestAPI: any = await fetch(url);
     requestAPI = await requestAPI.json();
-    let PageResena: PageResenaResponse = requestAPI.payload["en"];
+    let PageResena: PageResenaResponse = requestAPI.payload["es"];
 
     let url_resenas = "https://creasoft.com.pe/hotelier_api/pages/list-comments-pag.json"
     let requestAPI_resena: any = await fetch(url_resenas);
@@ -34,32 +34,30 @@ export default async function Resena(){
                     backgroundImage: `url("${PageResena.principal_section.image}")`,
                 }}
             >  
-            <HeaderSitev1 />
-            <div className="ui_texto_title_banner">
-                <h2>{PageResena.principal_section.title}</h2>
-            </div>
+                <HeaderSitev1 />
+                <div className="ui_texto_title_banner">
+                    <h2 dangerouslySetInnerHTML={{ __html:PageResena.principal_section.title}}></h2>
+                </div>
             </section>
-
-            
 
             <section className="ui_seccion_filters">
                 <div className="contenedor">
                     <div className="ui_texto_titulo_filtros">
-                        <h2>{PageResena.principal_section.subtitle}</h2>
+                        <h2 dangerouslySetInnerHTML={{ __html:PageResena.principal_section.subtitle}}></h2>
                     </div>
 
                     <div className="ui_filtros">
                         <div className="ui_item_filter">
                             <div className="ui_tag_filter">
                                 <Image width={20} height={18}src="/img/icon_filter.png" alt=""/>
-                                <span>{PageResena.filter_select.title}:</span>
+                                <span dangerouslySetInnerHTML={{ __html:PageResena.filter_select.title}}></span>
                             </div>
                             <div className="ui_select_filter">
                                 <select name="filter" id="filter">
                                     {
                                         PageResena.filter_select.options.map((item)=>{
                                             return(
-                                                <option value={item.value}>{item.name}</option>
+                                                <option value={item.value} dangerouslySetInnerHTML={{ __html:item.name}}></option>
                                             );
                                         })
                                     }
@@ -70,20 +68,19 @@ export default async function Resena(){
                         <div className="ui_item_filter">
                             <div className="ui_tag_filter">
                                 <Image width={19} height={18}src="/img/icon_order.png" alt=""/>
-                                <span>{PageResena.order_select.title}:</span>
+                                <span dangerouslySetInnerHTML={{ __html:PageResena.order_select.title}}></span>
                             </div>
                             <div className="ui_select_filter">
                                 <select name="order" id="order">
                                     {
                                         PageResena.order_select.options.map((item)=>{
                                             return(
-                                                <option value={item.value}>{item.name}</option>
+                                                <option value={item.value} dangerouslySetInnerHTML={{ __html:item.name}}></option>
                                             );
                                         })
                                     }
                                 </select>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -92,7 +89,6 @@ export default async function Resena(){
             <section className="ui_card_reseñas">
                 <div className="contenedor">
                     <div className="ui_seccion_resenas_lyt">
-                                
                         {
                         resenas.comments.map((item)=>{
                             return(

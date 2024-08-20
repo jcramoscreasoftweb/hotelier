@@ -29,16 +29,14 @@ export default  async function Nosotros() {
         >  
           <HeaderSitev1 />
           <div className="ui_texto_title_banner">
-            <h2>{contenidoNosotros.pincipal_section.title}</h2>
+            <h2 dangerouslySetInnerHTML={{ __html:contenidoNosotros.pincipal_section.title}}></h2>
           </div>
         </section>
         
         <section className="ui_seccion_1_nosotros">
           <div className="contenedor page_nosotros">
-            <h2>
-              {contenidoNosotros.pincipal_section.description}
-            </h2>
-            </div>
+            <h2 dangerouslySetInnerHTML={{ __html:contenidoNosotros.pincipal_section.description}}></h2>
+          </div>
         </section>
 
         <section className="ui_seccion_2_nosotros">
@@ -46,8 +44,8 @@ export default  async function Nosotros() {
             <div className="item_valor">
               <div className="valor_left">
                 <div className="item_valor_text">
-                  <h1>{contenidoNosotros.mision_section.title}</h1>
-                  <p>{contenidoNosotros.mision_section.description}</p>
+                  <h1 dangerouslySetInnerHTML={{ __html:contenidoNosotros.mision_section.title}}></h1>
+                  <p dangerouslySetInnerHTML={{ __html:contenidoNosotros.mision_section.description}}></p>
                 </div>
               </div>
               
@@ -67,12 +65,11 @@ export default  async function Nosotros() {
                 
               <div className="valor_right important">
                 <div className="item_valor_text">
-                  <h1>{contenidoNosotros.vision_section.title}</h1>
-                  <p>{contenidoNosotros.vision_section.description}</p>
+                  <h1 dangerouslySetInnerHTML={{ __html:contenidoNosotros.vision_section.title}}></h1>
+                  <p dangerouslySetInnerHTML={{ __html:contenidoNosotros.vision_section.description}}></p>
                 </div>
               </div>
             </div>
-
           </div>
         </section>
 
@@ -107,9 +104,6 @@ export default  async function Nosotros() {
             />
           </div>
         </section>
-
-
-
 
         <FooterSite_SinDecoracion />
     </>

@@ -7,8 +7,8 @@ export const ItemBeneficio = ({ imagen, titulo, descripcion }: any) => {
             <Image width={350} height={325}
                 src={imagen} alt="item-image-beneficio">
             </Image>
-            <h2>{titulo}</h2>
-            <p>{descripcion}</p>
+            <h2 dangerouslySetInnerHTML={{ __html: titulo }}></h2>
+            <p dangerouslySetInnerHTML={{ __html: descripcion }} ></p>
         </div> 
       </>
     );

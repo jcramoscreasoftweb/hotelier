@@ -29,14 +29,14 @@ export default async function Destino(){
             >  
                 <HeaderSitev1 />
                 <div className="ui_texto_title_banner">
-                    <h2>{contenidoDestino.banner_section.title}</h2>
+                    <h2 dangerouslySetInnerHTML={{ __html:contenidoDestino.banner_section.title}}></h2>
                 </div>
             </section>
 
             <section className="ui_seccion_1_destino">
                 <div className="contenedor">
                     <Image width={598} height={132} src={contenidoDestino.first_section.image_1} alt="image-destino"/>
-                    <p>{contenidoDestino.first_section.description}</p>
+                    <p dangerouslySetInnerHTML={{ __html:contenidoDestino.first_section.description}}></p>
 
                     <div className="ui_images_seccion_1">
                         <Image width={345} height={503} src={contenidoDestino.first_section.image_2} alt=""/>
@@ -45,7 +45,7 @@ export default async function Destino(){
 
                     <div className="ui_marco_titulo">
                         <Image width={62} height={60} src="/img/adorno_titulo_1.png" alt=""/>
-                        <h2>{contenidoDestino.first_section.title_tourist}</h2>
+                        <h2 dangerouslySetInnerHTML={{ __html:contenidoDestino.first_section.title_tourist}}></h2>
                         <Image width={62} height={60} src="/img/adorno_titulo_2.png" alt=""/>
                     </div>
                 </div>
@@ -79,8 +79,7 @@ export default async function Destino(){
                     })}
                 </div>
             </section>
-
-
+            
         <FooterSite/>
         </>
     );

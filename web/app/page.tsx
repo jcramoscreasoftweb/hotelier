@@ -33,7 +33,7 @@ export default async function Home() {
         <HeaderSitev1 />
 
         <div className="ui_texto_intro_home">
-          <h2>{contenidoPortada.banner_section.title}</h2>
+          <h2 dangerouslySetInnerHTML={{ __html:contenidoPortada.banner_section.title}}></h2>
         </div>
         <div className="ui_marco_opciones_home">
           <div className="ui_barra_busqueda"></div>
@@ -43,8 +43,8 @@ export default async function Home() {
         <div className="contenedor">
           <div className="ui_lyt_seccion_2_home">
             <div className="ui_seccion_2_home_info">
-              <h2> {contenidoPortada.principal_section.title}</h2>
-              <p>{contenidoPortada.principal_section.description}</p>
+              <h2 dangerouslySetInnerHTML={{ __html:contenidoPortada.principal_section.title}}></h2>
+              <p dangerouslySetInnerHTML={{ __html:contenidoPortada.principal_section.description}}></p>
             </div>
             <div className="ui_seccion_2_home_img">
               <Image

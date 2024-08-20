@@ -27,23 +27,20 @@ export default async function PoliticaPrivacidad(){
             >  
                 <HeaderSitev1 />
                 <div className="ui_texto_title_banner">
-                    <h2>{contenidoPrivacidad.pincipal_section.title}</h2>
+                    <h2 dangerouslySetInnerHTML={{ __html:contenidoPrivacidad.pincipal_section.title}}></h2>
                 </div>
             </section>
 
             <section className="ui_seccion_1_privacidad">
                 <div className="contenedor">
-                    <p>{contenidoPrivacidad.first_section.text_1}</p>
-                    <ul>
-                        {contenidoPrivacidad.first_section.text_2}
-                    </ul>
-                    <p>{contenidoPrivacidad.first_section.text_3}</p>
+                    <p dangerouslySetInnerHTML={{ __html:contenidoPrivacidad.first_section.text_1}}></p>
+                    <ul dangerouslySetInnerHTML={{ __html:contenidoPrivacidad.first_section.text_2}}></ul>
+                    <p dangerouslySetInnerHTML={{ __html:contenidoPrivacidad.first_section.text_3}}></p>
                     <p>
-                        Correo electrónico: <span>{contenidoPrivacidad.first_section.email}</span><br/>      
-                        Teléfono: <span>{contenidoPrivacidad.first_section.phone}</span>
+                        Correo electrónico: <span dangerouslySetInnerHTML={{ __html:contenidoPrivacidad.first_section.email}}></span><br/>      
+                        Teléfono: <span dangerouslySetInnerHTML={{ __html:contenidoPrivacidad.first_section.phone}}></span>
                     </p>
-                    <p>{contenidoPrivacidad.first_section.text_4}</p>
-
+                    <p dangerouslySetInnerHTML={{ __html:contenidoPrivacidad.first_section.text_4}}></p>
                 </div>
             </section>
 

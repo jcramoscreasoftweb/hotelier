@@ -14,7 +14,7 @@ export const ItemResena = ({ score, comment, user, date }: any) => {
             ))}
           </div>
           <div className="ui_mensaje">
-            <p>{comment}</p>
+            <p dangerouslySetInnerHTML={{ __html:comment}}></p>
           </div>
           <div className="ui_usuario">
             <p>- {user}, {date}</p>
