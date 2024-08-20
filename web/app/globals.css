@@ -645,7 +645,7 @@ padding-right: 23px;
 
 .item_valor .item_valor_text p{
   font-size: 22px;
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   line-height: normal;
 }
 
@@ -737,7 +737,7 @@ padding-right: 23px;
   margin-bottom: 25px;
   font-size: 20px;
   font-weight: 500;
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
 }
 
 .row_seccion_sostenibilidad .row_information ul{
@@ -954,7 +954,188 @@ padding-right: 23px;
   background: #00CFC9;
 }
 
+.ui_carrusel_item_galeria .ui_item_slider img{
+  cursor: pointer;
+}
 /***** END GALERIA ******/
+
+/***** CONTACTO ******/
+.ui_seccion_top_banner.destino{
+  background-image: url(/img/banner_contacto.png);
+}
+
+.ui_seccion_1_contacto .contenedor{
+  max-width: 1155px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ui_seccion_1_contacto{
+  margin-top: 52px;
+  margin-bottom: 70px;
+}
+
+.ui_seccion_1_contacto .ui_seccion_informacion{
+  width: 450px;
+  position: relative;
+  z-index: 100;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ui_seccion_1_contacto .ui_seccion_informacion .ui_image_top{
+  position: absolute;
+  top: -53px;
+  left: 5px;
+  z-index: 50;
+}
+.ui_seccion_1_contacto .ui_seccion_informacion .ui_image_bottom{
+  position: absolute;
+  z-index: 50;
+  bottom: 5px;
+  right: 17px;
+}
+
+.ui_seccion_1_contacto .ui_seccion_informacion .item_info{
+  width: 328px;
+  height: 150px;
+  z-index: 100;
+  border-radius: 12px;
+  background-color: #F7F1E5;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 28px;
+}
+.ui_seccion_1_contacto .ui_seccion_informacion .item_info:last-child{
+  margin-bottom: 0px;
+}
+.ui_seccion_informacion .item_info h2{
+  color: #512B17;
+  font-size: 24px;
+  font-family: "Fertigo-Pro";
+  margin-bottom: 13px;
+}
+
+.ui_seccion_informacion .item_info p{
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+}
+
+.ui_seccion_1_contacto .ui_seccion_form{
+  width: 645px;
+  height: 742px;
+  font-family: "Open Sans", sans-serif;
+  box-shadow: 0px 1px 6px 0px #cecece;
+  border-radius: 10px;
+  padding: 22px 64px;
+}
+
+.ui_seccion_1_contacto .ui_seccion_form h2{
+  color: #512B17;
+  font-size: 26px;
+  font-family: "Fertigo-Pro";
+  margin-bottom: 8px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.ui_seccion_1_contacto .ui_seccion_form p{
+  color: #454545;
+  font-size: 16px;
+  margin-bottom: 27px;
+  text-align: center;
+}
+
+.ui_seccion_form .ui_input_form {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.ui_seccion_form .ui_input_form:last-child{
+  margin-bottom: 0px;
+}
+
+.ui_seccion_form .ui_input_form span{
+  font-weight: 600;
+}
+
+.ui_seccion_form .ui_input_form input{
+  width: 100%;
+  height: 50px;
+  padding: 15px 20px;
+  border-radius: 30px;
+  border: solid 1px #D7D7D7;
+  outline: none;
+  font-size: 16px;
+}
+
+.ui_seccion_form .ui_input_form textarea{
+  width: 100%;
+  height: 113px;
+  border-radius: 30px;
+  border: solid 1px #D7D7D7;
+  outline: none;
+  resize: none;
+  overflow: hidden;
+  padding: 15px 20px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+}
+
+.ui_seccion_form .ui_input_form button{
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+  width: 100%;
+  height: 50px;
+  color: #ffff;
+  background-color: #00CFC9;
+  border: none;
+  border-radius: 30px;
+  outline: none;
+
+}
+
+.ui_seccion_form .ui_input_form .ui_selector_input{
+  display: flex;
+}
+.ui_seccion_form .ui_input_form .ui_selector_input input{
+  border-radius: 0px 30px 30px 0px;
+  width: 335px;
+}
+
+.ui_seccion_form .ui_input_form .ui_selector_input select{
+  width: 182px;
+  height: 50px;
+  padding: 16px 20px;
+  border-radius: 30px 0px 0px 30px;
+  border: solid 1px #D7D7D7;
+  border-right: 0px;
+  outline: none;
+  cursor: pointer;
+}
+
+.ui_seccion_2_contacto .ui_marco_titulo{
+ margin-bottom: 30px;
+}
+
+.ui_seccion_2_contacto .ui_iframe_map iframe{
+  background-color: grey;
+  border-radius: 12px;
+  width: 100%;
+  height: 440px;
+  margin-bottom: 40px;
+}
+
+/***** END CONTACTO ******/
 
 
 
