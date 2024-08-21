@@ -1,4 +1,3 @@
-
 export interface BusquedaResponse {
   id_tp_room:      number;
   name:            string;

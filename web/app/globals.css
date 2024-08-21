@@ -97,10 +97,18 @@ top: 0px;
 left: 0px;
 }
 
+.ui_header-site.page_busqueda{
+  position: relative;
+}
+
 .ui_logo_site{
   padding-top: 7px;
   padding-bottom: 7px;
   text-align: center;
+}
+
+.ui_header-site.page_busqueda .ui_nav_site ul{
+  background-color: #D5B470;
 }
 
 .ui_nav_site ul{
@@ -120,7 +128,10 @@ left: 0px;
   text-transform: uppercase;
   font-family: "Fertigo-Pro";
 }
-
+.ui_header-site.page_busqueda .ui_nav_site ul li.ui_btn_reserva a{
+  background-color: white;
+  color: #D5B470;
+}
 .ui_nav_site ul li.ui_btn_reserva a{
 background-color: #00CFC9;
 padding:9px 27px;
@@ -1136,13 +1147,25 @@ padding-right: 23px;
 
 /***** END CONTACTO ******/
 
-
-
 /*** RESULTADO BUSQUEDA ***/
+.contenedor.page_busqueda{
+  max-width: 1215px;
+ }
+
+ .ui_seccion_1_busqueda{
+  margin-top: 42px;
+  margin-bottom: 37px;
+ }
+ .ui_seccion_1_busqueda .ui_barra_busqueda{
+  background-color: grey;
+ }
+
+
+
 .ui_info_resultado{
 display: flex;
 justify-content: space-between;
-margin-bottom: 56px;
+margin-bottom: 21px;
 }
 .ui_info_resultado .label{
 font-size: 20px;
@@ -1156,9 +1179,10 @@ color:#454545
   font-weight: 400;
 }
 .ui_item_habitacion{
+  border-radius: 4px;
   border:1px solid #ececec;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 77px;
 }
 .ui_item_habitacion .ui_info_habitacion{
@@ -1170,11 +1194,12 @@ color:#454545
 }
 .ui_item_habitacion .ui_info_habitacion_precio{
   flex-grow: 1;
-
-  padding: 60px;
+  padding: 34px 39px 32px 39px;
 }
+
 .ui_item_habitacion .ui_titulo_habitacion{
-padding: 17px;
+padding: 5px  10px 10px 20px;
+padding-bottom: 20px;
 text-align: center;
 font-size: 24px;
 line-height: 28px;
@@ -1182,19 +1207,24 @@ font-weight: 400;
 font-family: "Fertigo-Pro";
 color: #512B17;
 }
+
 .slick-slide .ui_foto_item_habitacion img{
   width: 100%;
+  border-radius: 4px;
   vertical-align: top;
 }
 .ui_foto_item_habitacion{
-
+  max-width: 500px;
+  height: 280px;
 }
 .ui_foto_item_habitacion img{
   width: 100%;
 }
 .marco_carousel_fotos_habitacion{
-  padding-left: 57px;
-  padding-right: 57px;
+  padding-left: 78px;
+  padding-right: 52px;
+  width: 100%;
+  max-width: 630px;
 }
 .ui_habitacion_detalle{
 margin-top: 28px;
@@ -1234,14 +1264,14 @@ margin-right: 57px;
 
 .ui_habitacion_detalle_servicio {
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 17px;
   padding-top: 20px;
   padding-bottom: 20px;
-  padding-left: 70px;
-  padding-right: 70px;
+  margin-left: 78px;
+  width: 550px;
+  justify-content: space-evenly;
 }
 .ui_habitacion_detalle_servicio span{
   width: 30%;
@@ -1254,12 +1284,13 @@ margin-right: 57px;
 }
 
 .ui_item_habitacion .ui_ver_mas{
-  font-size: 20px;
+  font-size: 16px;
   color: #00CFC9;
   font-weight: 600;
   margin-top: 10px;
   margin-left: 56px;
   cursor: pointer;
+  text-decoration: underline;
 }
 
 .ui_info_habitacion_precio .ui_titulo_bloque{
@@ -1269,17 +1300,18 @@ font-weight: 600;
 margin-bottom: 17px;
 }
 .ui_info_habitacion_precio .ui_item_precio{
-border:  1px solid #ececec;
-padding: 20px;
-padding-right: 12px;
-border-radius: 7px;
-margin-bottom: 24px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-color:#454545;
-cursor: pointer;
-
+  width: 470px;
+  height: 108px;
+  border:  1px solid #ececec;
+  padding: 20px;
+  padding-right: 12px;
+  border-radius: 7px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color:#454545;
+  cursor: pointer;
 }
 
 .ui_info_habitacion_precio .ui_item_precio.activo{
@@ -1297,8 +1329,6 @@ color:#454545
 font-size: 12px;
 line-height: 16px;
 font-weight: 400;
-
-margin-bottom: 5px;
 
 }
 .ui_info_habitacion_precio .ui_item_precio .ui_info_noches{
@@ -1319,8 +1349,16 @@ line-height: 24px;
 margin-bottom: 20px;
 }
 .ui_info_habitacion_precio .ui_otras_plataformas .ui_item_otro{
-  margin-top:25px;
+  margin-top: 25px;
   margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  width: 220px;
+  justify-content: space-between;
+}
+
+.ui_info_habitacion_precio .ui_otras_plataformas .ui_item_otro:last-child{
+  margin-bottom: 0px;
 }
 .ui_info_habitacion_precio .ui_otras_plataformas .ui_item_otro span{
 font-size: 15px;

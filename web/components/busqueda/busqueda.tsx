@@ -1,13 +1,12 @@
 import { BusquedaResponse } from "@/interfaces";
 import Image from "next/image";
 
-export const ItemTipoHabitacion = async () => {
+export const ListadoTipoHabitacion = async () => {
 
     let url = "https://creasoft.com.pe/hotelier_api/pages/search-typerooms.json";
     let contenido = await fetch(url);
     let data = await contenido.json();
     let tipoHabitacion: BusquedaResponse = data.payload["es"];
-    // console.log(tipoHabitacion);
 
     return (
       <>
@@ -20,7 +19,7 @@ export const ItemTipoHabitacion = async () => {
                                 <div className="carousel_fotos_habitacion">
 
                                     <div className="ui_foto_item_habitacion">
-                                        <Image width={500} height={320} src={item.image} alt=""/>
+                                        <Image width={500} height={280} src={item.image} alt=""/>
                                     </div>
 
                                     {item.images_carrusel.map((itemCarrusel:any) =>{
@@ -31,24 +30,22 @@ export const ItemTipoHabitacion = async () => {
                                             />
                                         );
                                     })}   
-
                                 </div>
                             </div>
                             <div className="ui_habitacion_detalle">
 
                                 <div className="ui_habitacion_info">
-                                    <span><Image width={20} height={20} src="https://sashahotelhotelier.s3.us-east-2.amazonaws.com/images/icon_bed.png" alt=""/>{item.bed}</span>
-                                    <span><Image width={20} height={20} src="https://sashahotelhotelier.s3.us-east-2.amazonaws.com/images/icon_bed.png" alt=""/>{item.dimensions} m²</span>
-                                    <span><Image width={20} height={20} src="https://sashahotelhotelier.s3.us-east-2.amazonaws.com/images/icon_bed.png" alt=""/>{item.num_adults} adultos </span>
-                                    <span><Image width={20} height={20} src="https://sashahotelhotelier.s3.us-east-2.amazonaws.com/images/icon_bed.png" alt=""/>{item.num_children} niños </span>
+                                    <span><Image width={20} height={20} src="/img/icon_bed.png" alt=""/>{item.bed}</span>
+                                    <span><Image width={20} height={20} src="/img/icon_area.png" alt=""/>{item.dimensions} m²</span>
+                                    <span><Image width={20} height={20} src="/img/icon_adultos.png" alt=""/>{item.num_adults} adultos </span>
+                                    <span><Image width={20} height={20} src="/img/icon_adultos.png" alt=""/>{item.num_children} niños </span>
                                 </div>
                                 <div className="ui_habitacion_check">
-                                    <span><Image width={20} height={20} src="https://sashahotelhotelier.s3.us-east-2.amazonaws.com/images/icon_bed.png" alt=""/>Check in: {item.check_in}</span>
-                                    <span><Image width={20} height={20} src="https://sashahotelhotelier.s3.us-east-2.amazonaws.com/images/icon_bed.png" alt=""/>Check out: {item.check_out}</span>
+                                    <span><Image width={20} height={20} src="/img/icon_hora.png" alt=""/>Check in: {item.check_in}</span>
+                                    <span><Image width={20} height={20} src="/img/icon_hora.png" alt=""/>Check out: {item.check_out}</span>
                                 </div>
                             </div>
                             <div className="ui_habitacion_detalle_servicio">
-
                                     {item.services.map((service:any) =>{
                                         return(
                                             <ItemServicioHabitacion
@@ -58,8 +55,6 @@ export const ItemTipoHabitacion = async () => {
                                             />
                                         );
                                     })}  
-
-                                    
                             </div>
                             <div className="ui_ver_mas">
                             <span>Ver más detalles <Image width={20} height={20} src="/img/btn_siguiente.png" alt=""/></span>
@@ -95,11 +90,11 @@ export const ItemTipoHabitacion = async () => {
                                     <span>En otras plataformas</span>
                                 </div>
                                 <div className="ui_item_otro">
-                                    <Image width={120} height={16} src="https://placehold.co/120x16.png" alt=""/>
+                                    <Image width={102} height={16} src="/img/icon_booking.png" alt="icon-price"/>
                                     <span>US$ {item.price_booking}</span>
                                 </div>
                                 <div className="ui_item_otro">
-                                    <Image width={120} height={16} src="https://placehold.co/120x16.png" alt=""/>
+                                    <Image width={85} height={16} src="/img/icon_expedia.png" alt="icon-price"/>
                                     <span>US$ {item.price_expedia}</span>
                                 </div>
 
@@ -111,11 +106,6 @@ export const ItemTipoHabitacion = async () => {
                 </div>
             );
         })}
-
-
-                
-
-        
       </>
     );
   };
@@ -123,7 +113,7 @@ export const ItemTipoHabitacion = async () => {
   export const ItemImagenCarrusel = ({url}:any) => {
     return (
         <div className="ui_foto_item_habitacion">
-            <Image width={500} height={320} src={url} alt=""/>
+            <Image width={500} height={280} src={url} alt=""/>
         </div>
     );
   }

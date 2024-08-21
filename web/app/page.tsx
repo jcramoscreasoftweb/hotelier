@@ -163,7 +163,7 @@ export default async function Home() {
               })}
           </div>
           <div className="ui_mas_resenas">
-            <a href="">
+            <a href="/resenas">
               {contenidoPortada.commets_section.text_redirection}{" "}
               <Image
                 width={20}

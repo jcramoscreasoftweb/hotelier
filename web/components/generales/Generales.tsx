@@ -41,6 +41,45 @@ export const HeaderSitev1 = async () => {
   );
 };
 
+export const HeaderSitev2 = async () => {
+  let url = "https://creasoft.com.pe/hotelier_api/get-header.json";
+  let contenido = await fetch(url);
+  let data = await contenido.json();
+  let menuHeader: MenuHeaderResponse = data.payload["es"];
+
+  return (
+    <>
+      <header className="ui_header-site page_busqueda">
+        <div className="ui_logo_site">
+          <a href="">
+            <Image
+              width={70}
+              height={79}
+              src="/img/logo_header2.png"
+              alt="Hotelier site"
+            />
+          </a>
+        </div>
+        <nav className="ui_nav_site">
+          <ul>
+            {menuHeader.titles.map((item) => {
+              return (
+                <li>
+                  <Link href={`${item.link}`} dangerouslySetInnerHTML={{ __html: item.name }}></Link>
+                </li>
+              );
+            })}
+
+            <li className="ui_btn_reserva">
+              <Link href={`${menuHeader.button.link}`} dangerouslySetInnerHTML={{ __html: menuHeader.button.name }}></Link>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </>
+  );
+};
+
 export const FooterSite = async() => {
 
   let url = "https://creasoft.com.pe/hotelier_api/get-footer.json";
