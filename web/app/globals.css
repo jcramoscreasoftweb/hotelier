@@ -61,6 +61,9 @@ a, a:hover{
 img{
   vertical-align: top;
 }
+button, input, select, textarea{
+  outline: none;
+}
 
 body{
 
@@ -275,12 +278,13 @@ cursor: pointer;
 }
 
 .ui_close_modal{
-  width: 20px;
-  height: 20px;
-  background-color: black;
+  width: 44px;
+  height: 44px;
+  background-image: url(/img/icon_close.png);
   position: absolute;
-  right: 0px;
-  top:0px;
+  right: -22px;
+  top: -22px;
+  cursor: pointer;
 }
 /**** END GENERALES ****/
 
@@ -327,6 +331,10 @@ cursor: pointer;
   bottom: 64px;
   left: 50%;
   margin-left: -580px;*/
+}
+
+.ui_seccion_top_home .ui_marco_opciones_home .ui_barra_busqueda .ui_form_busqueda .btn_buscar{
+    bottom: 1px;
 }
 
 .ui_seccion_2_home{
@@ -934,7 +942,7 @@ padding-right: 23px;
   line-height: 1.2;
 }
 
-.ui_carrusel_item_galeria .slick-dots {
+.slick-dots {
   margin: 0 auto;
   width: max-content;
   list-style: none;
@@ -944,13 +952,13 @@ padding-right: 23px;
   padding-right: 40px;
 }
 
-.ui_carrusel_item_galeria .slick-dots li button {
+.slick-dots li button {
   appearance: none;
   -webkit-appearance: none;
   display: none;
 }
 
-.ui_carrusel_item_galeria  .slick-dots li {
+.slick-dots li {
   cursor: pointer;
   background: #ffff;
   border: 4px solid #00CFC9;
@@ -960,7 +968,7 @@ padding-right: 23px;
   height: 25px;
 }
 
-.ui_carrusel_item_galeria  .slick-dots li.slick-active {
+.slick-dots li.slick-active {
   background: #00CFC9;
 }
 
@@ -1157,10 +1165,145 @@ padding-right: 23px;
   margin-bottom: 37px;
  }
  .ui_seccion_1_busqueda .ui_barra_busqueda{
-  background-color: grey;
+  border: solid 2px #d9d9d9;
  }
 
+.ui_barra_busqueda .ui_form_busqueda{
+  display: flex;
+  padding: 14px 75px;
+  align-items: flex-start;
+  position: relative;
+}
 
+.ui_barra_busqueda .ui_form_busqueda .ui_separator_input{
+  border: solid 1px #D9D9D9;
+  height: 83px;
+  margin-left: 64px;
+  margin-right: 64px;
+}
+
+.ui_barra_busqueda .ui_form_busqueda .item_input_form input{
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+}
+.ui_barra_busqueda .ui_form_busqueda .item_input_form .label{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 13px;
+}
+
+.ui_barra_busqueda .ui_form_busqueda .item_input_form .label img{
+  margin-right: 13px;
+}
+
+.ui_barra_busqueda .ui_form_busqueda .item_input_form .label h2{
+  color: #454545;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.ui_barra_busqueda .ui_form_busqueda .item_input_form .label_huespedes{
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.ui_barra_busqueda .ui_form_busqueda .btn_buscar{
+  width: 209px;
+  height: 110px;
+  border-radius: 60px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: #00CFC9;
+  color: white;
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  bottom: 3px;
+}
+
+.ui_barra_busqueda .ui_form_busqueda .btn_buscar img{
+  margin-right: 13px;
+}
+
+.ui_barra_busqueda .ui_form_busqueda .item_input_form{
+  position: relative;
+}
+
+.item_input_form .ui_box_huespedes{
+  width: 250px;
+  height: 200px;
+  background-color: white;
+  position: absolute;
+  left: -64px;
+  top: 89px;
+  box-shadow: 0px 0px 8px 1px #00000025;
+  padding: 17px 13px;
+  border-radius: 6px;
+  display: none;
+}
+
+.ui_box_huespedes .item_box_huesped{
+  display: flex;
+  width: 218px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.ui_box_huespedes .item_box_huesped h2{
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.ui_box_huespedes .item_box_huesped .contador_huesped {
+  border-radius: 2px;
+  border: solid 0.5px #D7D7D7;
+  height: 40px;
+  width: 101px;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ui_box_huespedes .item_box_huesped .contador_huesped button{
+  color: #00CFC9;
+    font-size: 30px;
+    width: 20px;
+    height: 25px;
+    cursor: pointer;
+    border: none;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.ui_box_huespedes .item_box_huesped .contador_huesped input{
+  width: 30px;
+  height: 25px;
+  text-align: center;
+  font-size: 18px;
+  border: none;
+}
+
+.ui_box_huespedes .btn_huesped{
+  margin-top: 8px;
+  width: 100%;
+  background-color: #00CFC9;
+  color: white;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  text-align: center;
+  cursor: pointer;
+}
 
 .ui_info_resultado{
 display: flex;
@@ -1389,14 +1532,123 @@ font-weight: 600;
 
 }
 
-.ui_detalle_reserva .ui_contenido_modal{
-  width: 1300px;
-  height:829px;
+.ui_contenido_modal{
   background-color: white;
   border-radius: 20px;
   position: relative;
-  cursor: pointer;
 }
+
+.ui_detalle_reserva .ui_contenido_modal{
+  color: #454545;
+  width: 1230px;
+  height:550px;
+  display: flex;
+  padding: 24px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.contenedor_modal_carrusel{
+  width: 430px;
+}
+
+.ui_detalle_reserva .ui_contenido_modal .ui_modal_imagenes_habitacion {
+  background-color: rgb(214, 214, 214);
+  width: 544px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui_detalle_reserva .ui_contenido_modal .ui_modal_imagenes_habitacion .ui_carrusel_habitacion_modal{
+  width: 430px;
+  margin-bottom: 30px;
+}
+
+.ui_detalle_reserva .ui_contenido_modal .ui_modal_imagenes_habitacion .ui_mini_carrusel .item_carrusel{
+  width: 120px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.ui_mini_carrusel{
+  width: 430px;
+ }
+
+.ui_mini_carrusel .slick-dots li{
+  width: 20px;
+  height: 20px;
+  border: 2px solid #00CFC9;
+}
+
+.ui_detalle_reserva .ui_contenido_modal .ui_modal_imagenes_habitacion h2{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #512B17;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.ui_detalle_reserva .ui_contenido_modal .ui_modal_informacion_habitacion {
+  width: 565px;
+  padding: 5px;
+  height: 500px;
+}
+
+.ui_detalle_reserva .ui_contenido_modal .ui_modal_informacion_habitacion .row_detalle {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 474px;
+  margin-bottom: 17px
+}
+
+.ui_detalle_reserva .ui_contenido_modal .ui_modal_informacion_habitacion .row_detalle .col_detalle {
+  display: flex;
+  width: 220px;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.ui_detalle_reserva .ui_contenido_modal .ui_modal_informacion_habitacion .row_detalle .col_detalle .item_detalle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+.ui_detalle_reserva .ui_contenido_modal .ui_modal_informacion_habitacion p{
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.ui_detalle_reserva .ui_contenido_modal .ui_modal_informacion_habitacion .ui_servicios_politicas span{
+ font-size: 16px;
+ font-weight: 600;
+ margin-bottom: 7px;
+}
+
+.ui_detalle_reserva .ui_contenido_modal .ui_modal_informacion_habitacion .ui_servicios_politicas ul{
+  font-size: 16px;
+  margin-top: 10px;
+  list-style: disc;
+  margin-left: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.ui_detalle_reserva .ui_contenido_modal .ui_modal_informacion_habitacion .ui_servicios_politicas li{
+ width: 235px;
+ margin-bottom: 10px;
+} 
+
+
 /*** END RESULTADO BUSQUEDA ***/
 
 /***** RESENAS ******/

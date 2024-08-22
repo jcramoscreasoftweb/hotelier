@@ -69,6 +69,30 @@
 
                             </div>
                         </div>
+
+                        <div class="marco_carousel_fotos_habitacion">
+                            <div class="carousel_fotos_habitacion_mini">
+                                <div class="ui_foto_item_habitacion">
+                                    <img style="width: 100px;" src="https://placehold.co/550x320/EEE/31343C" alt="">
+                                </div>
+                                <div class="ui_foto_item-habitacion">
+                                    <img style="width: 100px;" src="https://placehold.co/550x320/EEE/31343C" alt="">
+                                </div>
+                                <div class="ui_foto_item-habitacion">
+                                    <img style="width: 100px;" src="https://placehold.co/550x320/EEE/31343C" alt="">
+                                </div>
+                                <div class="ui_foto_item_habitacion">
+                                    <img style="width: 100px;" src="https://placehold.co/550x320/EEE/31343C" alt="">
+                                </div>
+                                <div class="ui_foto_item-habitacion">
+                                    <img style="width: 100px;" src="https://placehold.co/550x320/EEE/31343C" alt="">
+                                </div>
+                                <div class="ui_foto_item-habitacion">
+                                    <img style="width: 100px;" src="https://placehold.co/550x320/EEE/31343C" alt="">
+                                </div>
+
+                            </div>
+                        </div>
                         <div class="ui_habitacion_detalle">
                             <div class="ui_habitacion_info">
                                 <span><img src="https://placehold.co/20x20/EEE/31343C" alt="">1 cama simple</span>
@@ -314,15 +338,30 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="  crossorigin="anonymous"></script>
   <script src="js/slick.js"></script>
   <script src="js/main.js"></script>
-    <script>
-        $(".carousel_fotos_habitacion").slick({
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    nextArrow:'<span class="btn-siguiente"></span>',
-    prevArrow:'<span class="btn-anterior"></span>'
 
-})
+    <script>
+    $(".carousel_fotos_habitacion").slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        nextArrow:'<span class="btn-siguiente"></span>',
+        prevArrow:'<span class="btn-anterior"></span>',
+        asNavFor: '.carousel_fotos_habitacion_mini',
+        arrows: false,
+    })
+
+    $(".carousel_fotos_habitacion_mini").slick({
+        infinite: true,
+        slidesToShow: 3,
+        // dots:true,
+        slidesToScroll: 1,
+        nextArrow:'<span class="btn-siguiente"></span>',
+        prevArrow:'<span class="btn-anterior"></span>',
+        asNavFor: '.carousel_fotos_habitacion'
+    })
+
+
+
     </script>
 
 </body>
