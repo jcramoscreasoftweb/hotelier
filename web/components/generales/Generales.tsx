@@ -12,14 +12,14 @@ export const HeaderSitev1 = async () => {
     <>
       <header className="ui_header-site">
         <div className="ui_logo_site">
-          <a href="">
+          <Link href="/">
             <Image
               width={70}
               height={79}
               src="/img/logo_header.png"
               alt="Hotelier site"
             />
-          </a>
+          </Link>
         </div>
         <nav className="ui_nav_site">
           <ul>
@@ -163,7 +163,7 @@ export const FooterSite = async() => {
                 <span>bookin@sachacusco.com</span>
               </div>
               <div className="ui_info_col4 social_media">
-                
+
                   <a href="">
                     <Image
                       width={41}
@@ -188,7 +188,7 @@ export const FooterSite = async() => {
                       alt=""
                     />
                   </a>
-                
+
               </div>
             </div>
           </div>
@@ -280,7 +280,7 @@ export const FooterSite_SinDecoracion = async() => {
                 <span>bookin@sachacusco.com</span>
               </div>
               <div className="ui_info_col4 social_media">
-                
+
                   <a href="">
                     <Image
                       width={41}
@@ -305,7 +305,7 @@ export const FooterSite_SinDecoracion = async() => {
                       alt=""
                     />
                   </a>
-                
+
               </div>
             </div>
           </div>
