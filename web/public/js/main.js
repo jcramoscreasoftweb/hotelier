@@ -46,13 +46,7 @@ $(".carousel_fotos_habitacion").slick({
     prevArrow:'<span class="btn-anterior"></span>'
 })
 
-$(".ui_mini_carrusel").slick({
-    arrows:false,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    dots: true,
-    asNavFor: '.ui_carrusel_habitacion_modal',
-})
+
 
 $(".ui_carrusel_habitacion_modal").slick({
     infinite: true,
@@ -60,7 +54,16 @@ $(".ui_carrusel_habitacion_modal").slick({
     slidesToScroll: 1,
     nextArrow:'<span class="btn-siguiente"></span>',
     prevArrow:'<span class="btn-anterior"></span>',
-    asNavFor: '.ui_mini_carrusel',  
+    asNavFor: '.ui_mini_carrusel', 
+})
+
+$(".ui_mini_carrusel").slick({
+    arrows:false,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    dots: true,
+    asNavFor: '.ui_carrusel_habitacion_modal',
+    focusOnSelect: true,
 })
 
 

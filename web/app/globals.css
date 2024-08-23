@@ -1553,7 +1553,6 @@ font-weight: 600;
 }
 
 .ui_detalle_reserva .ui_contenido_modal .ui_modal_imagenes_habitacion {
-  background-color: rgb(214, 214, 214);
   width: 544px;
   height: 500px;
   display: flex;
@@ -1571,6 +1570,10 @@ font-weight: 600;
   width: 120px;
   margin-left: 15px;
   margin-right: 15px;
+}
+
+.ui_detalle_reserva .ui_contenido_modal .ui_modal_imagenes_habitacion .ui_mini_carrusel .item_carrusel img{
+  cursor: pointer;
 }
 
 .ui_mini_carrusel{
