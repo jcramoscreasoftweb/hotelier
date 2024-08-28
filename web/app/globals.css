@@ -1271,16 +1271,15 @@ padding-right: 23px;
 
 .ui_box_huespedes .item_box_huesped .contador_huesped button{
   color: #00CFC9;
-    font-size: 30px;
-    width: 20px;
-    height: 25px;
-    cursor: pointer;
-    border: none;
-    background: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+  font-size: 30px;
+  width: 20px;
+  height: 25px;
+  cursor: pointer;
+  border: none;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ui_box_huespedes .item_box_huesped .contador_huesped input{
@@ -1650,8 +1649,6 @@ font-weight: 600;
  width: 235px;
  margin-bottom: 10px;
 } 
-
-
 /*** END RESULTADO BUSQUEDA ***/
 
 /***** RESENAS ******/
@@ -1747,3 +1744,246 @@ font-weight: 600;
 }
 
 /*** END RESENAS ***/
+
+/***** RECLAMOS ******/
+
+.ui_seccion_1_reclamos{
+  margin-top: 41px;
+  margin-bottom: 67px;
+  margin-bottom: 67px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section.ui_seccion_1_reclamos h1 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 5px;
+  color: #512B17;
+  font-family: 'Fertigo-Pro';
+}
+
+section.ui_seccion_1_reclamos p {
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 38px;
+  color: #512B17;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.ui_formulario_reclamo {
+  width: 100%;
+  max-width: 1016px;
+  min-height: 788px;
+  border-radius: 4px;
+  box-shadow: 0px 1px 6px 0px #cecece;
+  padding: 32px 163px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ui_formulario_reclamo h3{
+  font-size: 22px;
+  font-weight: 600;
+  color: #D5B470;
+  margin-top: 23px;
+  margin-bottom: 34px;
+  text-align: center;
+}
+
+.ui_formulario_reclamo .ui_marcador {
+  display: flex;
+  align-items: center;
+  height: 54px;
+  width: 100%;
+  justify-content: center;
+}
+
+.ui_formulario_reclamo .ui_marcador .item_marcador {
+  width: 54px;
+  height: 54px;
+  border-radius: 100%;
+  border: solid 2px #D5B470;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui_formulario_reclamo .ui_marcador .item_marcador span{
+  font-size: 32px;
+  color: #D5B470;
+  font-weight: 600;
+}
+
+.ui_formulario_reclamo .ui_marcador .separador {
+  width: 73px;
+  height: 0px;
+  border: solid 2px #D5B470;
+}
+
+.ui_formulario_tabs .tab_title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.ui_formulario_tabs .row-inputs{
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 33px;
+}
+
+.ui_formulario_tabs .row-inputs .item_input{
+  display: flex;
+  flex-direction: column;
+}
+
+.ui_formulario_tabs .row-inputs .item_input span{
+  margin-bottom: 15px;
+}
+
+.ui_formulario_tabs .row-inputs .item_input p{
+  font-size: 12px;
+  color: #EE4D4D;
+  text-align: left;
+  font-style: normal;
+  font-weight: 400;
+  margin: 0;
+  margin-top:5px;
+}
+
+.ui_formulario_tabs .row-inputs .item_input input{
+  border-radius: 30px;
+  width: 320px;
+  height: 50px;
+  border: solid 1px #D7D7D7;
+  padding: 16px 20px;
+  color: #454545;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.ui_formulario_tabs .row-inputs .item_input select{
+  font-family: "Open Sans", sans-serif;
+  border-radius: 30px;
+  width: 320px;
+  height: 50px;
+  border: solid 1px #D7D7D7;
+  padding: 16px 20px;
+  color: #454545;
+  font-size: 16px;
+}
+
+.ui_formulario_tabs .row-inputs .item_input textarea{
+  font-family: "Open Sans", sans-serif;
+  border-radius: 30px;
+  width: 689px;
+  height: 114px;
+  border: solid 1px #D7D7D7;
+  padding: 16px 20px;
+  color: #454545;
+  font-size: 16px;
+  resize: none;
+  overflow: hidden;
+  text-align: justify;
+}
+
+.ui_formulario_tabs .row-inputs .item_input.large input{
+  width: 689px;
+}
+
+.item_input .ui_selector_input{
+  display: flex;
+}
+.item_input .ui_selector_input input{
+  border-radius: 0px 30px 30px 0px !important;
+  width: 186px !important;
+}
+
+.item_input .ui_selector_input select{
+  font-size: 16px;
+  color: #454545;
+  width: 133px!important;
+  height: 50px;
+  padding: 16px 20px;
+  border-radius: 30px 0px 0px 30px !important;
+  border: solid 1px #D7D7D7;
+  border-right: 0px;
+  outline: none;
+  cursor: pointer;
+}
+
+.ui_formulario_tabs h2{
+  margin-top: 36px;
+  margin-bottom: 26px;
+  font-size: 16px;
+  text-align: justify;
+  color: #454545;
+}
+
+.ui_formulario_tabs .ui_checkbox{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 56px;
+}
+
+.ui_formulario_tabs .row_buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ui_formulario_tabs .row_buttons.f-end{
+  justify-content: flex-end;
+}
+
+.ui_formulario_tabs .row_buttons .btn_next {
+  width: 193px;
+  height: 50px;
+  border-radius: 30px;
+  background-color: #00CFC9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.ui_formulario_tabs .row_buttons .btn_form button {
+  width: 193px;
+  height: 50px;
+  border-radius: 30px;
+  border: none;
+  background-color: #7FE6E3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+
+}
+
+.ui_formulario_tabs .row_buttons .btn_form.active button {
+  background-color: #00CFC9;
+}
+.ui_formulario_tabs .row_buttons .btn_back span {
+  margin-left: 9px;
+  color: #00CFC9;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+}
+.ui_formulario_tabs .tab_1{
+  display: none;
+}
+
+
+/***** END RECLAMOS ******/
