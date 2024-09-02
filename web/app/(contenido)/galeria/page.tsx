@@ -53,7 +53,7 @@ export default async function Galeria(){
                             {
                             contenidoGaleria.areas_section.images.map((item) => {
                                 return (
-                                    <div className="ui_item_slider">
+                                    <div className="ui_item_slider" key={item.name}>
                                         <Image width={364} height={480} src={item.image} alt="imagen-slider-galeria"/>
                                     </div>
                                 );
@@ -75,7 +75,7 @@ export default async function Galeria(){
                             {
                             contenidoGaleria.rooms_section.images.map((item) => {
                                 return (
-                                    <div className="ui_item_slider">
+                                    <div className="ui_item_slider" key={item.name}>
                                         <Image width={364} height={480} src={item.image} alt="imagen-slider-galeria"/>
                                     </div>
                                 );
@@ -97,7 +97,7 @@ export default async function Galeria(){
                             {
                             contenidoGaleria.restaurant_section.images.map((item) => {
                                 return (
-                                    <div className="ui_item_slider">
+                                    <div className="ui_item_slider" key={item.name}>
                                         <Image width={364} height={480} src={item.image} alt="imagen-slider-galeria"/>
                                     </div>
                                 );

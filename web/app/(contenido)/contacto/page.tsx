@@ -71,7 +71,7 @@ export default async function Contacto(){
                                     <select name="id_country" id="id_country">
                                         {phoneCode.map((item : any) => {
                                             return(
-                                                <option value={item.id}>+ {item.code_phone} {item.country_name}</option>
+                                                <option key={item.id} value={item.id}>+ {item.code_phone} {item.country_name}</option>
                                             );
                                         })
                                         }

@@ -83,6 +83,7 @@ export default  async function Nosotros() {
               {contenidoNosotros.benefits_section.map((item)=>{
                 return(
                   <ItemBeneficio
+                    key={item.title}
                     imagen={item.image}
                     titulo={item.title}
                     descripcion={item.description}

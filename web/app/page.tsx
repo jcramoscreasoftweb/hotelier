@@ -217,6 +217,7 @@ export default async function Home() {
               {resenas.comments.map((card:any) => {
                 return (
                   <ItemResena 
+                    key={card.id}
                     score={card.score}
                     comment={card.comment}
                     user={card.name_user}

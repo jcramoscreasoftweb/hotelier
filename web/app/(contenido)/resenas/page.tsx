@@ -57,7 +57,7 @@ export default async function Resena(){
                                     {
                                         PageResena.filter_select.options.map((item)=>{
                                             return(
-                                                <option value={item.value} dangerouslySetInnerHTML={{ __html:item.name}}></option>
+                                                <option key={item.value} value={item.value} dangerouslySetInnerHTML={{ __html:item.name}}></option>
                                             );
                                         })
                                     }
@@ -75,7 +75,7 @@ export default async function Resena(){
                                     {
                                         PageResena.order_select.options.map((item)=>{
                                             return(
-                                                <option value={item.value} dangerouslySetInnerHTML={{ __html:item.name}}></option>
+                                                <option key={item.value} value={item.value} dangerouslySetInnerHTML={{ __html:item.name}}></option>
                                             );
                                         })
                                     }
@@ -93,6 +93,7 @@ export default async function Resena(){
                         resenas.comments.map((item)=>{
                             return(
                                 <ItemResena 
+                                    key={item.id}
                                     score={item.score}
                                     comment={item.comment}
                                     user={item.name_user}

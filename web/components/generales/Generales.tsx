@@ -25,7 +25,7 @@ export const HeaderSitev1 = async () => {
           <ul>
             {menuHeader.titles.map((item) => {
               return (
-                <li>
+                <li key={item.name}>
                   <Link href={`${item.link}`} dangerouslySetInnerHTML={{ __html: item.name }}></Link>
                 </li>
               );
@@ -64,7 +64,7 @@ export const HeaderSitev2 = async () => {
           <ul>
             {menuHeader.titles.map((item) => {
               return (
-                <li>
+                <li key={item.name}>
                   <Link href={`${item.link}`} dangerouslySetInnerHTML={{ __html: item.name }}></Link>
                 </li>
               );
@@ -110,7 +110,7 @@ export const FooterSite = async() => {
                 <ul>
                   {footer.column_1.map((item) => {
                     return (
-                      <li>
+                      <li key={item.name}>
                         <Link href={`${item.link}`} dangerouslySetInnerHTML={{ __html: item.name }}></Link>
                       </li>
                     );
@@ -121,7 +121,7 @@ export const FooterSite = async() => {
                 <ul>
                   {footer.column_2.map((item) => {
                     return (
-                      <li>
+                      <li key={item.name}>
                         <Link href={`${item.link}`} dangerouslySetInnerHTML={{ __html: item.name }}></Link>
                       </li>
                     );
@@ -132,7 +132,7 @@ export const FooterSite = async() => {
                 <ul>
                   {footer.column_3.map((item) => {
                     return (
-                      <li>
+                      <li key={item.name}>
                         <Link href={`${item.link}`} dangerouslySetInnerHTML={{ __html: item.name }}></Link>
                       </li>
                     );
@@ -227,7 +227,7 @@ export const FooterSite_SinDecoracion = async() => {
                 <ul>
                   {footer.column_1.map((item) => {
                     return (
-                      <li>
+                      <li key={item.name}>
                         <Link href={`${item.link}`} dangerouslySetInnerHTML={{ __html: item.name }}></Link>
                       </li>
                     );
@@ -238,7 +238,7 @@ export const FooterSite_SinDecoracion = async() => {
                 <ul>
                   {footer.column_2.map((item) => {
                     return (
-                      <li>
+                      <li key={item.name}>
                         <Link href={`${item.link}`} dangerouslySetInnerHTML={{ __html: item.name }}></Link>
                       </li>
                     );
@@ -249,7 +249,7 @@ export const FooterSite_SinDecoracion = async() => {
                 <ul>
                   {footer.column_3.map((item) => {
                     return (
-                      <li>
+                      <li key={item.name}>
                         <Link href={`${item.link}`} dangerouslySetInnerHTML={{ __html: item.name }}></Link>
                       </li>
                     );
