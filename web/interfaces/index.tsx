@@ -11,3 +11,4 @@ export type {PrivacidadResponse} from "@/interfaces/privacidad-response";
 export type {DestinoResponse} from "@/interfaces/destino-response";
 export type {GaleriaResponse} from "@/interfaces/galeria-response";
 export type {ContactoResponse} from "@/interfaces/contacto-response";
+export type {ReclamoResponse} from "@/interfaces/reclamo-response";

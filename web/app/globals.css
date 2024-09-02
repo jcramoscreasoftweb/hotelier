@@ -1809,12 +1809,15 @@ section.ui_seccion_1_reclamos p {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.ui_formulario_reclamo .ui_marcador .item_marcador span{
   font-size: 32px;
   color: #D5B470;
   font-weight: 600;
+}
+
+.ui_formulario_reclamo .ui_marcador .item_marcador.active {
+  color: white;
+  background-color: #D5B470;
+
 }
 
 .ui_formulario_reclamo .ui_marcador .separador {
@@ -1873,7 +1876,7 @@ section.ui_seccion_1_reclamos p {
   width: 320px;
   height: 50px;
   border: solid 1px #D7D7D7;
-  padding: 16px 20px;
+  padding: 10px 16px;
   color: #454545;
   font-size: 16px;
 }
@@ -1932,6 +1935,11 @@ section.ui_seccion_1_reclamos p {
   margin-bottom: 56px;
 }
 
+.ui_formulario_tabs .ui_checkbox a{
+  font-weight: 600;
+  text-decoration: underline;
+}
+
 .ui_formulario_tabs .row_buttons {
   display: flex;
   align-items: center;
@@ -1940,6 +1948,11 @@ section.ui_seccion_1_reclamos p {
 
 .ui_formulario_tabs .row_buttons.f-end{
   justify-content: flex-end;
+}
+
+.ui_formulario_tabs .row_buttons .btn_back{
+  display: flex;
+  align-items: center;
 }
 
 .ui_formulario_tabs .row_buttons .btn_next {
@@ -1968,7 +1981,6 @@ section.ui_seccion_1_reclamos p {
   font-weight: bold;
   cursor: pointer;
   font-size: 16px;
-
 }
 
 .ui_formulario_tabs .row_buttons .btn_form.active button {
