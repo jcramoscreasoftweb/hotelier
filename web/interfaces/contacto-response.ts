@@ -11,9 +11,16 @@ export interface BannerSection {
 }
 
 export interface FormSection {
-  title:    string;
-  subtitle: string;
+  title:         string;
+  subtitle:      string;
+  label_name:    string;
+  label_phone:   string;
+  label_email:   string;
+  label_message: string;
+  label_address: string;
+  label_button:  string;
 }
+
 
 export interface InfoSection {
   phone:   string;
@@ -25,3 +32,9 @@ export interface MapSection {
   title:  string;
   iframe: string;
 }
+
+export interface Popup {
+  title:    string;
+  subtitle: string;
+}
+

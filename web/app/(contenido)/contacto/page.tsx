@@ -3,7 +3,7 @@ import {
     HeaderSitev1,
     FooterSite,
 } from "@/components"
-import { ContactoResponse } from "@/interfaces";
+import { ContactoResponse, PhoneCodeResponse } from "@/interfaces";
 import Image from "next/image";
 
 export const metadata:Metadata={
@@ -17,6 +17,11 @@ export default async function Contacto(){
     let requestAPI: any = await fetch(url);
     requestAPI = await requestAPI.json();
     let contenidoContacto: ContactoResponse = requestAPI.payload["es"];
+
+    let url_phonecode = "https://creasoft.com.pe/hotelier_api/get-phonecode.json";
+    let requestAPI_phone: any = await fetch(url_phonecode);
+    requestAPI_phone = await requestAPI_phone.json();
+    let phoneCode: PhoneCodeResponse[] = requestAPI_phone.payload["es"];
 
     return(
         <>
@@ -36,55 +41,58 @@ export default async function Contacto(){
                     <div className="ui_seccion_informacion">
                         <Image className="ui_image_top" width={99} height={87} src="/img/adorno_contacto_1.png" alt="imagen-contacto"></Image>
                         <div className="item_info">
-                            <h2>Teléfono</h2>
+                            <h2>{contenidoContacto.form_section.label_phone}</h2>
                             <p dangerouslySetInnerHTML={{ __html:contenidoContacto.info_section.phone}}></p>
                         </div>
                         <div className="item_info">
-                            <h2>Correo electrónico</h2>
+                            <h2>{contenidoContacto.form_section.label_phone}</h2>
                             <p dangerouslySetInnerHTML={{ __html:contenidoContacto.info_section.email}}></p>
                         </div>
                         <div className="item_info">
-                            <h2>Dirección</h2>
+                            <h2>{contenidoContacto.form_section.label_address}</h2>
                             <p dangerouslySetInnerHTML={{ __html:contenidoContacto.info_section.address}}></p>
                         </div>
                         <Image className="ui_image_bottom" width={71} height={83} src="/img/adorno_contacto_2.png" alt="imagen-contacto"></Image>
                     </div>
 
                     <div className="ui_seccion_form">
-                        <form action="">
+                        <form action="" method="post">
                             <h2 dangerouslySetInnerHTML={{ __html:contenidoContacto.form_section.title}}></h2>
                             <p dangerouslySetInnerHTML={{ __html:contenidoContacto.form_section.subtitle}}></p>
 
                             <div className="ui_input_form">
-                                <span>Nombres y apellidos</span>
-                                <input type="text" id="" name="" required/>
+                                <span>{contenidoContacto.form_section.label_name}</span>
+                                <input type="text" id="name" name="name" maxLength={200} required/>
                             </div>
 
                             <div className="ui_input_form">
-                                <span>Teléfono</span>
+                                <span>{contenidoContacto.form_section.label_phone}</span>
                                 <div className="ui_selector_input">
-                                    <select name="" id="">
-                                        <option value="1">+ 51 Perú</option>
-                                        <option value="2">+ 51 Perú</option>
-                                        <option value="3">+ 51 Perú</option>
+                                    <select name="id_country" id="id_country">
+                                        {phoneCode.map((item : any) => {
+                                            return(
+                                                <option value={item.id}>+ {item.code_phone} {item.country_name}</option>
+                                            );
+                                        })
+                                        }
+
                                     </select>
-                                    <input type="text" id="" name="" required/>
+                                    <input type="text" id="phone" name="phone" maxLength={15} required/>
                                 </div>
-                                
                             </div>
 
                             <div className="ui_input_form">
-                                <span>Correo electrónico</span>
-                                <input type="text" id="" name="" required/>
+                                <span>{contenidoContacto.form_section.label_email}</span>
+                                <input type="text" id="email" name="email" maxLength={100} required/>
                             </div>
 
                             <div className="ui_input_form">
-                                <span>Mensaje</span>
-                                <textarea id="" name="" maxLength={220} required/>
+                                <span>{contenidoContacto.form_section.label_message}</span>
+                                <textarea id="message" name="message" maxLength={220} required/>
                             </div>
 
                             <div className="ui_input_form">
-                                <button>Enviar</button>
+                                <button>{contenidoContacto.form_section.label_button}</button>
                             </div>
                         </form>
 

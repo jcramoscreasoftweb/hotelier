@@ -5,8 +5,8 @@ $(".ui_carousel_beneficios").slick({
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
-    nextArrow:'<span class="btn-anterior"></span>',
-    prevArrow:'<span class="btn-siguiente"></span>'
+    nextArrow:'<span class="btn-siguiente"></span>',
+    prevArrow:'<span class="btn-anterior"></span>'
 
 })
 /*****  END HOME ******/

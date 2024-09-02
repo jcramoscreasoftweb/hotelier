@@ -6,7 +6,7 @@ export const ListadoTipoHabitacion = async () => {
     let url = "https://creasoft.com.pe/hotelier_api/pages/search-typerooms.json";
     let contenido = await fetch(url);
     let data = await contenido.json();
-    let tipoHabitacion: BusquedaResponse = data.payload["es"];
+    let tipoHabitacion: BusquedaResponse[] = data.payload["es"];
 
     return (
       <>
