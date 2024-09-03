@@ -81,7 +81,7 @@ $(".ui_listado_habitaciones .ui_info_habitacion .ui_ver_mas").click(function (){
 })
 
 $(".ui_fondo_modal .ui_close_modal").click(function(){
-    $(".ui_fondo_modal.ui_detalle_reserva").fadeOut();
+    $(".ui_fondo_modal").fadeOut();
 })
 
 // $(window).click(function(event){

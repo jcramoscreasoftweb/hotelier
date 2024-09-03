@@ -1153,6 +1153,44 @@ padding-right: 23px;
   margin-bottom: 40px;
 }
 
+  /* ESTILO BASE POPUPS */
+.ui_fondo_modal.ui_popup .ui_marco_modal .ui_contenido_modal {
+  width: 450px;
+  height: 293px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: start;
+  padding: 37px 70px;
+  text-align: center;
+}
+
+.ui_fondo_modal.ui_popup .ui_marco_modal .ui_contenido_modal img{
+  margin-bottom: 11px;
+}
+.ui_fondo_modal.ui_popup .ui_marco_modal .ui_contenido_modal h1{
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: #512B17;
+  font-family: "Fertigo-Pro";
+}
+.ui_fondo_modal.ui_popup .ui_marco_modal .ui_contenido_modal h2{
+  font-size: 16px;
+  color: #454545;
+}
+
+.ui_fondo_modal.ui_popup .ui_marco_modal .ui_contenido_modal .img_fondo_left{
+  position: absolute;
+  left: 10px;
+  top: 5px;
+}
+.ui_fondo_modal.ui_popup .ui_marco_modal .ui_contenido_modal .img_fondo_right{
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+}
+/* END ESTILO BASE POPUPS */
 /***** END CONTACTO ******/
 
 /*** RESULTADO BUSQUEDA ***/

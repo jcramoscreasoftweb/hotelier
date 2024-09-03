@@ -3,6 +3,7 @@ export interface ContactoResponse {
   info_section:   InfoSection;
   form_section:   FormSection;
   map_section:    MapSection;
+  popup:          Popup;
 }
 
 export interface BannerSection {
