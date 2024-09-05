@@ -35,6 +35,33 @@ $(".ui_btn_paginacion .ui_item_btn_page").click(function(){
 
 /***** END RESEÑA ******/
 
+/***** DETALLE RESERVA ******/
+$(".info_precio .item_precio").click(function(){
+
+    $(".info_precio .item_precio").removeClass("active")
+    $(this).addClass("active")
+})
+
+
+$(".info_servicios .item_servicio img").click(function(){
+    $(this).parent().remove();
+    if ($('.info_servicios li').length === 0) {
+        $('.info_servicios').remove()
+    }
+})
+
+$(".info_cupon .cupon_title img").click(function(){
+    $(this).toggleClass('rotate');
+    if ($(this).hasClass('rotate')) {
+        $('.info_cupon .cupon_detail').slideDown(200);
+    } else {
+        $('.info_cupon .cupon_detail').slideUp(200);
+    }
+})
+
+
+/***** END DETALLE RESERVA ******/
+
 
 
 /*****  PAGE BUSQUEDA ******/

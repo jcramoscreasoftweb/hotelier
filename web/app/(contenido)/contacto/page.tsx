@@ -68,7 +68,7 @@ export default async function Contacto(){
                             <div className="ui_input_form">
                                 <span>{contenidoContacto.form_section.label_phone}</span>
                                 <div className="ui_selector_input">
-                                    <select name="id_country" id="id_country">
+                                    <select name="id_country" id="id_country" defaultValue={139}>
                                         {phoneCode.map((item : any) => {
                                             return(
                                                 <option key={item.id} value={item.id}>+ {item.code_phone} {item.country_name}</option>

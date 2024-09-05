@@ -1,6 +1,6 @@
 import { Metadata } from "next"
 import { HeaderSitev2, FooterSite} from "@/components"
-import { ReclamoResponse} from "@/interfaces";
+import { ReclamoResponse,PhoneCodeResponse} from "@/interfaces";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -14,6 +14,11 @@ export default async function LibroReclamaciones() {
     let requestAPI: any = await fetch(url);
     requestAPI = await requestAPI.json();
     let contenidoReclamos: ReclamoResponse = requestAPI.payload["es"];
+
+    let url_phonecode = "https://creasoft.com.pe/hotelier_api/get-phonecode.json";
+    let requestAPI_phone: any = await fetch(url_phonecode);
+    requestAPI_phone = await requestAPI_phone.json();
+    let phoneCode: PhoneCodeResponse[] = requestAPI_phone.payload["es"];
 
   return (
     <>
@@ -94,9 +99,12 @@ export default async function LibroReclamaciones() {
                           <div className="item_input">
                             <span>{contenidoReclamos.form_step_1.label_phone}</span>
                             <div className="ui_selector_input">
-                                <select name="id_country" id="id_country">
-                                    <option value="1">+51 Perú</option>
-                                    <option value="2">+51 Perú</option>
+                                <select name="id_country" id="id_country" defaultValue={139}>
+                                  {phoneCode.map((item : any) => {
+                                    return(
+                                        <option key={item.id} value={item.id}>+ {item.code_phone} {item.country_name}</option>
+                                    );
+                                  })}
                                 </select>
                                 <input type="text" id="phone" name="phone" required/>
                             </div>

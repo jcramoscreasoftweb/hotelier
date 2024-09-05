@@ -13,5 +13,5 @@ export type {GaleriaResponse} from "@/interfaces/galeria-response";
 export type {ContactoResponse} from "@/interfaces/contacto-response";
 export type {ReclamoResponse} from "@/interfaces/reclamo-response";
 export type {PhoneCodeResponse} from "@/interfaces/phone-code-response";
-
-
+export type {DetalleReservaResponse} from "@/interfaces/detalle-reserva-response";
+export type {CalificacionResponse} from "@/interfaces/calificacion-response";

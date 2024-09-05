@@ -64,9 +64,8 @@ img{
 button, input, select, textarea{
   outline: none;
 }
-
-body{
-
+textarea{
+  font-family: "Open Sans", sans-serif;
 }
 
 body{
@@ -2038,7 +2037,442 @@ section.ui_seccion_1_reclamos p {
 /***** DETALLE RESERVA ******/
 .contenedor.page_detalle{
   max-width: 1185px;
+  margin-top: 38px;
+  margin-bottom: 74px;
+}
+
+.page_detalle h1{
+  font-family: "Fertigo-Pro";
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 32px;
+  color: #512B17;
+}
+
+.page_detalle .ui_box_container{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.page_detalle .ui_box_container .box_informacion_reserva{
+  width: 370px;
+  min-height: 883px;
+  border-radius: 4px;
+  padding: 31px 22px;
+  box-shadow: 0px 1px 6px 0px #cecece;
+}
+
+.page_detalle .ui_box_container .box_informacion_reserva .line_separator{
+  width: 337px;
+  border: solid #D9D9D9 1px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.page_detalle .ui_box_container .box_informacion_reserva h1{
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 23px;
+  text-align: left;
+  color: #454545;
+}
+
+
+.page_detalle .ui_box_container .box_informacion_reserva .info_date h2:last-of-type{
+  margin-top: 20px;
+}
+
+.page_detalle .ui_box_container .box_informacion_reserva .info_date, .info_room{
+  font-size: 16px;
+  color: #454545;
+}
+.page_detalle .ui_box_container .box_informacion_reserva .info_date h2, .info_room h2{
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.page_detalle .ui_box_container .box_informacion_reserva .info_date p {
+  margin-bottom: 16px;
+  display: flex;
+  width: 285px;
+  justify-content: space-between;
+}
+.page_detalle .ui_box_container .box_informacion_reserva .info_room h2 {
+  margin-bottom: 18px;
+}
+.page_detalle .ui_box_container .box_informacion_reserva .info_room p {
+  margin-bottom: 7px;
+}
+
+.page_detalle .ui_box_container .box_informacion_reserva .info_precio h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.page_detalle .ui_box_container .box_informacion_reserva .info_precio .item_precio{
+  width: 339px;
+  height: 54px;
+  border-radius: 24px;
+  border: solid #f5f5f5 1px;
+  padding: 16px;
+  display: flex;
+  margin-bottom: 17px;
+  align-items: center;
+  justify-content: space-between;
+  color: #454545;
+  cursor: pointer;
+}
+
+.page_detalle .ui_box_container .box_informacion_reserva .info_precio .item_precio h3{
+  margin-left: -45px;
+}
+
+.page_detalle .ui_box_container .box_informacion_reserva .info_precio .item_precio span{
+  font-weight:600;
+}
+
+.page_detalle .ui_box_container .box_informacion_reserva .info_precio .item_precio .radio_btn{
+  width: 22px;
+  height: 22px;
+  border-radius: 100%;
+  border: solid white 2px;
+  background-color: white;
+  box-shadow: 0 0 0 1px #D7D7D7;
+  margin-right: 7px;
+}
+
+.page_detalle .ui_box_container .box_informacion_reserva .info_precio .item_precio.active{
+  border: solid #00CFC9 1px;
+}
+.page_detalle .ui_box_container .box_informacion_reserva .info_precio .item_precio.active .radio_btn{
+  background-color: #00CFC9;
+}
+
+.box_informacion_reserva .info_servicios{
+  color: #454545;
+  font-size: 16px;
+}
+.box_informacion_reserva .info_servicios h2{
+  font-weight: 600;
+  margin-top: 28px;
+  margin-bottom: 20px;
+}
+
+.box_informacion_reserva .info_servicios li{
+  list-style: disc;
+}
+
+.box_informacion_reserva .info_servicios .item_servicio{
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 11px;
+}
+.box_informacion_reserva .info_servicios .item_servicio span{
+  font-weight: 600;
+}
+.box_informacion_reserva .info_servicios .item_servicio img{
+  margin-left: -30px;
+  cursor: pointer;
+}
+
+.box_informacion_reserva .info_total{
+  width: 324px;
+  height: 78px;
+  color: #454545;
+  background-color: #F7F1E5;
+  padding: 21px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.box_informacion_reserva .info_total h2{
+  font-size: 26px;
+  font-weight: 600;
+}
+.box_informacion_reserva .info_total span{
+  font-size: 26px;
+  font-weight: bold;
+}
+
+
+.page_detalle .ui_box_container .box_informacion_huesped{
+  width: 789px;
+  min-height: 883px;
+  border-radius: 4px;
+  padding: 28px 50px;
+  box-shadow: 0px 1px 6px 0px #cecece;
+}
+
+.ui_box_container .right_side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.page_detalle .ui_advertencia{
+  width: 789px;
+  height: 97px;
+  padding: 24px;
+  box-shadow: 0px 1px 6px 0px #cecece;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 32px;
+  font-size: 18px;
+}
+
+
+.box_informacion_reserva .info_cupon .cupon_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.box_informacion_reserva .info_cupon .cupon_detail {
+  display: none
+}
+
+.box_informacion_reserva .info_cupon .cupon_title h2{
+  color: #454545;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.box_informacion_reserva .info_cupon .cupon_title img{
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.box_informacion_reserva .info_cupon .cupon_title .rotate{
+  transform: rotate(-180deg);
+}
+
+.box_informacion_reserva .info_cupon input{
+  width: 333px;
+  height: 50px;
+  border-radius: 30px;
+  border: solid #D7D7D7 1px;
+  padding: 14px 18px;
+  font-size: 16px;
+  color: #454545;
+}
+
+.box_informacion_reserva .info_cupon .text_error{
+  font-size: 13px;
+  color: #FF2626;
+  margin-top: 5px;
+}
+
+.box_informacion_reserva .info_cupon .ui_boton_cupon{
+  width: 142px;
+  height: 40px;
+  border-radius: 30px;
+  background-color: #00CFC9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  margin-left: 190px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.ui_formulario_pago h3{
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #512B17;
+}
+
+.ui_formulario_pago .row-inputs {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 33px;
+}
+
+.ui_formulario_pago .row-inputs .item_input {
+  display: flex;
+  flex-direction: column;
+}
+.ui_formulario_pago .row-inputs .item_input span {
+  margin-bottom: 15px;
+}
+
+.ui_formulario_pago .row-inputs .item_input input {
+  border-radius: 30px;
+  width: 320px;
+  height: 50px;
+  border: solid 1px #D7D7D7;
+  padding: 16px 20px;
+  color: #454545;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.ui_formulario_pago .ui_checkbox {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 56px;
+}
+
+.ui_formulario_pago .ui_checkbox input{
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  border: solid #D7D7D7 1px;
+}
+
+.ui_formulario_pago .ui_checkbox a {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.ui_formulario_pago .row-inputs .item_input textarea {
+  font-family: "Open Sans", sans-serif;
+  border-radius: 30px;
+  width: 689px;
+  height: 109px;
+  border: solid 1px #D7D7D7;
+  padding: 16px 20px;
+  color: #454545;
+  font-size: 16px;
+  resize: none;
+  overflow: hidden;
+  text-align: justify;
+}
+
+.ui_formulario_pago .row_buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 38px;
+}
+
+.ui_formulario_pago .row_buttons .btn_form button {
+  width: 193px;
+  height: 50px;
+  border-radius: 30px;
+  border: none;
+  background-color: #7FE6E3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.ui_formulario_pago .row_buttons .btn_form.active button {
+  background-color: #00CFC9;
+}
+
+.ui_fondo_modal.ui_popup.detalle_reserva .ui_marco_modal .ui_contenido_modal {
+  width: 523px;
+  height: 328px;
 }
 
 /***** END DETALLE RESERVA ******/
 
+/***** CALIFICACION ******/
+.contenedor.page_calificacion{
+  width: 650px;
+  height: 430px;
+  border-radius: 12px;
+  box-shadow: 0px 1px 6px 0px #cecece;
+  padding: 14px 66px;
+  margin-top: 28px;
+  margin-bottom: 61px;
+}
+
+.page_calificacion h1{
+  font-family: "Fertigo-Pro";
+  font-size: 28px;
+  color: #512B17;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.page_calificacion h2{
+  text-align: center;
+  font-size: 18px;
+  color: #512B17;
+  margin-bottom: 20px;
+  line-height: normal;
+}
+
+.page_calificacion .row_stars{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 37px;
+  margin-bottom: 20px;
+}
+
+.page_calificacion .row_stars img{
+  cursor: pointer;
+}
+
+.page_calificacion .comentario h2{
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+  color: #454545;
+  margin-bottom: 15px;
+}
+.page_calificacion .comentario textarea{
+  width: 517px;
+  height: 134px;
+  border-radius: 30px;
+  border: solid 1px #D7D7D7;
+  outline: none;
+  resize: none;
+  overflow: hidden;
+  padding: 15px 20px;
+  font-size: 13px;
+  margin-bottom: 14px;
+  font-weight: lighter;
+  text-align: justify;
+
+}
+
+.page_calificacion .ui_boton_formulario {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.page_calificacion .ui_boton_formulario button{
+  width: 142px;
+  height: 40px;
+  background-color: #7FE6E3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-size: 16px;
+  font-weight:bold;
+}
+
+.page_calificacion .ui_boton_formulario .active{
+  background-color: #00CFC9;
+}
+
+.ui_fondo_modal.ui_popup.calificacion .ui_marco_modal .ui_contenido_modal {
+  width: 563px;
+  height: 358px;
+}
+
+/***** END CALIFICACION ******/
