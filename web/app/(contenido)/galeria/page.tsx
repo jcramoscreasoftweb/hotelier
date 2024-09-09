@@ -5,6 +5,7 @@ import {
 } from "@/components"
 import { GaleriaResponse } from "@/interfaces";
 import Image from "next/image";
+import { ItemEspaciosComunes } from "@/components/galeria/galeria";
 
 export const metadata:Metadata={
     title:"Galería",
@@ -24,10 +25,10 @@ export default async function Galeria(){
                 style={{
                     backgroundImage: `url("${contenidoGaleria.pincipal_section.image}")`,
                 }}
-            >  
+            >
                 <HeaderSitev1 />
                 <div className="ui_texto_title_banner">
-                    <h2 dangerouslySetInnerHTML={{ __html:contenidoGaleria.pincipal_section.title}}></h2>
+                    <h2>{contenidoGaleria.pincipal_section.title}</h2>
                 </div>
             </section>
 
@@ -43,34 +44,27 @@ export default async function Galeria(){
                     <div className="ui_row_item_galeria">
                         <div className="ui_marco_titulo">
                             <Image width={62} height={60} src="/img/adorno_titulo_1.png" alt=""/>
-                            <h2 dangerouslySetInnerHTML={{ __html:contenidoGaleria.areas_section.title}}></h2>
+                            <h2>{contenidoGaleria.areas_section.title}</h2>
                             <Image width={62} height={60} src="/img/adorno_titulo_2.png" alt=""/>
                         </div>
 
                         <p dangerouslySetInnerHTML={{ __html:contenidoGaleria.areas_section.description}}></p>
-                        
+
+
                         <div className="ui_carrusel_item_galeria">
-                            {
-                            contenidoGaleria.areas_section.images.map((item) => {
-                                return (
-                                    <div className="ui_item_slider" key={item.name}>
-                                        <Image width={364} height={480} src={item.image} alt="imagen-slider-galeria"/>
-                                    </div>
-                                );
-                            })
-                            }
-                        </div>                        
+                                <ItemEspaciosComunes images={contenidoGaleria.areas_section.images}></ItemEspaciosComunes>
+                        </div>
                     </div>
 
                     <div className="ui_row_item_galeria">
                         <div className="ui_marco_titulo">
                             <Image width={62} height={60} src="/img/adorno_titulo_1.png" alt=""/>
-                            <h2 dangerouslySetInnerHTML={{ __html:contenidoGaleria.rooms_section.title}}></h2>
+                            <h2>{contenidoGaleria.rooms_section.title}</h2>
                             <Image width={62} height={60} src="/img/adorno_titulo_2.png" alt=""/>
                         </div>
 
                         <p dangerouslySetInnerHTML={{ __html:contenidoGaleria.rooms_section.description}}></p>
-                        
+
                         <div className="ui_carrusel_item_galeria">
                             {
                             contenidoGaleria.rooms_section.images.map((item) => {
@@ -81,18 +75,18 @@ export default async function Galeria(){
                                 );
                             })
                             }
-                        </div>                        
+                        </div>
                     </div>
 
                     <div className="ui_row_item_galeria">
                         <div className="ui_marco_titulo">
                             <Image width={62} height={60} src="/img/adorno_titulo_1.png" alt=""/>
-                            <h2 dangerouslySetInnerHTML={{ __html:contenidoGaleria.restaurant_section.title}}></h2>
+                            <h2>{ contenidoGaleria.restaurant_section.title}</h2>
                             <Image width={62} height={60} src="/img/adorno_titulo_2.png" alt=""/>
                         </div>
 
                         <p dangerouslySetInnerHTML={{ __html:contenidoGaleria.restaurant_section.description}}></p>
-                        
+
                         <div className="ui_carrusel_item_galeria">
                             {
                             contenidoGaleria.restaurant_section.images.map((item) => {
@@ -103,7 +97,7 @@ export default async function Galeria(){
                                 );
                             })
                             }
-                        </div>                        
+                        </div>
                     </div>
                 </div>
             </section>

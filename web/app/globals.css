@@ -394,7 +394,8 @@ width: 45%;
 .ui_carousel_beneficios .ui_item-beneficio img{
   width: 100%;
 }
-.ui_carousel_beneficios .ui_item-beneficio .ui_titulo{
+.ui_carousel_beneficios .ui_item-beneficio .ui_titulo ,
+.ui_seccion_3_home .ui_titulo{
   font-size: 22px;
   color: #512B17;
   text-align: center;
@@ -402,7 +403,7 @@ width: 45%;
   margin-top: 16px;
 }
 .ui_seccion_4_home .contenedor{
-  
+
   max-width: 950px;
   height: 700px;
   position: relative
@@ -1687,7 +1688,7 @@ font-weight: 600;
 .ui_detalle_reserva .ui_contenido_modal .ui_modal_informacion_habitacion .ui_servicios_politicas li{
  width: 235px;
  margin-bottom: 10px;
-} 
+}
 
 .ui_fondo_modal.ui_popup.busqueda .ui_marco_modal .ui_contenido_modal {
   width: 1160px;

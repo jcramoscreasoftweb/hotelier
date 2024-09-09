@@ -1,7 +1,9 @@
+
 import {
   FooterSite,
   HeaderSitev1,
   ItemBeneficios,
+  ItemBeneficiosNuevo,
   ItemResena,
   ItemServicio,
 } from "@/components";
@@ -33,7 +35,9 @@ export default async function Home() {
         <HeaderSitev1 />
 
         <div className="ui_texto_intro_home">
-          <h2 dangerouslySetInnerHTML={{ __html:contenidoPortada.banner_section.title}}></h2>
+          <h2 >
+              {contenidoPortada.banner_section.title}
+          </h2>
         </div>
         <div className="ui_marco_opciones_home">
           <div className="ui_barra_busqueda">
@@ -84,15 +88,15 @@ export default async function Home() {
                           <button type="button" className="increment" data-target="children">+</button>
                         </div>
                       </div>
-                      
+
                       <div className="btn_huesped">Aplicar</div>
-                    
+
                     </div>
 
 
                   </div>
-                  
-                  
+
+
 
                   <button className="btn_buscar" >
                     <Image width={26} height={26} src="/img/icon_buscar.png" alt="icon-buscar"></Image>
@@ -106,7 +110,9 @@ export default async function Home() {
         <div className="contenedor">
           <div className="ui_lyt_seccion_2_home">
             <div className="ui_seccion_2_home_info">
-              <h2 dangerouslySetInnerHTML={{ __html:contenidoPortada.principal_section.title}}></h2>
+              <h2>
+                {contenidoPortada.principal_section.title}
+              </h2>
               <p dangerouslySetInnerHTML={{ __html:contenidoPortada.principal_section.description}}></p>
             </div>
             <div className="ui_seccion_2_home_img">
@@ -121,23 +127,12 @@ export default async function Home() {
         </div>
       </section>
       <section className="ui_seccion_3_home">
-        <div className="contenedor">
-          <div className="ui_carousel_beneficios">
-            {
-              contenidoPortada.hotel_section.map((item) => {
-                return (
-                  <ItemBeneficios
-                    key={item.title}
-                    titulo={item.title}
-                    icon={item.icon}
-                  />
-                );
-              })
-            }
-          </div>
-        </div>
-      </section>
+      <div className="contenedor">
 
+        <ItemBeneficiosNuevo hotel_section={contenidoPortada.hotel_section} ></ItemBeneficiosNuevo>
+
+        </div>
+        </section>
       <section className="ui_seccion_4_home">
         <div className="contenedor">
           <div className="ui_seccion_4_home_left">
@@ -216,7 +211,7 @@ export default async function Home() {
           <div className="ui_seccion_resenas_lyt">
               {resenas.comments.map((card:any) => {
                 return (
-                  <ItemResena 
+                  <ItemResena
                     key={card.id}
                     score={card.score}
                     comment={card.comment}

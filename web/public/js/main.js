@@ -1,25 +1,27 @@
-$(function(){
+
+//$(function()
+$(document).ready(function(){
 
 /*****  HOME ******/
-$(".ui_carousel_beneficios").slick({
+/*$(".ui_carousel_beneficios").slick({
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
     nextArrow:'<span class="btn-siguiente"></span>',
     prevArrow:'<span class="btn-anterior"></span>'
 
-})
+})*/
 /*****  END HOME ******/
 
 /*****  GALERIA ******/
-$(".ui_carrusel_item_galeria").slick({
+/*$(".ui_carrusel_item_galeria").slick({
     infinite: true,
     dots: true,
     slidesToShow: 3,
     slidesToScroll: 1,
     nextArrow:'<span class="btn-siguiente"></span>',
     prevArrow:'<span class="btn-anterior"></span>'
-})
+})*/
 
 $(".ui_carrusel_item_galeria .ui_item_slider img").click(function(){
     console.log("click en imagen slider");
@@ -65,7 +67,7 @@ $(".info_cupon .cupon_title img").click(function(){
 
 
 /*****  PAGE BUSQUEDA ******/
-$(".carousel_fotos_habitacion").slick({
+/*$(".carousel_fotos_habitacion").slick({
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -81,7 +83,7 @@ $(".ui_carrusel_habitacion_modal").slick({
     slidesToScroll: 1,
     nextArrow:'<span class="btn-siguiente"></span>',
     prevArrow:'<span class="btn-anterior"></span>',
-    asNavFor: '.ui_mini_carrusel', 
+    asNavFor: '.ui_mini_carrusel',
 })
 
 $(".ui_mini_carrusel").slick({
@@ -91,7 +93,7 @@ $(".ui_mini_carrusel").slick({
     dots: true,
     asNavFor: '.ui_carrusel_habitacion_modal',
     focusOnSelect: true,
-})
+})*/
 
 
 

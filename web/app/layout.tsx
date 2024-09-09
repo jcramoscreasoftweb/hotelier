@@ -19,10 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
-      <Script src="/js/jquery.js"/>
-      <Script src="/js/slick.js"/>
+       <Script src="/js/jquery.js"/>
+
       <Script src="/js/main.js"/>
+      <body className={inter.className}>{children}</body>
+
 
     </html>
   );
