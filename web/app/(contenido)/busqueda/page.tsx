@@ -1,5 +1,5 @@
 import  { Metadata } from "next"
-import {HeaderSitev2, ListadoTipoHabitacion} from "@/components"
+import {FooterSite,HeaderSitev2, ListadoTipoHabitacion} from "@/components"
 import Image from "next/image";
 
 export const metadata:Metadata={
@@ -194,6 +194,83 @@ export default function Busqueda() {
             </div>
     </div>
     {/* <!-- END MODAL DETALLE--> */}
+
+    {/* <!-- MODAL SIN RESULTADOS DE BUSQUEDA --> */}
+    <div className="ui_fondo_modal ui_popup busqueda">
+          <div className="ui_marco_modal">
+            <div className="ui_contenido_modal">
+              <div className="ui_close_modal"></div>
+              <Image className="img_fondo_left" width={102} height={106} src="/img/adorno_popup_superior.png" alt="icon-popup" />
+              <Image width={189} height={158} src="/img/icon_sin_resultado.png" alt="icon-popup" />
+              <h1>¡Lo sentimos!</h1>
+              <h2>No se encontraron resultados para tu búsqueda. <br />Por favor, intenta realizar una nueva búsqueda</h2>
+                
+              <div className="ui_barra_busqueda">
+                <form className="ui_form_busqueda" action="" method="get">
+                  <div className="item_input_form">
+                    <div className="label">
+                      <Image width={18} height={20} src="/img/icon_date.png" alt="icon-search"></Image>
+                      <h2>Fecha de entrada</h2>
+                    </div>
+                    <input type="date" name="checkin" id="checkin" />
+                  </div>
+
+                  <div className="ui_separator_input"></div>
+
+                  <div className="item_input_form">
+                    <div className="label">
+                      <Image width={18} height={20} src="/img/icon_date.png" alt="icon-search"></Image>
+                      <h2>Fecha de salida</h2>
+                    </div>
+                    <input type="date" name="checkout" id="checkout" />
+                  </div>
+
+                  <div className="ui_separator_input"></div>
+
+                  <div className="item_input_form">
+                    <div className="label">
+                      <Image width={18} height={20} src="/img/icon_huesped.png" alt="icon-search"></Image>
+                      <h2>Huéspedes</h2>
+                    </div>
+                    <h2 className="label_huespedes">1 adulto</h2>
+
+                    <div className="ui_box_huespedes">
+                      <div className="item_box_huesped">
+                        <h2>Adultos</h2>
+                        <div className="contador_huesped">
+                          <button type="button" className="decrement" data-target="adults">−</button>
+                          <input type="text" id="adults" name="adults" value="1" min="1" max="10" readOnly />
+                          <button type="button" className="increment" data-target="adults">+</button>
+                        </div>
+                      </div>
+
+                      <div className="item_box_huesped">
+                        <h2>Niños</h2>
+                        <div className="contador_huesped">
+                          <button type="button" className="decrement" data-target="children">−</button>
+                          <input type="text" id="children" name="children" value="0" min="0" max="10" readOnly />
+                          <button type="button" className="increment" data-target="children">+</button>
+                        </div>
+                      </div>
+
+                      <div className="btn_huesped">Aplicar</div>
+                    </div>
+                  </div>
+
+                  <button className="btn_buscar" >
+                    <Image width={26} height={26} src="/img/icon_buscar.png" alt="icon-buscar"></Image>
+                    Buscar
+                  </button>
+                </form>
+              </div>
+
+            </div>
+           </div>
+        </div>
+        {/* <!-- END MODAL SIN RESULTADOS DE BUSQUEDA --> */}
+
+        
+        <FooterSite />
 
     </>
   )

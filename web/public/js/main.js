@@ -123,11 +123,11 @@ $(".ui_fondo_modal .ui_close_modal").click(function(){
 
 /***** BUSCADOR HABITACIONES ******/
 $(".label_huespedes").click(function() {
-    $(".ui_box_huespedes").fadeIn(300)
+    $(this).parents(".item_input_form").find(".ui_box_huespedes").fadeIn(300);
 });
 $(".increment").click(function() {
     let target = $(this).data("target");
-    let $input = $("#" + target);
+    let $input = $(this).parent(".contador_huesped").find("#" + target);
     let value = parseInt($input.val());
     let max = parseInt($input.attr("max"));
     if (value < max) {
@@ -136,7 +136,7 @@ $(".increment").click(function() {
 });
 $(".decrement").click(function() {
     let target = $(this).data("target");
-    let $input = $("#" + target);
+    let $input = $(this).parent(".contador_huesped").find("#" + target);
     let value = parseInt($input.val());
     let min = parseInt($input.attr("min"));
     if (value > min) {
@@ -144,8 +144,8 @@ $(".decrement").click(function() {
     }
 });
 $(".ui_box_huespedes .btn_huesped").click(function() {
-    let adults = parseInt($("#adults").val());
-    let children = parseInt($("#children").val());
+    let adults = parseInt($(this).parent(".ui_box_huespedes").find("#adults").val());
+    let children = parseInt($(this).parent(".ui_box_huespedes").find("#children").val());
     let labelText = adults + " adulto" + (adults > 1 ? "s" : "");
     if (children > 0) {
         labelText += " y " + children + " niño" + (children > 1 ? "s" : "");

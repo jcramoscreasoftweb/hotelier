@@ -1258,6 +1258,9 @@ padding-right: 23px;
   position: absolute;
   right: 0;
   bottom: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ui_barra_busqueda .ui_form_busqueda .btn_buscar img{
@@ -1685,6 +1688,41 @@ font-weight: 600;
  width: 235px;
  margin-bottom: 10px;
 } 
+
+.ui_fondo_modal.ui_popup.busqueda .ui_marco_modal .ui_contenido_modal {
+  width: 1160px;
+  height: 514px;
+}
+
+.ui_fondo_modal.ui_popup.busqueda .ui_marco_modal .ui_contenido_modal h1 {
+  font-size: 30px;
+  margin-bottom: 22px;
+}
+.ui_fondo_modal.ui_popup.busqueda .ui_marco_modal .ui_contenido_modal h2 {
+  font-size: 19px;
+  line-height: normal;
+}
+
+.ui_popup.busqueda .ui_marco_modal .ui_contenido_modal .ui_barra_busqueda {
+  border: solid 2px #d9d9d9;
+  margin-top: 42px;
+}
+
+.ui_popup.busqueda .ui_contenido_modal .ui_barra_busqueda .ui_form_busqueda .item_input_form .label_huespedes{
+  font-size: 18px;
+  text-align: left;
+  cursor: pointer;
+}
+.ui_fondo_modal.ui_popup.busqueda .ui_marco_modal .ui_contenido_modal .img_fondo_left{
+  position: absolute;
+  left: 15px;
+  top: 15px;
+}
+
+/* BORRARRRR */
+.ui_fondo_modal.ui_popup.busqueda{
+  display: block;
+}
 /*** END RESULTADO BUSQUEDA ***/
 
 /***** RESENAS ******/
