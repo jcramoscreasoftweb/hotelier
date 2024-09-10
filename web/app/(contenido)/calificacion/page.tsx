@@ -14,7 +14,7 @@ export const metadata:Metadata={
     description:"Calificacion",
     keywords:["Calificacion","Hotelier"]
 }
-export default  async function Nosotros() {
+export default async function Calificacion() {
   let url = "https://creasoft.com.pe/hotelier_api/pages/page-calificacion.json";
   let requestAPI: any = await fetch(url);
   requestAPI = await requestAPI.json();

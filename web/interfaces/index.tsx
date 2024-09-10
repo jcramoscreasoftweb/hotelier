@@ -15,3 +15,4 @@ export type {ReclamoResponse} from "@/interfaces/reclamo-response";
 export type {PhoneCodeResponse} from "@/interfaces/phone-code-response";
 export type {DetalleReservaResponse} from "@/interfaces/detalle-reserva-response";
 export type {CalificacionResponse} from "@/interfaces/calificacion-response";
+export type {PageBusquedaResponse} from "@/interfaces/page-busqueda-response";

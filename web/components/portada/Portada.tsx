@@ -26,20 +26,20 @@ export const ItemBeneficiosNuevo = ({ hotel_section }: any) => {
      <>
 
           <Swiper
-          modules={[Navigation, Pagination]}
-          spaceBetween={50}
-          slidesPerView={3}
-          navigation
-          pagination={{ clickable: true }}
-        >
+            modules={[Navigation, Pagination]}
+            spaceBetween={50}
+            slidesPerView={3}
+            navigation
+            pagination={{ clickable: true }}
+          >
         {hotel_section.map((item:any) => {
           return (
             <SwiperSlide>
-            <div className="ui_item-beneficio">
-              <Image width={355} height={525} src={item.icon} alt="" />
-              <p className="ui_titulo">{item.title}</p>
-            </div>
-          </SwiperSlide>
+              <div className="ui_item-beneficio">
+                <Image width={355} height={525} src={item.icon} alt="" />
+                <p className="ui_titulo">{item.title}</p>
+              </div>
+            </SwiperSlide>
 
           );
         })}

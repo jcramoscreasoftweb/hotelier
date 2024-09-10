@@ -1720,10 +1720,143 @@ font-weight: 600;
   top: 15px;
 }
 
-/* BORRARRRR */
-.ui_fondo_modal.ui_popup.busqueda{
-  display: block;
+.ui_fondo_modal.ui_popup.servicios .ui_marco_modal .ui_contenido_modal {
+  width: 720px;
+  min-height: 510px;
 }
+
+.ui_popup.servicios .ui_marco_modal .ui_contenido_modal .list_service{
+  margin-top: 25px;
+}
+
+.ui_popup.servicios .ui_marco_modal .ui_contenido_modal .list_service{
+  color: #454545;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.ui_popup.servicios .ui_marco_modal .ui_contenido_modal .list_service .item_row_service{
+  width: 635px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 23px;
+}
+
+.list_service .item_row_service .title{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.list_service .item_row_service .title input{
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  border: solid #D7D7D7 1px;
+}  
+
+.ui_popup.servicios .ui_marco_modal .ui_contenido_modal span{
+  font-size: 20px;
+  color: #454545;
+  margin-bottom: 17px;
+  font-weight: 600;
+}
+
+.ui_popup.servicios .ui_marco_modal .ui_contenido_modal .button{
+  width: 405px;
+  height: 58px;
+  border-radius: 30px;
+  border: none;
+  background-color: #00CFC9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.ui_fondo_modal.ui_popup.guardar_info .ui_marco_modal .ui_contenido_modal {
+  width: 688px;
+  height: 476px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.ui_fondo_modal.ui_popup.guardar_info .ui_marco_modal .ui_contenido_modal h1{
+  margin-left: 120px;
+}
+
+.ui_fondo_modal.ui_popup.guardar_info .ui_marco_modal .ui_contenido_modal h2{
+  text-align: justify;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+.ui_popup.guardar_info .ui_marco_modal .ui_contenido_modal .row-input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+.ui_popup.guardar_info .ui_marco_modal .ui_contenido_modal .row-input span{
+  font-weight: 600;
+}
+
+.ui_popup.guardar_info .ui_marco_modal .ui_contenido_modal .row-input input{
+  border-radius: 30px;
+  width: 527px;
+  height: 50px;
+  border: solid 1px #D7D7D7;
+  padding: 16px 20px;
+  color: #454545;
+  font-size: 16px;
+  margin-bottom: 28px;
+}
+
+.ui_popup.guardar_info .ui_marco_modal .ui_contenido_modal .ui_checkbox{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 51px;
+}
+
+.ui_popup.guardar_info .ui_marco_modal .ui_contenido_modal .ui_checkbox input{
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  border: solid #D7D7D7 1px;
+}
+
+.ui_popup.guardar_info .ui_marco_modal .ui_contenido_modal .ui_checkbox a {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.ui_popup.guardar_info .ui_marco_modal .ui_contenido_modal .button{
+  margin-left: 90px;
+  width: 400px;
+  height: 58px;
+  border-radius: 30px;
+  border: none;
+  background-color: #00CFC9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.ui_fondo_modal.ui_popup.guardar_info_completado .ui_marco_modal .ui_contenido_modal {
+  width: 452px;
+  height: 251px;
+  align-items: center;
+  justify-content: center;
+}
+
 /*** END RESULTADO BUSQUEDA ***/
 
 /***** RESENAS ******/
@@ -2483,7 +2616,6 @@ section.ui_seccion_1_reclamos p {
   margin-bottom: 14px;
   font-weight: lighter;
   text-align: justify;
-
 }
 
 .page_calificacion .ui_boton_formulario {

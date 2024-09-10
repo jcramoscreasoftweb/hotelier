@@ -109,6 +109,10 @@ $(".ui_listado_habitaciones .ui_info_habitacion .ui_ver_mas").click(function (){
     $(".ui_fondo_modal.ui_detalle_reserva").fadeIn();
 })
 
+$(".ui_btn_item_reservar_habitacion.activo").click(function (){
+    $(".ui_popup.servicios").fadeIn();
+})
+
 $(".ui_fondo_modal .ui_close_modal").click(function(){
     $(".ui_fondo_modal").fadeOut();
 })

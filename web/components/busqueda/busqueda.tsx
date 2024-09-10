@@ -1,4 +1,4 @@
-import { BusquedaResponse } from "@/interfaces";
+import { BusquedaResponse, PageBusquedaResponse } from "@/interfaces";
 import Image from "next/image";
 
 export const ListadoTipoHabitacion = async () => {
@@ -7,6 +7,11 @@ export const ListadoTipoHabitacion = async () => {
     let contenido = await fetch(url);
     let data = await contenido.json();
     let tipoHabitacion: BusquedaResponse[] = data.payload["es"];
+
+    let url_page = "https://creasoft.com.pe/hotelier_api/pages/page-busqueda.json";
+    let requestAPI_page: any = await fetch(url_page);
+    requestAPI_page = await requestAPI_page.json();
+    let contenidoBusqueda: PageBusquedaResponse = requestAPI_page.payload["es"];
 
     return (
       <>
@@ -37,12 +42,12 @@ export const ListadoTipoHabitacion = async () => {
                                 <div className="ui_habitacion_info">
                                     <span><Image width={20} height={20} src="/img/icon_bed.png" alt=""/>{item.bed}</span>
                                     <span><Image width={20} height={20} src="/img/icon_area.png" alt=""/>{item.dimensions} m²</span>
-                                    <span><Image width={20} height={20} src="/img/icon_adultos.png" alt=""/>{item.num_adults} adultos </span>
-                                    <span><Image width={20} height={20} src="/img/icon_adultos.png" alt=""/>{item.num_children} niños </span>
+                                    <span><Image width={20} height={20} src="/img/icon_adultos.png" alt=""/>{item.num_adults} {contenidoBusqueda.card_room.label_adults} </span>
+                                    <span><Image width={20} height={20} src="/img/icon_adultos.png" alt=""/>{item.num_children} {contenidoBusqueda.card_room.label_children} </span>
                                 </div>
                                 <div className="ui_habitacion_check">
-                                    <span><Image width={20} height={20} src="/img/icon_hora.png" alt=""/>Check in: {item.check_in}</span>
-                                    <span><Image width={20} height={20} src="/img/icon_hora.png" alt=""/>Check out: {item.check_out}</span>
+                                    <span><Image width={20} height={20} src="/img/icon_hora.png" alt=""/>{contenidoBusqueda.card_room.label_checkin}: {item.check_in}</span>
+                                    <span><Image width={20} height={20} src="/img/icon_hora.png" alt=""/>{contenidoBusqueda.card_room.label_checkout}: {item.check_out}</span>
                                 </div>
                             </div>
                             <div className="ui_habitacion_detalle_servicio">
@@ -57,17 +62,17 @@ export const ListadoTipoHabitacion = async () => {
                                     })}  
                             </div>
                             <div className="ui_ver_mas">
-                            <span>Ver más detalles <Image width={20} height={20} src="/img/btn_siguiente.png" alt=""/></span>
+                            <span>{contenidoBusqueda.card_room.label_see_more} <Image width={20} height={20} src="/img/btn_siguiente.png" alt=""/></span>
                             </div>
                         </div>
 
                         <div className="ui_info_habitacion_precio">
-                            <p className="ui_titulo_bloque">Nuestros precios</p>
+                            <p className="ui_titulo_bloque">{contenidoBusqueda.card_room.title_price}</p>
                             <div className="ui_item_precio ">
                                 <div>
-                                    <span className="ui_subtitulo">Pago por adelantado</span>
-                                    <p className="ui_detalle_texto">Se realiza el pago directamente por nuestra plataforma.</p>
-                                    <span className="ui_info_noches">3 noches</span>
+                                    <span className="ui_subtitulo">{contenidoBusqueda.card_room.tp_payment_1}</span>
+                                    <p className="ui_detalle_texto">{contenidoBusqueda.card_room.payment1_description}</p>
+                                    <span className="ui_info_noches">3 {contenidoBusqueda.card_room.label_night}</span>
                                 </div>
                                 <div>
                                     <span className="ui_info_precio">US$ {item.price_web}</span>
@@ -75,9 +80,9 @@ export const ListadoTipoHabitacion = async () => {
                             </div>
                             <div className="ui_item_precio ">
                                 <div>
-                                    <span className="ui_subtitulo">Pago en hotel</span>
-                                    <p className="ui_detalle_texto">La reserva deberá ser pagada en su llegada al hotel.</p>
-                                    <span className="ui_info_noches">3 noches</span>
+                                    <span className="ui_subtitulo">{contenidoBusqueda.card_room.tp_payment_2}</span>
+                                    <p className="ui_detalle_texto">{contenidoBusqueda.card_room.payment2_description}</p>
+                                    <span className="ui_info_noches">3 {contenidoBusqueda.card_room.label_night}</span>
                                 </div>
                                 <div>
                                     <span className="ui_info_precio">US$ {item.price_hotel}</span>
@@ -87,7 +92,7 @@ export const ListadoTipoHabitacion = async () => {
 
                             <div className="ui_otras_plataformas">
                                 <div className="ui_titulo">
-                                    <span>En otras plataformas</span>
+                                    <span>{contenidoBusqueda.card_room.label_night}</span>
                                 </div>
                                 <div className="ui_item_otro">
                                     <Image width={102} height={16} src="/img/icon_booking.png" alt="icon-price"/>
@@ -100,7 +105,7 @@ export const ListadoTipoHabitacion = async () => {
 
                             </div>
                             <div className="ui_btn_item_reservar_habitacion">
-                                <span>Reservar</span>
+                                <span>{contenidoBusqueda.card_room.boton}</span>
                             </div>
                         </div>
                 </div>
