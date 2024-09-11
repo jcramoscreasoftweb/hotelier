@@ -5,7 +5,7 @@ import {
 } from "@/components"
 import { GaleriaResponse } from "@/interfaces";
 import Image from "next/image";
-import { ItemEspaciosComunes } from "@/components/galeria/galeria";
+import { ItemEspaciosComunes, ItemHabitaciones, ItemRestaurantes } from "@/components/galeria/galeria";
 
 export const metadata:Metadata={
     title:"Galería",
@@ -66,15 +66,8 @@ export default async function Galeria(){
                         <p dangerouslySetInnerHTML={{ __html:contenidoGaleria.rooms_section.description}}></p>
 
                         <div className="ui_carrusel_item_galeria">
-                            {
-                            contenidoGaleria.rooms_section.images.map((item) => {
-                                return (
-                                    <div className="ui_item_slider" key={item.name}>
-                                        <Image width={364} height={480} src={item.image} alt="imagen-slider-galeria"/>
-                                    </div>
-                                );
-                            })
-                            }
+
+                            <ItemHabitaciones images={contenidoGaleria.rooms_section.images}></ItemHabitaciones>
                         </div>
                     </div>
 
@@ -88,15 +81,9 @@ export default async function Galeria(){
                         <p dangerouslySetInnerHTML={{ __html:contenidoGaleria.restaurant_section.description}}></p>
 
                         <div className="ui_carrusel_item_galeria">
-                            {
-                            contenidoGaleria.restaurant_section.images.map((item) => {
-                                return (
-                                    <div className="ui_item_slider" key={item.name}>
-                                        <Image width={364} height={480} src={item.image} alt="imagen-slider-galeria"/>
-                                    </div>
-                                );
-                            })
-                            }
+
+                        <ItemRestaurantes images={contenidoGaleria.restaurant_section.images}></ItemRestaurantes>
+
                         </div>
                     </div>
                 </div>

@@ -3,6 +3,7 @@ import {FooterSite,HeaderSitev2, ListadoTipoHabitacion} from "@/components"
 import {PageBusquedaResponse} from"@/interfaces";
 import Image from "next/image";
 import Link from "next/link";
+import { CarouselFotosHabitacion } from "@/components/busqueda/carouselBusqueda";
 
 export const metadata:Metadata={
     title:"Resultado de busqueda",
@@ -70,7 +71,7 @@ export default async function Busqueda() {
                           <button type="button" className="increment" data-target="children">+</button>
                         </div>
                       </div>
-                      
+
                       <div className="btn_huesped">{contenidoBusqueda.labels_search.box_boton}</div>
                     </div>
                   </div>
@@ -80,7 +81,7 @@ export default async function Busqueda() {
                     {contenidoBusqueda.labels_search.boton}
                   </button>
                 </form>
-                
+
               </div>
           </div>
         </section>
@@ -105,7 +106,10 @@ export default async function Busqueda() {
               <div className="ui_close_modal"></div>
               <div className="ui_modal_imagenes_habitacion">
                 <h2>Habitación Doble Estandar</h2>
-                <div className="ui_carrusel_habitacion_modal">
+                <div>
+
+                </div>
+                {/*<div className="ui_carrusel_habitacion_modal">
                   <div className="item_carrusel">
                     <Image width={430} height={250} src="/img/room_1.png" alt="image-habitacion" />
                   </div>
@@ -132,7 +136,7 @@ export default async function Busqueda() {
                   <div className="item_carrusel">
                     <Image width={120} height={90} src="/img/room_1.png" alt="image-habitacion" />
                   </div>
-                </div>
+                </div>*/}
               </div>
 
               <div className="ui_modal_informacion_habitacion">
@@ -203,8 +207,8 @@ export default async function Busqueda() {
             <div className="ui_close_modal"></div>
             <Image className="img_fondo_left" width={102} height={106} src="/img/adorno_popup_superior.png" alt="icon-popup" />
             <Image width={189} height={158} src="/img/icon_sin_resultado.png" alt="icon-popup" />
-            <h1 dangerouslySetInnerHTML={{ __html:contenidoBusqueda.popup_sin_resultado.title}}></h1>
-            <h2  dangerouslySetInnerHTML={{ __html:contenidoBusqueda.popup_sin_resultado.subtitle}}></h2>
+            <h1>{contenidoBusqueda.popup_sin_resultado.title}</h1>
+            <h2 >{contenidoBusqueda.popup_sin_resultado.subtitle}</h2>
             <div className="ui_barra_busqueda">
               <form className="ui_form_busqueda" action="" method="get">
                 <div className="item_input_form">
@@ -268,16 +272,16 @@ export default async function Busqueda() {
         </div>
       </div>
       {/* <!-- END MODAL SIN RESULTADOS DE BUSQUEDA --> */}
-   
+
       {/* <!-- MODAL SERVICIOS ADICIONALES --> */}
       <div className="ui_fondo_modal ui_popup servicios">
         <div className="ui_marco_modal">
           <div className="ui_contenido_modal">
             <div className="ui_close_modal"></div>
             <Image className="img_fondo_left" width={102} height={106} src="/img/adorno_popup_superior.png" alt="icon-popup" />
-            <h1 dangerouslySetInnerHTML={{ __html:contenidoBusqueda.popup_servicios.title}}></h1>
-            <h2 dangerouslySetInnerHTML={{ __html:contenidoBusqueda.popup_servicios.subtitle}}></h2>
-            
+            <h1 >{contenidoBusqueda.popup_servicios.title}</h1>
+            <h2 >{contenidoBusqueda.popup_servicios.subtitle}</h2>
+
             <div className="list_service">
               <div className="item_row_service">
                 <div className="title">
@@ -330,7 +334,7 @@ export default async function Busqueda() {
 
             <span>Total: US$ 120.00</span>
             <div className="button">{contenidoBusqueda.popup_servicios.boton}</div>
-            
+
             <Image className="img_fondo_right" width={102} height={106} src="/img/adorno_popup_inferior.png" alt="icon-popup" />
           </div>
         </div>
@@ -343,8 +347,8 @@ export default async function Busqueda() {
           <div className="ui_contenido_modal">
             <div className="ui_close_modal"></div>
             <Image className="img_fondo_left" width={102} height={106} src="/img/adorno_popup_superior.png" alt="icon-popup" />
-            <h1 dangerouslySetInnerHTML={{__html:contenidoBusqueda.popup_information.title}}></h1>
-            <h2 dangerouslySetInnerHTML={{__html:contenidoBusqueda.popup_information.subtitle}}></h2>
+            <h1>{contenidoBusqueda.popup_information.title}</h1>
+            <h2 >{contenidoBusqueda.popup_information.subtitle}</h2>
             <div className="row-input">
               <span>{contenidoBusqueda.popup_information.label_email}</span>
               <input type="text" id="email" name="email" maxLength={50}/>
@@ -359,7 +363,7 @@ export default async function Busqueda() {
             </div>
 
             <div className="button">{contenidoBusqueda.popup_information.boton}</div>
-            
+
             <Image className="img_fondo_right" width={102} height={106} src="/img/adorno_popup_inferior.png" alt="icon-popup" />
           </div>
         </div>
@@ -373,13 +377,13 @@ export default async function Busqueda() {
                 <div className="ui_close_modal"></div>
                 <Image className="img_fondo_left" width={102} height={106} src="/img/adorno_popup_superior.png" alt="icon-popup" />
                 <Image width={68} height={68} src="/img/icon_popup.png" alt="icon-popup" />
-                <h1 dangerouslySetInnerHTML={{__html:contenidoBusqueda.popup_confirmation.title}}></h1>
+                <h1>{contenidoBusqueda.popup_confirmation.title}</h1>
                 <Image className="img_fondo_right" width={102} height={106} src="/img/adorno_popup_inferior.png" alt="icon-popup" />
             </div>
            </div>
         </div>
         {/* <!-- END MODAL CONFIRMACION INFORMACION GUARDADA--> */}
-      
+
       <FooterSite />
 
     </>

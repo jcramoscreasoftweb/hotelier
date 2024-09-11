@@ -39,3 +39,64 @@ export const ItemEspaciosComunes = ({ images }: any) => {
     </>
 }
 
+export const ItemHabitaciones = ({ images }: any) => {
+
+  return <>
+      {
+            <Swiper
+            modules={[Navigation, Pagination]}
+            spaceBetween={50}
+            slidesPerView={3}
+            navigation
+            pagination={{ clickable: true }}
+          >
+          {  images.map((item:any) => {
+            return (
+              <SwiperSlide>
+               <div className="ui_item_slider" key={item.name}>
+                      <Image width={364} height={480} src={item.image} alt="imagen-slider-galeria" />
+                  </div>
+            </SwiperSlide>
+
+            );
+          })}
+
+
+            {/* Añade más slides según necesites */}
+            </Swiper>
+
+
+      }
+  </>
+}
+
+export const ItemRestaurantes = ({ images }: any) => {
+
+  return <>
+      {
+            <Swiper
+            modules={[Navigation, Pagination]}
+            spaceBetween={50}
+            slidesPerView={3}
+            navigation
+            pagination={{ clickable: true }}
+          >
+          {  images.map((item:any) => {
+            return (
+              <SwiperSlide>
+               <div className="ui_item_slider" key={item.name}>
+                      <Image width={364} height={480} src={item.image} alt="imagen-slider-galeria" />
+                  </div>
+            </SwiperSlide>
+
+            );
+          })}
+
+
+            {/* Añade más slides según necesites */}
+            </Swiper>
+
+
+      }
+  </>
+}

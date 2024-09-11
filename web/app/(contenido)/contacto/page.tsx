@@ -29,10 +29,10 @@ export default async function Contacto(){
                 style={{
                     backgroundImage: `url("${contenidoContacto.banner_section.image}")`,
                 }}
-            >  
+            >
                 <HeaderSitev1 />
                 <div className="ui_texto_title_banner">
-                    <h2 dangerouslySetInnerHTML={{ __html:contenidoContacto.banner_section.title}}></h2>
+                    <h2>{contenidoContacto.banner_section.title}</h2>
                 </div>
             </section>
 
@@ -57,8 +57,8 @@ export default async function Contacto(){
 
                     <div className="ui_seccion_form">
                         <form action="" method="post">
-                            <h2 dangerouslySetInnerHTML={{ __html:contenidoContacto.form_section.title}}></h2>
-                            <p dangerouslySetInnerHTML={{ __html:contenidoContacto.form_section.subtitle}}></p>
+                            <h2 >{contenidoContacto.form_section.title}</h2>
+                            <p>{contenidoContacto.form_section.subtitle}</p>
 
                             <div className="ui_input_form">
                                 <span>{contenidoContacto.form_section.label_name}</span>
@@ -110,7 +110,7 @@ export default async function Contacto(){
                         height={60}
                         alt=""
                         />
-                        <h2 dangerouslySetInnerHTML={{ __html:contenidoContacto.map_section.title}}></h2>
+                        <h2>{contenidoContacto.map_section.title}</h2>
                         <Image
                             alt=""
                             src="/img/adorno_titulo_2.png"
@@ -133,14 +133,14 @@ export default async function Contacto(){
                         <div className="ui_close_modal"></div>
                         <Image className="img_fondo_left" width={102} height={106} src="/img/adorno_popup_superior.png" alt="icon-popup" />
                         <Image width={68} height={68} src="/img/icon_popup.png" alt="icon-popup" />
-                        <h1>{contenidoContacto.popup.title}</h1>
-                        <h2>{contenidoContacto.popup.subtitle}</h2>
+                        <h1>{/*contenidoContacto.popup.title*/}</h1>
+                        <h2>{/*contenidoContacto.popup.subtitle*/}</h2>
                         <Image className="img_fondo_right" width={102} height={106} src="/img/adorno_popup_inferior.png" alt="icon-popup" />
                     </div>
                 </div>
             </div>
             {/* <!-- END MODAL CONTACTO--> */}
-            
+
             <FooterSite/>
         </>
     );

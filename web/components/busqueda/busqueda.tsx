@@ -1,5 +1,7 @@
 import { BusquedaResponse, PageBusquedaResponse } from "@/interfaces";
 import Image from "next/image";
+import { CarouselFotosHabitacion } from "./carouselBusqueda";
+
 
 export const ListadoTipoHabitacion = async () => {
 
@@ -19,8 +21,16 @@ export const ListadoTipoHabitacion = async () => {
             return(
                 <div className="ui_item_habitacion" key={item.id_tp_room}>
                         <div className="ui_info_habitacion">
-                            <h2 className="ui_titulo_habitacion" dangerouslySetInnerHTML={{ __html:item.name}}></h2>
+                            <h2 className="ui_titulo_habitacion" >
+                                {item.name}
+                            </h2>
                             <div className="marco_carousel_fotos_habitacion">
+                                <div className="carousel_fotos_habitacion">
+                                    <CarouselFotosHabitacion images={item.images_carrusel}></CarouselFotosHabitacion>
+                                </div>
+
+                            </div>
+                            {/*<div className="marco_carousel_fotos_habitacion">
                                 <div className="carousel_fotos_habitacion">
 
                                     <div className="ui_foto_item_habitacion">
@@ -29,14 +39,14 @@ export const ListadoTipoHabitacion = async () => {
 
                                     {item.images_carrusel.map((itemCarrusel:any) =>{
                                         return(
-                                            <ItemImagenCarrusel 
+                                            <ItemImagenCarrusel
                                                 key={itemCarrusel.url}
                                                 url={itemCarrusel.url}
                                             />
                                         );
-                                    })}   
+                                    })}
                                 </div>
-                            </div>
+                            </div>*/}
                             <div className="ui_habitacion_detalle">
 
                                 <div className="ui_habitacion_info">
@@ -59,7 +69,7 @@ export const ListadoTipoHabitacion = async () => {
                                                 name={service.name}
                                             />
                                         );
-                                    })}  
+                                    })}
                             </div>
                             <div className="ui_ver_mas">
                             <span>{contenidoBusqueda.card_room.label_see_more} <Image width={20} height={20} src="/img/btn_siguiente.png" alt=""/></span>
@@ -129,7 +139,7 @@ export const ListadoTipoHabitacion = async () => {
             <Image width={20} height={20} src={icon} alt=""/>
             {name}
         </span>
-                            
+
     );
 
 }
