@@ -26,7 +26,7 @@ export const ListadoTipoHabitacion = async () => {
                             </h2>
                             <div className="marco_carousel_fotos_habitacion">
                                 <div className="carousel_fotos_habitacion">
-                                    <CarouselFotosHabitacion images={item.images_carrusel}></CarouselFotosHabitacion>
+                                    <CarouselFotosHabitacion img_portada={item.image} images={item.images_carrusel}></CarouselFotosHabitacion>
                                 </div>
 
                             </div>

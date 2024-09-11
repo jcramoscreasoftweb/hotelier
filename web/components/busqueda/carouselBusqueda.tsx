@@ -9,7 +9,7 @@ import "swiper/css/navigation"; // Importa estilos adicionales si usas la navega
 import { Navigation, Pagination } from "swiper/modules"; // Importa módulos específicos
 
 
-export const CarouselFotosHabitacion = ({ images }: any) => {
+export const CarouselFotosHabitacion = ({ img_portada, images }: any) => {
 
     return <>
         {
@@ -20,14 +20,22 @@ export const CarouselFotosHabitacion = ({ images }: any) => {
               navigation
               pagination={{ clickable: true }}
             >
+
+              <SwiperSlide>
+                <div className="item_carrusel">
+                  <Image width={500} height={280} src={img_portada} alt="image-habitacion" />
+                </div>
+              </SwiperSlide>
+
+
             {  images.map((item:any) => {
               return (
                 <SwiperSlide key={item.url}>
-                     <div     className="item_carrusel">
+                  <div     className="item_carrusel">
                     <Image width={500} height={280} src={item.url} alt="image-habitacion" />
                   </div>
 
-              </SwiperSlide>
+                </SwiperSlide>
 
               );
             })}
