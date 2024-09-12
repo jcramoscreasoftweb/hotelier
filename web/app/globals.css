@@ -138,8 +138,8 @@ left: 0px;
 background-color: #00CFC9;
 padding:9px 27px;
 border-radius: 20px;
-text-transform: capitalize;
 font-family: "Open Sans", sans-serif;
+font-weight: 600;
 }
 
 .contenedor{
@@ -438,10 +438,9 @@ width: 45%;
 
 .ui_seccion_info_adicional .ui_titulo
 {
-  font-size: 32px;
+  font-size: 28px;
   color:#512B17;
   font-family: "Fertigo-Pro";
-  width: 274px;
   text-align: center;
 }
 
@@ -554,9 +553,6 @@ padding-right: 23px;
   font-weight: 600;
 }
 
-.ui_mas_resenas a {
-  text-decoration: underline 1px;
-}
 /****** END HOME ******/
 
 /***** NOSOTROS ******/
@@ -1409,19 +1405,28 @@ color: #512B17;
   max-width: 630px;
 }
 .ui_habitacion_detalle{
-margin-top: 28px;
-border-bottom: 1px solid #ececec;
-margin-left: 57px;
-margin-right: 57px;
+margin-top: 17px;
+margin-left: 78px;
+margin-right: 78px;
+font-size: 14px;
 }
+
+.ui_info_habitacion .ui_separador_detalle{
+  width: 100%;
+  max-width: 540px;
+  height: 1.5px;
+  background-color: #D7D7D7;
+  margin-left: 58px;
+}
+
 .ui_habitacion_detalle .ui_habitacion_info{
   display: flex;
   justify-content: center;
   margin-bottom: 17px;
 }
 .ui_habitacion_detalle .ui_habitacion_info span{
-  margin-left: 18px;
-  margin-right: 18px;
+  margin-left: 16px;
+  margin-right: 16px;
   display: flex;
   align-items: center;
 }
@@ -1445,14 +1450,15 @@ margin-right: 57px;
 }
 
 .ui_habitacion_detalle_servicio {
+  font-size: 14px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 17px;
   padding-top: 20px;
   padding-bottom: 20px;
-  margin-left: 78px;
-  width: 550px;
+  margin-left: 104px;
+  width: 450px;
   justify-content: space-evenly;
 }
 .ui_habitacion_detalle_servicio span{
@@ -1470,9 +1476,12 @@ margin-right: 57px;
   color: #00CFC9;
   font-weight: 600;
   margin-top: 10px;
-  margin-left: 56px;
+  margin-right: 59px;
   cursor: pointer;
-  text-decoration: underline;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
 }
 
 .ui_info_habitacion_precio .ui_titulo_bloque{

@@ -160,7 +160,7 @@ export const FooterSite = async() => {
                 <span>+51 984 506 080</span>
               </div>
               <div className="ui_info_col3">
-                <span>bookin@sachacusco.com</span>
+                <span>booking@sachacusco.com</span>
               </div>
               <div className="ui_info_col4 social_media">
 
@@ -277,7 +277,7 @@ export const FooterSite_SinDecoracion = async() => {
                 <span>+51 984 506 080</span>
               </div>
               <div className="ui_info_col3">
-                <span>bookin@sachacusco.com</span>
+                <span>booking@sachacusco.com</span>
               </div>
               <div className="ui_info_col4 social_media">
 

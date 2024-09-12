@@ -60,6 +60,8 @@ export const ListadoTipoHabitacion = async () => {
                                     <span><Image width={20} height={20} src="/img/icon_hora.png" alt=""/>{contenidoBusqueda.card_room.label_checkout}: {item.check_out}</span>
                                 </div>
                             </div>
+
+                            <div className="ui_separador_detalle"></div>
                             <div className="ui_habitacion_detalle_servicio">
                                     {item.services.map((service:any) =>{
                                         return(
@@ -72,7 +74,8 @@ export const ListadoTipoHabitacion = async () => {
                                     })}
                             </div>
                             <div className="ui_ver_mas">
-                            <span>{contenidoBusqueda.card_room.label_see_more} <Image width={20} height={20} src="/img/btn_siguiente.png" alt=""/></span>
+                                <span>{contenidoBusqueda.card_room.label_see_more}</span>
+                                <Image width={20} height={20} src="/img/btn_siguiente.png" alt=""/>
                             </div>
                         </div>
 
