@@ -95,7 +95,7 @@ export default  async function Nosotros() {
                 <div className="info_cupon">
                   <div className="cupon_title">
                     <h2>{contenidoDetalle.info_reserva.label_cupon}</h2>
-                    <Image className="" width={18} height={11} src="/img/icon-arrow-cupon.png" alt="icon-arrow"/>
+                    <Image width={18} height={11} src="/img/icon-arrow-cupon.png" alt="icon-arrow"/>
                   </div>
 
                   <div className="cupon_detail">

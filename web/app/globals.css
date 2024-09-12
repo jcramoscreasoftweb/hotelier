@@ -548,9 +548,10 @@ padding-right: 23px;
 .ui_mas_resenas{
   margin-top: 53px;
   text-align: right;
-  font-size: 20px;
+  font-size: 16px;
   color: #00CFC9;
   font-weight: 600;
+  
 }
 
 /****** END HOME ******/
@@ -1472,7 +1473,7 @@ font-size: 14px;
 }
 
 .ui_item_habitacion .ui_ver_mas{
-  font-size: 16px;
+  font-size: 15px;
   color: #00CFC9;
   font-weight: 600;
   margin-top: 10px;
@@ -1481,7 +1482,7 @@ font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 10px;
+  gap: 9px;
 }
 
 .ui_info_habitacion_precio .ui_titulo_bloque{
@@ -2561,7 +2562,7 @@ section.ui_seccion_1_reclamos p {
 
 .ui_fondo_modal.ui_popup.detalle_reserva .ui_marco_modal .ui_contenido_modal {
   width: 523px;
-  height: 328px;
+  height: 374px;
 }
 
 /***** END DETALLE RESERVA ******/
