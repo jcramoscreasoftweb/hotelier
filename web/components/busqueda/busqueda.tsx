@@ -105,7 +105,7 @@ export const ListadoTipoHabitacion = async () => {
 
                             <div className="ui_otras_plataformas">
                                 <div className="ui_titulo">
-                                    <span>{contenidoBusqueda.card_room.label_night}</span>
+                                    <span>{contenidoBusqueda.card_room.label_others}</span>
                                 </div>
                                 <div className="ui_item_otro">
                                     <Image width={102} height={16} src="/img/icon_booking.png" alt="icon-price"/>
