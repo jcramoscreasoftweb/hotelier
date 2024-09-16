@@ -21,7 +21,7 @@ export const ItemEspaciosComunes = ({ images }: any) => {
             >
             {  images.map((item:any) => {
               return (
-                <SwiperSlide>
+                <SwiperSlide  key={item.name}>
                  <div className="ui_item_slider" key={item.name}>
                         <Image width={364} height={480} src={item.image} alt="imagen-slider-galeria" />
                     </div>
@@ -52,7 +52,7 @@ export const ItemHabitaciones = ({ images }: any) => {
           >
           {  images.map((item:any) => {
             return (
-              <SwiperSlide>
+              <SwiperSlide key={item.name}>
                <div className="ui_item_slider" key={item.name}>
                       <Image width={364} height={480} src={item.image} alt="imagen-slider-galeria" />
                   </div>
@@ -83,7 +83,7 @@ export const ItemRestaurantes = ({ images }: any) => {
           >
           {  images.map((item:any) => {
             return (
-              <SwiperSlide>
+              <SwiperSlide key={item.name}>
                <div className="ui_item_slider" key={item.name}>
                       <Image width={364} height={480} src={item.image} alt="imagen-slider-galeria" />
                   </div>

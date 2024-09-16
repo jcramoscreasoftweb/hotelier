@@ -34,7 +34,7 @@ export const ItemBeneficiosNuevo = ({ hotel_section }: any) => {
           >
         {hotel_section.map((item:any) => {
           return (
-            <SwiperSlide>
+            <SwiperSlide key={item.title}>
               <div className="ui_item-beneficio">
                 <Image width={355} height={525} src={item.icon} alt="" />
                 <p className="ui_titulo">{item.title}</p>
