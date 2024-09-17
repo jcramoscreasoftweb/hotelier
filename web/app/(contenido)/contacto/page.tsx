@@ -56,7 +56,7 @@ export default async function Contacto(){
                     </div>
 
                     <div className="ui_seccion_form">
-                        <form action="" method="post">
+                        <form action="http://127.0.0.1:8000/api/create-contact" method="post">
                             <h2 >{contenidoContacto.form_section.title}</h2>
                             <p>{contenidoContacto.form_section.subtitle}</p>
 
@@ -83,7 +83,7 @@ export default async function Contacto(){
 
                             <div className="ui_input_form">
                                 <span>{contenidoContacto.form_section.label_email}</span>
-                                <input type="text" id="email" name="email" maxLength={100} required/>
+                                <input type="email" id="email" name="email" maxLength={100} required/>
                             </div>
 
                             <div className="ui_input_form">
@@ -133,8 +133,8 @@ export default async function Contacto(){
                         <div className="ui_close_modal"></div>
                         <Image className="img_fondo_left" width={102} height={106} src="/img/adorno_popup_superior.png" alt="icon-popup" />
                         <Image width={68} height={68} src="/img/icon_popup.png" alt="icon-popup" />
-                        <h1>{/*contenidoContacto.popup.title*/}</h1>
-                        <h2>{/*contenidoContacto.popup.subtitle*/}</h2>
+                        <h1>{contenidoContacto.popup.title}</h1>
+                        <h2>{contenidoContacto.popup.subtitle}</h2>
                         <Image className="img_fondo_right" width={102} height={106} src="/img/adorno_popup_inferior.png" alt="icon-popup" />
                     </div>
                 </div>

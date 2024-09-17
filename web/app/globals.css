@@ -1140,8 +1140,13 @@ padding-right: 23px;
   border-radius: 30px 0px 0px 30px;
   border: solid 1px #D7D7D7;
   border-right: 0px;
-  outline: none;
   cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('/img/select_arrow.png');
+  background-repeat: no-repeat;
+  background-position: right 22px center;
 }
 
 .ui_seccion_2_contacto .ui_marco_titulo{
@@ -1923,7 +1928,14 @@ font-weight: 600;
   border-color: #D7D7D7;
   width: 271px;
   height: 50px;
-  outline: none;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('/img/select_arrow.png');
+  background-repeat: no-repeat;
+  background-position: right 22px center;
+
 }
 .ui_seccion_resenas_paginacion {
   margin-top: 51px;
@@ -2104,6 +2116,13 @@ section.ui_seccion_1_reclamos p {
   padding: 10px 16px;
   color: #454545;
   font-size: 16px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('/img/select_arrow.png');
+  background-repeat: no-repeat;
+  background-position: right 22px center;
+  
 }
 
 .ui_formulario_tabs .row-inputs .item_input textarea{
@@ -2178,6 +2197,7 @@ section.ui_seccion_1_reclamos p {
 .ui_formulario_tabs .row_buttons .btn_back{
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .ui_formulario_tabs .row_buttons .btn_next {
