@@ -339,9 +339,6 @@ cursor: pointer;
   margin-left: -580px;*/
 }
 
-.ui_seccion_top_home .ui_marco_opciones_home .ui_barra_busqueda .ui_form_busqueda .btn_buscar{
-    bottom: 1px;
-}
 
 .ui_seccion_2_home{
   padding-top: 90px;
@@ -1232,6 +1229,7 @@ padding-right: 23px;
   font-size: 18px;
   border: none;
   cursor: pointer;
+  font-family: 'Open-Sans';
 }
 .ui_barra_busqueda .ui_form_busqueda .item_input_form .label{
   display: flex;
@@ -1265,9 +1263,11 @@ padding-right: 23px;
   background-color: #00CFC9;
   color: white;
   font-size: 24px;
+  font-weight: 600;
+  font-family: 'Open-Sans';
   position: absolute;
   right: 0;
-  bottom: 3px;
+  bottom: 1px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2684,3 +2684,304 @@ section.ui_seccion_1_reclamos p {
 }
 
 /***** END CALIFICACION ******/
+
+
+
+@media (max-width: 768px) {
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .contenedor {
+    width: 100%;
+    max-width: 375px;
+    margin: 0 auto;
+  }
+  .ui_icono_whatasapp img {
+    width: 44px;
+    height: 44px;
+}
+/***** RESPONSIVE HEADER ******/
+  .ui_logo_site{
+    padding-top: 5px;
+  }
+  .ui_logo_site img {
+    width: 43px;
+    height: 50px;
+  }
+  .ui_nav_site{
+    display: none;
+  }
+/***** END RESPONSIVE HEADER ******/
+
+/***** RESPONSIVE FOOTER ******/
+  .ui_footer_site .contenedor{
+    flex-direction: column;
+    gap: 20px;
+  }
+  .logo-footer img{
+    max-width: 94px;
+    height: 108px;
+  }
+  .ui_info_top, .ui_info_bottom{
+    flex-direction: column;
+  }
+  .ui_info_bottom{
+    gap: 15px;
+    margin-top: 20px;
+    padding-top: 20px;
+  }
+  .ui_info_top div {
+    min-height: 80px;
+  }
+  .ui_info_col4 {
+    margin-left: 0px;
+  }
+  .decoracion_footer img{
+    height: 85px;
+  }
+  .ui_icono_whatasapp{
+    bottom: 80px;
+    right: -35px;
+  }
+/***** END RESPONSIVE FOOTER ******/
+
+
+
+/***** RESPONSIVE HOME ******/
+  .ui_seccion_top_home{
+    height: 457px;
+    padding-top: 70px;
+
+  }
+  .ui_texto_intro_home{
+    font-size: 23px;
+    line-height: 24px;
+  }
+  .ui_marco_opciones_home{
+    bottom: 30px;
+  }
+  .ui_barra_busqueda{
+    width: 295px;
+    height: 217px;
+    border-radius: 25px;
+  }
+  form.ui_form_busqueda {
+    flex-direction: column;
+  }
+  .ui_barra_busqueda .ui_form_busqueda{
+    padding:14px 14px;
+  }
+
+  .ui_form_busqueda .item_input_form {
+    display: flex;
+    align-items: center;
+    width: 240px;
+    justify-content: space-between;
+  }
+
+  .ui_barra_busqueda .ui_form_busqueda .item_input_form .label h2{
+    font-size: 14px;
+  }
+  .ui_barra_busqueda .ui_form_busqueda .item_input_form .label_huespedes{
+    font-size: 14px;
+  }
+  .ui_barra_busqueda .ui_form_busqueda .item_input_form .label img{
+    margin-right: 8px;
+  }
+  .ui_barra_busqueda .ui_form_busqueda .item_input_form input{
+    font-size: 14px;
+    width: 95px;
+  }
+  
+  .ui_barra_busqueda .ui_form_busqueda .ui_separator_input{
+    margin: 0;
+    width: 263px;
+    height: 2px;
+  }
+  .ui_barra_busqueda .ui_form_busqueda .btn_buscar{
+    position: absolute;
+    font-size: 15px;
+    width: 100%;
+    border-radius: 26px;
+    height: 54px;
+    bottom: -57px !important;
+  }
+  .item_input_form .ui_box_huespedes{
+    width: 295px;
+    left: -14px;
+    top: 45px;
+    box-shadow: 0px 2px 3px 3px #00000025;
+    z-index: 1000;
+    padding: 16px 22px;
+    border-radius: 0px 0px 6px 6px;
+  }
+  .ui_box_huespedes .item_box_huesped{
+    width: 248px;
+    margin-bottom: 17px;
+  }
+  .ui_box_huespedes .item_box_huesped h2{
+    font-size: 14px;
+  }
+  .ui_box_huespedes .item_box_huesped .contador_huesped input{
+    width: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Open-Sans';
+  }
+  .ui_box_huespedes .btn_huesped{
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    margin-top: 26px;
+  }
+  .ui_barra_busqueda .ui_form_busqueda .btn_buscar img{
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+  }
+
+
+  
+
+  .ui_seccion_2_home {
+    padding-top: 30px;
+    padding-bottom: 35px;
+  }
+  .ui_seccion_2_home_info{
+    width: 100%;
+  }
+  .ui_lyt_seccion_2_home{
+    flex-direction: column;
+  }
+  .ui_seccion_2_home_info h2{
+    font-size: 42px;
+    text-align: center;
+  }
+  .ui_seccion_2_home_info p{
+    font-size: 16px;
+  }
+  .ui_seccion_2_home_img{
+    width: 100%;
+    text-align: center;
+  }
+  .ui_seccion_2_home_img img {
+    width: 300px;
+    height: auto;
+  }
+
+  .ui_seccion_4_home .contenedor{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 30px;
+  }
+  .ui_seccion_4_home_right .complemento, .ui_seccion_4_home_left .complemento{
+    display: none;
+  }
+  .ui_seccion_4_home_left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .ui_seccion_4_home_left img{
+    width: 329px;
+    height: 337px;
+    position: relative;
+  }
+
+  .ui_seccion_4_home_left .complemento_mobile.top{
+    width: 165px;
+    height: 70px;
+  }
+
+  .ui_seccion_4_home_right img{
+    width: 271px;
+    height: 271px;
+    bottom: 50px;
+    left: 8px;
+    position: relative;
+  }
+  
+  .ui_seccion_4_home_right .complemento_mobile.left{
+    width: 94px;
+    height: 97px;
+    position: absolute;
+  }
+  .ui_seccion_4_home_right .complemento_mobile.right{
+    width: 93px;
+    height: 100px;
+    position: absolute;
+    left: 100px;
+  }
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+  .ui_seccion_info_adicional{
+    margin-top: 100px;
+    background-color: #FCF9F4;
+  }
+
+  .ui_seccion_info_adicional .ui_titulo{
+    font-size: 24px;
+    width: 224px;
+  }
+  
+  .ui_seccion_info_adicional_lyt {
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px 40px;
+    background-color: none;
+  }
+  .ui_seccion_info_adicional_lyt .ui_contenido {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .ui_contenido .ui_item{
+    margin-left: 0px;
+  }
+  .ui_marco_titulo{
+    margin-bottom: 40px;
+  }
+  .ui_marco_titulo h2{
+    font-size: 32px;
+  }
+  .ui_marco_titulo img{
+    width: 41px;
+    height: 45px;
+  }
+  .ui_seccion_resenas_lyt{
+    justify-content: center;
+  }
+  .ui_item_resena{
+    width: 297px;
+  }
+
+  
+}
+
+
+/***** END RESPONSIVE HOME ******/
+@media (min-width: 768px) {
+  .complemento_mobile{
+    display: none;
+  }
+}

@@ -132,6 +132,7 @@ export default async function Home() {
       <section className="ui_seccion_4_home">
         <div className="contenedor">
           <div className="ui_seccion_4_home_left">
+            <Image className="complemento_mobile top" width={165} height={70} src="/img/complemento_mob_top.png" alt=""/>
             <Image
               width={481}
               height={481}
@@ -160,6 +161,8 @@ export default async function Home() {
               src="/img/complemento.png"
               alt=""
             />
+            <Image className="complemento_mobile left" width={94} height={97} src="/img/complemento_mob_left.png" alt=""/>
+            <Image className="complemento_mobile right" width={93} height={100} src="/img/complemento_mob_right.png" alt=""/>
           </div>
         </div>
       </section>
