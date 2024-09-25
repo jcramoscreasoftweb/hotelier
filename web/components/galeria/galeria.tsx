@@ -18,6 +18,20 @@ export const ItemEspaciosComunes = ({ images }: any) => {
               slidesPerView={3}
               navigation
               pagination={{ clickable: true }}
+              breakpoints={{
+                640: {
+                  slidesPerView: 1,
+                  spaceBetween: 50,
+                },
+                768: {
+                  slidesPerView: 2,
+                  spaceBetween: 50,
+                },
+                1250: {
+                  slidesPerView: 3,
+                  spaceBetween: 50,
+                },
+              }}
             >
             {  images.map((item:any) => {
               return (
@@ -49,6 +63,20 @@ export const ItemHabitaciones = ({ images }: any) => {
             slidesPerView={3}
             navigation
             pagination={{ clickable: true }}
+            breakpoints={{
+              640: {
+                slidesPerView: 1,
+                spaceBetween: 50,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 50,
+              },
+              1250: {
+                slidesPerView: 3,
+                spaceBetween: 50,
+              },
+            }}
           >
           {  images.map((item:any) => {
             return (
@@ -80,6 +108,20 @@ export const ItemRestaurantes = ({ images }: any) => {
             slidesPerView={3}
             navigation
             pagination={{ clickable: true }}
+            breakpoints={{
+              640: {
+                slidesPerView: 1,
+                spaceBetween: 50,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 50,
+              },
+              1250: {
+                slidesPerView: 3,
+                spaceBetween: 50,
+              },
+            }}
           >
           {  images.map((item:any) => {
             return (

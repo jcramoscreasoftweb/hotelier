@@ -176,6 +176,7 @@ export default async function Home() {
             <div className="ui_contenido">
               {contenidoPortada.services_section.items.map((item) => {
                 return (
+                  
                   <ItemServicio
                     key={item.title}
                     titulo={item.title}

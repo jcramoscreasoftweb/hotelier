@@ -22,7 +22,7 @@ export const HeaderSitev1 = async () => {
           </Link>
         </div>
         <nav className="ui_nav_site">
-          <ul>
+          <ul className="nav_desktop">
             {menuHeader.titles.map((item) => {
               return (
                 <li key={item.name}>
@@ -35,6 +35,30 @@ export const HeaderSitev1 = async () => {
               <Link href={`${menuHeader.button.link}`} dangerouslySetInnerHTML={{ __html: menuHeader.button.name }}></Link>
             </li>
           </ul>
+
+          <ul className="nav_mobile">
+            <li><Image className="icon_navbar_toggle" width={24} height={18} src="/img/icon-navbar.png" alt="icon-navbar"/></li>
+            <li className="ui_btn_reserva">
+              <Link href={`${menuHeader.button.link}`} dangerouslySetInnerHTML={{ __html: menuHeader.button.name }}></Link>
+            </li>
+          </ul>
+
+          <div className="ui_content_navmobile">
+            <Image width={44} height={50} src="/img/logo_header2.png" alt="icon-navbar"/>
+            <div className="ui_franja_opciones">
+              <Image className="icon_navbar_toggle" width={24} height={18} src="/img/icon-navbar.png" alt="icon-navbar"/>
+              <Link className="ui_btn_reserva" href={`${menuHeader.button.link}`} dangerouslySetInnerHTML={{ __html: menuHeader.button.name }}></Link>
+            </div>
+            <div className="ui_nav_pages">
+              {menuHeader.titles.map((item) => {
+                return (
+                    <Link key={item.name} href={`${item.link}`} dangerouslySetInnerHTML={{ __html: item.name }}></Link> 
+                );
+              })}
+
+            </div>
+            <Image width={199} height={215} src="/img/logo_header3.png" alt="icon-navbar"/>
+          </div>
         </nav>
       </header>
     </>
@@ -61,7 +85,7 @@ export const HeaderSitev2 = async () => {
           </a>
         </div>
         <nav className="ui_nav_site">
-          <ul>
+          <ul className="nav_desktop">
             {menuHeader.titles.map((item) => {
               return (
                 <li key={item.name}>
@@ -74,6 +98,30 @@ export const HeaderSitev2 = async () => {
               <Link href={`${menuHeader.button.link}`} dangerouslySetInnerHTML={{ __html: menuHeader.button.name }}></Link>
             </li>
           </ul>
+
+          <ul className="nav_mobile">
+            <li><Image className="icon_navbar_toggle" width={24} height={18} src="/img/icon-navbar.png" alt="icon-navbar"/></li>
+            <li className="ui_btn_reserva">
+              <Link href={`${menuHeader.button.link}`} dangerouslySetInnerHTML={{ __html: menuHeader.button.name }}></Link>
+            </li>
+          </ul>
+
+          <div className="ui_content_navmobile">
+            <Image width={44} height={50} src="/img/logo_header2.png" alt="icon-navbar"/>
+            <div className="ui_franja_opciones">
+              <Image className="icon_navbar_toggle" width={24} height={18} src="/img/icon-navbar.png" alt="icon-navbar"/>
+              <Link className="ui_btn_reserva" href={`${menuHeader.button.link}`} dangerouslySetInnerHTML={{ __html: menuHeader.button.name }}></Link>
+            </div>
+            <div className="ui_nav_pages">
+              {menuHeader.titles.map((item) => {
+                return (
+                    <Link key={item.name} href={`${item.link}`} dangerouslySetInnerHTML={{ __html: item.name }}></Link> 
+                );
+              })}
+
+            </div>
+            <Image width={199} height={215} src="/img/logo_header3.png" alt="icon-navbar"/>
+          </div>
         </nav>
       </header>
     </>

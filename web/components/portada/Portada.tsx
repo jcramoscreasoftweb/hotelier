@@ -25,18 +25,34 @@ export const ItemBeneficiosNuevo = ({ hotel_section }: any) => {
     return (
      <>
 
-          <Swiper
+          <Swiper className="ui_carousel_beneficios"
             modules={[Navigation, Pagination]}
             spaceBetween={50}
             slidesPerView={3}
             navigation
             pagination={{ clickable: true }}
+            breakpoints={{
+              640: {
+                slidesPerView: 1, // 1 slide en pantallas pequeñas
+                spaceBetween: 50,
+              },
+              // Cuando la ventana tiene >= 768px
+              768: {
+                slidesPerView: 2, // 2 slides en pantallas medianas
+                spaceBetween: 40,
+              },
+              // Cuando la ventana tiene >= 1024px
+              1250: {
+                slidesPerView: 3, // 3 slides en pantallas grandes
+                spaceBetween: 50,
+              },
+            }}
           >
         {hotel_section.map((item:any) => {
           return (
             <SwiperSlide key={item.title}>
               <div className="ui_item-beneficio">
-                <Image width={355} height={525} src={item.icon} alt="" />
+                <Image width={355} height={525} src={item.icon} alt="image-beneficio" />
                 <p className="ui_titulo">{item.title}</p>
               </div>
             </SwiperSlide>

@@ -120,6 +120,7 @@ left: 0px;
   background-color: #D5B470;
 }
 
+
 .ui_nav_site ul{
   display: flex;
   justify-content: center;
@@ -149,6 +150,71 @@ font-family: "Open-Sans", sans-serif;
 font-weight: 600;
 }
 
+.ui_nav_site .nav_mobile{
+  justify-content: space-between;
+}
+
+.nav_mobile {
+  padding: 20px 10px;
+}
+
+.ui_content_navmobile {
+  background-color: white;
+  width: 100%;
+  z-index: 10000;
+  position: absolute;
+  top: 0;
+  min-height: 500px;
+  box-shadow: 0px 0px 5px 5px #00000030;
+  text-align: center;
+  padding-top: 5px;
+  display: none;
+}
+
+.ui_content_navmobile .ui_franja_opciones {
+  background-color: #D5B470;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 15px;
+  margin-bottom: 10px;
+  margin-top: 8px;
+}
+
+.ui_franja_opciones .ui_btn_reserva {
+  background-color: white;
+  color: #D5B470;
+  width: 148px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  border-radius: 23px;
+}
+
+.ui_content_navmobile .ui_nav_pages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #D2AD62;
+  font-size: 18px;
+  font-family: "Fertigo-Pro";
+  text-transform: uppercase;
+  margin-bottom: 60px;
+}
+
+.ui_content_navmobile .ui_nav_pages a{
+  width: 300px;
+ padding: 26px 0px 26px 0px;
+ border-bottom: solid 1px #D7D7D7;
+}
+
+.ui_content_navmobile .ui_nav_pages a:last-child{
+  border: none;
+}
+
 .contenedor{
   width: 100%;
   max-width: 1250px;
@@ -171,12 +237,16 @@ font-weight: 600;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 70px;
 }
 
 .ui_info_top, .ui_info_bottom{
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 }
 .ui_info_top div{
   min-height: 140px;
@@ -287,6 +357,7 @@ cursor: pointer;
   width: 44px;
   height: 44px;
   background-image: url(/img/icon_close.png);
+  background-size: 100% 100%;
   position: absolute;
   right: -22px;
   top: -22px;
@@ -370,7 +441,8 @@ cursor: pointer;
 width: 45%;
 }
 .ui_seccion_2_home_img img{
-  width: 540px;
+  width: 100%;
+  max-width: 540px;
   height: auto;
 }
 .ui_seccion_3_home .contenedor{
@@ -384,19 +456,15 @@ width: 45%;
 .ui_carousel_beneficios{
   position: relative;
 }
-.ui_carousel_beneficios.slick-slider{
-  width: 1130px;
-}
-.ui_carousel_beneficios .slick-slide{
-  margin-left: 16px;
-  margin-right: 16px;
-}
+
+
 .ui_item-beneficio{
   width: 100%;
   max-width: 355px;
 }
 .ui_carousel_beneficios .ui_item-beneficio img{
   width: 100%;
+  max-width: 355px;
 }
 .ui_carousel_beneficios .ui_item-beneficio .ui_titulo ,
 .ui_seccion_3_home .ui_titulo{
@@ -413,14 +481,16 @@ width: 45%;
   position: relative
 }
 .ui_seccion_4_home_left img{
+  width: 100%;
+  max-width: 481px;
   position: absolute;
   left: 0px;
   bottom: 0px;
-  width: 481px;
   z-index: 100;
 }
 .ui_seccion_4_home_right img{
-  width: 533px;
+  width: 100%;
+  max-width: 533px;
   position: absolute;
   right: 0px;
   bottom: 0px;
@@ -433,7 +503,8 @@ width: 45%;
   left: -90px;
 }
 .ui_seccion_4_home_right .complemento{
-  width: 370px;
+  width: 100%;
+  max-width: 370px;
   position: absolute;
   top: 0px;
   right: -190px;
@@ -597,6 +668,7 @@ padding-right: 23px;
   margin-top: 50px;
   margin-bottom: 50px;
   color: #454545;
+  padding: 0px 33px 0px 33px;
 }
 
 .ui_seccion_1_nosotros h2{
@@ -633,6 +705,11 @@ padding-right: 23px;
   position: absolute;
   right: 15%;
   z-index: 50;
+}
+
+.item_valor .valor_right .item_valor_image img{
+  width: 100%;
+  max-width: 500px;
 }
 
 .item_valor .valor_right.important{
@@ -750,6 +827,12 @@ padding-right: 23px;
   max-width: 475px;
 }
 
+.row_seccion_sostenibilidad .row_image img{
+  width: 100%;
+  max-width: 460px;
+  height: 460px;
+}
+
 .row_seccion_sostenibilidad .row_information h2{
   color: #D2AD62;
   margin-bottom: 25px;
@@ -785,12 +868,18 @@ padding-right: 23px;
 }
 
 .row_seccion_sostenibilidad.imagenes .img_sostenibilidad_left{
+  width: 100%;
+  max-width: 486px;
+  height: auto;
   position: absolute;
   left: 180px;
   top: 0;
 }
 
 .row_seccion_sostenibilidad.imagenes .img_sostenibilidad_right{
+  width: 100%;
+  max-width: 512px;
+  height: auto;
   position: absolute;
   right: 8%;
   top: 80px;
@@ -809,6 +898,7 @@ padding-right: 23px;
   font-size: 18px;
   text-align: justify;
   line-height: 1.2;
+  padding: 0px 40px;
 }
 
 .ui_seccion_1_privacidad p{
@@ -829,7 +919,7 @@ padding-right: 23px;
 }
 
 .ui_seccion_1_privacidad span{
-  font-weight: 500;
+  font-weight: 600;
 }
 /***** END POLITICAS PRIVACIDAD ******/
 
@@ -994,7 +1084,8 @@ padding-right: 23px;
 }
 
 .ui_seccion_1_contacto .ui_seccion_informacion{
-  width: 450px;
+  width: 100%;
+  max-width: 450px;
   position: relative;
   z-index: 100;
   text-align: center;
@@ -1045,8 +1136,9 @@ padding-right: 23px;
 }
 
 .ui_seccion_1_contacto .ui_seccion_form{
-  width: 645px;
-  height: 742px;
+  width: 100%;
+  max-width: 645px;
+  min-height: 742px;
   font-family: "Open-Sans", sans-serif;
   box-shadow: 0px 1px 6px 0px #cecece;
   border-radius: 10px;
@@ -1093,6 +1185,7 @@ padding-right: 23px;
   border: solid 1px #D7D7D7;
   outline: none;
   font-size: 16px;
+  font-family: "Open-Sans";
 }
 
 .ui_seccion_form .ui_input_form textarea{
@@ -1124,16 +1217,20 @@ padding-right: 23px;
 
 .ui_seccion_form .ui_input_form .ui_selector_input{
   display: flex;
+  width: 100%;
 }
 .ui_seccion_form .ui_input_form .ui_selector_input input{
   border-radius: 0px 30px 30px 0px;
-  width: 335px;
+  max-width: 335px;
 }
 
 .ui_seccion_form .ui_input_form .ui_selector_input select{
-  width: 182px;
+  width: 100%;
+  font-family: "Open-Sans";
+  font-size: 16px;
+  max-width: 182px;
   height: 50px;
-  padding: 16px 20px;
+  padding: 10px 20px;
   border-radius: 30px 0px 0px 30px;
   border: solid 1px #D7D7D7;
   border-right: 0px;
@@ -1160,7 +1257,8 @@ padding-right: 23px;
 
   /* ESTILO BASE POPUPS */
 .ui_fondo_modal.ui_popup .ui_marco_modal .ui_contenido_modal {
-  width: 450px;
+  width: 100%;
+  max-width: 450px;
   height: 293px;
   border-radius: 5px;
   display: flex;
@@ -1172,6 +1270,8 @@ padding-right: 23px;
 }
 
 .ui_fondo_modal.ui_popup .ui_marco_modal .ui_contenido_modal img{
+  width: 100%;
+  max-width: 68px;
   margin-bottom: 11px;
 }
 .ui_fondo_modal.ui_popup .ui_marco_modal .ui_contenido_modal h1{
@@ -1183,6 +1283,7 @@ padding-right: 23px;
 .ui_fondo_modal.ui_popup .ui_marco_modal .ui_contenido_modal h2{
   font-size: 16px;
   color: #454545;
+  line-height: normal;
 }
 
 .ui_fondo_modal.ui_popup .ui_marco_modal .ui_contenido_modal .img_fondo_left{
@@ -2685,8 +2786,6 @@ section.ui_seccion_1_reclamos p {
 
 /***** END CALIFICACION ******/
 
-
-
 @media (max-width: 768px) {
   input[type="date"]::-webkit-calendar-picker-indicator {
     opacity: 0;
@@ -2710,8 +2809,11 @@ section.ui_seccion_1_reclamos p {
     width: 43px;
     height: 50px;
   }
-  .ui_nav_site{
+  .ui_nav_site .nav_desktop{
     display: none;
+  }
+  .ui_nav_site ul li{
+    font-size: 14px;
   }
 /***** END RESPONSIVE HEADER ******/
 
@@ -2750,6 +2852,7 @@ section.ui_seccion_1_reclamos p {
 
 
 /***** RESPONSIVE HOME ******/
+
   .ui_seccion_top_home{
     height: 457px;
     padding-top: 70px;
@@ -2780,6 +2883,7 @@ section.ui_seccion_1_reclamos p {
     width: 240px;
     justify-content: space-between;
   }
+  
 
   .ui_barra_busqueda .ui_form_busqueda .item_input_form .label h2{
     font-size: 14px;
@@ -2845,8 +2949,6 @@ section.ui_seccion_1_reclamos p {
   }
 
 
-  
-
   .ui_seccion_2_home {
     padding-top: 30px;
     padding-bottom: 35px;
@@ -2871,6 +2973,11 @@ section.ui_seccion_1_reclamos p {
   .ui_seccion_2_home_img img {
     width: 300px;
     height: auto;
+  }
+
+  .ui_carousel_beneficios .ui_item-beneficio img{
+    max-width: 240px;
+    height: 360px;
   }
 
   .ui_seccion_4_home .contenedor{
@@ -2903,7 +3010,8 @@ section.ui_seccion_1_reclamos p {
   }
 
   .ui_seccion_4_home_right img{
-    width: 271px;
+    width: 100%;
+    max-width: 271px;
     height: 271px;
     bottom: 50px;
     left: 8px;
@@ -2960,6 +3068,7 @@ section.ui_seccion_1_reclamos p {
   }
   .ui_marco_titulo{
     margin-bottom: 40px;
+    align-items: center;
   }
   .ui_marco_titulo h2{
     font-size: 32px;
@@ -2974,12 +3083,247 @@ section.ui_seccion_1_reclamos p {
   .ui_item_resena{
     width: 297px;
   }
+/***** END RESPONSIVE HOME ******/
 
+
+/***** RESPONSIVE NOSOTROS ******/
+  .contenedor.page_nosotros{
+    max-width: 380px;
+  }
+  .ui_seccion_top_banner{
+   height: 260px; 
+   padding-top: 115px;
+  }
+  .ui_texto_title_banner{
+    font-size: 36px;
+    max-width: 254px;
+    line-height: 47px;
+    
+  }
+  .ui_seccion_1_nosotros h2{
+    font-size: 16px;
+  }
+  .item_valor .item_valor_text{
+    width: 302px;
+    height: 302px;
+  }
+  .item_valor .item_valor_text h1{
+    font-size: 32px;
+  }
+  .item_valor .item_valor_text p{
+    font-size: 16px;
+  }
+  .item_valor .valor_right .item_valor_image img, .item_valor .valor_left .item_valor_image img{
+    max-width: 320px;
+    height: 320px;
+  }
+
+  .item_valor .valor_left{
+    position: relative;
+    left: 0px;
+  }
+
+  .item_valor .valor_right{
+    bottom: 31px;
+    right: 10px;
+  }
+  .item_valor .valor_right.important{
+    right: 12px;
+  }
+  .ui_seccion_2_nosotros .item_valor{
+    align-items: start;
+    height: 584px;
+  }
+  .ui_seccion_2_nosotros{
+    margin-bottom: 50px;
+  }
+/***** END RESPONSIVE NOSOTROS ******/
+
+/***** RESPONSIVE SOSTENIBILIDAD ******/
+  .ui_seccion_1_sostenibilidad p{
+    font-size: 16px;
+  }
+
+  .ui_seccion_2_sostenibilidad .ui_marco_titulo h2, .ui_seccion_3_sostenibilidad .ui_marco_titulo h2{
+    font-size: 26px;
+  }
+  .ui_seccion_2_sostenibilidad .row_seccion_sostenibilidad{
+    flex-direction: column;
+    gap: 25px;
+  }
+  .ui_seccion_2_sostenibilidad .row_seccion_sostenibilidad.invert_mob{
+    flex-direction: column-reverse;
+  }
+  .row_seccion_sostenibilidad .row_image img{
+    max-width: 300px;
+    height: 300px;
+  }
+  .ui_seccion_3_sostenibilidad .row_seccion_sostenibilidad{
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 28px;
+  }
+  .row_seccion_sostenibilidad.imagenes .img_sostenibilidad_left{
+    max-width: 270px;
+    position: relative;
+    left: 0;
+  }
   
+  .row_seccion_sostenibilidad.imagenes .img_sostenibilidad_right{
+    max-width: 273px;
+    left: 135px;
+    top: 210px;
+  }
+  .row_seccion_sostenibilidad .row_information h2{
+    font-size: 16px;
+  }
+/***** END RESPONSIVE SOSTENIBILIDAD ******/
+
+/***** RESPONSIVE POLITICAS PRIVACIDAD ******/
+  .ui_seccion_1_privacidad{
+    font-size: 16px;
+  }
+/***** END RESPONSIVE POLITICAS PRIVACIDAD ******/
+
+/***** RESPONSIVE RESENAS ******/
+.ui_texto_titulo_filtros{
+  font-size: 16px;
+  text-align: left;
+  margin-bottom: 40px;
+}
+.ui_filtros {
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ui_filtros .ui_item_filter{
+  flex-direction: column;
+  align-items: start;
+  gap: 16px;
+}
+.ui_item_filter .ui_select_filter{
+  margin: 0;
+}
+
+.ui_item_filter .ui_select_filter select{
+  width: 339px;
+}
+/***** END RESPONSIVE RESENAS ******/
+
+
+/***** RESPONSIVE CONTACTO ******/
+.ui_seccion_1_contacto{
+  margin-top: 15px;
+}
+.ui_seccion_1_contacto .contenedor{
+  flex-direction: column-reverse;
+  gap: 70px;
+}
+.ui_seccion_1_contacto .ui_seccion_form{
+  box-shadow: none;
+  padding: 22px 25px;
+}
+.ui_seccion_1_contacto .ui_seccion_form h2{
+  font-size: 32px;
+}
+
+.ui_seccion_form .ui_input_form .ui_selector_input select{
+  max-width: 138px;
+}
+.ui_seccion_form .ui_input_form textarea{
+  height: 165px;
+}
+.ui_seccion_1_contacto .ui_seccion_informacion .item_info{
+  width: 100%;
+  max-width: 268px;
+  height: 170px;
+  margin-bottom: 40px;
+}
+.ui_seccion_informacion .item_info h2{
+  font-size: 22px;
+}
+.ui_seccion_informacion .item_info p{
+  font-size: 18px
+}
+.ui_seccion_1_contacto .ui_seccion_informacion .ui_image_top{
+  width: 100%;
+  max-width: 65px;
+  height: auto;
+  top: -48px;
+  left: 46px;
+}
+
+.ui_seccion_1_contacto .ui_seccion_informacion .ui_image_bottom{
+  width: 100%;
+  max-width: 65px;
+  height: auto;
+  bottom: -15px;
+  right: 39px;
+}
+.ui_seccion_2_contacto .ui_marco_titulo{
+  margin-bottom: 15px;
+}
+.ui_seccion_2_contacto .ui_iframe_map iframe{
+  height: 230px;
+}
+.ui_fondo_modal.ui_popup .ui_marco_modal .ui_contenido_modal{
+  max-width: 341px;
+  height: 276px;
+  padding: 30px 49px;
+}
+.ui_fondo_modal.ui_popup .ui_marco_modal .ui_contenido_modal img{
+  max-width: 44px;
+  height: auto;
+}
+.ui_fondo_modal.ui_popup .ui_marco_modal .ui_contenido_modal h1{
+  font-size: 22px;
+}
+.ui_fondo_modal.ui_popup .ui_marco_modal .ui_contenido_modal .img_fondo_left{
+  max-width: 80px;
+  left: 10px;
+  top: 12px;
+}
+.ui_fondo_modal.ui_popup .ui_marco_modal .ui_contenido_modal .img_fondo_right{
+  right: 9px;
+  bottom: 0px;
+  max-width: 82px;
+}
+.ui_close_modal{
+  width: 32px;
+  height: 32px;
+  right: -15px;
+  top: -18px;
+}
+/***** END RESPONSIVE CONTACTO ******/
+
+/***** RESPONSIVE GALERIA ******/
+
+.ui_carrusel_item_galeria.swiper-slide{
+  width: 100%;
+  max-width: 240px;
+  height: 360px; 
+}
+
+/***** END RESPONSIVE GALERIA ******/
+
+
 }
 
 
-/***** END RESPONSIVE HOME ******/
+
+@media (max-width: 1214px) {
+  .ui_nav_site .nav_desktop{
+    display: none;
+  }
+}
+
+@media (min-width: 1214px) {
+  .ui_nav_site .nav_mobile{
+    display: none;
+  }
+}
+
+
 @media (min-width: 768px) {
   .complemento_mobile{
     display: none;

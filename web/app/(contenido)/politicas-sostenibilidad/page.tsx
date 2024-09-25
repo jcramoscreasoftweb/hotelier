@@ -60,7 +60,7 @@ export default  async function PoliticaSostenibilidad(){
 
                 </div>
 
-                <div className="row_seccion_sostenibilidad">
+                <div className="row_seccion_sostenibilidad invert_mob">
                     <div className="row_image">
                         <Image width={460} height={460} src={contenidoSostenibilidad.first_section.image_2} alt="image-sostenibilidad"/>
                     </div>

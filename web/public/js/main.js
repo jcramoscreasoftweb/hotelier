@@ -11,6 +11,11 @@ $(document).ready(function(){
     prevArrow:'<span class="btn-anterior"></span>'
 
 })*/
+
+$(".icon_navbar_toggle").click(function (){
+    $(".ui_content_navmobile").fadeToggle(100);
+})
+
 /*****  END HOME ******/
 
 /*****  GALERIA ******/
