@@ -39,20 +39,22 @@ export default async function Destino(){
                     <p dangerouslySetInnerHTML={{ __html:contenidoDestino.first_section.description}}></p>
 
                     <div className="ui_images_seccion_1">
-                        <Image width={345} height={503} src={contenidoDestino.first_section.image_2} alt=""/>
-                        <Image width={398} height={392} src={contenidoDestino.first_section.image_text} alt=""/>
+                        <Image className="img_mapa" width={345} height={503} src={contenidoDestino.first_section.image_2} alt=""/>
+                        <Image className="img_text" width={398} height={392} src={contenidoDestino.first_section.image_text} alt=""/>
                     </div>
+
+                    
+                </div>
+            </section>
+
+            <section className="ui_seccion_2_destino">
+                <div className="contenedor">
 
                     <div className="ui_marco_titulo">
                         <Image width={62} height={60} src="/img/adorno_titulo_1.png" alt=""/>
                         <h2 dangerouslySetInnerHTML={{ __html:contenidoDestino.first_section.title_tourist}}></h2>
                         <Image width={62} height={60} src="/img/adorno_titulo_2.png" alt=""/>
                     </div>
-                </div>
-            </section>
-
-            <section className="ui_seccion_2_destino">
-                <div className="contenedor">
 
                     {contenidoDestino.attractions_section.map((item, index) => {
                         if (index % 2 === 0) {

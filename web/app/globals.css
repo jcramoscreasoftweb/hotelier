@@ -931,6 +931,7 @@ padding-right: 23px;
 .ui_seccion_1_destino {
   margin-top: 50px;
   margin-bottom: 50px;
+  padding: 30px;
   color: #454545;
 }
 
@@ -939,6 +940,22 @@ padding-right: 23px;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+
+.ui_seccion_1_destino .contenedor img{
+  width: 100%;
+  max-width: 598px;
+  height: 132px;
+}
+.ui_seccion_1_destino .ui_images_seccion_1 .img_mapa{
+  width: 100%;
+  max-width: 343px;
+  height: auto;
+}
+.ui_seccion_1_destino .ui_images_seccion_1 .img_text{
+  width: 100%;
+  max-width: 398px;
+  height: auto;
 }
 
 .ui_seccion_1_destino p{
@@ -950,9 +967,14 @@ padding-right: 23px;
 
 .ui_seccion_1_destino .ui_images_seccion_1{
   display: flex;
-    align-items: center;
-    width: 810px;
-    justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  max-width: 810px;
+  justify-content: space-around;
+}
+
+.ui_seccion_2_destino{
+  padding: 21px;
 }
 
 .ui_seccion_2_destino .item_atraccion{
@@ -966,7 +988,8 @@ padding-right: 23px;
 }
 
 .ui_seccion_2_destino .item_atraccion .atraccion_informacion{
-  width: 540px;
+  width: 100%;
+  max-width: 540px;
 }
 
 .ui_seccion_2_destino .item_atraccion .atraccion_informacion h2{
@@ -990,6 +1013,12 @@ padding-right: 23px;
 .ui_seccion_2_destino .item_atraccion .atraccion_informacion span{
   margin-left: 15px;
   font-weight: 500;
+}
+
+.item_atraccion .atraccion_imagen img{
+  width: 100%;
+  max-width: 530px;
+  height: auto;
 }
 
 .ui_seccion_1_destino .ui_marco_titulo{
@@ -2088,13 +2117,13 @@ font-weight: 600;
 .ui_seccion_1_reclamos{
   margin-top: 41px;
   margin-bottom: 67px;
-  margin-bottom: 67px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* padding: 20px; */
 }
 
-section.ui_seccion_1_reclamos h1 {
+.ui_seccion_1_reclamos h1 {
   font-size: 36px;
   text-align: center;
   margin-bottom: 5px;
@@ -2102,7 +2131,7 @@ section.ui_seccion_1_reclamos h1 {
   font-family: 'Fertigo-Pro';
 }
 
-section.ui_seccion_1_reclamos p {
+.ui_seccion_1_reclamos p {
   font-size: 22px;
   text-align: center;
   margin-bottom: 38px;
@@ -2181,6 +2210,8 @@ section.ui_seccion_1_reclamos p {
 .ui_formulario_tabs .row-inputs .item_input{
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 320px;
 }
 
 .ui_formulario_tabs .row-inputs .item_input span{
@@ -2199,7 +2230,8 @@ section.ui_seccion_1_reclamos p {
 
 .ui_formulario_tabs .row-inputs .item_input input{
   border-radius: 30px;
-  width: 320px;
+  width: 100%;
+  max-width: 320px;
   height: 50px;
   border: solid 1px #D7D7D7;
   padding: 16px 20px;
@@ -2211,7 +2243,8 @@ section.ui_seccion_1_reclamos p {
 .ui_formulario_tabs .row-inputs .item_input select{
   font-family: "Open-Sans", sans-serif;
   border-radius: 30px;
-  width: 320px;
+  width: 100%;
+  max-width: 320px;
   height: 50px;
   border: solid 1px #D7D7D7;
   padding: 10px 16px;
@@ -2229,7 +2262,8 @@ section.ui_seccion_1_reclamos p {
 .ui_formulario_tabs .row-inputs .item_input textarea{
   font-family: "Open-Sans", sans-serif;
   border-radius: 30px;
-  width: 689px;
+  width: 100%;
+  max-width: 689px;
   height: 114px;
   border: solid 1px #D7D7D7;
   padding: 16px 20px;
@@ -2302,7 +2336,8 @@ section.ui_seccion_1_reclamos p {
 }
 
 .ui_formulario_tabs .row_buttons .btn_next {
-  width: 193px;
+  width: 100%;
+  max-width: 193px;
   height: 50px;
   border-radius: 30px;
   background-color: #00CFC9;
@@ -2696,9 +2731,14 @@ section.ui_seccion_1_reclamos p {
 /***** END DETALLE RESERVA ******/
 
 /***** CALIFICACION ******/
+
+.ui_seccion_1_comentario{
+  padding: 15px;
+}
 .contenedor.page_calificacion{
-  width: 650px;
-  height: 430px;
+  width: 100%;
+  max-width: 650px;
+  min-height: 430px;
   border-radius: 12px;
   box-shadow: 0px 1px 6px 0px #cecece;
   padding: 14px 66px;
@@ -2731,6 +2771,8 @@ section.ui_seccion_1_reclamos p {
 }
 
 .page_calificacion .row_stars img{
+  width: 100%;
+  max-width: 40px;
   cursor: pointer;
 }
 
@@ -2742,7 +2784,8 @@ section.ui_seccion_1_reclamos p {
   margin-bottom: 15px;
 }
 .page_calificacion .comentario textarea{
-  width: 517px;
+  width: 100%;
+  max-width: 517px;
   height: 134px;
   border-radius: 30px;
   border: solid 1px #D7D7D7;
@@ -2762,7 +2805,8 @@ section.ui_seccion_1_reclamos p {
 }
 
 .page_calificacion .ui_boton_formulario button{
-  width: 142px;
+  width: 100%;
+  max-width: 142px;
   height: 40px;
   background-color: #7FE6E3;
   display: flex;
@@ -3030,19 +3074,6 @@ section.ui_seccion_1_reclamos p {
     left: 100px;
   }
   
-  
-  
-
-
-
-
-
-
-
-
-
-
-
   .ui_seccion_info_adicional{
     margin-top: 100px;
     background-color: #FCF9F4;
@@ -3074,8 +3105,8 @@ section.ui_seccion_1_reclamos p {
     font-size: 32px;
   }
   .ui_marco_titulo img{
-    width: 41px;
-    height: 45px;
+    width: 41px!important;
+    height: 45px!important;
   }
   .ui_seccion_resenas_lyt{
     justify-content: center;
@@ -3306,7 +3337,127 @@ section.ui_seccion_1_reclamos p {
 
 /***** END RESPONSIVE GALERIA ******/
 
+/***** RESPONSIVE DESTINO ******/
+.ui_seccion_top_banner.destino .ui_texto_title_banner{
+  font-size: 44px;
+}
+.ui_seccion_1_destino{
+  margin-bottom: 16px;
+}
+.ui_seccion_1_destino .contenedor img{
+  max-width: 300px;
+  height: 66px;
+}
+.ui_seccion_1_destino p{
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 16px;
+}
 
+.ui_seccion_1_destino .ui_images_seccion_1{
+  flex-direction: column;
+}
+
+.ui_seccion_1_destino .ui_images_seccion_1 .img_mapa{
+  max-width: 192px;
+}
+.ui_seccion_1_destino .ui_images_seccion_1 .img_text{
+  max-width: 274px;
+}
+
+.ui_seccion_2_destino .item_atraccion, .ui_seccion_2_destino .item_atraccion{
+  flex-direction: column!important;
+}
+.item_atraccion .atraccion_imagen img{
+  max-width: 320px;
+}
+
+.ui_seccion_2_destino .ui_marco_titulo{
+  margin-top: 0px;
+  margin-bottom: 24px;
+}
+
+.ui_seccion_2_destino .ui_marco_titulo h2{
+  font-size: 22px;
+}
+
+.ui_seccion_2_destino .item_atraccion .atraccion_informacion h2{
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 14px;
+}
+.ui_seccion_2_destino .item_atraccion .atraccion_informacion p:last-child{
+  margin-top: 14px;
+}
+/***** END RESPONSIVE DESTINO ******/
+
+
+/***** RESPONSIVE CALIFICACION ******/
+.contenedor.page_calificacion{
+  box-shadow: none;
+  padding: 0 20px;
+}
+.page_calificacion h2{
+  font-size: 16px;
+}
+
+.page_calificacion .row_stars img{
+  max-width: 36px;
+  height: 36px;
+}
+.page_calificacion .row_stars{
+  gap: 23px;
+}
+.page_calificacion .ui_boton_formulario button{
+  max-width: 332px;
+}
+
+/***** END RESPONSIVE CALIFICACION ******/
+
+/***** RESPONSIVE RECLAMOS ******/
+
+.ui_formulario_reclamo .ui_marcador .item_marcador{
+  width: 29px;
+  height: 29px;
+  font-size: 17px;
+}
+.ui_formulario_reclamo .ui_marcador .separador{
+  width: 39px;
+  border: solid 1px #D5B470;
+}
+
+.ui_seccion_1_reclamos h1 {
+  font-size: 26px;
+}
+.ui_seccion_1_reclamos p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.ui_formulario_reclamo{
+  padding: 20px;
+  box-shadow: none;
+}
+
+.ui_formulario_tabs .row-inputs{
+  flex-direction: column;
+  gap: 40px;
+}
+
+.ui_formulario_reclamo h3{
+  font-size: 16px;
+}
+.ui_formulario_tabs .row_buttons .btn_next{
+  max-width: 335px;
+}
+.ui_formulario_tabs .row_buttons{
+  flex-direction: column-reverse;
+  gap: 25px;
+}
+.ui_formulario_tabs .row_buttons .btn_form button {
+  width: 335px;
+}
+/***** END RESPONSIVE RECLAMOS ******/
 }
 
 
