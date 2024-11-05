@@ -110,9 +110,9 @@ $(".ui_info_habitacion_precio .ui_item_precio").click(function(){
     $(this).parent().find(".ui_btn_item_reservar_habitacion").addClass("activo")
 })
 
-$(".ui_listado_habitaciones .ui_info_habitacion .ui_ver_mas").click(function (){
+/*$(".ui_listado_habitaciones .ui_info_habitacion .ui_ver_mas").click(function (){
     $(".ui_fondo_modal.ui_detalle_reserva").fadeIn();
-})
+})*/
 
 $(".ui_btn_item_reservar_habitacion.activo").click(function (){
     $(".ui_popup.servicios").fadeIn();

@@ -24,15 +24,15 @@ export default  async function Nosotros() {
   let requestAPI_phone: any = await fetch(url_phonecode);
   requestAPI_phone = await requestAPI_phone.json();
   let phoneCode: PhoneCodeResponse[] = requestAPI_phone.payload["es"];
-  
+
   return (
     <>
         <HeaderSitev2 />
-        
+
         <section className="ui_seccion_1_detalle">
           <div className="contenedor page_detalle">
             <h1>{contenidoDetalle.title_page}</h1>
-            
+
 
             <div className="ui_box_container">
               <div className="box_informacion_reserva">
@@ -91,7 +91,7 @@ export default  async function Nosotros() {
                 </div>
 
                 <div className="line_separator"></div>
-                
+
                 <div className="info_cupon">
                   <div className="cupon_title">
                     <h2>{contenidoDetalle.info_reserva.label_cupon}</h2>
@@ -120,7 +120,7 @@ export default  async function Nosotros() {
                 <div className="box_informacion_huesped">
                 <form className="ui_formulario_pago" action="" >
                   <h3>{contenidoDetalle.info_form.title}</h3>
-                  
+
                   <div className="row-inputs">
                     <div className="item_input">
                       <span>{contenidoDetalle.info_form.label_lastname_1}</span>
@@ -152,7 +152,7 @@ export default  async function Nosotros() {
                       <p></p>
                     </div>
                   </div>
-                  
+
                   <div className="row-inputs">
                     <div className="item_input">
                       <span>{contenidoDetalle.info_form.label_email}</span>
@@ -207,35 +207,22 @@ export default  async function Nosotros() {
                 </form>
                 </div>
 
-                
+
                 <div className="ui_advertencia">
                   <Image width={40} height={40} src="/img/icon_info_checkout.png" alt="icon-checkout"/>
                   <p>{contenidoDetalle.info_advertencia}</p>
                 </div>
               </div>
 
-              
+
             </div>
 
-            
+
 
           </div>
         </section>
 
-        {/* <!-- MODAL CONFIRMACION PAGO --> */}
-        <div className="ui_fondo_modal ui_popup detalle_reserva">
-                <div className="ui_marco_modal">
-                    <div className="ui_contenido_modal">
-                        <div className="ui_close_modal"></div>
-                        <Image className="img_fondo_left" width={102} height={106} src="/img/adorno_popup_superior.png" alt="icon-popup" />
-                        <Image width={68} height={68} src="/img/icon_popup.png" alt="icon-popup" />
-                        <h1 dangerouslySetInnerHTML={{ __html:contenidoDetalle.popup.title}}></h1>
-                        <h2 dangerouslySetInnerHTML={{ __html:contenidoDetalle.popup.subtitle}}></h2>
-                        <Image className="img_fondo_right" width={102} height={106} src="/img/adorno_popup_inferior.png" alt="icon-popup" />
-                    </div>
-                </div>
-            </div>
-            {/* <!-- END MODAL CONFIRMACION PAGO--> */}
+
 
 
 

@@ -344,7 +344,7 @@ cursor: pointer;
   left: 0px;
   top: 0px;
   z-index: 1000;
-  display: none;
+  /*display: none;*/
 }
 .ui_marco_modal{
   height: 100%;
@@ -626,7 +626,7 @@ padding-right: 23px;
   font-size: 16px;
   color: #00CFC9;
   font-weight: 600;
-  
+
 }
 
 /****** END HOME ******/
@@ -1873,7 +1873,8 @@ font-weight: 600;
 }
 
 .ui_fondo_modal.ui_popup.servicios .ui_marco_modal .ui_contenido_modal {
-  width: 720px;
+  width: 100%;
+  max-width: 720px;
   min-height: 510px;
 }
 
@@ -1906,7 +1907,7 @@ font-weight: 600;
   height: 20px;
   border-radius: 2px;
   border: solid #D7D7D7 1px;
-}  
+}
 
 .ui_popup.servicios .ui_marco_modal .ui_contenido_modal span{
   font-size: 20px;
@@ -2256,7 +2257,7 @@ font-weight: 600;
   background-image: url('/img/select_arrow.png');
   background-repeat: no-repeat;
   background-position: right 22px center;
-  
+
 }
 
 .ui_formulario_tabs .row-inputs .item_input textarea{
@@ -2927,7 +2928,7 @@ font-weight: 600;
     width: 240px;
     justify-content: space-between;
   }
-  
+
 
   .ui_barra_busqueda .ui_form_busqueda .item_input_form .label h2{
     font-size: 14px;
@@ -2942,7 +2943,7 @@ font-weight: 600;
     font-size: 14px;
     width: 95px;
   }
-  
+
   .ui_barra_busqueda .ui_form_busqueda .ui_separator_input{
     margin: 0;
     width: 263px;
@@ -3061,7 +3062,7 @@ font-weight: 600;
     left: 8px;
     position: relative;
   }
-  
+
   .ui_seccion_4_home_right .complemento_mobile.left{
     width: 94px;
     height: 97px;
@@ -3073,7 +3074,7 @@ font-weight: 600;
     position: absolute;
     left: 100px;
   }
-  
+
   .ui_seccion_info_adicional{
     margin-top: 100px;
     background-color: #FCF9F4;
@@ -3083,7 +3084,7 @@ font-weight: 600;
     font-size: 24px;
     width: 224px;
   }
-  
+
   .ui_seccion_info_adicional_lyt {
     flex-direction: column;
     gap: 30px;
@@ -3122,14 +3123,14 @@ font-weight: 600;
     max-width: 380px;
   }
   .ui_seccion_top_banner{
-   height: 260px; 
+   height: 260px;
    padding-top: 115px;
   }
   .ui_texto_title_banner{
     font-size: 36px;
     max-width: 254px;
     line-height: 47px;
-    
+
   }
   .ui_seccion_1_nosotros h2{
     font-size: 16px;
@@ -3199,7 +3200,7 @@ font-weight: 600;
     position: relative;
     left: 0;
   }
-  
+
   .row_seccion_sostenibilidad.imagenes .img_sostenibilidad_right{
     max-width: 273px;
     left: 135px;
@@ -3332,7 +3333,7 @@ font-weight: 600;
 .ui_carrusel_item_galeria.swiper-slide{
   width: 100%;
   max-width: 240px;
-  height: 360px; 
+  height: 360px;
 }
 
 /***** END RESPONSIVE GALERIA ******/
