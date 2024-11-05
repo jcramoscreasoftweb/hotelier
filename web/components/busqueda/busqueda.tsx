@@ -20,7 +20,7 @@ export const ListadoTipoHabitacion = async () => {
       <>
         {tipoHabitacion.map((item:any)=> {
             return(
-                <ItemHabitacionBusqueda item={item} contenidoBusqueda={contenidoBusqueda}></ItemHabitacionBusqueda>
+                <ItemHabitacionBusqueda key={item.id_tp_room} item={item} contenidoBusqueda={contenidoBusqueda}></ItemHabitacionBusqueda>
             );
 
 
