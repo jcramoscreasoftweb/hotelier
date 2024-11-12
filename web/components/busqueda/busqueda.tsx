@@ -6,12 +6,12 @@ import { ItemHabitacionBusqueda } from "./itemHabitacionBusqueda";
 
 export const ListadoTipoHabitacion = async () => {
 
-    let url = "https://creasoft.com.pe/hotelier_api/pages/search-typerooms.json";
+    let url = "https://creasoft.com.pe/hotelier_api/pages/search-typerooms.json?V4";
     let contenido = await fetch(url);
     let data = await contenido.json();
     let tipoHabitacion: BusquedaResponse[] = data.payload["es"];
 
-    let url_page = "https://creasoft.com.pe/hotelier_api/pages/page-busqueda.json";
+    let url_page = "https://creasoft.com.pe/hotelier_api/pages/page-busqueda.json?v3";
     let requestAPI_page: any = await fetch(url_page);
     requestAPI_page = await requestAPI_page.json();
     let contenidoBusqueda: PageBusquedaResponse = requestAPI_page.payload["es"];

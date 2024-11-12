@@ -3,7 +3,7 @@ import {
   FooterSite,
   HeaderSitev2,
 } from "@/components";
-
+import Script from 'next/script';
 import {DetalleReservaResponse, PhoneCodeResponse} from"@/interfaces";
 import Image from "next/image";
 import Link from "next/link";
@@ -28,7 +28,17 @@ export default  async function Nosotros() {
   return (
     <>
         <HeaderSitev2 />
-
+        {/* Script en el head */}
+        <Script
+                src="https://js.culqi.com/checkout-js"
+                //strategy="beforeInteractive" // Cargar en el <head>
+                //onLoad={() => console.log("Script en el <head> cargado")}
+            />
+              <Script
+                src="/js/pago.js"
+                //strategy="beforeInteractive" // Cargar en el <head>
+                //onLoad={() => console.log("Script en el <head> cargado")}
+            />
         <section className="ui_seccion_1_detalle">
           <div className="contenedor page_detalle">
             <h1>{contenidoDetalle.title_page}</h1>
@@ -200,7 +210,7 @@ export default  async function Nosotros() {
 
                   <div className="row_buttons">
                     <div className="btn_form active">
-                      <button>{contenidoDetalle.info_form.label_boton_pagar}</button>
+                      <button id="pagar-culqui" type="button">{contenidoDetalle.info_form.label_boton_pagar}</button>
                     </div>
 
                   </div>

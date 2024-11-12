@@ -12,7 +12,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 
 export default async function Home() {
-  let url = "https://creasoft.com.pe/hotelier_api/pages/page-home.json";
+  let url = "https://creasoft.com.pe/hotelier_api/pages/page-home.json?v45";
   let requestAPI: any = await fetch(url);
   requestAPI = await requestAPI.json();
   let contenidoPortada: PortadaResponse = requestAPI.payload["es"];
@@ -39,7 +39,7 @@ export default async function Home() {
         </div>
         <div className="ui_marco_opciones_home">
           <div className="ui_barra_busqueda">
-          <form className="ui_form_busqueda" action="" method="get">
+          <form className="ui_form_busqueda" action="busqueda-habitaciones" method="get">
                   <div className="item_input_form">
                     <div className="label">
                       <Image width={18} height={20} src="/img/icon_date.png" alt="icon-search"></Image>
@@ -176,7 +176,7 @@ export default async function Home() {
             <div className="ui_contenido">
               {contenidoPortada.services_section.items.map((item) => {
                 return (
-                  
+
                   <ItemServicio
                     key={item.title}
                     titulo={item.title}

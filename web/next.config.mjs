@@ -4,6 +4,10 @@ const nextConfig = {
         remotePatterns:[
             {
                 protocol:"https",
+                hostname:"sashahotel.s3.us-east-2.amazonaws.com"
+            },
+            {
+                protocol:"https",
                 hostname:"sashahotelhotelier.s3.us-east-2.amazonaws.com"
             },
             {
