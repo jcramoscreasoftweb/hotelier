@@ -1,0 +1,3500 @@
+/****** FUENTES *******/
+
+@font-face {
+  font-family: "Open-Sans";
+  src: url(/fonts/OpenSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Fertigo-Pro";
+  src: url(/fonts/fertigo-pro-regular.otf);
+}
+
+/**** END FUENTES *****/
+
+/*** RESET CSS ***/
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*** END RESET ****/
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+a, a:hover{
+  color: inherit;
+  text-decoration: none;
+}
+img{
+  vertical-align: top;
+}
+button, input, select, textarea{
+  outline: none;
+}
+textarea{
+  font-family: "Open-Sans", sans-serif;
+}
+
+body{
+-webkit-font-smoothing: antialiased;
+opacity: 0.99;
+-moz-osx-font-smoothing: grayscale;
+font-family: "Open-Sans";
+font-optical-sizing: auto;
+text-transform: initial;
+font-style: normal;
+}
+*{
+-webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+
+/**** GENERALES *****/
+.ui_header-site{
+position: absolute;
+width: 100%;
+top: 0px;
+left: 0px;
+}
+
+.ui_header-site.page_busqueda{
+  position: relative;
+}
+
+.ui_logo_site{
+  padding-top: 7px;
+  padding-bottom: 7px;
+  text-align: center;
+}
+
+.ui_header-site.page_busqueda .ui_nav_site ul{
+  background-color: #D5B470;
+}
+
+
+.ui_nav_site ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 62px;
+  padding-top: 21px;
+  padding-bottom: 21px;
+  background-color: rgba(0, 0, 0, 0.5);
+  min-height: 60px;
+}
+
+.ui_nav_site ul li{
+  font-size:16px;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Fertigo-Pro";
+}
+.ui_header-site.page_busqueda .ui_nav_site ul li.ui_btn_reserva a{
+  background-color: white;
+  color: #D5B470;
+}
+.ui_nav_site ul li.ui_btn_reserva a{
+background-color: #00CFC9;
+padding:9px 27px;
+border-radius: 20px;
+font-family: "Open-Sans", sans-serif;
+font-weight: 600;
+}
+
+.ui_nav_site .nav_mobile{
+  justify-content: space-between;
+}
+
+.nav_mobile {
+  padding: 20px 10px;
+}
+
+.ui_content_navmobile {
+  background-color: white;
+  width: 100%;
+  z-index: 10000;
+  position: absolute;
+  top: 0;
+  min-height: 500px;
+  box-shadow: 0px 0px 5px 5px #00000030;
+  text-align: center;
+  padding-top: 5px;
+  display: none;
+}
+
+.ui_content_navmobile .ui_franja_opciones {
+  background-color: #D5B470;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 15px;
+  margin-bottom: 10px;
+  margin-top: 8px;
+}
+
+.ui_franja_opciones .ui_btn_reserva {
+  background-color: white;
+  color: #D5B470;
+  width: 148px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  border-radius: 23px;
+}
+
+.ui_content_navmobile .ui_nav_pages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #D2AD62;
+  font-size: 18px;
+  font-family: "Fertigo-Pro";
+  text-transform: uppercase;
+  margin-bottom: 60px;
+}
+
+.ui_content_navmobile .ui_nav_pages a{
+  width: 300px;
+ padding: 26px 0px 26px 0px;
+ border-bottom: solid 1px #D7D7D7;
+}
+
+.ui_content_navmobile .ui_nav_pages a:last-child{
+  border: none;
+}
+
+.contenedor{
+  width: 100%;
+  max-width: 1250px;
+  margin:0 auto;
+}
+
+.ui_footer_site{
+  background-color: #D5B470;
+
+  padding-bottom: 30px;
+}
+.ui_derechos_reservados{
+  font-size: 14px;
+  text-align: center;
+  margin-top: 32px;
+  color: white;
+}
+
+.ui_footer_site .contenedor{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 70px;
+}
+
+.ui_info_top, .ui_info_bottom{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.ui_info_top div{
+  min-height: 140px;
+}
+.ui_info_top ul li{
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 17px;
+  text-align: center;
+}
+.ui_info_bottom{
+  border-top: 1px solid white;
+  padding-top: 26px;
+}
+.ui_info_bottom div{
+  text-align: center;
+  color: white;
+  line-height: 18px;
+}
+.ui_info_col1{
+  width: 220px;
+}
+.ui_info_col2{
+  width: 220px;
+}
+.ui_info_col3{
+  width: 300px;
+}
+.ui_info_col4{
+  margin-left: 40px;
+  text-align: center;
+}
+.ui_info_col4 p{
+  font-size:16px ;
+  margin-bottom: 16px;
+  color: white;
+  line-height: 18px;
+}
+
+.ui_info_col4.social_media {
+  display: flex;
+  gap: 20px;
+}
+
+.img-full{
+  width: 100%;
+}
+
+
+.btn-anterior.slick-arrow{
+position: absolute;
+left: -40px;
+top: 50%;
+margin-top: -9.5px;
+z-index: 1000;
+width: 19px;
+height: 32px;
+background-image: url(/img/arrow_left.png);
+background-size: 100% 100%;
+cursor: pointer;
+}
+.btn-siguiente.slick-arrow{
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  margin-top: -9.5px;
+  z-index: 1000;
+  width: 19px;
+height: 32px;
+background-image: url(/img/arrow_right.png);
+background-size: 100% 100%;
+cursor: pointer;
+}
+
+.ui_icono_whatasapp{
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  bottom: 20px;
+  right: 50px;
+}
+
+
+.no-position{
+  position: initial!important;
+}
+
+.ui_fondo_modal{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 1000;
+  /*display: none;*/
+}
+.ui_marco_modal{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ui_close_modal{
+  width: 44px;
+  height: 44px;
+  background-image: url(/img/icon_close.png);
+  background-size: 100% 100%;
+  position: absolute;
+  right: -22px;
+  top: -22px;
+  cursor: pointer;
+}
+/**** END GENERALES ****/
+
+
+
+/***** HOME ******/
+
+.ui_seccion_top_home{
+  width: 100%;
+  height: 640px;
+  position: relative;
+  background-image: url(/img/inicio_banner.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 180px;
+  padding-top: 153px;
+}
+
+.ui_texto_intro_home{
+  font-size: 60px;
+  line-height: 67px;
+  color: white;
+  font-family: "Fertigo-Pro";
+  text-align: center;
+}
+.ui_marco_opciones_home{
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  bottom: 68px;
+  display: flex;
+  justify-content: center;
+}
+.ui_barra_busqueda{
+  width: 1075px;
+  height: 110px;
+  border-radius: 60px;
+  background-color: white;
+ /* position: absolute;
+  bottom: 64px;
+  left: 50%;
+  margin-left: -580px;*/
+}
+
+
+.ui_seccion_2_home{
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+.ui_lyt_seccion_2_home{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ui_seccion_2_home_info{
+  width: 45%;
+
+}
+.ui_seccion_2_home_info h2{
+  font-size: 57px;
+  font-family: "Fertigo-Pro";
+  margin-bottom: 35px;
+  color: #512B17;
+}
+.ui_seccion_2_home_info p{
+  font-size: 20px;
+  margin-bottom: 30px;
+  line-height: 1.4;
+  color: #454545;
+  text-align: justify;
+}
+.ui_seccion_2_home_img{
+width: 45%;
+}
+.ui_seccion_2_home_img img{
+  width: 100%;
+  max-width: 540px;
+  height: auto;
+}
+.ui_seccion_3_home .contenedor{
+ padding-left: 58px;
+}
+.ui_seccion_3_home{
+  background-color:#FCF9F4;
+  padding-top: 95px;
+  padding-bottom: 63px;
+}
+.ui_carousel_beneficios{
+  position: relative;
+}
+
+
+.ui_item-beneficio{
+  width: 100%;
+  max-width: 355px;
+}
+.ui_carousel_beneficios .ui_item-beneficio img{
+  width: 100%;
+  max-width: 355px;
+}
+.ui_carousel_beneficios .ui_item-beneficio .ui_titulo ,
+.ui_seccion_3_home .ui_titulo{
+  font-size: 22px;
+  color: #512B17;
+  text-align: center;
+  font-weight: 800;
+  margin-top: 16px;
+}
+.ui_seccion_4_home .contenedor{
+
+  max-width: 950px;
+  height: 700px;
+  position: relative
+}
+.ui_seccion_4_home_left img{
+  width: 100%;
+  max-width: 481px;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  z-index: 100;
+}
+.ui_seccion_4_home_right img{
+  width: 100%;
+  max-width: 533px;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  z-index: 50;
+}
+.ui_seccion_4_home_left .complemento{
+  width: 219px;
+  position: absolute;
+  bottom: -93px;
+  left: -90px;
+}
+.ui_seccion_4_home_right .complemento{
+  width: 100%;
+  max-width: 370px;
+  position: absolute;
+  top: 0px;
+  right: -190px;
+
+}
+
+.ui_seccion_info_adicional .ui_titulo
+{
+  font-size: 28px;
+  color:#512B17;
+  font-family: "Fertigo-Pro";
+  text-align: center;
+}
+
+.ui_contenido{
+  display: flex;
+  ;
+}
+.ui_contenido .ui_item{
+  display: flex;
+  width: 272px;
+  height: 132px;
+  background-color: white;
+  border-radius: 12px;
+  margin-left: 32px;
+  padding: 17px 20px;
+  align-items: center;
+}
+.ui_contenido .ui_item h3{
+  font-size: 16px;
+  color:#512B17;
+  font-weight: 800;
+  margin-bottom: 10px;
+
+}
+.ui_contenido .ui_item p{
+  font-size:16px;
+  color:#454545;
+  line-height: 1.2;
+  width: 180px;
+
+}
+.ui_seccion_info_adicional_lyt{
+  display: flex;
+  background-color: #FCF9F4;
+  border-radius: 20px;
+  padding: 43px 35px;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.ui_seccion_info_adicional{
+  margin-top: 140px;
+}
+
+.ui_seccion_resenas{
+  padding-bottom: 79px;
+}
+.ui_seccion_resenas_lyt{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 50px;
+}
+.ui_marco_titulo{
+  text-align: center;
+  margin-top: 42px;
+  margin-bottom: 67px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.ui_marco_titulo h2{
+  font-size: 40px;
+  font-family: "Fertigo-Pro";
+  color:#512B17;
+}
+.ui_item_resena{
+  border-radius: 20px;
+  width: 384px;
+  box-shadow: 0px 1px 6px 0px #cecece;
+  min-height: 220px;
+  position: relative;
+}
+
+.ui_item_resena .ui_estrellas{
+  margin-bottom: 15px;
+  padding-left: 23px;
+  padding-right: 23px;
+  margin-top: 25px;
+  display: flex;
+  gap: 10px;
+}
+
+.ui_item_resena .ui_mensaje{
+font-size: 13px;
+line-height: 17px;
+color:#454545;
+font-weight: 300;
+margin-bottom: 14px;
+padding-left: 23px;
+padding-right: 23px;
+}
+.ui_item_resena .ui_usuario{
+  font-size: 14px;
+  color: #D5B470;
+  background-color: #FCF9F4;
+  padding: 13px 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.ui_mas_resenas{
+  margin-top: 53px;
+  text-align: right;
+  font-size: 16px;
+  color: #00CFC9;
+  font-weight: 600;
+
+}
+
+/****** END HOME ******/
+
+/***** NOSOTROS ******/
+
+.ui_seccion_top_banner{
+  width: 100%;
+  height: 300px;
+  position: relative;
+  background-image: url(/img/banner_nosotros.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 153px;
+}
+
+.ui_texto_title_banner{
+  font-size: 50px;
+  line-height: 67px;
+  color: white;
+  font-family: "Fertigo-Pro";
+  text-align: center;
+  width: 998px;
+}
+.contenedor.page_nosotros{
+  max-width: 1215px;
+}
+.contenedor.page_nosotros.valores {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ui_seccion_1_nosotros{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: #454545;
+  padding: 0px 33px 0px 33px;
+}
+
+.ui_seccion_1_nosotros h2{
+  text-align: justify;
+  font-size: 20px;
+  font-family: "Open-Sans", sans-serif;
+  line-height: 1.5;
+  line-height: normal;
+}
+
+.ui_seccion_2_nosotros {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 87px;
+}
+
+.ui_seccion_2_nosotros .item_valor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 500px;
+}
+
+.item_valor .valor_left{
+  position: absolute;
+  left: 170px;
+  z-index: 100;
+}
+
+.item_valor .valor_right{
+  position: absolute;
+  right: 15%;
+  z-index: 50;
+}
+
+.item_valor .valor_right .item_valor_image img{
+  width: 100%;
+  max-width: 500px;
+}
+
+.item_valor .valor_right.important{
+  position: absolute;
+  right: 15%;
+  z-index: 150;
+}
+
+.item_valor .item_valor_text {
+  color: white;
+  width: 400px;
+  height: 400px;
+  text-align: center;
+  background-color: #D5B470;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 35px;
+}
+
+.item_valor .item_valor_text h1{
+  font-size: 44px;
+  margin-bottom: 25px;
+  font-family: "Fertigo-Pro";
+}
+
+.item_valor .item_valor_text p{
+  font-size: 22px;
+  font-family: "Open-Sans", sans-serif;
+  line-height: normal;
+}
+
+.ui_seccion_3_nosotros{
+  background-color: #FCF9F4;
+  padding-top: 40px;
+}
+
+.ui_seccion_3_nosotros .title_seccion_3{
+  color: #512B17;
+  font-size: 44px;
+  margin-bottom: 42px;
+  text-align: center;
+  font-family: "Fertigo-pro";
+}
+
+.seccion_3_items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  row-gap: 30px;
+  margin-bottom: 100px;
+}
+
+.seccion_3_items .item_beneficio {
+  width: 350px;
+  text-align: center;
+}
+
+.seccion_3_items .item_beneficio img{
+  margin-left: -45px;
+}
+.seccion_3_items .item_beneficio h2{
+  color: #512B17;
+  font-size: 20px;
+  margin-top: 35px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.seccion_3_items .item_beneficio p{
+  color: #512B17;
+  font-size: 16px;
+  line-height: 1.2;
+}
+/***** END NOSOTROS ******/
+
+
+/***** POLITICAS SOSTENIBILIDAD ******/
+.ui_seccion_top_banner.sostenibilidad{
+  background-image: url(/img/banner_sostenibilidad.png);
+}
+
+.contenedor.page_sostenibilidad{
+  max-width: 1215px;
+}
+
+.ui_seccion_1_sostenibilidad{
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.ui_seccion_1_sostenibilidad p{
+  font-size: 20px;
+  line-height: 1.2;
+  text-align: justify;
+}
+
+.ui_seccion_2_sostenibilidad .ui_marco_titulo{
+  margin-bottom: 20px;
+}
+
+.ui_seccion_2_sostenibilidad .row_seccion_sostenibilidad {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 50px;
+}
+
+.row_seccion_sostenibilidad .row_information {
+  width: 100%;
+  max-width: 475px;
+}
+
+.row_seccion_sostenibilidad .row_image img{
+  width: 100%;
+  max-width: 460px;
+  height: 460px;
+}
+
+.row_seccion_sostenibilidad .row_information h2{
+  color: #D2AD62;
+  margin-bottom: 25px;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Open-Sans", sans-serif;
+}
+
+.row_seccion_sostenibilidad .row_information ul{
+  color: #454545;
+  margin-bottom: 16px;
+  text-align: justify;
+  list-style: disc;
+  line-height: 1.2;
+}
+
+.row_seccion_sostenibilidad .row_information ul:last-child{
+  margin-bottom: 0px;
+}
+
+.ui_seccion_3_sostenibilidad .row_seccion_sostenibilidad{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 50px;
+}
+
+.row_seccion_sostenibilidad.imagenes{
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 500px;
+}
+
+.row_seccion_sostenibilidad.imagenes .img_sostenibilidad_left{
+  width: 100%;
+  max-width: 486px;
+  height: auto;
+  position: absolute;
+  left: 180px;
+  top: 0;
+}
+
+.row_seccion_sostenibilidad.imagenes .img_sostenibilidad_right{
+  width: 100%;
+  max-width: 512px;
+  height: auto;
+  position: absolute;
+  right: 8%;
+  top: 80px;
+}
+/***** END POLITICAS SOSTENIBILIDAD ******/
+
+/***** POLITICAS PRIVACIDAD ******/
+.ui_seccion_top_banner.privacidad{
+  background-image: url(/img/banner_politicas_privacidad.png);
+}
+
+.ui_seccion_1_privacidad {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: #454545;
+  font-size: 18px;
+  text-align: justify;
+  line-height: 1.2;
+  padding: 0px 40px;
+}
+
+.ui_seccion_1_privacidad p{
+  margin-bottom: 40px;
+    line-height: 1.2;
+}
+
+.ui_seccion_1_privacidad ul{
+  list-style: disc;
+  padding-left: 25px;
+  margin-bottom: 30px;
+}
+.ui_seccion_1_privacidad li{
+  margin-bottom: 15px;
+}
+.ui_seccion_1_privacidad li:last-child{
+  margin-bottom: 0px;
+}
+
+.ui_seccion_1_privacidad span{
+  font-weight: 600;
+}
+/***** END POLITICAS PRIVACIDAD ******/
+
+/***** DESTINO ******/
+.ui_seccion_top_banner.destino{
+  background-image: url(/img/banner_destino.png);
+}
+
+.ui_seccion_1_destino {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 30px;
+  color: #454545;
+}
+
+.ui_seccion_1_destino .contenedor {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ui_seccion_1_destino .contenedor img{
+  width: 100%;
+  max-width: 598px;
+  height: 132px;
+}
+.ui_seccion_1_destino .ui_images_seccion_1 .img_mapa{
+  width: 100%;
+  max-width: 343px;
+  height: auto;
+}
+.ui_seccion_1_destino .ui_images_seccion_1 .img_text{
+  width: 100%;
+  max-width: 398px;
+  height: auto;
+}
+
+.ui_seccion_1_destino p{
+  margin-top: 36px;
+  margin-bottom: 36px;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.ui_seccion_1_destino .ui_images_seccion_1{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 810px;
+  justify-content: space-around;
+}
+
+.ui_seccion_2_destino{
+  padding: 21px;
+}
+
+.ui_seccion_2_destino .item_atraccion{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 50px;
+}
+.ui_seccion_2_destino .item_atraccion.reverse{
+  flex-direction: row-reverse;
+}
+
+.ui_seccion_2_destino .item_atraccion .atraccion_informacion{
+  width: 100%;
+  max-width: 540px;
+}
+
+.ui_seccion_2_destino .item_atraccion .atraccion_informacion h2{
+  color: #D2AD62;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.ui_seccion_2_destino .item_atraccion .atraccion_informacion p{
+  color: #454545;
+  font-size: 16px;
+  margin-bottom: 27px;
+  text-align: justify;
+  line-height: 1.2;
+}
+.ui_seccion_2_destino .item_atraccion .atraccion_informacion p:last-child{
+ margin-top: 27px;
+}
+
+.ui_seccion_2_destino .item_atraccion .atraccion_informacion span{
+  margin-left: 15px;
+  font-weight: 500;
+}
+
+.item_atraccion .atraccion_imagen img{
+  width: 100%;
+  max-width: 530px;
+  height: auto;
+}
+
+.ui_seccion_1_destino .ui_marco_titulo{
+  margin-bottom: 0px;
+}
+
+/***** END DESTINO ******/
+
+/***** GALERIA ******/
+.ui_seccion_top_banner.destino{
+  background-image: url(/img/banner_galeria.png);
+}
+
+.ui_seccion_1_galeria{
+  margin-top: 45px;
+  margin-bottom: 45px;
+  text-align: center;
+}
+
+.ui_seccion_1_galeria p{
+  color: #454545;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.ui_seccion_2_galeria .ui_marco_titulo{
+  margin-bottom: 0px;
+}
+
+.ui_seccion_2_galeria .ui_row_item_galeria:last-child{
+  margin-bottom: 60px;
+}
+
+.ui_seccion_2_galeria p{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 45px;
+  color: #454545;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.slick-dots {
+  margin: 0 auto;
+  width: max-content;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  margin-top: 20px;
+  padding-right: 40px;
+}
+
+.slick-dots li button {
+  appearance: none;
+  -webkit-appearance: none;
+  display: none;
+}
+
+.slick-dots li {
+  cursor: pointer;
+  background: #ffff;
+  border: 4px solid #00CFC9;
+  border-radius: 100%;
+  margin: 5px;
+  width: 25px;
+  height: 25px;
+}
+
+.slick-dots li.slick-active {
+  background: #00CFC9;
+}
+
+.ui_carrusel_item_galeria .ui_item_slider img{
+  cursor: pointer;
+}
+/***** END GALERIA ******/
+
+/***** CONTACTO ******/
+.ui_seccion_top_banner.destino{
+  background-image: url(/img/banner_contacto.png);
+}
+
+.ui_seccion_1_contacto .contenedor{
+  max-width: 1155px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ui_seccion_1_contacto{
+  margin-top: 52px;
+  margin-bottom: 70px;
+}
+
+.ui_seccion_1_contacto .ui_seccion_informacion{
+  width: 100%;
+  max-width: 450px;
+  position: relative;
+  z-index: 100;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ui_seccion_1_contacto .ui_seccion_informacion .ui_image_top{
+  position: absolute;
+  top: -53px;
+  left: 5px;
+  z-index: 50;
+}
+.ui_seccion_1_contacto .ui_seccion_informacion .ui_image_bottom{
+  position: absolute;
+  z-index: 50;
+  bottom: 5px;
+  right: 17px;
+}
+
+.ui_seccion_1_contacto .ui_seccion_informacion .item_info{
+  width: 328px;
+  height: 150px;
+  z-index: 100;
+  border-radius: 12px;
+  background-color: #F7F1E5;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 28px;
+}
+.ui_seccion_1_contacto .ui_seccion_informacion .item_info:last-child{
+  margin-bottom: 0px;
+}
+.ui_seccion_informacion .item_info h2{
+  color: #512B17;
+  font-size: 24px;
+  font-family: "Fertigo-Pro";
+  margin-bottom: 13px;
+}
+
+.ui_seccion_informacion .item_info p{
+  font-family: "Open-Sans", sans-serif;
+  font-size: 20px;
+}
+
+.ui_seccion_1_contacto .ui_seccion_form{
+  width: 100%;
+  max-width: 645px;
+  min-height: 742px;
+  font-family: "Open-Sans", sans-serif;
+  box-shadow: 0px 1px 6px 0px #cecece;
+  border-radius: 10px;
+  padding: 22px 64px;
+}
+
+.ui_seccion_1_contacto .ui_seccion_form h2{
+  color: #512B17;
+  font-size: 26px;
+  font-family: "Fertigo-Pro";
+  margin-bottom: 8px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.ui_seccion_1_contacto .ui_seccion_form p{
+  color: #454545;
+  font-size: 16px;
+  margin-bottom: 27px;
+  text-align: center;
+}
+
+.ui_seccion_form .ui_input_form {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.ui_seccion_form .ui_input_form:last-child{
+  margin-bottom: 0px;
+}
+
+.ui_seccion_form .ui_input_form span{
+  font-weight: 600;
+}
+
+.ui_seccion_form .ui_input_form input{
+  width: 100%;
+  height: 50px;
+  padding: 15px 20px;
+  border-radius: 30px;
+  border: solid 1px #D7D7D7;
+  outline: none;
+  font-size: 16px;
+  font-family: "Open-Sans";
+}
+
+.ui_seccion_form .ui_input_form textarea{
+  width: 100%;
+  height: 113px;
+  border-radius: 30px;
+  border: solid 1px #D7D7D7;
+  outline: none;
+  resize: none;
+  overflow: hidden;
+  padding: 15px 20px;
+  font-family: "Open-Sans", sans-serif;
+  font-size: 16px;
+}
+
+.ui_seccion_form .ui_input_form button{
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Open-Sans", sans-serif;
+  width: 100%;
+  height: 50px;
+  color: #ffff;
+  background-color: #00CFC9;
+  border: none;
+  border-radius: 30px;
+  outline: none;
+
+}
+
+.ui_seccion_form .ui_input_form .ui_selector_input{
+  display: flex;
+  width: 100%;
+}
+.ui_seccion_form .ui_input_form .ui_selector_input input{
+  border-radius: 0px 30px 30px 0px;
+  max-width: 335px;
+}
+
+.ui_seccion_form .ui_input_form .ui_selector_input select{
+  width: 100%;
+  font-family: "Open-Sans";
+  font-size: 16px;
+  max-width: 182px;
+  height: 50px;
+  padding: 10px 20px;
+  border-radius: 30px 0px 0px 30px;
+  border: solid 1px #D7D7D7;
+  border-right: 0px;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('/img/select_arrow.png');
+  background-repeat: no-repeat;
+  background-position: right 22px center;
+}
+
+.ui_seccion_2_contacto .ui_marco_titulo{
+ margin-bottom: 30px;
+}
+
+.ui_seccion_2_contacto .ui_iframe_map iframe{
+  background-color: grey;
+  border-radius: 12px;
+  width: 100%;
+  height: 440px;
+  margin-bottom: 40px;
+}
+
+  /* ESTILO BASE POPUPS */
+.ui_fondo_modal.ui_popup .ui_marco_modal .ui_contenido_modal {
+  width: 100%;
+  max-width: 450px;
+  height: 293px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: start;
+  padding: 37px 70px;
+  text-align: center;
+}
+
+.ui_fondo_modal.ui_popup .ui_marco_modal .ui_contenido_modal img{
+  width: 100%;
+  max-width: 68px;
+  margin-bottom: 11px;
+}
+.ui_fondo_modal.ui_popup .ui_marco_modal .ui_contenido_modal h1{
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: #512B17;
+  font-family: "Fertigo-Pro";
+}
+.ui_fondo_modal.ui_popup .ui_marco_modal .ui_contenido_modal h2{
+  font-size: 16px;
+  color: #454545;
+  line-height: normal;
+}
+
+.ui_fondo_modal.ui_popup .ui_marco_modal .ui_contenido_modal .img_fondo_left{
+  position: absolute;
+  left: 10px;
+  top: 5px;
+}
+.ui_fondo_modal.ui_popup .ui_marco_modal .ui_contenido_modal .img_fondo_right{
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+}
+/* END ESTILO BASE POPUPS */
+/***** END CONTACTO ******/
+
+/*** RESULTADO BUSQUEDA ***/
+.contenedor.page_busqueda{
+  max-width: 1215px;
+ }
+
+ .ui_seccion_1_busqueda{
+  margin-top: 42px;
+  margin-bottom: 37px;
+ }
+ .ui_seccion_1_busqueda .ui_barra_busqueda{
+  border: solid 2px #d9d9d9;
+ }
+
+.ui_barra_busqueda .ui_form_busqueda{
+  display: flex;
+  padding: 14px 75px;
+  align-items: flex-start;
+  position: relative;
+}
+
+.ui_barra_busqueda .ui_form_busqueda .ui_separator_input{
+  border: solid 1px #D9D9D9;
+  height: 83px;
+  margin-left: 64px;
+  margin-right: 64px;
+}
+
+.ui_barra_busqueda .ui_form_busqueda .item_input_form input{
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Open-Sans';
+}
+.ui_barra_busqueda .ui_form_busqueda .item_input_form .label{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 13px;
+}
+
+.ui_barra_busqueda .ui_form_busqueda .item_input_form .label img{
+  margin-right: 13px;
+}
+
+.ui_barra_busqueda .ui_form_busqueda .item_input_form .label h2{
+  color: #454545;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.ui_barra_busqueda .ui_form_busqueda .item_input_form .label_huespedes{
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.ui_barra_busqueda .ui_form_busqueda .btn_buscar{
+  width: 209px;
+  height: 110px;
+  border-radius: 60px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: #00CFC9;
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  font-family: 'Open-Sans';
+  position: absolute;
+  right: 0;
+  bottom: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui_barra_busqueda .ui_form_busqueda .btn_buscar img{
+  margin-right: 13px;
+}
+
+.ui_barra_busqueda .ui_form_busqueda .item_input_form{
+  position: relative;
+}
+
+.item_input_form .ui_box_huespedes{
+  width: 250px;
+  height: 200px;
+  background-color: white;
+  position: absolute;
+  left: -64px;
+  top: 89px;
+  box-shadow: 0px 0px 8px 1px #00000025;
+  padding: 17px 13px;
+  border-radius: 6px;
+  display: none;
+}
+
+.ui_box_huespedes .item_box_huesped{
+  display: flex;
+  width: 218px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.ui_box_huespedes .item_box_huesped h2{
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.ui_box_huespedes .item_box_huesped .contador_huesped {
+  border-radius: 2px;
+  border: solid 0.5px #D7D7D7;
+  height: 40px;
+  width: 101px;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ui_box_huespedes .item_box_huesped .contador_huesped button{
+  color: #00CFC9;
+  font-size: 30px;
+  width: 20px;
+  height: 25px;
+  cursor: pointer;
+  border: none;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui_box_huespedes .item_box_huesped .contador_huesped input{
+  width: 30px;
+  height: 25px;
+  text-align: center;
+  font-size: 18px;
+  border: none;
+}
+
+.ui_box_huespedes .btn_huesped{
+  margin-top: 8px;
+  width: 100%;
+  background-color: #00CFC9;
+  color: white;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.ui_info_resultado{
+display: flex;
+justify-content: space-between;
+margin-bottom: 21px;
+}
+.ui_info_resultado .label{
+font-size: 20px;
+line-height: 27px;
+font-weight: 600;
+color:#454545
+}
+.label_resultado{
+  font-size: 20px;
+  line-height: 27px;
+  font-weight: 400;
+}
+.ui_item_habitacion{
+  border-radius: 4px;
+  border:1px solid #ececec;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 77px;
+}
+.ui_item_habitacion .ui_info_habitacion{
+  width: 670px;
+
+  padding-bottom: 30px;
+  padding-top: 10px;
+  border-right: 1px solid #ececec;
+}
+.ui_item_habitacion .ui_info_habitacion_precio{
+  flex-grow: 1;
+  padding: 34px 39px 32px 39px;
+}
+
+.ui_item_habitacion .ui_titulo_habitacion{
+padding: 5px  10px 10px 20px;
+padding-bottom: 20px;
+text-align: center;
+font-size: 24px;
+line-height: 28px;
+font-weight: 400;
+font-family: "Fertigo-Pro";
+color: #512B17;
+}
+
+.slick-slide .ui_foto_item_habitacion img{
+  width: 100%;
+  border-radius: 4px;
+  vertical-align: top;
+}
+.ui_foto_item_habitacion{
+  max-width: 500px;
+  height: 280px;
+}
+.ui_foto_item_habitacion img{
+  width: 100%;
+}
+.marco_carousel_fotos_habitacion{
+  padding-left: 78px;
+  padding-right: 52px;
+  width: 100%;
+  max-width: 630px;
+}
+.ui_habitacion_detalle{
+margin-top: 17px;
+margin-left: 78px;
+margin-right: 78px;
+font-size: 14px;
+}
+
+.ui_info_habitacion .ui_separador_detalle{
+  width: 100%;
+  max-width: 540px;
+  height: 1.5px;
+  background-color: #D7D7D7;
+  margin-left: 58px;
+}
+
+.ui_habitacion_detalle .ui_habitacion_info{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 17px;
+}
+.ui_habitacion_detalle .ui_habitacion_info span{
+  margin-left: 16px;
+  margin-right: 16px;
+  display: flex;
+  align-items: center;
+}
+.ui_habitacion_detalle .ui_habitacion_info span img{
+  margin-right: 8px;
+}
+.ui_habitacion_detalle .ui_habitacion_check{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 17px;
+}
+
+.ui_habitacion_detalle .ui_habitacion_check span{
+  margin-left: 18px;
+  margin-right: 18px;
+  display: flex;
+  align-items: center;
+}
+.ui_habitacion_detalle .ui_habitacion_check span img{
+  margin-right: 8px;
+}
+
+.ui_habitacion_detalle_servicio {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 17px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-left: 104px;
+  width: 450px;
+  justify-content: space-evenly;
+}
+.ui_habitacion_detalle_servicio span{
+  width: 30%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+.ui_habitacion_detalle_servicio span img{
+  margin-right: 7px;
+}
+
+.ui_item_habitacion .ui_ver_mas{
+  font-size: 15px;
+  color: #00CFC9;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-right: 59px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 9px;
+}
+
+.ui_info_habitacion_precio .ui_titulo_bloque{
+font-size: 18px;
+color:#454545;
+font-weight: 600;
+margin-bottom: 17px;
+}
+.ui_info_habitacion_precio .ui_item_precio{
+  width: 470px;
+  height: 108px;
+  border:  1px solid #ececec;
+  padding: 20px;
+  padding-right: 12px;
+  border-radius: 7px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color:#454545;
+  cursor: pointer;
+}
+
+.ui_info_habitacion_precio .ui_item_precio.activo{
+  border-color: #00CFC9;
+}
+.ui_info_habitacion_precio .ui_item_precio .ui_subtitulo{
+font-size: 16px;
+font-weight: 600;
+line-height: 22px;
+margin-bottom: 10px;
+display: block;
+color:#454545
+}
+.ui_info_habitacion_precio .ui_item_precio .ui_detalle_texto{
+font-size: 12px;
+line-height: 16px;
+font-weight: 400;
+
+}
+.ui_info_habitacion_precio .ui_item_precio .ui_info_noches{
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+
+}
+.ui_info_habitacion_precio .ui_item_precio .ui_info_precio{
+font-size: 24px;
+line-height: 35px;
+font-weight: 600;
+}
+.ui_info_habitacion_precio .ui_otras_plataformas .ui_titulo{
+font-size: 18px;
+font-weight: 600;
+line-height: 24px;
+margin-bottom: 20px;
+}
+.ui_info_habitacion_precio .ui_otras_plataformas .ui_item_otro{
+  margin-top: 25px;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  width: 220px;
+  justify-content: space-between;
+}
+
+.ui_info_habitacion_precio .ui_otras_plataformas .ui_item_otro:last-child{
+  margin-bottom: 0px;
+}
+.ui_info_habitacion_precio .ui_otras_plataformas .ui_item_otro span{
+font-size: 15px;
+font-weight: 600;
+}
+.ui_info_habitacion_precio .ui_otras_plataformas .ui_item_otro img{
+  margin-right: 15px;
+}
+.ui_btn_item_reservar_habitacion{
+  margin-top: 55px;
+}
+.ui_btn_item_reservar_habitacion{
+  width: 100%;
+  font-size: 20px;
+  line-height: 27px;
+  display: inline-block;
+  padding: 15px;
+  text-align: center;
+  font-weight: 600;
+  color: white;
+  border-radius:30px ;
+  background-color: #00CFC9;
+  opacity: 0.3;
+}
+.ui_btn_item_reservar_habitacion.activo{
+  opacity: 1;
+  cursor: pointer;
+
+}
+
+.ui_contenido_modal{
+  background-color: white;
+  border-radius: 20px;
+  position: relative;
+}
+
+.ui_detalle_reserva .ui_contenido_modal{
+  color: #454545;
+  width: 1230px;
+  height:550px;
+  display: flex;
+  padding: 24px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.contenedor_modal_carrusel{
+  width: 430px;
+}
+
+.ui_detalle_reserva .ui_contenido_modal .ui_modal_imagenes_habitacion {
+  width: 544px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui_detalle_reserva .ui_contenido_modal .ui_modal_imagenes_habitacion .ui_carrusel_habitacion_modal{
+  width: 430px;
+  margin-bottom: 30px;
+}
+
+.ui_detalle_reserva .ui_contenido_modal .ui_modal_imagenes_habitacion .ui_mini_carrusel .item_carrusel{
+  width: 120px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.ui_detalle_reserva .ui_contenido_modal .ui_modal_imagenes_habitacion .ui_mini_carrusel .item_carrusel img{
+  cursor: pointer;
+}
+
+.ui_mini_carrusel{
+  width: 430px;
+ }
+
+.ui_mini_carrusel .slick-dots li{
+  width: 20px;
+  height: 20px;
+  border: 2px solid #00CFC9;
+}
+
+.ui_detalle_reserva .ui_contenido_modal .ui_modal_imagenes_habitacion h2{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #512B17;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.ui_detalle_reserva .ui_contenido_modal .ui_modal_informacion_habitacion {
+  width: 565px;
+  padding: 5px;
+  height: 500px;
+}
+
+.ui_detalle_reserva .ui_contenido_modal .ui_modal_informacion_habitacion .row_detalle {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 474px;
+  margin-bottom: 17px
+}
+
+.ui_detalle_reserva .ui_contenido_modal .ui_modal_informacion_habitacion .row_detalle .col_detalle {
+  display: flex;
+  width: 220px;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.ui_detalle_reserva .ui_contenido_modal .ui_modal_informacion_habitacion .row_detalle .col_detalle .item_detalle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+.ui_detalle_reserva .ui_contenido_modal .ui_modal_informacion_habitacion p{
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.ui_detalle_reserva .ui_contenido_modal .ui_modal_informacion_habitacion .ui_servicios_politicas span{
+ font-size: 16px;
+ font-weight: 600;
+ margin-bottom: 7px;
+}
+
+.ui_detalle_reserva .ui_contenido_modal .ui_modal_informacion_habitacion .ui_servicios_politicas ul{
+  font-size: 16px;
+  margin-top: 10px;
+  list-style: disc;
+  margin-left: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.ui_detalle_reserva .ui_contenido_modal .ui_modal_informacion_habitacion .ui_servicios_politicas li{
+ width: 235px;
+ margin-bottom: 10px;
+}
+
+.ui_fondo_modal.ui_popup.busqueda .ui_marco_modal .ui_contenido_modal {
+  width: 1160px;
+  height: 514px;
+}
+
+.ui_fondo_modal.ui_popup.busqueda .ui_marco_modal .ui_contenido_modal h1 {
+  font-size: 30px;
+  margin-bottom: 22px;
+}
+.ui_fondo_modal.ui_popup.busqueda .ui_marco_modal .ui_contenido_modal h2 {
+  font-size: 19px;
+  line-height: normal;
+}
+
+.ui_popup.busqueda .ui_marco_modal .ui_contenido_modal .ui_barra_busqueda {
+  border: solid 2px #d9d9d9;
+  margin-top: 42px;
+}
+
+.ui_popup.busqueda .ui_contenido_modal .ui_barra_busqueda .ui_form_busqueda .item_input_form .label_huespedes{
+  font-size: 18px;
+  text-align: left;
+  cursor: pointer;
+}
+.ui_fondo_modal.ui_popup.busqueda .ui_marco_modal .ui_contenido_modal .img_fondo_left{
+  position: absolute;
+  left: 15px;
+  top: 15px;
+}
+
+.ui_fondo_modal.ui_popup.servicios .ui_marco_modal .ui_contenido_modal {
+  width: 100%;
+  max-width: 720px;
+  min-height: 510px;
+}
+
+.ui_popup.servicios .ui_marco_modal .ui_contenido_modal .list_service{
+  margin-top: 25px;
+}
+
+.ui_popup.servicios .ui_marco_modal .ui_contenido_modal .list_service{
+  color: #454545;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.ui_popup.servicios .ui_marco_modal .ui_contenido_modal .list_service .item_row_service{
+  width: 635px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 23px;
+}
+
+.list_service .item_row_service .title{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.list_service .item_row_service .title input{
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  border: solid #D7D7D7 1px;
+}
+
+.ui_popup.servicios .ui_marco_modal .ui_contenido_modal span{
+  font-size: 20px;
+  color: #454545;
+  margin-bottom: 17px;
+  font-weight: 600;
+}
+
+.ui_popup.servicios .ui_marco_modal .ui_contenido_modal .button{
+  width: 405px;
+  height: 58px;
+  border-radius: 30px;
+  border: none;
+  background-color: #00CFC9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.ui_fondo_modal.ui_popup.guardar_info .ui_marco_modal .ui_contenido_modal {
+  width: 688px;
+  height: 476px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.ui_fondo_modal.ui_popup.guardar_info .ui_marco_modal .ui_contenido_modal h1{
+  margin-left: 120px;
+}
+
+.ui_fondo_modal.ui_popup.guardar_info .ui_marco_modal .ui_contenido_modal h2{
+  text-align: justify;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+.ui_popup.guardar_info .ui_marco_modal .ui_contenido_modal .row-input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+.ui_popup.guardar_info .ui_marco_modal .ui_contenido_modal .row-input span{
+  font-weight: 600;
+}
+
+.ui_popup.guardar_info .ui_marco_modal .ui_contenido_modal .row-input input{
+  border-radius: 30px;
+  width: 527px;
+  height: 50px;
+  border: solid 1px #D7D7D7;
+  padding: 16px 20px;
+  color: #454545;
+  font-size: 16px;
+  margin-bottom: 28px;
+}
+
+.ui_popup.guardar_info .ui_marco_modal .ui_contenido_modal .ui_checkbox{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 51px;
+}
+
+.ui_popup.guardar_info .ui_marco_modal .ui_contenido_modal .ui_checkbox input{
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  border: solid #D7D7D7 1px;
+}
+
+.ui_popup.guardar_info .ui_marco_modal .ui_contenido_modal .ui_checkbox a {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.ui_popup.guardar_info .ui_marco_modal .ui_contenido_modal .button{
+  margin-left: 90px;
+  width: 400px;
+  height: 58px;
+  border-radius: 30px;
+  border: none;
+  background-color: #00CFC9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.ui_fondo_modal.ui_popup.guardar_info_completado .ui_marco_modal .ui_contenido_modal {
+  width: 452px;
+  height: 251px;
+  align-items: center;
+  justify-content: center;
+}
+
+/*** END RESULTADO BUSQUEDA ***/
+
+/***** RESENAS ******/
+
+.ui_seccion_top_banner.sostenibilidad{
+  background-image: url(/img/banner_resenas.png);
+}
+
+.ui_texto_titulo_filtros {
+  text-align: center;
+  margin-top: 47px;
+  margin-bottom: 54px;
+  font-size: 20px;
+  color: #454545;
+}
+
+.ui_filtros {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 54px;
+}
+
+.ui_filtros .ui_item_filter {
+  display: flex;
+  align-items: center;
+}
+
+.ui_item_filter .ui_tag_filter {
+  display: flex;
+  align-items: center;
+}
+
+.ui_item_filter .ui_tag_filter span {
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.ui_item_filter .ui_select_filter {
+  margin-right: 43px;
+}
+
+.ui_item_filter .ui_select_filter select {
+  padding: 10px 18px;
+  font-size: 16px;
+  border-radius: 30px;
+  border-color: #D7D7D7;
+  width: 271px;
+  height: 50px;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('/img/select_arrow.png');
+  background-repeat: no-repeat;
+  background-position: right 22px center;
+
+}
+.ui_seccion_resenas_paginacion {
+  margin-top: 51px;
+  margin-bottom: 51px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui_seccion_resenas_paginacion .ui_btn_paginacion{
+  display: flex;
+  gap: 11px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.ui_seccion_resenas_paginacion img{
+  cursor: pointer;
+}
+
+.ui_seccion_resenas_paginacion .ui_btn_paginacion .ui_item_btn_page {
+  width: 52px;
+  height: 52px;
+  border-radius: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #454545;
+  box-shadow: 0px 0px 8px 1px #00000025;
+  font-size: 21px;
+  cursor: pointer;
+}
+
+.ui_seccion_resenas_paginacion .ui_item_btn_page.activo{
+  background-color: #00CFC9;
+  box-shadow: none;
+  color: white;
+}
+
+.ui_seccion_resenas_paginacion button{
+  border: none;
+  background: none;
+}
+
+/*** END RESENAS ***/
+
+/***** RECLAMOS ******/
+
+.ui_seccion_1_reclamos{
+  margin-top: 41px;
+  margin-bottom: 67px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* padding: 20px; */
+}
+
+.ui_seccion_1_reclamos h1 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 5px;
+  color: #512B17;
+  font-family: 'Fertigo-Pro';
+}
+
+.ui_seccion_1_reclamos p {
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 38px;
+  color: #512B17;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.ui_formulario_reclamo {
+  width: 100%;
+  max-width: 1016px;
+  min-height: 788px;
+  border-radius: 4px;
+  box-shadow: 0px 1px 6px 0px #cecece;
+  padding: 32px 163px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ui_formulario_reclamo h3{
+  font-size: 22px;
+  font-weight: 600;
+  color: #D5B470;
+  margin-top: 23px;
+  margin-bottom: 34px;
+  text-align: center;
+}
+
+.ui_formulario_reclamo .ui_marcador {
+  display: flex;
+  align-items: center;
+  height: 54px;
+  width: 100%;
+  justify-content: center;
+}
+
+.ui_formulario_reclamo .ui_marcador .item_marcador {
+  width: 54px;
+  height: 54px;
+  border-radius: 100%;
+  border: solid 2px #D5B470;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: #D5B470;
+  font-weight: 600;
+}
+
+.ui_formulario_reclamo .ui_marcador .item_marcador.active {
+  color: white;
+  background-color: #D5B470;
+
+}
+
+.ui_formulario_reclamo .ui_marcador .separador {
+  width: 73px;
+  height: 0px;
+  border: solid 2px #D5B470;
+}
+
+.ui_formulario_tabs .tab_title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.ui_formulario_tabs .row-inputs{
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 33px;
+}
+
+.ui_formulario_tabs .row-inputs .item_input{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 320px;
+}
+
+.ui_formulario_tabs .row-inputs .item_input span{
+  margin-bottom: 15px;
+}
+
+.ui_formulario_tabs .row-inputs .item_input p{
+  font-size: 12px;
+  color: #EE4D4D;
+  text-align: left;
+  font-style: normal;
+  font-weight: 400;
+  margin: 0;
+  margin-top:5px;
+}
+
+.ui_formulario_tabs .row-inputs .item_input input{
+  border-radius: 30px;
+  width: 100%;
+  max-width: 320px;
+  height: 50px;
+  border: solid 1px #D7D7D7;
+  padding: 16px 20px;
+  color: #454545;
+  font-size: 16px;
+  font-family: "Open-Sans", sans-serif;
+}
+
+.ui_formulario_tabs .row-inputs .item_input select{
+  font-family: "Open-Sans", sans-serif;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 320px;
+  height: 50px;
+  border: solid 1px #D7D7D7;
+  padding: 10px 16px;
+  color: #454545;
+  font-size: 16px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('/img/select_arrow.png');
+  background-repeat: no-repeat;
+  background-position: right 22px center;
+
+}
+
+.ui_formulario_tabs .row-inputs .item_input textarea{
+  font-family: "Open-Sans", sans-serif;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 689px;
+  height: 114px;
+  border: solid 1px #D7D7D7;
+  padding: 16px 20px;
+  color: #454545;
+  font-size: 16px;
+  resize: none;
+  overflow: hidden;
+  text-align: justify;
+}
+
+.ui_formulario_tabs .row-inputs .item_input.large input{
+  width: 689px;
+}
+
+.item_input .ui_selector_input{
+  display: flex;
+}
+.item_input .ui_selector_input input{
+  border-radius: 0px 30px 30px 0px !important;
+  width: 186px !important;
+}
+
+.item_input .ui_selector_input select{
+  font-size: 16px;
+  color: #454545;
+  width: 133px!important;
+  height: 50px;
+  padding: 16px 20px;
+  border-radius: 30px 0px 0px 30px !important;
+  border: solid 1px #D7D7D7;
+  border-right: 0px;
+  outline: none;
+  cursor: pointer;
+}
+
+.ui_formulario_tabs h2{
+  margin-top: 36px;
+  margin-bottom: 26px;
+  font-size: 16px;
+  text-align: justify;
+  color: #454545;
+}
+
+.ui_formulario_tabs .ui_checkbox{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 56px;
+}
+
+.ui_formulario_tabs .ui_checkbox a{
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.ui_formulario_tabs .row_buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ui_formulario_tabs .row_buttons.f-end{
+  justify-content: flex-end;
+}
+
+.ui_formulario_tabs .row_buttons .btn_back{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.ui_formulario_tabs .row_buttons .btn_next {
+  width: 100%;
+  max-width: 193px;
+  height: 50px;
+  border-radius: 30px;
+  background-color: #00CFC9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.ui_formulario_tabs .row_buttons .btn_form button {
+  width: 193px;
+  height: 50px;
+  border-radius: 30px;
+  border: none;
+  background-color: #7FE6E3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.ui_formulario_tabs .row_buttons .btn_form.active button {
+  background-color: #00CFC9;
+}
+.ui_formulario_tabs .row_buttons .btn_back span {
+  margin-left: 9px;
+  color: #00CFC9;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Open-Sans", sans-serif;
+}
+.ui_formulario_tabs .tab_1{
+  display: none;
+}
+/***** END RECLAMOS ******/
+
+/***** DETALLE RESERVA ******/
+.contenedor.page_detalle{
+  max-width: 1185px;
+  margin-top: 38px;
+  margin-bottom: 74px;
+}
+
+.page_detalle h1{
+  font-family: "Fertigo-Pro";
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 32px;
+  color: #512B17;
+}
+
+.page_detalle .ui_box_container{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.page_detalle .ui_box_container .box_informacion_reserva{
+  width: 370px;
+  min-height: 883px;
+  border-radius: 4px;
+  padding: 31px 22px;
+  box-shadow: 0px 1px 6px 0px #cecece;
+}
+
+.page_detalle .ui_box_container .box_informacion_reserva .line_separator{
+  width: 337px;
+  border: solid #D9D9D9 1px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.page_detalle .ui_box_container .box_informacion_reserva h1{
+  font-family: "Open-Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 23px;
+  text-align: left;
+  color: #454545;
+}
+
+
+.page_detalle .ui_box_container .box_informacion_reserva .info_date h2:last-of-type{
+  margin-top: 20px;
+}
+
+.page_detalle .ui_box_container .box_informacion_reserva .info_date, .info_room{
+  font-size: 16px;
+  color: #454545;
+}
+.page_detalle .ui_box_container .box_informacion_reserva .info_date h2, .info_room h2{
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.page_detalle .ui_box_container .box_informacion_reserva .info_date p {
+  margin-bottom: 16px;
+  display: flex;
+  width: 285px;
+  justify-content: space-between;
+}
+.page_detalle .ui_box_container .box_informacion_reserva .info_room h2 {
+  margin-bottom: 18px;
+}
+.page_detalle .ui_box_container .box_informacion_reserva .info_room p {
+  margin-bottom: 7px;
+}
+
+.page_detalle .ui_box_container .box_informacion_reserva .info_precio h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.page_detalle .ui_box_container .box_informacion_reserva .info_precio .item_precio{
+  width: 339px;
+  height: 54px;
+  border-radius: 24px;
+  border: solid #f5f5f5 1px;
+  padding: 16px;
+  display: flex;
+  margin-bottom: 17px;
+  align-items: center;
+  justify-content: space-between;
+  color: #454545;
+  cursor: pointer;
+}
+
+.page_detalle .ui_box_container .box_informacion_reserva .info_precio .item_precio h3{
+  margin-left: -45px;
+}
+
+.page_detalle .ui_box_container .box_informacion_reserva .info_precio .item_precio span{
+  font-weight:600;
+}
+
+.page_detalle .ui_box_container .box_informacion_reserva .info_precio .item_precio .radio_btn{
+  width: 22px;
+  height: 22px;
+  border-radius: 100%;
+  border: solid white 2px;
+  background-color: white;
+  box-shadow: 0 0 0 1px #D7D7D7;
+  margin-right: 7px;
+}
+
+.page_detalle .ui_box_container .box_informacion_reserva .info_precio .item_precio.active{
+  border: solid #00CFC9 1px;
+}
+.page_detalle .ui_box_container .box_informacion_reserva .info_precio .item_precio.active .radio_btn{
+  background-color: #00CFC9;
+}
+
+.box_informacion_reserva .info_servicios{
+  color: #454545;
+  font-size: 16px;
+}
+.box_informacion_reserva .info_servicios h2{
+  font-weight: 600;
+  margin-top: 28px;
+  margin-bottom: 20px;
+}
+
+.box_informacion_reserva .info_servicios li{
+  list-style: disc;
+}
+
+.box_informacion_reserva .info_servicios .item_servicio{
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 11px;
+}
+.box_informacion_reserva .info_servicios .item_servicio span{
+  font-weight: 600;
+}
+.box_informacion_reserva .info_servicios .item_servicio img{
+  margin-left: -30px;
+  cursor: pointer;
+}
+
+.box_informacion_reserva .info_total{
+  width: 324px;
+  height: 78px;
+  color: #454545;
+  background-color: #F7F1E5;
+  padding: 21px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.box_informacion_reserva .info_total h2{
+  font-size: 26px;
+  font-weight: 600;
+}
+.box_informacion_reserva .info_total span{
+  font-size: 26px;
+  font-weight: bold;
+}
+
+
+.page_detalle .ui_box_container .box_informacion_huesped{
+  width: 789px;
+  min-height: 883px;
+  border-radius: 4px;
+  padding: 28px 50px;
+  box-shadow: 0px 1px 6px 0px #cecece;
+}
+
+.ui_box_container .right_side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.page_detalle .ui_advertencia{
+  width: 789px;
+  height: 97px;
+  padding: 24px;
+  box-shadow: 0px 1px 6px 0px #cecece;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 32px;
+  font-size: 18px;
+}
+
+
+.box_informacion_reserva .info_cupon .cupon_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.box_informacion_reserva .info_cupon .cupon_detail {
+  display: none
+}
+
+.box_informacion_reserva .info_cupon .cupon_title h2{
+  color: #454545;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.box_informacion_reserva .info_cupon .cupon_title img{
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.box_informacion_reserva .info_cupon .cupon_title .rotate{
+  transform: rotate(-180deg);
+}
+
+.box_informacion_reserva .info_cupon input{
+  width: 333px;
+  height: 50px;
+  border-radius: 30px;
+  border: solid #D7D7D7 1px;
+  padding: 14px 18px;
+  font-size: 16px;
+  color: #454545;
+}
+
+.box_informacion_reserva .info_cupon .text_error{
+  font-size: 13px;
+  color: #FF2626;
+  margin-top: 5px;
+}
+
+.box_informacion_reserva .info_cupon .ui_boton_cupon{
+  width: 142px;
+  height: 40px;
+  border-radius: 30px;
+  background-color: #00CFC9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  margin-left: 190px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.ui_formulario_pago h3{
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #512B17;
+}
+
+.ui_formulario_pago .row-inputs {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 33px;
+}
+
+.ui_formulario_pago .row-inputs .item_input {
+  display: flex;
+  flex-direction: column;
+}
+.ui_formulario_pago .row-inputs .item_input span {
+  margin-bottom: 15px;
+}
+
+.ui_formulario_pago .row-inputs .item_input input {
+  border-radius: 30px;
+  width: 320px;
+  height: 50px;
+  border: solid 1px #D7D7D7;
+  padding: 16px 20px;
+  color: #454545;
+  font-size: 16px;
+  font-family: "Open-Sans", sans-serif;
+}
+
+.ui_formulario_pago .ui_checkbox {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 56px;
+}
+
+.ui_formulario_pago .ui_checkbox input{
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  border: solid #D7D7D7 1px;
+}
+
+.ui_formulario_pago .ui_checkbox a {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.ui_formulario_pago .row-inputs .item_input textarea {
+  font-family: "Open-Sans", sans-serif;
+  border-radius: 30px;
+  width: 689px;
+  height: 109px;
+  border: solid 1px #D7D7D7;
+  padding: 16px 20px;
+  color: #454545;
+  font-size: 16px;
+  resize: none;
+  overflow: hidden;
+  text-align: justify;
+}
+
+.ui_formulario_pago .row_buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 38px;
+}
+
+.ui_formulario_pago .row_buttons .btn_form button {
+  width: 193px;
+  height: 50px;
+  border-radius: 30px;
+  border: none;
+  background-color: #7FE6E3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.ui_formulario_pago .row_buttons .btn_form.active button {
+  background-color: #00CFC9;
+}
+
+.ui_fondo_modal.ui_popup.detalle_reserva .ui_marco_modal .ui_contenido_modal {
+  width: 523px;
+  height: 374px;
+}
+
+/***** END DETALLE RESERVA ******/
+
+/***** CALIFICACION ******/
+
+.ui_seccion_1_comentario{
+  padding: 15px;
+}
+.contenedor.page_calificacion{
+  width: 100%;
+  max-width: 650px;
+  min-height: 430px;
+  border-radius: 12px;
+  box-shadow: 0px 1px 6px 0px #cecece;
+  padding: 14px 66px;
+  margin-top: 28px;
+  margin-bottom: 61px;
+}
+
+.page_calificacion h1{
+  font-family: "Fertigo-Pro";
+  font-size: 28px;
+  color: #512B17;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.page_calificacion h2{
+  text-align: center;
+  font-size: 18px;
+  color: #512B17;
+  margin-bottom: 20px;
+  line-height: normal;
+}
+
+.page_calificacion .row_stars{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 37px;
+  margin-bottom: 20px;
+}
+
+.page_calificacion .row_stars img{
+  width: 100%;
+  max-width: 40px;
+  cursor: pointer;
+}
+
+.page_calificacion .comentario h2{
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+  color: #454545;
+  margin-bottom: 15px;
+}
+.page_calificacion .comentario textarea{
+  width: 100%;
+  max-width: 517px;
+  height: 134px;
+  border-radius: 30px;
+  border: solid 1px #D7D7D7;
+  outline: none;
+  resize: none;
+  overflow: hidden;
+  padding: 15px 20px;
+  font-size: 13px;
+  margin-bottom: 14px;
+  font-weight: lighter;
+  text-align: justify;
+}
+
+.page_calificacion .ui_boton_formulario {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.page_calificacion .ui_boton_formulario button{
+  width: 100%;
+  max-width: 142px;
+  height: 40px;
+  background-color: #7FE6E3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-size: 16px;
+  font-weight:bold;
+}
+
+.page_calificacion .ui_boton_formulario .active{
+  background-color: #00CFC9;
+}
+
+.ui_fondo_modal.ui_popup.calificacion .ui_marco_modal .ui_contenido_modal {
+  width: 563px;
+  height: 358px;
+}
+
+/***** END CALIFICACION ******/
+
+@media (max-width: 768px) {
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .contenedor {
+    width: 100%;
+    max-width: 375px;
+    margin: 0 auto;
+  }
+  .ui_icono_whatasapp img {
+    width: 44px;
+    height: 44px;
+}
+/***** RESPONSIVE HEADER ******/
+  .ui_logo_site{
+    padding-top: 5px;
+  }
+  .ui_logo_site img {
+    width: 43px;
+    height: 50px;
+  }
+  .ui_nav_site .nav_desktop{
+    display: none;
+  }
+  .ui_nav_site ul li{
+    font-size: 14px;
+  }
+/***** END RESPONSIVE HEADER ******/
+
+/***** RESPONSIVE FOOTER ******/
+  .ui_footer_site .contenedor{
+    flex-direction: column;
+    gap: 20px;
+  }
+  .logo-footer img{
+    max-width: 94px;
+    height: 108px;
+  }
+  .ui_info_top, .ui_info_bottom{
+    flex-direction: column;
+  }
+  .ui_info_bottom{
+    gap: 15px;
+    margin-top: 20px;
+    padding-top: 20px;
+  }
+  .ui_info_top div {
+    min-height: 80px;
+  }
+  .ui_info_col4 {
+    margin-left: 0px;
+  }
+  .decoracion_footer img{
+    height: 85px;
+  }
+  .ui_icono_whatasapp{
+    bottom: 80px;
+    right: -35px;
+  }
+/***** END RESPONSIVE FOOTER ******/
+
+
+
+/***** RESPONSIVE HOME ******/
+
+  .ui_seccion_top_home{
+    height: 457px;
+    padding-top: 70px;
+
+  }
+  .ui_texto_intro_home{
+    font-size: 23px;
+    line-height: 24px;
+  }
+  .ui_marco_opciones_home{
+    bottom: 30px;
+  }
+  .ui_barra_busqueda{
+    width: 295px;
+    height: 217px;
+    border-radius: 25px;
+  }
+  form.ui_form_busqueda {
+    flex-direction: column;
+  }
+  .ui_barra_busqueda .ui_form_busqueda{
+    padding:14px 14px;
+  }
+
+  .ui_form_busqueda .item_input_form {
+    display: flex;
+    align-items: center;
+    width: 240px;
+    justify-content: space-between;
+  }
+
+
+  .ui_barra_busqueda .ui_form_busqueda .item_input_form .label h2{
+    font-size: 14px;
+  }
+  .ui_barra_busqueda .ui_form_busqueda .item_input_form .label_huespedes{
+    font-size: 14px;
+  }
+  .ui_barra_busqueda .ui_form_busqueda .item_input_form .label img{
+    margin-right: 8px;
+  }
+  .ui_barra_busqueda .ui_form_busqueda .item_input_form input{
+    font-size: 14px;
+    width: 95px;
+  }
+
+  .ui_barra_busqueda .ui_form_busqueda .ui_separator_input{
+    margin: 0;
+    width: 263px;
+    height: 2px;
+  }
+  .ui_barra_busqueda .ui_form_busqueda .btn_buscar{
+    position: absolute;
+    font-size: 15px;
+    width: 100%;
+    border-radius: 26px;
+    height: 54px;
+    bottom: -57px !important;
+  }
+  .item_input_form .ui_box_huespedes{
+    width: 295px;
+    left: -14px;
+    top: 45px;
+    box-shadow: 0px 2px 3px 3px #00000025;
+    z-index: 1000;
+    padding: 16px 22px;
+    border-radius: 0px 0px 6px 6px;
+  }
+  .ui_box_huespedes .item_box_huesped{
+    width: 248px;
+    margin-bottom: 17px;
+  }
+  .ui_box_huespedes .item_box_huesped h2{
+    font-size: 14px;
+  }
+  .ui_box_huespedes .item_box_huesped .contador_huesped input{
+    width: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Open-Sans';
+  }
+  .ui_box_huespedes .btn_huesped{
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    margin-top: 26px;
+  }
+  .ui_barra_busqueda .ui_form_busqueda .btn_buscar img{
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+  }
+
+
+  .ui_seccion_2_home {
+    padding-top: 30px;
+    padding-bottom: 35px;
+  }
+  .ui_seccion_2_home_info{
+    width: 100%;
+  }
+  .ui_lyt_seccion_2_home{
+    flex-direction: column;
+  }
+  .ui_seccion_2_home_info h2{
+    font-size: 42px;
+    text-align: center;
+  }
+  .ui_seccion_2_home_info p{
+    font-size: 16px;
+  }
+  .ui_seccion_2_home_img{
+    width: 100%;
+    text-align: center;
+  }
+  .ui_seccion_2_home_img img {
+    width: 300px;
+    height: auto;
+  }
+
+  .ui_carousel_beneficios .ui_item-beneficio img{
+    max-width: 240px;
+    height: 360px;
+  }
+
+  .ui_seccion_4_home .contenedor{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 30px;
+  }
+  .ui_seccion_4_home_right .complemento, .ui_seccion_4_home_left .complemento{
+    display: none;
+  }
+  .ui_seccion_4_home_left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .ui_seccion_4_home_left img{
+    width: 329px;
+    height: 337px;
+    position: relative;
+  }
+
+  .ui_seccion_4_home_left .complemento_mobile.top{
+    width: 165px;
+    height: 70px;
+  }
+
+  .ui_seccion_4_home_right img{
+    width: 100%;
+    max-width: 271px;
+    height: 271px;
+    bottom: 50px;
+    left: 8px;
+    position: relative;
+  }
+
+  .ui_seccion_4_home_right .complemento_mobile.left{
+    width: 94px;
+    height: 97px;
+    position: absolute;
+  }
+  .ui_seccion_4_home_right .complemento_mobile.right{
+    width: 93px;
+    height: 100px;
+    position: absolute;
+    left: 100px;
+  }
+
+  .ui_seccion_info_adicional{
+    margin-top: 100px;
+    background-color: #FCF9F4;
+  }
+
+  .ui_seccion_info_adicional .ui_titulo{
+    font-size: 24px;
+    width: 224px;
+  }
+
+  .ui_seccion_info_adicional_lyt {
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px 40px;
+    background-color: none;
+  }
+  .ui_seccion_info_adicional_lyt .ui_contenido {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .ui_contenido .ui_item{
+    margin-left: 0px;
+  }
+  .ui_marco_titulo{
+    margin-bottom: 40px;
+    align-items: center;
+  }
+  .ui_marco_titulo h2{
+    font-size: 32px;
+  }
+  .ui_marco_titulo img{
+    width: 41px!important;
+    height: 45px!important;
+  }
+  .ui_seccion_resenas_lyt{
+    justify-content: center;
+  }
+  .ui_item_resena{
+    width: 297px;
+  }
+/***** END RESPONSIVE HOME ******/
+
+
+/***** RESPONSIVE NOSOTROS ******/
+  .contenedor.page_nosotros{
+    max-width: 380px;
+  }
+  .ui_seccion_top_banner{
+   height: 260px;
+   padding-top: 115px;
+  }
+  .ui_texto_title_banner{
+    font-size: 36px;
+    max-width: 254px;
+    line-height: 47px;
+
+  }
+  .ui_seccion_1_nosotros h2{
+    font-size: 16px;
+  }
+  .item_valor .item_valor_text{
+    width: 302px;
+    height: 302px;
+  }
+  .item_valor .item_valor_text h1{
+    font-size: 32px;
+  }
+  .item_valor .item_valor_text p{
+    font-size: 16px;
+  }
+  .item_valor .valor_right .item_valor_image img, .item_valor .valor_left .item_valor_image img{
+    max-width: 320px;
+    height: 320px;
+  }
+
+  .item_valor .valor_left{
+    position: relative;
+    left: 0px;
+  }
+
+  .item_valor .valor_right{
+    bottom: 31px;
+    right: 10px;
+  }
+  .item_valor .valor_right.important{
+    right: 12px;
+  }
+  .ui_seccion_2_nosotros .item_valor{
+    align-items: start;
+    height: 584px;
+  }
+  .ui_seccion_2_nosotros{
+    margin-bottom: 50px;
+  }
+/***** END RESPONSIVE NOSOTROS ******/
+
+/***** RESPONSIVE SOSTENIBILIDAD ******/
+  .ui_seccion_1_sostenibilidad p{
+    font-size: 16px;
+  }
+
+  .ui_seccion_2_sostenibilidad .ui_marco_titulo h2, .ui_seccion_3_sostenibilidad .ui_marco_titulo h2{
+    font-size: 26px;
+  }
+  .ui_seccion_2_sostenibilidad .row_seccion_sostenibilidad{
+    flex-direction: column;
+    gap: 25px;
+  }
+  .ui_seccion_2_sostenibilidad .row_seccion_sostenibilidad.invert_mob{
+    flex-direction: column-reverse;
+  }
+  .row_seccion_sostenibilidad .row_image img{
+    max-width: 300px;
+    height: 300px;
+  }
+  .ui_seccion_3_sostenibilidad .row_seccion_sostenibilidad{
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 28px;
+  }
+  .row_seccion_sostenibilidad.imagenes .img_sostenibilidad_left{
+    max-width: 270px;
+    position: relative;
+    left: 0;
+  }
+
+  .row_seccion_sostenibilidad.imagenes .img_sostenibilidad_right{
+    max-width: 273px;
+    left: 135px;
+    top: 210px;
+  }
+  .row_seccion_sostenibilidad .row_information h2{
+    font-size: 16px;
+  }
+/***** END RESPONSIVE SOSTENIBILIDAD ******/
+
+/***** RESPONSIVE POLITICAS PRIVACIDAD ******/
+  .ui_seccion_1_privacidad{
+    font-size: 16px;
+  }
+/***** END RESPONSIVE POLITICAS PRIVACIDAD ******/
+
+/***** RESPONSIVE RESENAS ******/
+.ui_texto_titulo_filtros{
+  font-size: 16px;
+  text-align: left;
+  margin-bottom: 40px;
+}
+.ui_filtros {
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ui_filtros .ui_item_filter{
+  flex-direction: column;
+  align-items: start;
+  gap: 16px;
+}
+.ui_item_filter .ui_select_filter{
+  margin: 0;
+}
+
+.ui_item_filter .ui_select_filter select{
+  width: 339px;
+}
+/***** END RESPONSIVE RESENAS ******/
+
+
+/***** RESPONSIVE CONTACTO ******/
+.ui_seccion_1_contacto{
+  margin-top: 15px;
+}
+.ui_seccion_1_contacto .contenedor{
+  flex-direction: column-reverse;
+  gap: 70px;
+}
+.ui_seccion_1_contacto .ui_seccion_form{
+  box-shadow: none;
+  padding: 22px 25px;
+}
+.ui_seccion_1_contacto .ui_seccion_form h2{
+  font-size: 32px;
+}
+
+.ui_seccion_form .ui_input_form .ui_selector_input select{
+  max-width: 138px;
+}
+.ui_seccion_form .ui_input_form textarea{
+  height: 165px;
+}
+.ui_seccion_1_contacto .ui_seccion_informacion .item_info{
+  width: 100%;
+  max-width: 268px;
+  height: 170px;
+  margin-bottom: 40px;
+}
+.ui_seccion_informacion .item_info h2{
+  font-size: 22px;
+}
+.ui_seccion_informacion .item_info p{
+  font-size: 18px
+}
+.ui_seccion_1_contacto .ui_seccion_informacion .ui_image_top{
+  width: 100%;
+  max-width: 65px;
+  height: auto;
+  top: -48px;
+  left: 46px;
+}
+
+.ui_seccion_1_contacto .ui_seccion_informacion .ui_image_bottom{
+  width: 100%;
+  max-width: 65px;
+  height: auto;
+  bottom: -15px;
+  right: 39px;
+}
+.ui_seccion_2_contacto .ui_marco_titulo{
+  margin-bottom: 15px;
+}
+.ui_seccion_2_contacto .ui_iframe_map iframe{
+  height: 230px;
+}
+.ui_fondo_modal.ui_popup .ui_marco_modal .ui_contenido_modal{
+  max-width: 341px;
+  height: 276px;
+  padding: 30px 49px;
+}
+.ui_fondo_modal.ui_popup .ui_marco_modal .ui_contenido_modal img{
+  max-width: 44px;
+  height: auto;
+}
+.ui_fondo_modal.ui_popup .ui_marco_modal .ui_contenido_modal h1{
+  font-size: 22px;
+}
+.ui_fondo_modal.ui_popup .ui_marco_modal .ui_contenido_modal .img_fondo_left{
+  max-width: 80px;
+  left: 10px;
+  top: 12px;
+}
+.ui_fondo_modal.ui_popup .ui_marco_modal .ui_contenido_modal .img_fondo_right{
+  right: 9px;
+  bottom: 0px;
+  max-width: 82px;
+}
+.ui_close_modal{
+  width: 32px;
+  height: 32px;
+  right: -15px;
+  top: -18px;
+}
+/***** END RESPONSIVE CONTACTO ******/
+
+/***** RESPONSIVE GALERIA ******/
+
+.ui_carrusel_item_galeria.swiper-slide{
+  width: 100%;
+  max-width: 240px;
+  height: 360px;
+}
+
+/***** END RESPONSIVE GALERIA ******/
+
+/***** RESPONSIVE DESTINO ******/
+.ui_seccion_top_banner.destino .ui_texto_title_banner{
+  font-size: 44px;
+}
+.ui_seccion_1_destino{
+  margin-bottom: 16px;
+}
+.ui_seccion_1_destino .contenedor img{
+  max-width: 300px;
+  height: 66px;
+}
+.ui_seccion_1_destino p{
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.ui_seccion_1_destino .ui_images_seccion_1{
+  flex-direction: column;
+}
+
+.ui_seccion_1_destino .ui_images_seccion_1 .img_mapa{
+  max-width: 192px;
+}
+.ui_seccion_1_destino .ui_images_seccion_1 .img_text{
+  max-width: 274px;
+}
+
+.ui_seccion_2_destino .item_atraccion, .ui_seccion_2_destino .item_atraccion{
+  flex-direction: column!important;
+}
+.item_atraccion .atraccion_imagen img{
+  max-width: 320px;
+}
+
+.ui_seccion_2_destino .ui_marco_titulo{
+  margin-top: 0px;
+  margin-bottom: 24px;
+}
+
+.ui_seccion_2_destino .ui_marco_titulo h2{
+  font-size: 22px;
+}
+
+.ui_seccion_2_destino .item_atraccion .atraccion_informacion h2{
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 14px;
+}
+.ui_seccion_2_destino .item_atraccion .atraccion_informacion p:last-child{
+  margin-top: 14px;
+}
+/***** END RESPONSIVE DESTINO ******/
+
+
+/***** RESPONSIVE CALIFICACION ******/
+.contenedor.page_calificacion{
+  box-shadow: none;
+  padding: 0 20px;
+}
+.page_calificacion h2{
+  font-size: 16px;
+}
+
+.page_calificacion .row_stars img{
+  max-width: 36px;
+  height: 36px;
+}
+.page_calificacion .row_stars{
+  gap: 23px;
+}
+.page_calificacion .ui_boton_formulario button{
+  max-width: 332px;
+}
+
+/***** END RESPONSIVE CALIFICACION ******/
+
+/***** RESPONSIVE RECLAMOS ******/
+
+.ui_formulario_reclamo .ui_marcador .item_marcador{
+  width: 29px;
+  height: 29px;
+  font-size: 17px;
+}
+.ui_formulario_reclamo .ui_marcador .separador{
+  width: 39px;
+  border: solid 1px #D5B470;
+}
+
+.ui_seccion_1_reclamos h1 {
+  font-size: 26px;
+}
+.ui_seccion_1_reclamos p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.ui_formulario_reclamo{
+  padding: 20px;
+  box-shadow: none;
+}
+
+.ui_formulario_tabs .row-inputs{
+  flex-direction: column;
+  gap: 40px;
+}
+
+.ui_formulario_reclamo h3{
+  font-size: 16px;
+}
+.ui_formulario_tabs .row_buttons .btn_next{
+  max-width: 335px;
+}
+.ui_formulario_tabs .row_buttons{
+  flex-direction: column-reverse;
+  gap: 25px;
+}
+.ui_formulario_tabs .row_buttons .btn_form button {
+  width: 335px;
+}
+/***** END RESPONSIVE RECLAMOS ******/
+}
+
+
+
+@media (max-width: 1214px) {
+  .ui_nav_site .nav_desktop{
+    display: none;
+  }
+}
+
+@media (min-width: 1214px) {
+  .ui_nav_site .nav_mobile{
+    display: none;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .complemento_mobile{
+    display: none;
+  }
+}
+
+
+
+
+
+/*** adicionales ***/
+
+.ui_mensaje_habitaciones_no_encontradas{
+  padding-top: 100px;
+  padding-bottom: 100px;
+  font-size: 40px;
+  line-height: 45px;
+
+  font-family: "Fertigo-Pro";
+  text-align: center;
+  color:gray;
+}
