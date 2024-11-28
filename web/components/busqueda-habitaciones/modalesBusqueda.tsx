@@ -1,9 +1,14 @@
 import Image from "next/image";
-import { CarouselFotosHabitacion } from "./carouselBusqueda";
+import { CarouselFotosHabitacion } from "./componentes";
 
 
-export const ModalServiciosAdicionales=({contenidoBusqueda, closeModal, bookingRoom}:any)=>{
 
+export const ModalServiciosAdicionales=({contenidoBusqueda,cargosAdicionales, item, closeModal, bookingRoom}:any)=>{
+
+  const data_item=item.services;
+  console.log(item);
+
+  console.log(cargosAdicionales);
     return  (
         <>
          {/* <!-- MODAL SERVICIOS ADICIONALES --> */}
@@ -16,56 +21,31 @@ export const ModalServiciosAdicionales=({contenidoBusqueda, closeModal, bookingR
         <h2 >{contenidoBusqueda.popup_servicios.subtitle}</h2>
 
         <div className="list_service">
-          <div className="item_row_service">
-            <div className="title">
-              <input type="checkbox" name="" id="" />
-              <h3>Servicio de transporte</h3>
-            </div>
-            <h3>US$ 40.00</h3>
-          </div>
+          
+            {
+        data_item.map((item:any, index:any)=> {
+             return(
+              
+                  <div className="item_row_service" key={index}>
+                    <div className="title">
+                      <input type="checkbox" name="" id="" />
+                      <h3>{item.name}</h3>
+                    </div>
+                    <h3>US$ 40.00</h3>
+                  </div>
+                             
+            );
 
-          <div className="item_row_service">
-            <div className="title">
-              <input type="checkbox" name="" id="" />
-              <h3>Servicio de transporte</h3>
-            </div>
-            <h3>US$ 40.00</h3>
-          </div>
 
-          <div className="item_row_service">
-            <div className="title">
-              <input type="checkbox" name="" id="" />
-              <h3>Servicio de transporte</h3>
-            </div>
-            <h3>US$ 40.00</h3>
-          </div>
+        })
+     
+        }
 
-          <div className="item_row_service">
-            <div className="title">
-              <input type="checkbox" name="" id="" />
-              <h3>Servicio de transporte</h3>
-            </div>
-            <h3>US$ 40.00</h3>
-          </div>
+          
 
-          <div className="item_row_service">
-            <div className="title">
-              <input type="checkbox" name="" id="" />
-              <h3>Servicio de transporte</h3>
-            </div>
-            <h3>US$ 40.00</h3>
-          </div>
-
-          <div className="item_row_service">
-            <div className="title">
-              <input type="checkbox" name="" id="" />
-              <h3>Servicio de transporte</h3>
-            </div>
-            <h3>US$ 40.00</h3>
-          </div>
         </div>
 
-        <span>Total: US$ 120.00</span>
+        <span>Total: US$ {cargosAdicionales}</span>
         <div className="button" onClick={bookingRoom}>{contenidoBusqueda.popup_servicios.boton}</div>
 
         <Image className="img_fondo_right" width={102} height={106} src="/img/adorno_popup_inferior.png" alt="icon-popup" />

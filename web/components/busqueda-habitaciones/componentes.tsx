@@ -2,6 +2,13 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from 'next/navigation'
 import { HabitacionesNoDisponible, ListadoHabitaciones } from './listadoHabitaciones';
+import Image from "next/image";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css"; // Importa los estilos básicos de Swiper
+import "swiper/css/navigation"; // Importa estilos adicionales si usas la navegación
+import { Navigation, Pagination } from "swiper/modules"; // Importa módulos específicos
+
 
 export const ContenidoBusquedaHabitacion =  () => {
 
@@ -15,8 +22,7 @@ export const ContenidoBusquedaHabitacion =  () => {
     const children = searchParams.get('children')
     const date_in = searchParams.get('date_in')
     const date_out = searchParams.get('date_out')
-    console.log(date_in.length)
-    console.log(date_out)
+ 
 
     /*console.log(typeof (adults));
     console.log(children);
@@ -24,7 +30,7 @@ export const ContenidoBusquedaHabitacion =  () => {
     console.log(date_out);*/
     let estado_parametros=false
     if(adults=="0" ||  date_in?.length==0 || date_out?.length==0){
-        console.log("*********************")
+
     }else{
 
         estado_parametros=true;
@@ -64,4 +70,56 @@ export const ContenidoBusquedaHabitacion =  () => {
 
         </>
     )
+}
+
+export const ItemServicioHabitacion = ({ icon, name }: any) => {
+    return (
+        <span>
+            <Image width={20} height={20} src={icon} alt=""/>
+            {name}
+        </span>
+
+    );
+
+}
+
+
+export const CarouselFotosHabitacion = ({ img_portada, images }: any) => {
+
+    return <>
+        {
+              <Swiper
+              modules={[Navigation, Pagination]}
+              spaceBetween={0}
+              slidesPerView={1}
+              navigation
+              pagination={{ clickable: true }}
+            >
+
+              <SwiperSlide>
+                <div className="item_carrusel">
+                  <Image width={500} height={280} src={img_portada} alt="image-habitacion" />
+                </div>
+              </SwiperSlide>
+
+
+            {  images.map((item:any) => {
+              return (
+                <SwiperSlide key={item.url}>
+                  <div     className="item_carrusel">
+                    <Image width={500} height={280} src={item.url} alt="image-habitacion" />
+                  </div>
+
+                </SwiperSlide>
+
+              );
+            })}
+
+
+              {/* Añade más slides según necesites */}
+              </Swiper>
+
+
+        }
+    </>
 }

@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import { PageBusquedaResponse } from "@/interfaces";
 import Image from "next/image";
-import { ListadoTipoHabitacion } from "../busqueda/busqueda";
+
 import { BusquedaHabitaciones } from "./busquedaHabitaciones";
 
 export const ListadoHabitaciones =  ({contenidoBusqueda}:any)=> {
@@ -18,7 +18,7 @@ export const ListadoHabitaciones =  ({contenidoBusqueda}:any)=> {
                             <Image width={18} height={20} src="/img/icon_date.png" alt="icon-search"></Image>
                             <h2>{contenidoBusqueda.labels_search.date_in}</h2>
                             </div>
-                            <input type="date" name="date_in" id="checkin"/>
+                            <input type="date" name="date_in"  id="checkin"/>
                         </div>
 
                         <div className="ui_separator_input"></div>
@@ -77,7 +77,7 @@ export const ListadoHabitaciones =  ({contenidoBusqueda}:any)=> {
 
                     <BusquedaHabitaciones contenidoBusqueda={contenidoBusqueda}></BusquedaHabitaciones>
 
-            </div>
+         </div>
         </>
     )
 

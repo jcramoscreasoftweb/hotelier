@@ -1,7 +1,7 @@
 
 import  { Metadata } from "next"
-import {FooterSite,HeaderSitev2, ListadoTipoHabitacion} from "@/components"
-import Image from "next/image";
+import {FooterSite,HeaderSitev2} from "@/components"
+
 import { ContenidoBusquedaHabitacion } from "@/components/busqueda-habitaciones/componentes";
 
 

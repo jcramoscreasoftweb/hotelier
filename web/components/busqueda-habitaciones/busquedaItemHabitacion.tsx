@@ -1,11 +1,13 @@
 "use client";
 import { BusquedaResponse, PageBusquedaResponse } from "@/interfaces";
 import Image from "next/image";
-import { ItemServicioHabitacion } from "./busqueda";
 
+import { useSearchParams } from 'next/navigation'
 import { useState } from 'react';
 import { useRouter } from 'next/navigation'
-import { CarouselFotosHabitacion } from "./carouselBusqueda";
+
+
+import { CarouselFotosHabitacion, ItemServicioHabitacion } from "./componentes";
 import { ModalDetalleRoom, ModalServiciosAdicionales } from "./modalesBusqueda";
 
 
@@ -15,6 +17,20 @@ export const ItemHabitacionBusqueda = ({item,contenidoBusqueda}:any) => {
 
     const [selectedRoom, setSelectedRoom] = useState(null); // Para manejar el producto seleccionado
     const [isModalOpen, setIsModalOpen] = useState(false); // Para controlar la visibilidad del modal
+    const [isActivarOpcion, setActivarOpcion] = useState(false); 
+    const [isPrecioActivo, setPrecioActivo] = useState(null); 
+    let cargosAdicionales=0;
+
+
+    
+    const searchParams = useSearchParams()
+
+    const adults = searchParams.get('adults')
+    const children = searchParams.get('children')
+    const date_in = searchParams.get('date_in')
+    const date_out = searchParams.get('date_out')
+
+
 
     const handleRoomClick = (room:any) => {
         setSelectedRoom(room);
@@ -28,17 +44,31 @@ export const ItemHabitacionBusqueda = ({item,contenidoBusqueda}:any) => {
       setModalServiciosAdcionales(false); // Cierra el modal
       setSelectedRoom(null); // Resetea el producto seleccionado
     };
-
-
-
-
+    const activarOpcionPrecio=(item:any)=>{
+        setPrecioActivo(item);
+        setActivarOpcion(true)
+    }
+   
     const bookingRoom=()=>{
+        let data_reserva={
+            id:null,
+            date_in:date_in,
+            date_out:date_out,
+            check_in:null,
+            check_out:null,
+            adults:adults,
+            children:children,
+            tipo_pago:0,
+            servicios_adicionales:[],
+            total_pago:100
+        }
+      localStorage.setItem("datareserva",JSON.stringify(data_reserva));
       router.push('/detalle')
     }
 
     return (
         <>
-          <div className="ui_item_habitacion"  key={item.id_tp_room}>
+          <div className="ui_item_habitacion"  key={item.id}>
                         <div className="ui_info_habitacion">
                             <h2 className="ui_titulo_habitacion" >
                                 {item.name}
@@ -84,7 +114,7 @@ export const ItemHabitacionBusqueda = ({item,contenidoBusqueda}:any) => {
 
                         <div className="ui_info_habitacion_precio">
                             <p className="ui_titulo_bloque">{contenidoBusqueda.card_room.title_price}</p>
-                            <div className="ui_item_precio ">
+                            <div className={isPrecioActivo === 1 ? 'ui_item_precio activo' : 'ui_item_precio'} onClick={() => activarOpcionPrecio(1) }>
                                 <div>
                                     <span className="ui_subtitulo">{contenidoBusqueda.card_room.tp_payment_1}</span>
                                     <p className="ui_detalle_texto">{contenidoBusqueda.card_room.payment1_description}</p>
@@ -94,7 +124,7 @@ export const ItemHabitacionBusqueda = ({item,contenidoBusqueda}:any) => {
                                     <span className="ui_info_precio">US$ {item.price_web}</span>
                                 </div>
                             </div>
-                            <div className="ui_item_precio ">
+                            <div className= {isPrecioActivo === 2 ? 'ui_item_precio activo' : 'ui_item_precio'} onClick={() => activarOpcionPrecio(2) }>
                                 <div>
                                     <span className="ui_subtitulo">{contenidoBusqueda.card_room.tp_payment_2}</span>
                                     <p className="ui_detalle_texto">{contenidoBusqueda.card_room.payment2_description}</p>
@@ -120,13 +150,19 @@ export const ItemHabitacionBusqueda = ({item,contenidoBusqueda}:any) => {
                                 </div>
 
                             </div>
-                            <div  onClick={() =>  setModalServiciosAdcionales(true)} className="ui_btn_item_reservar_habitacion">
+                            {isActivarOpcion ? 
+                            <div  onClick={() =>  setModalServiciosAdcionales(true)} className="ui_btn_item_reservar_habitacion activo">
                                 <span>{contenidoBusqueda.card_room.boton}</span>
-                            </div>
+                            </div> 
+                            : 
+                            <div className="ui_btn_item_reservar_habitacion">
+                                <span>{contenidoBusqueda.card_room.boton}</span>
+                            </div> 
+                            }
                         </div>
                 </div>
                 {modalServiciosAdcionales && (
-                   <ModalServiciosAdicionales contenidoBusqueda={contenidoBusqueda}  closeModal={closeModal} bookingRoom={bookingRoom}></ModalServiciosAdicionales>
+                   <ModalServiciosAdicionales contenidoBusqueda={contenidoBusqueda}  cargosAdicionales={cargosAdicionales} item={item} closeModal={closeModal} bookingRoom={bookingRoom}></ModalServiciosAdicionales>
                 )}
                 {isModalOpen && selectedRoom && (
                   <ModalDetalleRoom item={item} contenidoBusqueda={contenidoBusqueda}  closeModal={closeModal}></ModalDetalleRoom>
