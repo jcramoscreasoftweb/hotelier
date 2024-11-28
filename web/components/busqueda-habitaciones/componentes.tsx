@@ -15,19 +15,20 @@ export const ContenidoBusquedaHabitacion =  () => {
     const children = searchParams.get('children')
     const date_in = searchParams.get('date_in')
     const date_out = searchParams.get('date_out')
-    console.log(date_in.length)
-    console.log(date_out)
+    let serarch_parameters:any={};
 
-    /*console.log(typeof (adults));
-    console.log(children);
-    console.log(date_in);
-    console.log(date_out);*/
+    serarch_parameters.data=false;
     let estado_parametros=false
     if(adults=="0" ||  date_in?.length==0 || date_out?.length==0){
-        console.log("*********************")
-    }else{
 
+    }else{
+        serarch_parameters.adults=adults;
+        serarch_parameters.children=children;
+        serarch_parameters.date_in=date_in;
+        serarch_parameters.date_out=date_out;
+        serarch_parameters.data=true;
         estado_parametros=true;
+
 
     }
 
@@ -60,7 +61,7 @@ export const ContenidoBusquedaHabitacion =  () => {
     return (
         <>
 
-            {estado_parametros ? <ListadoHabitaciones contenidoBusqueda={data}/> : <HabitacionesNoDisponible contenidoBusqueda={data}/>}
+            {estado_parametros ? <ListadoHabitaciones  serarch_parameters={ serarch_parameters} contenidoBusqueda={data}/> : <HabitacionesNoDisponible serarch_parameters= { serarch_parameters}  contenidoBusqueda={data}/>}
 
         </>
     )

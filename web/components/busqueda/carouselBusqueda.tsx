@@ -21,16 +21,16 @@ export const CarouselFotosHabitacion = ({ img_portada, images }: any) => {
               pagination={{ clickable: true }}
             >
 
-              <SwiperSlide>
+              <SwiperSlide  key={img_portada}>
                 <div className="item_carrusel">
                   <Image width={500} height={280} src={img_portada} alt="image-habitacion" />
                 </div>
               </SwiperSlide>
 
 
-            {  images.map((item:any) => {
+            {  images.map((item:any,index:any) => {
               return (
-                <SwiperSlide key={item.url}>
+                <SwiperSlide key={index}>
                   <div     className="item_carrusel">
                     <Image width={500} height={280} src={item.url} alt="image-habitacion" />
                   </div>

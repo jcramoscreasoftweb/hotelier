@@ -2,7 +2,7 @@
 import { BusquedaResponse, PageBusquedaResponse } from "@/interfaces";
 import Image from "next/image";
 import { ItemServicioHabitacion } from "./busqueda";
-import { useSearchParams } from 'next/navigation'
+
 import { useState } from 'react';
 import { useRouter } from 'next/navigation'
 import { CarouselFotosHabitacion } from "./carouselBusqueda";
@@ -11,34 +11,14 @@ import { ModalDetalleRoom, ModalServiciosAdicionales } from "./modalesBusqueda";
 
 
 export const ItemHabitacionBusqueda = ({item,contenidoBusqueda}:any) => {
-
-    const searchParams = useSearchParams()
-    var dataSeleccionada:any={
-        id:0,
-        nombre:"",
-        date_in:"",
-        date_out:"",
-        adults:0,
-        children:0,
-        price:0,
-        cash_price:0
-    }
-    let selecionPrecio=false;
   const router = useRouter()
 
     const [selectedRoom, setSelectedRoom] = useState(null); // Para manejar el producto seleccionado
     const [isModalOpen, setIsModalOpen] = useState(false); // Para controlar la visibilidad del modal
 
-    const [isActiveReserva, setIsActiveReserva] = useState(false);
-
-
     const handleRoomClick = (room:any) => {
-        console.log(JSON.stringify(room));
-
         setSelectedRoom(room);
-        //localStorage.setItem("room",);
-        setIsModalOpen(true); // Abre el modal
-
+      setIsModalOpen(true); // Abre el modal
     };
 
     const [modalServiciosAdcionales, setModalServiciosAdcionales] = useState(false);
@@ -53,42 +33,12 @@ export const ItemHabitacionBusqueda = ({item,contenidoBusqueda}:any) => {
 
 
     const bookingRoom=()=>{
-
-
-
-        const adults = searchParams.get('adults')
-        const children = searchParams.get('children')
-        const date_in = searchParams.get('date_in')
-        const date_out = searchParams.get('date_out')
-
-        console.log(adults);
-        console.log(children);
-        console.log(date_in);
-        console.log(date_out);
-        dataSeleccionada.date_in=date_in;
-        dataSeleccionada.date_out=date_out;
-        dataSeleccionada.adults=adults;
-        dataSeleccionada.children=children;
-
-
-        localStorage.setItem('pre_reserva', JSON.stringify(dataSeleccionada));
-        router.push('/detalle')
+      router.push('/detalle')
     }
-    const seleccionarTipoPago=(tipo:any)=>
-    {
-        console.log(selecionPrecio)
-        setIsActiveReserva(true);
-        selecionPrecio=true;
-        console.log(tipo)
-        console.log(selecionPrecio)
-    }
-
-
-
 
     return (
         <>
-          <div className="ui_item_habitacion"  key={item.id_tp_room}>
+          <div className="ui_item_habitacion"  key={item.id}>
                         <div className="ui_info_habitacion">
                             <h2 className="ui_titulo_habitacion" >
                                 {item.name}
@@ -134,7 +84,7 @@ export const ItemHabitacionBusqueda = ({item,contenidoBusqueda}:any) => {
 
                         <div className="ui_info_habitacion_precio">
                             <p className="ui_titulo_bloque">{contenidoBusqueda.card_room.title_price}</p>
-                            <div onClick={() =>  seleccionarTipoPago(1)}  className="ui_item_precio" >
+                            <div className="ui_item_precio" >
                                 <div>
                                     <span className="ui_subtitulo">{contenidoBusqueda.card_room.tp_payment_1}</span>
                                     <p className="ui_detalle_texto">{contenidoBusqueda.card_room.payment1_description}</p>
@@ -144,7 +94,7 @@ export const ItemHabitacionBusqueda = ({item,contenidoBusqueda}:any) => {
                                     <span className="ui_info_precio">US$ {item.price_web}</span>
                                 </div>
                             </div>
-                            <div onClick={() =>  seleccionarTipoPago(2)}  className="ui_item_precio">
+                            <div className="ui_item_precio">
                                 <div>
                                     <span className="ui_subtitulo">{contenidoBusqueda.card_room.tp_payment_2}</span>
                                     <p className="ui_detalle_texto">{contenidoBusqueda.card_room.payment2_description}</p>
@@ -170,19 +120,9 @@ export const ItemHabitacionBusqueda = ({item,contenidoBusqueda}:any) => {
                                 </div>
 
                             </div>
-                            { isActiveReserva ?
-
-                            <div  onClick={() =>  setModalServiciosAdcionales(true)} className="ui_btn_item_reservar_habitacion activo">
-                                <span>{contenidoBusqueda.card_room.boton}
-                                </span>
+                            <div  onClick={() =>  setModalServiciosAdcionales(true)} className="ui_btn_item_reservar_habitacion">
+                                <span>{contenidoBusqueda.card_room.boton}</span>
                             </div>
-                            :
-                            <div   className="ui_btn_item_reservar_habitacion">
-                                <span>{contenidoBusqueda.card_room.boton}
-                                </span>
-                            </div>
-                            }
-
                         </div>
                 </div>
                 {modalServiciosAdcionales && (

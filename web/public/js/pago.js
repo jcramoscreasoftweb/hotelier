@@ -4,6 +4,7 @@
  const btn_pagar = document.getElementById('pagar-culqui');
  btn_pagar.addEventListener('click', (e) => {
     console.log("----")
+    console.log(localStorage.getItem("pre_reserva"))
      var Culqi;
      var settings = {
              title: 'Perú Hotelier',

@@ -1,7 +1,8 @@
 
 import  { Metadata } from "next"
-import {FooterSite,HeaderSitev2, ListadoTipoHabitacion} from "@/components"
-import Image from "next/image";
+import {FooterSite,HeaderSitev2} from "@/components"
+
+import Script from 'next/script';
 import { ContenidoBusquedaHabitacion } from "@/components/busqueda-habitaciones/componentes";
 
 
@@ -14,9 +15,13 @@ export default function BusquedaNueva() {
 
 
 return(<>
+
         <HeaderSitev2 />
+
             <ContenidoBusquedaHabitacion></ContenidoBusquedaHabitacion>
         <FooterSite />
+        <Script src="js/jquery.js"  strategy="beforeInteractive"  />
+        <Script src="js/busqueda.js"  strategy="afterInteractive"  />
     </>
     )
 }

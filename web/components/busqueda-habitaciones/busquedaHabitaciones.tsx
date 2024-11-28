@@ -21,7 +21,8 @@ export const BusquedaHabitaciones=({contenidoBusqueda}:any)=>{
 
                 // Codifica las credenciales en Base64
                 const auth = btoa(`${username}:${password}`);
-                const response = await fetch(`http://18.222.202.240/api/search-typerooms?${searchParams.toString()}`,{
+
+                const response = await fetch(`https://cuddly-turkeys-ring.loca.lt/api/search-typerooms?${searchParams.toString()}`,{
                     method: "GET", // GET es el valor predeterminado
                     headers: {
                         Authorization: `Basic ${auth}`, // Encabezado de autenticación
@@ -31,7 +32,7 @@ export const BusquedaHabitaciones=({contenidoBusqueda}:any)=>{
                 if (!response.ok) throw new Error('Error en la solicitud');
 
                 const result = await response.json();
-
+                console.log(result.payload["es"]);
                 setrecords(result.records)
                 setDataHabitaciones(result.payload["es"]); // Asigna los datos obtenidos al estado
             } catch (error:any) {
@@ -55,7 +56,7 @@ export const BusquedaHabitaciones=({contenidoBusqueda}:any)=>{
 
         {dataHabitaciones.map((item:any)=> {
              return(
-                <ItemHabitacionBusqueda key={item.id_tp_room} item={item} contenidoBusqueda={contenidoBusqueda}></ItemHabitacionBusqueda>
+                <ItemHabitacionBusqueda key={item.id_room} item={item} contenidoBusqueda={contenidoBusqueda}></ItemHabitacionBusqueda>
             );
 
 

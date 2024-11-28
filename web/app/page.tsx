@@ -45,7 +45,7 @@ export default async function Home() {
                       <Image width={18} height={20} src="/img/icon_date.png" alt="icon-search"></Image>
                       <h2>Fecha de entrada</h2>
                     </div>
-                    <input type="date" name="checkin" id="checkin"/>
+                    <input type="date" name="date_in" id="checkin"/>
                   </div>
 
                   <div className="ui_separator_input"></div>
@@ -55,7 +55,7 @@ export default async function Home() {
                       <Image width={18} height={20} src="/img/icon_date.png" alt="icon-search"></Image>
                       <h2>Fecha de salida</h2>
                     </div>
-                    <input type="date" name="checkout" id="checkout" />
+                    <input type="date" name="date_out" id="checkout" />
                   </div>
 
                   <div className="ui_separator_input"></div>

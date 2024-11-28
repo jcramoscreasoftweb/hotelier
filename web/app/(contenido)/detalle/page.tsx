@@ -1,3 +1,4 @@
+
 import  { Metadata } from "next";
 import {
   FooterSite,
@@ -8,6 +9,7 @@ import {DetalleReservaResponse, PhoneCodeResponse} from"@/interfaces";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
+import { ContenidoDetalleReserva } from "@/components/detalle/componentes";
 
 export const metadata:Metadata={
     title:"Detalle reserva",
@@ -15,6 +17,9 @@ export const metadata:Metadata={
     keywords:["Detalle","reserva","Hotelier"]
 }
 export default  async function Nosotros() {
+
+
+
   let url = "https://creasoft.com.pe/hotelier_api/pages/page-detalle-reserva.json";
   let requestAPI: any = await fetch(url);
   requestAPI = await requestAPI.json();
@@ -45,86 +50,8 @@ export default  async function Nosotros() {
 
 
             <div className="ui_box_container">
-              <div className="box_informacion_reserva">
-                <h1>{contenidoDetalle.info_reserva.title}</h1>
 
-                <div className="info_date">
-                  <h2>{contenidoDetalle.info_reserva.label_datein}</h2>
-                  <p>Lunes, 03 junio 2024   <span>09:00 a.m.</span></p>
-
-                  <h2>{contenidoDetalle.info_reserva.label_dateout}</h2>
-                  <p>Lunes, 03 junio 2024   <span>09:00 a.m.</span></p>
-                </div>
-
-                <div className="line_separator"></div>
-
-                <div className="info_room">
-                  <h2>Habitación doble estándar</h2>
-                  <p>{contenidoDetalle.info_reserva.label_people}: 2</p>
-                  <p>{contenidoDetalle.info_reserva.label_people}: 3 {contenidoDetalle.info_reserva.label_days}</p>
-                </div>
-
-                <div className="line_separator"></div>
-
-                <div className="info_precio">
-                  <h2>{contenidoDetalle.info_reserva.label_precio}</h2>
-
-                  <div className="item_precio active">
-                    <div className="radio_btn"></div>
-                    <h3>{contenidoDetalle.info_reserva.label_tp_payment1}</h3>
-                    <span>US$ 360</span>
-                  </div>
-
-                  <div className="item_precio">
-                    <div className="radio_btn"></div>
-                    <h3>{contenidoDetalle.info_reserva.label_tp_payment2}</h3>
-                    <span>US$ 360</span>
-                  </div>
-                </div>
-
-                <div className="info_servicios">
-                  <h2>{contenidoDetalle.info_reserva.label_servicios}</h2>
-                  <ul>
-
-                    <li className="item_servicio">
-                        <h3>Servicio de transporte</h3>
-                        <span>US$ 40.00</span>
-                        <Image width={18} height={18} src="/img/icon_delete_servicio.svg" alt="icon-close" />
-                    </li>
-                    <li className="item_servicio">
-                        <h3>Servicio de bienvenida</h3>
-                        <span>US$ 20.00</span>
-                        <Image width={18} height={18} src="/img/icon_delete_servicio.svg" alt="icon-close" />
-                    </li>
-                  </ul>
-
-                </div>
-
-                <div className="line_separator"></div>
-
-                <div className="info_cupon">
-                  <div className="cupon_title">
-                    <h2>{contenidoDetalle.info_reserva.label_cupon}</h2>
-                    <Image width={18} height={11} src="/img/icon-arrow-cupon.png" alt="icon-arrow"/>
-                  </div>
-
-                  <div className="cupon_detail">
-                    <input type="text" maxLength={30} placeholder={contenidoDetalle.info_reserva.label_cupon_placeholder}/>
-                    <p className="text_error"></p>
-                    <div className="ui_boton_cupon">
-                      <h2>{contenidoDetalle.info_reserva.label_cupon_boton}</h2>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="line_separator"></div>
-
-                <div className="info_total">
-                  <h2>Total:</h2>
-                  <span>US$ 480.00</span>
-                </div>
-
-              </div>
+              <ContenidoDetalleReserva  contenidoDetalle={contenidoDetalle}></ContenidoDetalleReserva>
 
               <div className="right_side">
                 <div className="box_informacion_huesped">
@@ -231,6 +158,7 @@ export default  async function Nosotros() {
 
           </div>
         </section>
+
 
 
 
