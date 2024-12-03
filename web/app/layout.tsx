@@ -19,11 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-       <Script src="/js/jquery.js"/>
+    
 
 
       <body className={openSans.className}>{children}</body>
-
+      <Script  src="/js/jquery.js"/>
       <Script  src="/js/main.js"/>
     </html>
   );

@@ -2583,7 +2583,7 @@ font-weight: 600;
 }
 
 .box_informacion_reserva .info_cupon .cupon_detail {
-  display: none
+  /*display: none*/
 }
 
 .box_informacion_reserva .info_cupon .cupon_title h2{

@@ -11,6 +11,8 @@ export const ContenidoDealleReserva=({contenidoDetalle}:any)=>{
 
     let reservaClienteLocal=JSON.parse(localData.toString());
 
+ 
+
     let monto_servicio=0;
     reservaClienteLocal.aditional_services.map((item:any)=>{
       monto_servicio=monto_servicio+reservaClienteLocal.aditional_services_aviables[item].price
@@ -20,9 +22,7 @@ export const ContenidoDealleReserva=({contenidoDetalle}:any)=>{
     if(reservaClienteLocal.tipo_pago=="2"){
       monto_reserva=reservaClienteLocal.price_hotel;
     }
-    console.log("----")
-    console.log(monto_reserva);
-    console.log("----")
+
 
     let monto=reservaClienteLocal.total_pago+monto_servicio;
     reservaClienteLocal.total_pago=monto+monto_reserva;
@@ -59,6 +59,22 @@ export const ContenidoDealleReserva=({contenidoDetalle}:any)=>{
 
     const actualizarTotal=(monto:any)=>{
       handleChange("total_pago",monto)
+    }
+
+    const removerServicio= (index:any)=>{
+      console.log(reservaCliente.aditional_services)
+      let actual_servicios:any=[];
+      reservaCliente.aditional_services.map((item:any)=>{
+        console.log(item)
+        if(index!==item){
+          actual_servicios.push(item)
+        }
+      })
+      console.log(actual_servicios);
+      handleChange("aditional_services",actual_servicios);
+     // console.log(index);
+      //reservaCliente.aditional_services.filter((item:any) => item !== index)
+     // handleChange(reservaCliente);
     }
    /* const [isPrecioActivo, setPrecioActivo] = useState(null);
     let montoinicial=0;
@@ -102,6 +118,10 @@ export const ContenidoDealleReserva=({contenidoDetalle}:any)=>{
        }
        setTotal(monto_reserva);
       }*/
+     const validarCupon=()=>{
+      console.log("validarCupon");
+     }
+     console.log( reservaCliente.aditional_services.length)
       return (<>
                 <div className="box_informacion_reserva">
                           <h1>{contenidoDetalle.info_reserva.title}</h1>
@@ -139,31 +159,36 @@ export const ContenidoDealleReserva=({contenidoDetalle}:any)=>{
                               <span>US$ {reservaCliente.price_hotel}</span>
                             </div>
                           </div>
-
-                          <div className="info_servicios">
+                          {
+                            reservaCliente.aditional_services.length > 0 ?  <> <div className="info_servicios">
                             <h2>{contenidoDetalle.info_reserva.label_servicios}</h2>
                             <ul>
                               {
                                 reservaCliente.aditional_services.map((item:any)=>{
                                  return(
-
+  
                                     <li className="item_servicio" key={item}>
                                         <h3>{reservaCliente.aditional_services_aviables[item].name}</h3>
                                         <span>US$ {reservaCliente.aditional_services_aviables[item].price}</span>
-                                        <Image width={18} height={18} src="/img/icon_delete_servicio.svg" alt="icon-close" />
+                                        <Image width={18} height={18} src="/img/icon_delete_servicio.svg"  onClick={()=>removerServicio(item)} alt="icon-close" />
                                     </li>
-
+  
                                  )
                                 })
                               }
-
-
-
+  
+  
+  
                             </ul>
-
+  
                           </div>
+                            <div className="line_separator"></div>
+                            </> :""  
+                           
+                          }
 
-                          <div className="line_separator"></div>
+
+                        
 
                           <div className="info_cupon">
                             <div className="cupon_title">
@@ -174,7 +199,7 @@ export const ContenidoDealleReserva=({contenidoDetalle}:any)=>{
                             <div className="cupon_detail">
                               <input type="text" maxLength={30} placeholder={contenidoDetalle.info_reserva.label_cupon_placeholder}/>
                               <p className="text_error"></p>
-                              <div className="ui_boton_cupon">
+                              <div className="ui_boton_cupon" onClick={()=>validarCupon()}>
                                 <h2>{contenidoDetalle.info_reserva.label_cupon_boton}</h2>
                               </div>
                             </div>
@@ -184,7 +209,7 @@ export const ContenidoDealleReserva=({contenidoDetalle}:any)=>{
 
                           <div className="info_total">
                             <h2>Total:</h2>
-                            <span>US$ {reservaCliente.total_pago}</span>
+                            <span data-total={reservaCliente.total_pago} id="pago-total">US$ {reservaCliente.total_pago}</span>
                           </div>
 
                 </div>
