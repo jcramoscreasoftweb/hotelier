@@ -14,15 +14,31 @@ import { ModalDetalleRoom, ModalServiciosAdicionales } from "./modalesBusqueda";
 
 export const ItemHabitacionBusqueda = ({item,contenidoBusqueda}:any) => {
   const router = useRouter()
+  let data_reserva:any={
+    id:null,
+    date_in:"",
+    date_out:"",
+    check_in:"",
+    check_out:"",
+    adults:"",
+    children:"",
+    tipo_pago:"",
+    diffInDays:"",
+    price_web:"",
+    price_hotel:"",
+    aditional_services:[],
+    aditional_services_aviables:[],
+    total_pago:0
+}
 
+let inf:any=[];
     const [selectedRoom, setSelectedRoom] = useState(null); // Para manejar el producto seleccionado
     const [isModalOpen, setIsModalOpen] = useState(false); // Para controlar la visibilidad del modal
-    const [isActivarOpcion, setActivarOpcion] = useState(false); 
-    const [isPrecioActivo, setPrecioActivo] = useState(null); 
+    const [isActivarOpcion, setActivarOpcion] = useState(false);
+    const [isPrecioActivo, setPrecioActivo] = useState(null);
+
     let cargosAdicionales=0;
 
-
-    
     const searchParams = useSearchParams()
 
     const adults = searchParams.get('adults')
@@ -34,7 +50,7 @@ export const ItemHabitacionBusqueda = ({item,contenidoBusqueda}:any) => {
 
     const handleRoomClick = (room:any) => {
         setSelectedRoom(room);
-      setIsModalOpen(true); // Abre el modal
+        setIsModalOpen(true); // Abre el modal
     };
 
     const [modalServiciosAdcionales, setModalServiciosAdcionales] = useState(false);
@@ -46,22 +62,28 @@ export const ItemHabitacionBusqueda = ({item,contenidoBusqueda}:any) => {
     };
     const activarOpcionPrecio=(item:any)=>{
         setPrecioActivo(item);
+
         setActivarOpcion(true)
     }
-   
+
     const bookingRoom=()=>{
-        let data_reserva={
-            id:null,
-            date_in:date_in,
-            date_out:date_out,
-            check_in:null,
-            check_out:null,
-            adults:adults,
-            children:children,
-            tipo_pago:0,
-            servicios_adicionales:[],
-            total_pago:100
-        }
+        console.log(item);
+        data_reserva.id=item.id_room;
+
+        data_reserva.date_in=date_in;
+        data_reserva.date_out=date_out;
+        data_reserva.check_in=item.check_in;
+        data_reserva.check_out=item.check_out;
+        data_reserva.adults=adults;
+        data_reserva.children=children;
+        data_reserva.tipo_pago=isPrecioActivo;
+        data_reserva.diffInDays=item.diffInDays;
+        data_reserva.price_web=item.price_web;
+        data_reserva.price_hotel=item.price_hotel;
+        data_reserva.aditional_services_aviables=item.additional_services_availables;
+        data_reserva.total_pago=0;
+
+
       localStorage.setItem("datareserva",JSON.stringify(data_reserva));
       router.push('/detalle')
     }
@@ -118,7 +140,7 @@ export const ItemHabitacionBusqueda = ({item,contenidoBusqueda}:any) => {
                                 <div>
                                     <span className="ui_subtitulo">{contenidoBusqueda.card_room.tp_payment_1}</span>
                                     <p className="ui_detalle_texto">{contenidoBusqueda.card_room.payment1_description}</p>
-                                    <span className="ui_info_noches">3 {contenidoBusqueda.card_room.label_night}</span>
+                                    <span className="ui_info_noches">{item.diffInDays} {contenidoBusqueda.card_room.label_night}</span>
                                 </div>
                                 <div>
                                     <span className="ui_info_precio">US$ {item.price_web}</span>
@@ -128,7 +150,7 @@ export const ItemHabitacionBusqueda = ({item,contenidoBusqueda}:any) => {
                                 <div>
                                     <span className="ui_subtitulo">{contenidoBusqueda.card_room.tp_payment_2}</span>
                                     <p className="ui_detalle_texto">{contenidoBusqueda.card_room.payment2_description}</p>
-                                    <span className="ui_info_noches">3 {contenidoBusqueda.card_room.label_night}</span>
+                                    <span className="ui_info_noches">{item.diffInDays} {contenidoBusqueda.card_room.label_night}</span>
                                 </div>
                                 <div>
                                     <span className="ui_info_precio">US$ {item.price_hotel}</span>
@@ -150,19 +172,19 @@ export const ItemHabitacionBusqueda = ({item,contenidoBusqueda}:any) => {
                                 </div>
 
                             </div>
-                            {isActivarOpcion ? 
+                            {isActivarOpcion ?
                             <div  onClick={() =>  setModalServiciosAdcionales(true)} className="ui_btn_item_reservar_habitacion activo">
                                 <span>{contenidoBusqueda.card_room.boton}</span>
-                            </div> 
-                            : 
+                            </div>
+                            :
                             <div className="ui_btn_item_reservar_habitacion">
                                 <span>{contenidoBusqueda.card_room.boton}</span>
-                            </div> 
+                            </div>
                             }
                         </div>
                 </div>
                 {modalServiciosAdcionales && (
-                   <ModalServiciosAdicionales contenidoBusqueda={contenidoBusqueda}  cargosAdicionales={cargosAdicionales} item={item} closeModal={closeModal} bookingRoom={bookingRoom}></ModalServiciosAdicionales>
+                   <ModalServiciosAdicionales contenidoBusqueda={contenidoBusqueda}  serviciosAdicionales={data_reserva.aditional_services} item={item} data_reserva={data_reserva} closeModal={closeModal} bookingRoom={bookingRoom}></ModalServiciosAdicionales>
                 )}
                 {isModalOpen && selectedRoom && (
                   <ModalDetalleRoom item={item} contenidoBusqueda={contenidoBusqueda}  closeModal={closeModal}></ModalDetalleRoom>

@@ -1,14 +1,48 @@
+"use client"
 import Image from "next/image";
 import { CarouselFotosHabitacion } from "./componentes";
+import { useEffect, useState } from "react";
+
+
+export const ModalServiciosAdicionales=({contenidoBusqueda, item, serviciosAdicionales,closeModal, bookingRoom}:any)=>{
+
+  const data_item=item.additional_services_availables;
 
 
 
-export const ModalServiciosAdicionales=({contenidoBusqueda,cargosAdicionales, item, closeModal, bookingRoom}:any)=>{
+  const [isMontoServicios, setMontoServicios] = useState(0);
+  const [isAdicionalServicios, setAdicionalServicios] =  useState<string[]>([]);
+  const addService=(e: React.ChangeEvent<HTMLInputElement>, index:any)=>{
 
-  const data_item=item.services;
-  console.log(item);
 
-  console.log(cargosAdicionales);
+    const isChecked = e.target.checked; // Leer estado checked directamente
+
+    if (isChecked) {
+      //setExtraServicios([e.target.id])
+
+
+
+        //setExtraServicios((prev) => [...isExtraServicios, e.target.id]);
+        setMontoServicios(isMontoServicios+data_item[e.target.id].price);
+
+        serviciosAdicionales.push(e.target.id)
+
+
+
+    } else {
+      //setExtraServicios((prev) => prev.filter((item) => item !== e.target.id));
+      setMontoServicios(isMontoServicios-data_item[e.target.id].price);
+      //setExtraServicios([e.target.id])
+      serviciosAdicionales.filter((item:any) => item !== e.target.id)
+    }
+
+
+    //calcularCosto();
+    //data_reserva.aditional_services=isExtraServicios;
+  }
+
+
+
     return  (
         <>
          {/* <!-- MODAL SERVICIOS ADICIONALES --> */}
@@ -21,31 +55,36 @@ export const ModalServiciosAdicionales=({contenidoBusqueda,cargosAdicionales, it
         <h2 >{contenidoBusqueda.popup_servicios.subtitle}</h2>
 
         <div className="list_service">
-          
+
             {
         data_item.map((item:any, index:any)=> {
              return(
-              
+
                   <div className="item_row_service" key={index}>
                     <div className="title">
-                      <input type="checkbox" name="" id="" />
+
+                      <input type="checkbox"   onChange={(e) => addService(e,index)} name={index} id={index} />
+
+                      <label htmlFor={index} >
                       <h3>{item.name}</h3>
+                      </label>
+
                     </div>
-                    <h3>US$ 40.00</h3>
+                    <h3>US$ {item.price}</h3>
                   </div>
-                             
+
             );
 
 
         })
-     
+
         }
 
-          
+
 
         </div>
 
-        <span>Total: US$ {cargosAdicionales}</span>
+        <span>Total: US$ {isMontoServicios}</span>
         <div className="button" onClick={bookingRoom}>{contenidoBusqueda.popup_servicios.boton}</div>
 
         <Image className="img_fondo_right" width={102} height={106} src="/img/adorno_popup_inferior.png" alt="icon-popup" />

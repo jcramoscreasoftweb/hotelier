@@ -43,6 +43,7 @@ $(".ui_btn_paginacion .ui_item_btn_page").click(function(){
 /***** END RESEÑA ******/
 
 /***** DETALLE RESERVA ******/
+/*
 $(".info_precio .item_precio").click(function(){
 
     $(".info_precio .item_precio").removeClass("active")
@@ -65,7 +66,7 @@ $(".info_cupon .cupon_title img").click(function(){
         $('.info_cupon .cupon_detail').slideUp(200);
     }
 })
-
+*/
 
 /***** END DETALLE RESERVA ******/
 

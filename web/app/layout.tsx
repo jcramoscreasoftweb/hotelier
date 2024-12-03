@@ -21,10 +21,10 @@ export default function RootLayout({
     <html lang="en">
        <Script src="/js/jquery.js"/>
 
-      <Script src="/js/main.js"/>
+
       <body className={openSans.className}>{children}</body>
 
-
+      <Script  src="/js/main.js"/>
     </html>
   );
 }

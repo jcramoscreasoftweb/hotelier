@@ -22,14 +22,15 @@ export const ContenidoBusquedaHabitacion =  () => {
     const children = searchParams.get('children')
     const date_in = searchParams.get('date_in')
     const date_out = searchParams.get('date_out')
- 
+
+
 
     /*console.log(typeof (adults));
     console.log(children);
     console.log(date_in);
     console.log(date_out);*/
     let estado_parametros=false
-    if(adults=="0" ||  date_in?.length==0 || date_out?.length==0){
+    if(adults=="0" ||  date_in?.length==0 || date_in==null ||date_out?.length==0 || date_out==null){
 
     }else{
 
@@ -86,6 +87,7 @@ export const ItemServicioHabitacion = ({ icon, name }: any) => {
 
 export const CarouselFotosHabitacion = ({ img_portada, images }: any) => {
 
+
     return <>
         {
               <Swiper
@@ -96,16 +98,16 @@ export const CarouselFotosHabitacion = ({ img_portada, images }: any) => {
               pagination={{ clickable: true }}
             >
 
-              <SwiperSlide>
+              <SwiperSlide key={img_portada}>
                 <div className="item_carrusel">
                   <Image width={500} height={280} src={img_portada} alt="image-habitacion" />
                 </div>
               </SwiperSlide>
 
 
-            {  images.map((item:any) => {
+            {  images.map((item:any,index:any) => {
               return (
-                <SwiperSlide key={item.url}>
+                <SwiperSlide key={index}>
                   <div     className="item_carrusel">
                     <Image width={500} height={280} src={item.url} alt="image-habitacion" />
                   </div>

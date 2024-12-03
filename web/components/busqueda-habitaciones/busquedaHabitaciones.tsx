@@ -17,25 +17,25 @@ export const BusquedaHabitaciones=({contenidoBusqueda}:any)=>{
         // Función para obtener los datos de la API
         const fetchData = async () => {
             try {
-                const username = process.env.NEXT_PUBLIC_API_KEY_USER;;
-                const password = process.env.NEXT_PUBLIC_API_KEY_PASS;;
+                const username = process.env.NEXT_PUBLIC_API_USER;
+                const password = process.env.NEXT_PUBLIC_API_PASS;
 
                 // Codifica las credenciales en Base64
                 const auth = btoa(`${username}:${password}`);
-                
-                //const response = await fetch(`${apiUrl}/api/search-typerooms?${searchParams.toString()}`,{
-                /*const response = await fetch(`https://creasoft.com.pe/hotelier_api/pages/page-busqueda.json`,{
+
+                const response = await fetch(`${apiUrl}/api/search-typerooms?${searchParams.toString()}`,{
                     method: "GET", // GET es el valor predeterminado
                     headers: {
-                       // Authorization: `Basic ${auth}`, // Encabezado de autenticación
+                        Authorization: `Basic ${auth}`, // Encabezado de autenticación
                         "Content-Type": "application/json" // Opcional, depende del servicio
                     }
-                } );*/
-                const response = await fetch(`https://creasoft.com.pe/hotelier_api/pages/search-typerooms.json?V4`);
+                } );
+                //const response = await fetch(`https://creasoft.com.pe/hotelier_api/pages/search-typerooms.json?V4`);
                 if (!response.ok) throw new Error('Error en la solicitud');
 
                 const result = await response.json();
                 result.records=true;
+                //console.log(result);
                 setrecords(result.records)
                 setDataHabitaciones(result.payload["es"]); // Asigna los datos obtenidos al estado
             } catch (error:any) {
@@ -65,7 +65,7 @@ export const BusquedaHabitaciones=({contenidoBusqueda}:any)=>{
 
 
         })
-     
+
         }
       </>
 
