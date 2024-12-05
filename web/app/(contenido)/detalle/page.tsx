@@ -29,15 +29,19 @@ export default  async function Nosotros() {
   return (
     <>
         <HeaderSitev2 />
+     
+     
+    
         {/* Script en el head */}
         <Script
                 src="https://js.culqi.com/checkout-js"
                 //strategy="beforeInteractive" // Cargar en el <head>
                 //onLoad={() => console.log("Script en el <head> cargado")}
             />
+            
               <Script
                 src="/js/pago.js"
-                //strategy="beforeInteractive" // Cargar en el <head>
+                //strategy="afterInteractive" // Cargar en el <head>
                 //onLoad={() => console.log("Script en el <head> cargado")}
             />
         <section className="ui_seccion_1_detalle">
@@ -155,7 +159,27 @@ export default  async function Nosotros() {
 
           </div>
         </section>
+        <div className="modal-gracias">
+            <div className="marco-modal-gracias">
+            <div className="contenido-modal-gracias">
+              <img className="close-modal-gracias" src="/img/icon_close.png" alt="" />
+              <img  className="deco1" src="img/adorno_popup_superior.png" alt="" />
+              <img  className="deco2" src="img/adorno_popup_inferior.png" alt="" />
+                            <img className="ico-check" src="/img/ico_check_reserva.png" alt="" />
+                            <p className="titulo">¡Reserva registrada <br></br> exitosamente!</p>
+                            <div>
+                              <p className="detalle">
+                              Hemos enviado un correo electrónico con los detalles de tu reserva, incluyendo instrucciones para el check-in, políticas de cancelación y contacto del hotel. Revisa tu bandeja de entrada y la carpeta de SPAM.
 
+Puedes consultar el estado de tu reserva con el 
+código <span id="codigo-reserva">xer132</span>.
+
+                              </p>
+                            </div>
+              </div>
+
+            </div>
+        </div>
 
 
 

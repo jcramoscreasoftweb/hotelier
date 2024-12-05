@@ -232,7 +232,8 @@ export const ContenidoDealleReserva=({contenidoDetalle}:any)=>{
                           <div className="info_cupon">
                             <div className="cupon_title">
                               <h2>{contenidoDetalle.info_reserva.label_cupon}</h2>
-                              <Image width={18} height={11} src="/img/icon-arrow-cupon.png" alt="icon-arrow"/>
+                              { //<Image width={18} height={11} src="/img/select_arrow.png" alt="icon-arrow"/>
+                              }
                             </div>
 
                             <div className="cupon_detail">

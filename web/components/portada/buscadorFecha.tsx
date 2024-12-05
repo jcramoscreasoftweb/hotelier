@@ -1,8 +1,45 @@
 
 "use client"
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 export const BuscarFechasPortada=()=>{
+  const [dateIn, setDateIn] = useState("");
+  const [dateOut, setDateOut] = useState("");
+  useEffect(() => {
+    const now = new Date();
+ 
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, "0");
+    const day = String(now.getDate()).padStart(2, "0");
+    const hours = String(now.getHours()).padStart(2, "0");
+    const minutes = String(now.getMinutes()).padStart(2, "0");
+
+    const nextDate = new Date();
+    nextDate.setDate(nextDate.getDate() + 1); // Añade un día a la fecha actual
+    const nextDay = String(nextDate.getDate()).padStart(2, "0");
+
+    setDateIn(`${year}-${month}-${day}`);
+    //setDateOut(`${year}-${month}-${nextDay}`); // Formato requerido para datetime-local
+  }, []);
+
+  const handleChangeDateIn = (e:any) => {
+    setDateIn(e.target.value);
+
+    const nextDate = new Date(e.target.value);
+    nextDate.setDate(nextDate.getDate() + 2); // Añade un día a la fecha actual
+  
+
+    const year = nextDate.getFullYear();
+    const month = String(nextDate.getMonth() + 1).padStart(2, "0");
+    const day = String(nextDate.getDate()).padStart(2, "0");
+    setDateOut(`${year}-${month}-${day}`);
+
+  };
+  const handleChangeDateOut = (e:any) => {
+    setDateOut(e.target.value);
+  };
+
 return (
     <>
      <div className="ui_marco_opciones_home">
@@ -13,7 +50,11 @@ return (
                       <Image width={18} height={20} src="/img/icon_date.png" alt="icon-search"></Image>
                       <h2>Fecha de entrada</h2>
                     </div>
-                    <input type="date" name="date_in" id="checkin"/>
+                    <input type="date" name="date_in" id="checkin" 
+                    min={dateIn}
+                    value={dateIn} // Hora inicial basada en la fecha actual
+                    onChange={handleChangeDateIn}
+                    />
                   </div>
 
                   <div className="ui_separator_input"></div>
@@ -23,7 +64,11 @@ return (
                       <Image width={18} height={20} src="/img/icon_date.png" alt="icon-search"></Image>
                       <h2>Fecha de salida</h2>
                     </div>
-                    <input type="date" name="date_out" id="checkout" />
+                    <input type="date" name="date_out" 
+                     min={dateOut}
+                     value={dateOut} // Hora inicial basada en la fecha actual
+                     onChange={handleChangeDateOut}
+                     id="checkout" />
                   </div>
 
                   <div className="ui_separator_input"></div>

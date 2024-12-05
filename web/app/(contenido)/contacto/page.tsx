@@ -5,6 +5,7 @@ import {
 } from "@/components"
 import { ContactoResponse, PhoneCodeResponse } from "@/interfaces";
 import Image from "next/image";
+import { FormularioContacto } from "@/components/contacto/formularioContacto";
 
 export const metadata:Metadata={
     title:"Contacto",
@@ -22,7 +23,7 @@ export default async function Contacto(){
     let requestAPI_phone: any = await fetch(url_phonecode);
     requestAPI_phone = await requestAPI_phone.json();
     let phoneCode: PhoneCodeResponse[] = requestAPI_phone.payload["es"];
-
+   
     return(
         <>
             <section className="ui_seccion_top_banner contacto"
@@ -56,45 +57,7 @@ export default async function Contacto(){
                     </div>
 
                     <div className="ui_seccion_form">
-                        <form action="http://127.0.0.1:8000/api/create-contact" method="post">
-                            <h2 >{contenidoContacto.form_section.title}</h2>
-                            <p>{contenidoContacto.form_section.subtitle}</p>
-
-                            <div className="ui_input_form">
-                                <span>{contenidoContacto.form_section.label_name}</span>
-                                <input type="text" id="name" name="name" maxLength={200} required/>
-                            </div>
-
-                            <div className="ui_input_form">
-                                <span>{contenidoContacto.form_section.label_phone}</span>
-                                <div className="ui_selector_input">
-                                    <select name="id_country" id="id_country" defaultValue={139}>
-                                        {phoneCode.map((item : any) => {
-                                            return(
-                                                <option key={item.id} value={item.id}>+ {item.code_phone} {item.country_name}</option>
-                                            );
-                                        })
-                                        }
-
-                                    </select>
-                                    <input type="text" id="phone" name="phone" maxLength={15} required/>
-                                </div>
-                            </div>
-
-                            <div className="ui_input_form">
-                                <span>{contenidoContacto.form_section.label_email}</span>
-                                <input type="email" id="email" name="email" maxLength={100} required/>
-                            </div>
-
-                            <div className="ui_input_form">
-                                <span>{contenidoContacto.form_section.label_message}</span>
-                                <textarea id="message" name="message" maxLength={220} required/>
-                            </div>
-
-                            <div className="ui_input_form">
-                                <button>{contenidoContacto.form_section.label_button}</button>
-                            </div>
-                        </form>
+                      <FormularioContacto contenidoContacto={contenidoContacto} phoneCode={phoneCode}></FormularioContacto>
 
                     </div>
 
@@ -127,18 +90,7 @@ export default async function Contacto(){
             </section>
 
             {/* <!-- MODAL CONTACTO --> */}
-            <div className="ui_fondo_modal ui_popup">
-                <div className="ui_marco_modal">
-                    <div className="ui_contenido_modal">
-                        <div className="ui_close_modal"></div>
-                        <Image className="img_fondo_left" width={102} height={106} src="/img/adorno_popup_superior.png" alt="icon-popup" />
-                        <Image width={68} height={68} src="/img/icon_popup.png" alt="icon-popup" />
-                        <h1>{contenidoContacto.popup.title}</h1>
-                        <h2>{contenidoContacto.popup.subtitle}</h2>
-                        <Image className="img_fondo_right" width={102} height={106} src="/img/adorno_popup_inferior.png" alt="icon-popup" />
-                    </div>
-                </div>
-            </div>
+           
             {/* <!-- END MODAL CONTACTO--> */}
 
             <FooterSite/>

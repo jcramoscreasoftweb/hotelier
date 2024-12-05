@@ -5,6 +5,8 @@ import "@/public/css/slick.css";
 
 import Script from "next/script"
 
+
+
 const openSans  = Open_Sans ({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -20,11 +22,17 @@ export default function RootLayout({
   return (
     <html lang="en">
     
-
+            <head>
+                {/* Cargar jQuery desde un CDN */}
+                <Script
+                    src="/js/jquery.js"
+                    strategy="beforeInteractive"
+                />
+            </head>
 
       <body className={openSans.className}>{children}</body>
-      <Script  src="/js/jquery.js"/>
-      <Script  src="/js/main.js"/>
+      <Script src="/js/main.js" strategy="afterInteractive" />
+    
     </html>
   );
 }

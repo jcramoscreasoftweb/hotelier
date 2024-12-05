@@ -2517,6 +2517,8 @@ font-weight: 600;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 11px;
+  position: relative;
+  padding-right: 26px;
 }
 .box_informacion_reserva .info_servicios .item_servicio span{
   font-weight: 600;
@@ -2524,6 +2526,8 @@ font-weight: 600;
 .box_informacion_reserva .info_servicios .item_servicio img{
   margin-left: -30px;
   cursor: pointer;
+  position: absolute;
+  right: 0px;
 }
 
 .box_informacion_reserva .info_total{
@@ -3509,4 +3513,84 @@ font-weight: 600;
 .text-cupon-detalle{
   font-size: 15px;
   padding: 10px;
+}
+
+
+.modal-gracias{
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: none;
+}
+.marco-modal-gracias{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contenido-modal-gracias{
+  width: 530px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenido-modal-gracias .ico-check{
+  width: 66px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.contenido-modal-gracias .titulo{
+color: #512B17;
+font-size: 28px;
+line-height: 1.3;
+
+font-family: "Fertigo-Pro";
+margin-bottom: 20px;
+text-align: center;
+}
+.contenido-modal-gracias .detalle{
+font-size: 16px;
+line-height: 1.7;
+font-family: "Open-Sans";
+padding-left: 40px;
+padding-right: 40px;
+color: #454545;
+text-align: center;
+}
+.contenido-modal-gracias{
+  position: relative;
+  padding-bottom: 120px;
+}
+.contenido-modal-gracias .deco1{
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+.contenido-modal-gracias .deco2{
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+.close-modal-gracias{
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  cursor: pointer;
+}
+
+.formulario-contacto p.error{
+  color:red;
+  width: 100%;
+  text-align: left;
 }

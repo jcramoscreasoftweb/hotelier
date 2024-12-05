@@ -38,13 +38,14 @@
 
  }
  btn_pagar.addEventListener('click', (e) => {
-   // validarCampos();
-    console.log(allValid)
+    validarCampos();
+    //console.log(allValid)
     //tkn_test_ZQMyxrpwvH4vQfzC
 
-    /*allValid=true;
+   
     if (allValid) {
-        let total=$("#pago-total").attr("data-total");
+        $(".modal-gracias").fadeIn();
+        /* let total=$("#pago-total").attr("data-total");
 
         var Culqi;
         var settings = {
@@ -78,6 +79,7 @@
 
 
         const handleCulqiAction = () => {
+                cargo();
                 if (Culqi.token) {
                     if (Culqi.token.id){
                         const token = Culqi.token.id;
@@ -97,9 +99,9 @@
             Culqi = new CulqiCheckout(publicKey, config);
             Culqi.culqi = handleCulqiAction;
         Culqi.open()
-        e.preventDefault();
-    }*/
-        cargo();
+        e.preventDefault();*/
+    }
+        
 
 
 
@@ -152,4 +154,10 @@ console.error('Error:', error.message);
 }
  }
 
+ $(function(){
+  $(".close-modal-gracias").click(function(){
+    $(".modal-gracias").fadeOut();
+    window.location="/"
+  })
+ })
 /*** END CULQUI */

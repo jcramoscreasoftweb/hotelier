@@ -75,14 +75,14 @@ export const HeaderSitev2 = async () => {
     <>
       <header className="ui_header-site page_busqueda">
         <div className="ui_logo_site">
-          <a href="">
+          <Link href="/">
             <Image
               width={70}
               height={79}
               src="/img/logo_header2.png"
               alt="Hotelier site"
             />
-          </a>
+          </Link>
         </div>
         <nav className="ui_nav_site">
           <ul className="nav_desktop">

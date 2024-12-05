@@ -15,8 +15,22 @@ export const metadata:Metadata={
     keywords:["Nosotros","Saccha","Hotelier"]
 }
 export default  async function Nosotros() {
-  let url = "https://creasoft.com.pe/hotelier_api/pages/page-nosotros.json";
-  let requestAPI: any = await fetch(url);
+
+  const username = process.env.NEXT_PUBLIC_API_USER;
+  const password = process.env.NEXT_PUBLIC_API_PASS;
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+  const auth = btoa(`${username}:${password}`);
+
+  
+  let url = apiUrl+"/api/page-nosotros";
+ //let url = "https://creasoft.com.pe/hotelier_api/pages/page-nosotros.json";
+  let requestAPI: any = await fetch(url,{
+    method: "GET", // GET es el valor predeterminado
+    headers: {
+        Authorization: `Basic ${auth}`, // Encabezado de autenticación
+        "Content-Type": "application/json" // Opcional, depende del servicio
+    }
+});
   requestAPI = await requestAPI.json();
   let contenidoNosotros: NosotrosResponse = requestAPI.payload["es"];
 
