@@ -34,7 +34,7 @@ export const BusquedaHabitaciones=({contenidoBusqueda}:any)=>{
                 if (!response.ok) throw new Error('Error en la solicitud');
 
                 const result = await response.json();
-                result.records=true;
+
                 //console.log(result);
                 setrecords(result.records)
                 setDataHabitaciones(result.payload["es"]); // Asigna los datos obtenidos al estado

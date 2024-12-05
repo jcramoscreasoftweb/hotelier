@@ -46,7 +46,7 @@ export default  async function Nosotros() {
 
 
             <div className="ui_box_container">
-            
+
               <ContenidoDealleReserva contenidoDetalle={contenidoDetalle}></ContenidoDealleReserva>
 
 
@@ -125,7 +125,7 @@ export default  async function Nosotros() {
                   </div>
 
                   <div className="ui_checkbox">
-                    <input type="checkbox" name="" id="" required/>
+                    <input type="checkbox" name="inp-terminos" id="inp_terminos" required/>
                     <span>
                       {contenidoDetalle.info_form.label_policies}
                       <Link href="/terminos-condiciones">{contenidoDetalle.info_form.label_policies_redirect}</Link>

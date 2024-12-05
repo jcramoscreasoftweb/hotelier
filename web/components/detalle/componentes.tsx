@@ -1,7 +1,7 @@
 
 "use client"
 import { useSearchParams } from 'next/navigation'
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Image from "next/image";
 import { useRouter } from 'next/navigation'
 export const ContenidoDealleReserva=({contenidoDetalle}:any)=>{
@@ -11,7 +11,7 @@ export const ContenidoDealleReserva=({contenidoDetalle}:any)=>{
 
     let reservaClienteLocal=JSON.parse(localData.toString());
 
- 
+
 
     let monto_servicio=0;
     reservaClienteLocal.aditional_services.map((item:any)=>{
@@ -31,7 +31,7 @@ export const ContenidoDealleReserva=({contenidoDetalle}:any)=>{
 
 
     const [reservaCliente, setReservaCliente] = useState(reservaClienteLocal);
-    console.log(reservaClienteLocal);
+
 
 
     const handleChange = (key:any, value: string | number) => {
@@ -39,6 +39,7 @@ export const ContenidoDealleReserva=({contenidoDetalle}:any)=>{
         ...prev, // Mantener las propiedades existentes
         [key]: value, // Actualizar solo la propiedad específica
       }));
+
     };
     const actualizarTipoPago=(tipo:any)=>{
       handleChange("tipo_pago",tipo)
@@ -54,6 +55,7 @@ export const ContenidoDealleReserva=({contenidoDetalle}:any)=>{
 
       actualizarTotal(monto+monto_servicio);
 
+
     }
 
 
@@ -62,66 +64,103 @@ export const ContenidoDealleReserva=({contenidoDetalle}:any)=>{
     }
 
     const removerServicio= (index:any)=>{
-      console.log(reservaCliente.aditional_services)
+
       let actual_servicios:any=[];
+      let monto_actual_servicios:any=0;
       reservaCliente.aditional_services.map((item:any)=>{
         console.log(item)
         if(index!==item){
           actual_servicios.push(item)
+          monto_actual_servicios=monto_actual_servicios+reservaCliente.aditional_services_aviables[item].price;
         }
       })
-      console.log(actual_servicios);
+
       handleChange("aditional_services",actual_servicios);
-     // console.log(index);
-      //reservaCliente.aditional_services.filter((item:any) => item !== index)
-     // handleChange(reservaCliente);
-    }
-   /* const [isPrecioActivo, setPrecioActivo] = useState(null);
-    let montoinicial=0;
-
-    let monto_reserva=reservaCliente.price_hotel;
-
-
-      reservaCliente.aditional_services.map((item:any)=>{
-        montoinicial=montoinicial+reservaCliente.aditional_services_aviables[item].price
-
-      })
-      if(reservaCliente.tipo_pago==1){
-        monto_reserva=reservaCliente.price_web;
-      }
-
-      const [isTotal,setTotal]=useState(montoinicial+monto_reserva);
-
-      const [isPrecioSeleccionado,setPrecioSeleccionado]=useState(reservaCliente.tipo_pago);
-
-      const actualizarTipoPago=(id:any)=>{
-        setPrecioSeleccionado(id)
-
-        if(id==1){
-          monto_reserva=reservaCliente.price_web;
-         }else{
-          monto_reserva=reservaCliente.price_hotel;
-         }
-         console.log(monto_reserva);
-         setTotal(monto_reserva);
-
-       actualizarMontoTotal();
-
-      }
-*/
-     /* const actualizarMontoTotal=()=>{
-       let monto_reserva=0;
-       if(isPrecioSeleccionado==1){
-        monto_reserva=reservaCliente.price_web;
-       }else{
+      let monto_reserva=reservaCliente.price_web;
+      if(reservaCliente.tipo_pago=="2"){
         monto_reserva=reservaCliente.price_hotel;
-       }
-       setTotal(monto_reserva);
-      }*/
-     const validarCupon=()=>{
-      console.log("validarCupon");
+      }
+
+
+      handleChange("total_pago",monto_reserva+monto_actual_servicios)
+
+    }
+
+       const [dataCupon, setDataCupon] = useState<string | null>(null);
+       const [loadingCupon, setLoadingCupon] = useState<boolean>(false); // Estado de carga
+       const [errorCupon, setErrorCupon] = useState<string | null>(null);
+       const [detalleCupon, setDetalleCupon] = useState<string | null>("");
+
+
+
+    const inputCupon:any = useRef<HTMLInputElement>(null); //
+     const validarCupon=async ()=>{
+
+      setDetalleCupon("")
+      setLoadingCupon(true); // Iniciar estado de carga
+      setErrorCupon(null); // Reiniciar errores previos
+
+      try {
+        const username = process.env.NEXT_PUBLIC_API_USER;
+        const password = process.env.NEXT_PUBLIC_API_PASS;
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+        // Codifica las credenciales en Base64
+        const auth = btoa(`${username}:${password}`);
+        const params = new URLSearchParams({
+          name: inputCupon.current.value,
+          id_room:"1",
+          id_roomstype:"1"
+        })
+
+        const response = await fetch(`${apiUrl}/api/coupon?${params.toString()}`,{
+            method: "GET", // GET es el valor predeterminado
+            headers: {
+                Authorization: `Basic ${auth}`, // Encabezado de autenticación
+                "Content-Type": "application/json" // Opcional, depende del servicio
+            }
+        } );
+        if (!response.ok) throw new Error('Error en la solicitud');
+
+        const result = await response.json();
+        if(result.records){
+
+        let totalactual=reservaCliente.total_pago;
+
+
+        setDetalleCupon(result.payload.description_coupon)
+          if(result.payload.type_coupon=="porc")
+          {
+            handleChange("total_pago",totalactual*((100-result.payload.amount_coupon)/100));
+          }
+          else{
+            handleChange("total_pago",totalactual-result.payload.amount_coupon);
+          }
+
+
+
+        }
+        else{
+          setDetalleCupon(result.message)
+        }
+
+
+
+    } catch (error:any) {
+      setErrorCupon(error.message);       // Asigna el mensaje de error al estado
+    } finally {
+      setLoadingCupon(false);             // Finaliza el indicador de carga
+    }
+
+
      }
-     console.log( reservaCliente.aditional_services.length)
+
+     const actualizarLocal=()=>{
+
+     localStorage.setItem("datareserva",JSON.stringify(reservaCliente));
+     }
+
+
+
       return (<>
                 <div className="box_informacion_reserva">
                           <h1>{contenidoDetalle.info_reserva.title}</h1>
@@ -166,29 +205,29 @@ export const ContenidoDealleReserva=({contenidoDetalle}:any)=>{
                               {
                                 reservaCliente.aditional_services.map((item:any)=>{
                                  return(
-  
+
                                     <li className="item_servicio" key={item}>
                                         <h3>{reservaCliente.aditional_services_aviables[item].name}</h3>
                                         <span>US$ {reservaCliente.aditional_services_aviables[item].price}</span>
                                         <Image width={18} height={18} src="/img/icon_delete_servicio.svg"  onClick={()=>removerServicio(item)} alt="icon-close" />
                                     </li>
-  
+
                                  )
                                 })
                               }
-  
-  
-  
+
+
+
                             </ul>
-  
+
                           </div>
                             <div className="line_separator"></div>
-                            </> :""  
-                           
+                            </> :""
+
                           }
 
 
-                        
+
 
                           <div className="info_cupon">
                             <div className="cupon_title">
@@ -197,7 +236,11 @@ export const ContenidoDealleReserva=({contenidoDetalle}:any)=>{
                             </div>
 
                             <div className="cupon_detail">
-                              <input type="text" maxLength={30} placeholder={contenidoDetalle.info_reserva.label_cupon_placeholder}/>
+                              <input type="text"
+                             // Vincula el valor del input al estado
+                                ref={inputCupon}
+                               maxLength={30} placeholder={contenidoDetalle.info_reserva.label_cupon_placeholder}/>
+                              <p className='text-cupon-detalle'>{detalleCupon}</p>
                               <p className="text_error"></p>
                               <div className="ui_boton_cupon" onClick={()=>validarCupon()}>
                                 <h2>{contenidoDetalle.info_reserva.label_cupon_boton}</h2>

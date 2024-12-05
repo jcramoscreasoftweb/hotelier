@@ -12,17 +12,35 @@ import Image from "next/image";
 import styles from "./page.module.css";
 
 export default async function Home() {
-  let url = "https://creasoft.com.pe/hotelier_api/pages/page-home.json?v45";
-  let requestAPI: any = await fetch(url);
+
+  const username = process.env.NEXT_PUBLIC_API_USER;
+  const password = process.env.NEXT_PUBLIC_API_PASS;
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+  const auth = btoa(`${username}:${password}`);
+
+  let url = apiUrl+"/api/page-home";
+  let requestAPI: any = await fetch(url,{
+    method: "GET", // GET es el valor predeterminado
+    headers: {
+        Authorization: `Basic ${auth}`, // Encabezado de autenticación
+        "Content-Type": "application/json" // Opcional, depende del servicio
+    }
+});
   requestAPI = await requestAPI.json();
   let contenidoPortada: PortadaResponse = requestAPI.payload["es"];
 
-  let url_resenas = "https://creasoft.com.pe/hotelier_api/pages/list-comments-pag.json"
-  let requestAPI_resena: any = await fetch(url_resenas);
+  let url_resenas = apiUrl+"/api/list-comments-pag?order=date_desc&pagination=3"
+  let requestAPI_resena: any = await fetch(url_resenas,{
+      method: "GET", // GET es el valor predeterminado
+      headers: {
+          Authorization: `Basic ${auth}`, // Encabezado de autenticación
+          "Content-Type": "application/json" // Opcional, depende del servicio
+      }
+  });
   requestAPI_resena = await requestAPI_resena.json();
   let resenas: ResenaResponse = requestAPI_resena.payload["es"];
 
-  // console.log(resenas)
+
 
   return (
     <>
@@ -45,7 +63,7 @@ export default async function Home() {
                       <Image width={18} height={20} src="/img/icon_date.png" alt="icon-search"></Image>
                       <h2>Fecha de entrada</h2>
                     </div>
-                    <input type="date" name="data_in" id="checkin"/>
+                    <input type="date" name="date_in" id="checkin"/>
                   </div>
 
                   <div className="ui_separator_input"></div>
