@@ -1241,6 +1241,7 @@ padding-right: 23px;
   border: none;
   border-radius: 30px;
   outline: none;
+  cursor: pointer;
 
 }
 
@@ -2541,15 +2542,28 @@ font-weight: 600;
   align-items: center;
   justify-content: space-between;
 }
+.box_informacion_reserva .info_total.total-descuento{
+  height: 30px;
+  margin-bottom: 10px;
+}
+
 .box_informacion_reserva .info_total h2{
   font-size: 26px;
   font-weight: 600;
 }
+.box_informacion_reserva .info_total.total-descuento h2{
+  font-size: 20px;
+  font-weight: 600;
+}
+
 .box_informacion_reserva .info_total span{
   font-size: 26px;
   font-weight: bold;
 }
-
+.box_informacion_reserva .info_total.total-descuento span{
+  font-size:20px;
+  font-weight: 600;
+}
 
 .page_detalle .ui_box_container .box_informacion_huesped{
   width: 789px;
@@ -3593,4 +3607,31 @@ text-align: center;
   color:red;
   width: 100%;
   text-align: left;
+}
+
+.spinner {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: conic-gradient(#0000 10%,#00CFC9);
+  -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 9px),#000 0);
+  animation: spinner-zp9dbg 1s infinite linear;
+}
+.fixed-load{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes spinner-zp9dbg {
+  to {
+     transform: rotate(1turn);
+  }
 }

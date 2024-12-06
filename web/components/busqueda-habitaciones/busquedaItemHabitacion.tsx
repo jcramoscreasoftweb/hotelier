@@ -16,6 +16,7 @@ export const ItemHabitacionBusqueda = ({item,contenidoBusqueda}:any) => {
   const router = useRouter()
   let data_reserva:any={
     id:null,
+    id_type_room:"",
     date_in:"",
     date_out:"",
     check_in:"",
@@ -69,6 +70,7 @@ let inf:any=[];
     const bookingRoom=()=>{
         console.log(item);
         data_reserva.id=item.id_room;
+        data_reserva.id_type_room=item.id_tp_room;
 
         data_reserva.date_in=date_in;
         data_reserva.date_out=date_out;

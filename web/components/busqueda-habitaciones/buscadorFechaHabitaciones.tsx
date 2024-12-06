@@ -3,9 +3,9 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useSearchParams } from 'next/navigation'
-
+import Script from "next/script"
 export const BuscarFechasHabitaciones=({contenidoBusqueda}:any)=>{
-    
+
     const searchParams = useSearchParams()
 
     const adults = searchParams.get('adults')
@@ -14,7 +14,7 @@ export const BuscarFechasHabitaciones=({contenidoBusqueda}:any)=>{
     const date_out = searchParams.get('date_out')
     const date = new Date(date_in);
     console.log(date instanceof Date && !isNaN(date_in));
-   
+
     /*const dateRegex = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/;
 
     if (dateRegex.test(date_in)) {
@@ -26,22 +26,22 @@ export const BuscarFechasHabitaciones=({contenidoBusqueda}:any)=>{
     const [dateOutMin, setDateOutMin] = useState("");
     const [dateOut, setDateOut] = useState("");
     useEffect(() => {
-      
+
         if(date_in){
             setDateIn(date_in);
         }else{
             /*const now = new Date();
-   
+
             const year = now.getFullYear();
             const month = String(now.getMonth() + 1).padStart(2, "0");
             const day = String(now.getDate()).padStart(2, "0");
             const hours = String(now.getHours()).padStart(2, "0");
             const minutes = String(now.getMinutes()).padStart(2, "0");
-        
+
             /*const nextDate = new Date();
             nextDate.setDate(nextDate.getDate() + 1); // Añade un día a la fecha actual
             const nextDay = String(nextDate.getDate()).padStart(2, "0");
-        
+
             setDateIn(`${year}-${month}-${day}`);*/
         }
         if(date_out){
@@ -53,10 +53,10 @@ export const BuscarFechasHabitaciones=({contenidoBusqueda}:any)=>{
             const year = nextDate.getFullYear();
             const month = String(nextDate.getMonth() + 1).padStart(2, "0");
             const nextDay = String(nextDate.getDate()).padStart(2, "0");
-        
+
             setDateOutMin(`${year}-${month}-${nextDay}`);
         }
-      
+
       //setDateOut(`${year}-${month}-${nextDay}`); // Formato requerido para datetime-local
     }, []);
 
@@ -65,8 +65,8 @@ export const BuscarFechasHabitaciones=({contenidoBusqueda}:any)=>{
 
         const nextDate = new Date(e.target.value);
         nextDate.setDate(nextDate.getDate() + 2); // Añade un día a la fecha actual
-      
-    
+
+
         const year = nextDate.getFullYear();
         const month = String(nextDate.getMonth() + 1).padStart(2, "0");
         const day = String(nextDate.getDate()).padStart(2, "0");
@@ -80,6 +80,7 @@ export const BuscarFechasHabitaciones=({contenidoBusqueda}:any)=>{
 
 
 return(<>
+<Script src="/js/busqueda.js" strategy="afterInteractive" />
 <div className="ui_barra_busqueda">
                         <form className="ui_form_busqueda" action="" method="get">
                         <div className="item_input_form">
@@ -87,7 +88,7 @@ return(<>
                             <Image width={18} height={20} src="/img/icon_date.png" alt="icon-search"></Image>
                             <h2>{contenidoBusqueda.labels_search.date_in}</h2>
                             </div>
-                            <input type="date" name="date_in" 
+                            <input type="date" name="date_in"
                              min={dateIn}
                              value={dateIn} // Hora inicial basada en la fecha actual
                              onChange={handleChangeDateIn}

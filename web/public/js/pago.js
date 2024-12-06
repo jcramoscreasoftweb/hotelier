@@ -3,6 +3,7 @@
 
  const btn_pagar = document.getElementById('pagar-culqui');
  let allValid;
+
  function validarCampos(){
     allValid = true;
     const first_lastname = document.getElementById('first_lastname');
@@ -38,11 +39,50 @@
 
  }
  btn_pagar.addEventListener('click', (e) => {
-    validarCampos();
-    //console.log(allValid)
-    //tkn_test_ZQMyxrpwvH4vQfzC
 
-   
+
+let data=JSON.parse(localStorage.getItem("datareserva"));
+
+
+
+validarCampos();
+if (allValid) {
+  if(data.tipo_pago==2){
+    cargo();
+  }else{
+    cargoCulqui(e);
+  }
+}
+
+
+/*
+"contact_name": "Moises",
+    "coupon" : "",
+    "contact_lastname": "Jota",
+    "contact_email": "mjota@creasoftweb.com",
+    "contact_phone": "977153166",
+    "contact_tpdoc": "DNI",
+    "contact_docnumber": "78547414",
+    "date_in": "2024-11-08",
+    "date_out": "2024-11-10",
+    "id_tp_payment": "1",
+    "import": "212.942",
+    "note": "Test note",
+    "num_adults": "",
+    "num_children": "",
+    "id_room" : 1,
+    "id_roomstype" : 1,
+    "payment_token" : "tkn_test_1c08j7eqr3VXkIVZ",
+    "payment_email" : "mj.sistem@creasoftweb.com",
+    "services" : [
+        1,
+        3
+    ]*/
+
+
+   /* validarCampos();
+
+
     if (allValid) {
         $(".modal-gracias").fadeIn();
         /* let total=$("#pago-total").attr("data-total");
@@ -100,33 +140,104 @@
             Culqi.culqi = handleCulqiAction;
         Culqi.open()
         e.preventDefault();*/
-    }
-        
+    /*}
+    */
 
 
 
  });
+ function cargoCulqui(e){
+  let dataReserva=JSON.parse(localStorage.getItem("datareserva"));
+  var Culqi;
+  var settings = {
+          title: 'Perú Hotelier',
+          currency: 'USD',
+          amount: dataReserva.total_pago+"00",
+          order: 'ord_live_d1P0Tu1n7Od4nZdp',
+          xculqirsaid: 'be71cbe5-08f0-43ac-8c0a-a865ccecb69b',
+          rsapublickey: '-----BEGIN PUBLIC KEY-----MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDLFswWxnKR0D0TnoYeon5mIa8wU3LQxBanoDjKlgrGHixJ4zIZmRF9SJ5ksBGt6K0F7sKoZsldUjyBzThcufoeXvZYqeqJ1M7OlB+MNOMa4ShAWkAgSbivJLzDNTYrF77gj6kRfgekfeCJnnwFcfEaQZ2DvmW3YUPEvF77jQ2LCwIDAQAB-----END PUBLIC KEY-----',
+      }
+      const paymentMethods = {// las opciones se ordenan según se configuren
+              tarjeta: true,
+              yape: true,
+              billetera: true,
+              bancaMovil: true,
+              agente: true,
+              cuotealo: true,
+          }
+      const options = {
+          lang: 'auto',
+          installments: true,
+          modal: true,
+          container: "#culqi-container", // Opcional
+          paymentMethods: paymentMethods,
+          paymentMethodsSort: Object.keys(paymentMethods), // las opciones se ordenan según se configuren en paymentMethods
+      }
+      const config = {
+          settings,
+          options,
+      };
+
+
+  const handleCulqiAction = () => {
+
+          if (Culqi.token) {
+              if (Culqi.token.id){
+                  const token = Culqi.token.id;
+                  const email = Culqi.token.email;
+                  Culqi.close();
+                  console.log(token);
+                  console.log(email);
+                  //AQUI CONSUMES EL API PARA ENVIAR EL TOKEN Y EL EMAIL QUE EL USUARIO AÑADA EN EL CAMPO DE EMAIL DEL FORMULARIO
+              }
+          } else if (Culqi.order) {
+          const order = Culqi.order;
+          } else {
+          console.log('Errorrr : ', Culqi.error);
+          }
+      }
+     const publicKey = 'pk_live_7e82730b0192c948'; //CLAVE PUBLICA
+      Culqi = new CulqiCheckout(publicKey, config);
+      Culqi.culqi = handleCulqiAction;
+  Culqi.open()
+  e.preventDefault();
+ }
 
  async function cargo() {
+  const first_lastname = document.getElementById('first_lastname');
+  const second_lastname = document.getElementById('second_lastname');
+  const name = document.getElementById('name');
+  const doc_number = document.getElementById('doc_number');
+  const email = document.getElementById('email');
+  const phone = document.getElementById('phone');
+  const tpdoc=document.getElementById('tpdoc').value;
+  const id_country= document.getElementById('id_country');
+  let value_tpdoc="Pasaporte"
+  if(tpdoc==1){
+    value_tpdoc="DNI";
+  }
+  let dataReserva=JSON.parse(localStorage.getItem("datareserva"));
   const data = {
-    contact_name: "Moises",
-    coupon: "",
-    contact_lastname: "Jota",
-    contact_email: "mjota@creasoftweb.com",
-    contact_phone: "977153166",
-    contact_tpdoc: "DNI",
-    contact_docnumber: "78547414",
-    date_in: "2024-11-08",
-    date_out: "2024-11-10",
-    id_tp_payment: "1",
-    import: "500",
-    note: "Test note",
-    num_adults: "",
-    num_children: "",
-    reservation_services: [1, 2, 3],
-    id_room: 1,
-    payment_token: "tkn_test_MK8gj2Ra3S9lew70",
-    payment_email:"mjota@creasoftweb.com"
+    "contact_name":  name.value ,
+    "coupon" : "",
+    "contact_lastname": first_lastname.value + " " + second_lastname.value,
+    "contact_email": email.value,
+    "contact_phone": phone.value,
+    "code_phone":id_country.value,
+    "contact_tpdoc": value_tpdoc,
+    "contact_docnumber":doc_number.value,
+    "date_in":dataReserva.date_in,
+    "date_out": dataReserva.date_out,
+    "id_tp_payment": dataReserva.tipo_pago,
+    "import":dataReserva.total_pago,
+    "note": "Test note",
+    "num_adults": dataReserva.adults,
+    "num_children":  dataReserva.children,
+    "id_room" : dataReserva.id,
+    "id_roomstype" : dataReserva.id_type_room,
+    "payment_token" : "tkn_test_1c08j7eqr3VXkIVZ",
+    "payment_email" : "mj.sistem@creasoftweb.com",
+    "services" : dataReserva.aditional_services
 };
 
 const username = "#|~4139h*II7yN@"; // Sustituye con tu usuario
@@ -149,12 +260,17 @@ if (!response.ok) {
 
 const result = await response.json();
 console.log('Response:', result);
+console.log(result.status);
+if(result.status==200){
+  console.log("aqui")
+  $(".modal-gracias").fadeIn();
+}
 } catch (error) {
 console.error('Error:', error.message);
 }
  }
 
- $(function(){
+$(function(){
   $(".close-modal-gracias").click(function(){
     $(".modal-gracias").fadeOut();
     window.location="/"

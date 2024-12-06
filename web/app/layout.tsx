@@ -21,18 +21,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-    
+
             <head>
                 {/* Cargar jQuery desde un CDN */}
                 <Script
                     src="/js/jquery.js"
-                    strategy="beforeInteractive"
+
                 />
             </head>
 
       <body className={openSans.className}>{children}</body>
-      <Script src="/js/main.js" strategy="afterInteractive" />
-    
+      <Script src="/js/main.js"  />
+
     </html>
   );
 }

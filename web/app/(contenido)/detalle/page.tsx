@@ -29,21 +29,17 @@ export default  async function Nosotros() {
   return (
     <>
         <HeaderSitev2 />
-     
-     
-    
+
+
+
         {/* Script en el head */}
         <Script
                 src="https://js.culqi.com/checkout-js"
                 //strategy="beforeInteractive" // Cargar en el <head>
                 //onLoad={() => console.log("Script en el <head> cargado")}
             />
-            
-              <Script
-                src="/js/pago.js"
-                //strategy="afterInteractive" // Cargar en el <head>
-                //onLoad={() => console.log("Script en el <head> cargado")}
-            />
+
+
         <section className="ui_seccion_1_detalle">
           <div className="contenedor page_detalle">
             <h1>{contenidoDetalle.title_page}</h1>
@@ -171,7 +167,7 @@ export default  async function Nosotros() {
                               <p className="detalle">
                               Hemos enviado un correo electrónico con los detalles de tu reserva, incluyendo instrucciones para el check-in, políticas de cancelación y contacto del hotel. Revisa tu bandeja de entrada y la carpeta de SPAM.
 
-Puedes consultar el estado de tu reserva con el 
+Puedes consultar el estado de tu reserva con el
 código <span id="codigo-reserva">xer132</span>.
 
                               </p>
@@ -182,8 +178,12 @@ código <span id="codigo-reserva">xer132</span>.
         </div>
 
 
-
-
+        <Script src="/js/jquery.js"/>
+        <Script
+                src="/js/pago.js"
+                // Cargar en el <head>
+                //onLoad={() => console.log("Script en el <head> cargado")}
+            />
         <FooterSite />
     </>
   )

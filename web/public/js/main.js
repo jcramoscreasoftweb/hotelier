@@ -134,7 +134,9 @@ $(".ui_fondo_modal .ui_close_modal").click(function(){
 
 
 /***** BUSCADOR HABITACIONES ******/
+
 $(".label_huespedes").click(function() {
+    console.log("click aqui")
     $(this).parents(".item_input_form").find(".ui_box_huespedes").fadeIn(300);
 });
 $(".increment").click(function() {

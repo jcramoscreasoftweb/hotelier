@@ -17,6 +17,7 @@ return(<>
         <HeaderSitev2 />
             <ContenidoBusquedaHabitacion></ContenidoBusquedaHabitacion>
         <FooterSite />
+
     </>
     )
 }

@@ -5,10 +5,12 @@ import { useState, useEffect } from "react";
 
 export const BuscarFechasPortada=()=>{
   const [dateIn, setDateIn] = useState("");
+  const [dateInMin, setDateInMin] = useState("");
   const [dateOut, setDateOut] = useState("");
+  const [dateOutMin, setDateOutMin] = useState("");
   useEffect(() => {
     const now = new Date();
- 
+
     const year = now.getFullYear();
     const month = String(now.getMonth() + 1).padStart(2, "0");
     const day = String(now.getDate()).padStart(2, "0");
@@ -18,7 +20,7 @@ export const BuscarFechasPortada=()=>{
     const nextDate = new Date();
     nextDate.setDate(nextDate.getDate() + 1); // Añade un día a la fecha actual
     const nextDay = String(nextDate.getDate()).padStart(2, "0");
-
+    setDateInMin(`${year}-${month}-${day}`)
     setDateIn(`${year}-${month}-${day}`);
     //setDateOut(`${year}-${month}-${nextDay}`); // Formato requerido para datetime-local
   }, []);
@@ -28,12 +30,13 @@ export const BuscarFechasPortada=()=>{
 
     const nextDate = new Date(e.target.value);
     nextDate.setDate(nextDate.getDate() + 2); // Añade un día a la fecha actual
-  
+
 
     const year = nextDate.getFullYear();
     const month = String(nextDate.getMonth() + 1).padStart(2, "0");
     const day = String(nextDate.getDate()).padStart(2, "0");
     setDateOut(`${year}-${month}-${day}`);
+    setDateOutMin(`${year}-${month}-${day}`)
 
   };
   const handleChangeDateOut = (e:any) => {
@@ -50,8 +53,8 @@ return (
                       <Image width={18} height={20} src="/img/icon_date.png" alt="icon-search"></Image>
                       <h2>Fecha de entrada</h2>
                     </div>
-                    <input type="date" name="date_in" id="checkin" 
-                    min={dateIn}
+                    <input type="date" name="date_in" id="checkin"
+                    min={dateInMin}
                     value={dateIn} // Hora inicial basada en la fecha actual
                     onChange={handleChangeDateIn}
                     />
@@ -64,8 +67,8 @@ return (
                       <Image width={18} height={20} src="/img/icon_date.png" alt="icon-search"></Image>
                       <h2>Fecha de salida</h2>
                     </div>
-                    <input type="date" name="date_out" 
-                     min={dateOut}
+                    <input type="date" name="date_out"
+                     min={dateOutMin}
                      value={dateOut} // Hora inicial basada en la fecha actual
                      onChange={handleChangeDateOut}
                      id="checkout" />
