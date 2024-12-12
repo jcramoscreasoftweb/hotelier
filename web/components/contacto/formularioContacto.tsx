@@ -123,7 +123,7 @@ export const FormularioContacto=({contenidoContacto,phoneCode}:any)=>{
 
     return (
         <>
-        {  loadingContacto ? <Loadingv1></Loadingv1> : <></>}
+
         <form onSubmit={handleSubmit} className="formulario-contacto"  method="post">
 <h2 >{contenidoContacto.form_section.title}</h2>
 <p>{contenidoContacto.form_section.subtitle}</p>
