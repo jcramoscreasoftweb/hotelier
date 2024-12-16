@@ -30,7 +30,7 @@ export default async function Home() {
   requestAPI = await requestAPI.json();
   let contenidoPortada: PortadaResponse = requestAPI.payload["es"];
 
-  let url_resenas = apiUrl+"/api/list-comments-pag?order=date_desc&pagination=3"
+  let url_resenas = apiUrl+"/api/list-comments-pag?order=date_DESC&pagination=3"
   let requestAPI_resena: any = await fetch(url_resenas,{
       method: "GET", // GET es el valor predeterminado
       headers: {
@@ -56,7 +56,7 @@ export default async function Home() {
         <div className="ui_texto_intro_home">
           <h2  dangerouslySetInnerHTML={{ __html:contenidoPortada.banner_section.title}}></h2>
         </div>
-      
+
         <BuscarFechasPortada></BuscarFechasPortada>
       </section>
       <section className="ui_seccion_2_home">
