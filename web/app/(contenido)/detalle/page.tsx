@@ -155,13 +155,13 @@ export default  async function Nosotros() {
 
           </div>
         </section>
-        <div className="modal-gracias">
+        <div className="modal-gracias" >
             <div className="marco-modal-gracias">
             <div className="contenido-modal-gracias">
-              <img className="close-modal-gracias" src="/img/icon_close.png" alt="" />
-              <img  className="deco1" src="img/adorno_popup_superior.png" alt="" />
-              <img  className="deco2" src="img/adorno_popup_inferior.png" alt="" />
-                            <img className="ico-check" src="/img/ico_check_reserva.png" alt="" />
+              <Image className="close-modal-gracias" src="/img/icon_close.png"  width={40} height={40}  alt="" />
+              <Image   width={102} height={106}  className="deco1" src="/img/adorno_popup_superior.png" alt="" />
+              <Image   width={102} height={106}  className="deco2" src="/img/adorno_popup_inferior.png" alt="" />
+                            <Image  width={106} height={106}  className="ico-check" src="/img/ico_check_reserva.png" alt="" />
                             <p className="titulo">¡Reserva registrada <br></br> exitosamente!</p>
                             <div>
                               <p className="detalle">

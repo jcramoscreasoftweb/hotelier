@@ -4,14 +4,69 @@ import { CarouselFotosHabitacion } from "./componentes";
 import { useEffect, useState } from "react";
 
 
-export const ModalServiciosAdicionales=({contenidoBusqueda, item, serviciosAdicionales,closeModal, bookingRoom}:any)=>{
+export const ModalServiciosAdicionales=({contenidoBusqueda, actualizarServicios, item, more_services,setServiciosAdicionales,serviciosAdicionales,closeModal, bookingRoom}:any)=>{
 
-  const data_item=item.additional_services_availables;
+  const [isMontoServicios, setMontoServicios] = useState(0);
+ //const [isAdicionalServicios, setAdicionalServicios] =  useState<string[]>([]);
+  /*useEffect(() => {
+    setMontoServicios(0)
+  }, []);*/
+
+
+  let idserviciosseleccionados:any=[];
+
+
+
+  const addService=(e: React.ChangeEvent<HTMLInputElement>, index:any,itemCheck:any)=>{
+    const isChecked = e.target.checked;
+    if(isChecked){
+      console.log("ESTA CON CHECK")
+      idserviciosseleccionados.push(index);
+      more_services.push(index);
+      //more_services.push(index)
+      //setAdicionalServicios(more_services)
+      //setMontoServicios(isMontoServicios+itemCheck.price);
+
+    }else{
+      console.log("LE QUITO EL CHECK")
+      //setMontoServicios(isMontoServicios-itemCheck.price);
+        /*let resultado = idserviciosseleccionados.filter((id:any) => {
+            return id!==index;
+        });*/
+        let resultado = idserviciosseleccionados.filter((id:any) => {
+          return id!==index;
+      });
+
+        idserviciosseleccionados=resultado;
+
+       //setMontoServicios(isMontoServicios-itemCheck.price);
+
+
+    }
+    console.log(idserviciosseleccionados)
+    /*console.log(idserviciosseleccionados);*/
+
+   // console.log(idserviciosseleccionados);
+    /*serviciosAdicionales=[];
+    idserviciosseleccionados.map((el:any)=>{
+      serviciosAdicionales.push(el)
+    })*/
+    //serviciosAdicionales=idserviciosseleccionados;
+
+    //data_reserva.aditional_services=isExtraServicios;
+    //actualizarServicios();
+    localStorage.setItem("serviciosadicionales",JSON.stringify(idserviciosseleccionados));
+  }
+
+
+ /* const data_item=item.additional_services_availables;
 
 
 
   const [isMontoServicios, setMontoServicios] = useState(0);
   const [isAdicionalServicios, setAdicionalServicios] =  useState<string[]>([]);
+
+
   const addService=(e: React.ChangeEvent<HTMLInputElement>, index:any)=>{
 
 
@@ -33,15 +88,24 @@ export const ModalServiciosAdicionales=({contenidoBusqueda, item, serviciosAdici
       //setExtraServicios((prev) => prev.filter((item) => item !== e.target.id));
       setMontoServicios(isMontoServicios-data_item[e.target.id].price);
       //setExtraServicios([e.target.id])
-      serviciosAdicionales.filter((item:any) => item !== e.target.id)
-    }
 
+      serviciosAdicionales.filter((itemopcion:any) => {
+        console.log("----")
+        console.log(itemopcion)
+        console.log("----")
+        console.log("****")
+        console.log(e.target.id)
+        console.log("****")
+        itemopcion !== e.target.id
+      })
+    }
+    console.log(serviciosAdicionales);
 
     //calcularCosto();
-    //data_reserva.aditional_services=isExtraServicios;
+     //data_reserva.aditional_services=isExtraServicios;
   }
 
-
+*/
 
     return  (
         <>
@@ -57,15 +121,15 @@ export const ModalServiciosAdicionales=({contenidoBusqueda, item, serviciosAdici
         <div className="list_service">
 
             {
-        data_item.map((item:any, index:any)=> {
+        item.additional_services_availables.map((item:any, index:any)=> {
              return(
 
                   <div className="item_row_service" key={index}>
                     <div className="title">
 
-                      <input type="checkbox"   onChange={(e) => addService(e,index)} name={index} id={index} />
+                      <input type="checkbox"   onChange={(e) => addService(e,item.id,item)} name={item.id} id={item.id} />
 
-                      <label htmlFor={index} >
+                      <label htmlFor={item.id} >
                       <h3>{item.name}</h3>
                       </label>
 
@@ -84,7 +148,8 @@ export const ModalServiciosAdicionales=({contenidoBusqueda, item, serviciosAdici
 
         </div>
 
-        <span>Total: US$ {isMontoServicios}</span>
+        {/*<span>Total: US$ {isMontoServicios}</span>*/}
+        <br></br>
         <div className="button" onClick={bookingRoom}>{contenidoBusqueda.popup_servicios.boton}</div>
 
         <Image className="img_fondo_right" width={102} height={106} src="/img/adorno_popup_inferior.png" alt="icon-popup" />

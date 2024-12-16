@@ -13,7 +13,8 @@ import { ModalDetalleRoom, ModalServiciosAdicionales } from "./modalesBusqueda";
 
 
 export const ItemHabitacionBusqueda = ({item,contenidoBusqueda}:any) => {
-  const router = useRouter()
+  const router = useRouter();
+
   let data_reserva:any={
     id:null,
     id_type_room:"",
@@ -32,6 +33,11 @@ export const ItemHabitacionBusqueda = ({item,contenidoBusqueda}:any) => {
     total_pago:0
 }
 
+
+
+
+let more_services:any=[];
+
 let inf:any=[];
     const [selectedRoom, setSelectedRoom] = useState(null); // Para manejar el producto seleccionado
     const [isModalOpen, setIsModalOpen] = useState(false); // Para controlar la visibilidad del modal
@@ -48,7 +54,12 @@ let inf:any=[];
     const date_out = searchParams.get('date_out')
 
 
-
+    const actualizarServicios = () => {
+        console.log(data_reserva)
+        console.log("[[[[[")
+      console.log(more_services)
+      console.log("]]]]]]")
+    };
     const handleRoomClick = (room:any) => {
         setSelectedRoom(room);
         setIsModalOpen(true); // Abre el modal
@@ -68,10 +79,10 @@ let inf:any=[];
     }
 
     const bookingRoom=()=>{
-        console.log(item);
+        let dataservicios:any=localStorage.getItem("serviciosadicionales");
+
         data_reserva.id=item.id_room;
         data_reserva.id_type_room=item.id_tp_room;
-
         data_reserva.date_in=date_in;
         data_reserva.date_out=date_out;
         data_reserva.check_in=item.check_in;
@@ -84,10 +95,13 @@ let inf:any=[];
         data_reserva.price_hotel=item.price_hotel;
         data_reserva.aditional_services_aviables=item.additional_services_availables;
         data_reserva.total_pago=0;
+        data_reserva.aditional_services=JSON.parse(dataservicios);
+
+        localStorage.setItem("datareserva",JSON.stringify(data_reserva));
+        console.log(data_reserva);
 
 
-      localStorage.setItem("datareserva",JSON.stringify(data_reserva));
-      router.push('/detalle')
+        router.push('/detalle')
     }
 
     return (
@@ -186,7 +200,7 @@ let inf:any=[];
                         </div>
                 </div>
                 {modalServiciosAdcionales && (
-                   <ModalServiciosAdicionales contenidoBusqueda={contenidoBusqueda}  serviciosAdicionales={data_reserva.aditional_services} item={item} data_reserva={data_reserva} closeModal={closeModal} bookingRoom={bookingRoom}></ModalServiciosAdicionales>
+                   <ModalServiciosAdicionales actualizarServicios={actualizarServicios}  more_services={more_services} contenidoBusqueda={contenidoBusqueda}  serviciosAdicionales={data_reserva.aditional_services} item={item} data_reserva={data_reserva} closeModal={closeModal} bookingRoom={bookingRoom} ></ModalServiciosAdicionales>
                 )}
                 {isModalOpen && selectedRoom && (
                   <ModalDetalleRoom item={item} contenidoBusqueda={contenidoBusqueda}  closeModal={closeModal}></ModalDetalleRoom>
