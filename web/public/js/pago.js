@@ -129,6 +129,10 @@ if (allValid) {
     value_tpdoc="DNI";
   }
   let dataReserva=JSON.parse(localStorage.getItem("datareserva"));
+  let detalle_aditional_services=[];
+  dataReserva.aditional_services.map((item)=>{
+    detalle_aditional_services.push(item.id)
+  })
   const data = {
     "contact_name":  name.value ,
     "coupon" : "",
@@ -149,7 +153,7 @@ if (allValid) {
     "id_roomstype" : dataReserva.id_type_room,
     "payment_token" : "tkn_test_1c08j7eqr3VXkIVZ",
     "payment_email" : "mj.sistem@creasoftweb.com",
-    "services" : dataReserva.aditional_services
+    "services" : detalle_aditional_services
 };
 
 const username = "#|~4139h*II7yN@"; // Sustituye con tu usuario
