@@ -9,7 +9,7 @@ import { DestinoResponse } from "@/interfaces";
 import Image from "next/image";
 
 export const metadata:Metadata={
-    title:"Destino",
+    title:"Sacha Cusco",
     description:"Destino",
     keywords:["Destino","Cusco"]
 }
@@ -37,7 +37,7 @@ export default async function Destino(){
                 style={{
                     backgroundImage: `url("${contenidoDestino.banner_section.image}")`,
                 }}
-            >  
+            >
                 <HeaderSitev1 />
                 <div className="ui_texto_title_banner">
                     <h2 dangerouslySetInnerHTML={{ __html:contenidoDestino.banner_section.title}}></h2>
@@ -54,7 +54,7 @@ export default async function Destino(){
                         <Image className="img_text" width={398} height={392} src={contenidoDestino.first_section.image_text} alt=""/>
                     </div>
 
-                    
+
                 </div>
             </section>
 
@@ -92,7 +92,7 @@ export default async function Destino(){
                     })}
                 </div>
             </section>
-            
+
         <FooterSite/>
         </>
     );

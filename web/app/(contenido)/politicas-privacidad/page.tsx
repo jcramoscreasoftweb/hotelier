@@ -7,7 +7,7 @@ import { PrivacidadResponse } from "@/interfaces";
 import Image from "next/image";
 
 export const metadata:Metadata={
-    title:"Políticas de privacidad",
+    title:"Sacha Cusco",
     description:"Políticas de privacidad",
     keywords:["Políticas","privacidad"]
 }
@@ -35,7 +35,7 @@ export default async function PoliticaPrivacidad(){
                 style={{
                     backgroundImage: `url("${contenidoPrivacidad.pincipal_section.image}")`,
                 }}
-            >  
+            >
                 <HeaderSitev1 />
                 <div className="ui_texto_title_banner">
                     <h2 dangerouslySetInnerHTML={{ __html:contenidoPrivacidad.pincipal_section.title}}></h2>
@@ -48,7 +48,7 @@ export default async function PoliticaPrivacidad(){
                     <ul dangerouslySetInnerHTML={{ __html:contenidoPrivacidad.first_section.text_2}}></ul>
                     <p dangerouslySetInnerHTML={{ __html:contenidoPrivacidad.first_section.text_3}}></p>
                     <p>
-                        Correo electrónico: <span dangerouslySetInnerHTML={{ __html:contenidoPrivacidad.first_section.email}}></span><br/>      
+                        Correo electrónico: <span dangerouslySetInnerHTML={{ __html:contenidoPrivacidad.first_section.email}}></span><br/>
                         Teléfono: <span dangerouslySetInnerHTML={{ __html:contenidoPrivacidad.first_section.phone}}></span>
                     </p>
                     <p dangerouslySetInnerHTML={{ __html:contenidoPrivacidad.first_section.text_4}}></p>

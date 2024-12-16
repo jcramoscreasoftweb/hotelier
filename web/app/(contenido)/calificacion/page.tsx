@@ -10,7 +10,7 @@ import Link from "next/link";
 import styles from "./page.module.css";
 
 export const metadata:Metadata={
-    title:"Calificacion",
+     title:"Sacha Cusco",
     description:"Calificacion",
     keywords:["Calificacion","Hotelier"]
 }
@@ -20,11 +20,11 @@ export default async function Calificacion() {
   requestAPI = await requestAPI.json();
   let contenidoCalificacion: CalificacionResponse = requestAPI.payload["es"];
 
-  
+
   return (
     <>
         <HeaderSitev2 />
-        
+
         <section className="ui_seccion_1_comentario">
           <div className="contenedor page_calificacion">
             <h1>{contenidoCalificacion.form_calificacion.title}</h1>

@@ -8,7 +8,7 @@ import Image from "next/image";
 import { ItemEspaciosComunes, ItemHabitaciones, ItemRestaurantes } from "@/components/galeria/galeria";
 
 export const metadata:Metadata={
-    title:"Galería",
+    title:"Sacha Cusco",
     description:"Galería",
     keywords:["Galería","Galería"]
 }

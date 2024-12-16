@@ -21,8 +21,9 @@ export const ModalServiciosAdicionales=({contenidoBusqueda, actualizarServicios,
     const isChecked = e.target.checked;
     if(isChecked){
       console.log("ESTA CON CHECK")
-      idserviciosseleccionados.push(index);
-      more_services.push(index);
+      idserviciosseleccionados.push(itemCheck);
+      //more_services.push(index);
+      //more_services.push(itemCheck)
       //more_services.push(index)
       //setAdicionalServicios(more_services)
       //setMontoServicios(isMontoServicios+itemCheck.price);
@@ -33,9 +34,14 @@ export const ModalServiciosAdicionales=({contenidoBusqueda, actualizarServicios,
         /*let resultado = idserviciosseleccionados.filter((id:any) => {
             return id!==index;
         });*/
-        let resultado = idserviciosseleccionados.filter((id:any) => {
+        /*let resultado = idserviciosseleccionados.filter((id:any) => {
           return id!==index;
-      });
+      });*/
+      let resultado=idserviciosseleccionados.filter((itemselected:any)=>{
+        return (itemselected.id!==index)
+      })
+
+
 
         idserviciosseleccionados=resultado;
 

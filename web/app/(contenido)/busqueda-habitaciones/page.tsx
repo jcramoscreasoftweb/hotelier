@@ -1,12 +1,12 @@
 
 import  { Metadata } from "next"
 import {FooterSite,HeaderSitev2} from "@/components"
-
+import {  Suspense } from "react";
 import { ContenidoBusquedaHabitacion } from "@/components/busqueda-habitaciones/componentes";
 
 
 export const metadata:Metadata={
-    title:"Resultado de busqueda",
+    title:"Sacha Cusco",
     description:"Resultado de busqueda",
     keywords:["Busqueda","Reserva","Hotel"]
 }
@@ -15,7 +15,10 @@ export default function BusquedaNueva() {
 
 return(<>
         <HeaderSitev2 />
-            <ContenidoBusquedaHabitacion></ContenidoBusquedaHabitacion>
+        <Suspense fallback={<div></div>}>
+        <ContenidoBusquedaHabitacion></ContenidoBusquedaHabitacion>
+        </Suspense>
+
         <FooterSite />
 
     </>

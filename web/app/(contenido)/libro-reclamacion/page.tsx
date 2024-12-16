@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata:Metadata={
-    title:"Libro de reclamación",
+    title:"Sacha Cusco",
     description:"Libro de reclamación",
     keywords:["libro","reclamos"]
 }
@@ -179,7 +179,7 @@ export default async function LibroReclamaciones() {
                 </form>
 
             </div>
-          
+
         </section>
       </div>
 

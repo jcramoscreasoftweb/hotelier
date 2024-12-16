@@ -1,7 +1,7 @@
 
 "use client"
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense  } from "react";
 import { useSearchParams } from 'next/navigation'
 import Script from "next/script"
 export const BuscarFechasHabitaciones=({contenidoBusqueda}:any)=>{
@@ -79,9 +79,10 @@ export const BuscarFechasHabitaciones=({contenidoBusqueda}:any)=>{
 
 
 
-return(<>
-<Script src="/js/busqueda.js" strategy="afterInteractive" />
-<div className="ui_barra_busqueda">
+        return(<>
+         <Suspense fallback={<div></div>}>
+         <Script src="/js/busqueda.js" strategy="afterInteractive" />
+                    <div className="ui_barra_busqueda">
                         <form className="ui_form_busqueda" action="" method="get">
                         <div className="item_input_form">
                             <div className="label">
@@ -149,6 +150,8 @@ return(<>
                         </form>
 
                     </div>
+                    </Suspense>
+
                     </>)
 
 

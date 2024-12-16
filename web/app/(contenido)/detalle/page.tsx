@@ -11,7 +11,7 @@ import styles from "./page.module.css";
 import { ContenidoDealleReserva } from "@/components/detalle/componentes";
 
 export const metadata:Metadata={
-    title:"Detalle reserva",
+     title:"Sacha Cusco",
     description:"Detalle reserva",
     keywords:["Detalle","reserva","Hotelier"]
 }

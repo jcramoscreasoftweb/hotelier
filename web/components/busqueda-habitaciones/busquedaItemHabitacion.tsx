@@ -98,10 +98,11 @@ let inf:any=[];
         data_reserva.aditional_services=JSON.parse(dataservicios);
 
         localStorage.setItem("datareserva",JSON.stringify(data_reserva));
-        console.log(data_reserva);
 
 
-        router.push('/detalle')
+
+
+       router.push('/detalle')
     }
 
     return (
@@ -144,10 +145,10 @@ let inf:any=[];
                                         );
                                     })}
                             </div>
-                            <div className="ui_ver_mas">
+                            {/*<div className="ui_ver_mas">
                                 <span  onClick={() => handleRoomClick(item)}>{contenidoBusqueda.card_room.label_see_more}</span>
                                 <Image width={20} height={20} src="/img/btn_siguiente.png" alt=""/>
-                            </div>
+                            </div>*/}
                         </div>
 
                         <div className="ui_info_habitacion_precio">

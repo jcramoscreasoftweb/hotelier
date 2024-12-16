@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from "react";
+import { useEffect, useState , Suspense } from "react";
 import { useSearchParams } from 'next/navigation'
 import { HabitacionesNoDisponible, ListadoHabitaciones } from './listadoHabitaciones';
 import Image from "next/image";
@@ -24,11 +24,6 @@ export const ContenidoBusquedaHabitacion =  () => {
     const date_out = searchParams.get('date_out')
 
 
-
-    /*console.log(typeof (adults));
-    console.log(children);
-    console.log(date_in);
-    console.log(date_out);*/
     let estado_parametros=false
     if(adults=="0" ||  date_in?.length==0 || date_in==null ||date_out?.length==0 || date_out==null){
 
@@ -65,11 +60,11 @@ export const ContenidoBusquedaHabitacion =  () => {
 
 
     return (
-        <>
-
+      <>
+        <Suspense fallback={<div></div>}>
             {estado_parametros ? <ListadoHabitaciones contenidoBusqueda={data}/> : <HabitacionesNoDisponible contenidoBusqueda={data}/>}
-
-        </>
+        </Suspense>
+      </>
     )
 }
 

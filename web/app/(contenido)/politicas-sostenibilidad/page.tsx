@@ -7,7 +7,7 @@ import { SostenibilidadResponse } from "@/interfaces";
 import Image from "next/image";
 
 export const metadata:Metadata={
-    title:"Políticas de sostenibilidad",
+    title:"Sacha Cusco",
     description:"Políticas de sostenibilidad",
     keywords:["Políticas","sostenibilidad"]
 }
@@ -17,10 +17,10 @@ export default  async function PoliticaSostenibilidad(){
     const password = process.env.NEXT_PUBLIC_API_PASS;
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
     const auth = btoa(`${username}:${password}`);
- 
+
     let url = apiUrl+"/api/page-sostenibilidad";
-   
-    
+
+
     //let url = "https://creasoft.com.pe/hotelier_api/pages/page-sostenibilidad.json";
     let requestAPI: any = await fetch(url,{
         method: "GET", // GET es el valor predeterminado
@@ -31,7 +31,7 @@ export default  async function PoliticaSostenibilidad(){
     });
     requestAPI = await requestAPI.json();
     let contenidoSostenibilidad: SostenibilidadResponse = requestAPI.payload["es"];
-  
+
 
     return(
         <>
@@ -39,7 +39,7 @@ export default  async function PoliticaSostenibilidad(){
             style={{
                 backgroundImage: `url("${contenidoSostenibilidad.pincipal_section.image}")`,
             }}
-        >  
+        >
           <HeaderSitev1 />
           <div className="ui_texto_title_banner">
             <h2 dangerouslySetInnerHTML={{ __html:contenidoSostenibilidad.pincipal_section.title}}></h2>

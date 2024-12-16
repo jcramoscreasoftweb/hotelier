@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState ,Suspense } from "react";
 
 import { useSearchParams } from 'next/navigation'
 import { ItemHabitacionBusqueda } from "./busquedaItemHabitacion";
@@ -56,7 +56,7 @@ export const BusquedaHabitaciones=({contenidoBusqueda}:any)=>{
 
     return (
         <>
-
+        <Suspense fallback={<div></div>}>
         {
         dataHabitaciones.map((item:any)=> {
              return(
@@ -67,6 +67,7 @@ export const BusquedaHabitaciones=({contenidoBusqueda}:any)=>{
         })
 
         }
+        </Suspense>
       </>
 
 

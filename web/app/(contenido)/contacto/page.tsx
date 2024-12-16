@@ -8,7 +8,7 @@ import Image from "next/image";
 import { FormularioContacto } from "@/components/contacto/formularioContacto";
 
 export const metadata:Metadata={
-    title:"Contacto",
+    title:"Sacha Cusco",
     description:"Contacto",
     keywords:["Contacto","Contacto"]
 }
@@ -23,7 +23,7 @@ export default async function Contacto(){
     let requestAPI_phone: any = await fetch(url_phonecode);
     requestAPI_phone = await requestAPI_phone.json();
     let phoneCode: PhoneCodeResponse[] = requestAPI_phone.payload["es"];
-   
+
     return(
         <>
             <section className="ui_seccion_top_banner contacto"
@@ -90,7 +90,7 @@ export default async function Contacto(){
             </section>
 
             {/* <!-- MODAL CONTACTO --> */}
-           
+
             {/* <!-- END MODAL CONTACTO--> */}
 
             <FooterSite/>
