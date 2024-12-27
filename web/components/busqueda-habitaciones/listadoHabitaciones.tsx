@@ -3,7 +3,7 @@ import { PageBusquedaResponse } from "@/interfaces";
 import Image from "next/image";
 
 import { BusquedaHabitaciones } from "./busquedaHabitaciones";
-import { BuscarFechasHabitaciones } from "./buscadorFechaHabitaciones";
+
 
 export const ListadoHabitaciones =  ({contenidoBusqueda}:any)=> {
 
@@ -12,7 +12,7 @@ export const ListadoHabitaciones =  ({contenidoBusqueda}:any)=> {
          <div className="contenedor page_busqueda">
                 <section className="ui_seccion_1_busqueda">
                 <div className="ui_marco_opciones_home no-position">
-                    <BuscarFechasHabitaciones contenidoBusqueda={contenidoBusqueda}></BuscarFechasHabitaciones>
+
                 </div>
                 </section>
 
@@ -32,7 +32,7 @@ export const HabitacionesNoDisponible =   ({contenidoBusqueda}:any)=> {
             <div className="contenedor page_busqueda">
                 <section className="ui_seccion_1_busqueda">
                 <div className="ui_marco_opciones_home no-position">
-                    <BuscarFechasHabitaciones contenidoBusqueda={contenidoBusqueda}></BuscarFechasHabitaciones>
+
                 </div>
                 </section>
 

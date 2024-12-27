@@ -24,8 +24,9 @@ export const ContenidoDealleReserva=({contenidoDetalle}:any)=>{
       useEffect(() => {
         localData=localStorage.getItem("datareserva");
 
+
         if(localData){
-          console.log("hay data")
+
           let reservaClienteLocal=JSON.parse(localData.toString());
           calularMontoInicial(reservaClienteLocal);
           setReservaCliente(reservaClienteLocal)
@@ -41,7 +42,7 @@ export const ContenidoDealleReserva=({contenidoDetalle}:any)=>{
         })
 
         let monto_reserva=reservaClienteLocal.price_web;
-        if(reservaClienteLocal.tipo_pago=="2"){
+        if(reservaClienteLocal.tipo_pago=="hotel" ||reservaClienteLocal.tipo_pago=="2"){
           monto_reserva=reservaClienteLocal.price_hotel;
         }
 
@@ -56,7 +57,7 @@ export const ContenidoDealleReserva=({contenidoDetalle}:any)=>{
 
         reservaCliente.tipo_pago=tipo;
         let monto=reservaCliente.price_web;
-        if(tipo=="2"){
+        if(tipo=="2" || tipo=="hotel" ){
           monto=reservaCliente.price_hotel;
         }
         let monto_servicio=0;
@@ -85,7 +86,7 @@ export const ContenidoDealleReserva=({contenidoDetalle}:any)=>{
 
 
       let monto_reserva=reservaCliente.price_web;
-      if(reservaCliente.tipo_pago=="2"){
+      if(reservaCliente.tipo_pago=="2" || reservaCliente.tipo_pago=="hotel"){
         monto_reserva=reservaCliente.price_hotel;
       }
 
@@ -233,13 +234,13 @@ export const ContenidoDealleReserva=({contenidoDetalle}:any)=>{
                                   <div className="info_precio">
                                     <h2>{contenidoDetalle.info_reserva.label_precio}</h2>
 
-                                    <div className={reservaCliente.tipo_pago === 1 ? 'item_precio active' : 'item_precio'} onClick={() => actualizarTipoPago(1)  }  >
+                                    <div className={reservaCliente.tipo_pago === 1 || reservaCliente.tipo_pago === "adelantando" ? 'item_precio active' : 'item_precio'} onClick={() => actualizarTipoPago(1)  }  >
                                       <div className="radio_btn"></div>
                                       <h3>{contenidoDetalle.info_reserva.label_tp_payment1}</h3>
                                       <span>US$ {reservaCliente.price_web}</span>
                                     </div>
 
-                                    <div className={reservaCliente.tipo_pago === 2 ? 'item_precio active' : 'item_precio'} onClick={() => actualizarTipoPago(2) } >
+                                    <div className={reservaCliente.tipo_pago === 2 || reservaCliente.tipo_pago === "hotel" ? 'item_precio active' : 'item_precio'} onClick={() => actualizarTipoPago(2) } >
                                       <div className="radio_btn"></div>
                                       <h3>{contenidoDetalle.info_reserva.label_tp_payment2}</h3>
                                       <span>US$ {reservaCliente.price_hotel}</span>
@@ -253,13 +254,13 @@ export const ContenidoDealleReserva=({contenidoDetalle}:any)=>{
                                         reservaCliente.aditional_services.map((item:any)=>{
 
                                           return (
-                                            <>
+
                                              <li className="item_servicio" key={item.id}>
                                                 <h3>{item.name}</h3>
                                                 <span>US$ {item.price}</span>
                                                 <Image width={18} height={18} src="/img/icon_delete_servicio.svg"  onClick={()=>removerServicio(item.id)} alt="icon-close" />
                                             </li>
-                                            </>
+
                                           )
                                         })
                                       }

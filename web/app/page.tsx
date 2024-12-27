@@ -11,6 +11,7 @@ import { PortadaResponse, ResenaResponse } from "@/interfaces";
 import Image from "next/image";
 import styles from "./page.module.css";
 import { BuscarFechasPortada } from "@/components/portada/buscadorFecha";
+import NuevoBuscadorFecha from "@/components/portada/nuevoBuscadorFecha";
 
 export default async function Home() {
 
@@ -57,7 +58,8 @@ export default async function Home() {
           <h2  dangerouslySetInnerHTML={{ __html:contenidoPortada.banner_section.title}}></h2>
         </div>
 
-        <BuscarFechasPortada></BuscarFechasPortada>
+        {/*<BuscarFechasPortada></BuscarFechasPortada>*/}
+        <NuevoBuscadorFecha></NuevoBuscadorFecha>
       </section>
       <section className="ui_seccion_2_home">
         <div className="contenedor">

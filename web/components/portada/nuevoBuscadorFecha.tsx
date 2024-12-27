@@ -13,7 +13,7 @@ interface NuevoBuscadorFechaProps {
   initialChildren?: number;
 }
 
-export default function NuevoBuscadorFechaHabitaciones({
+export default function NuevoBuscadorFecha({
   initialStartDate,
   initialEndDate,
   initialAdults = 1,
@@ -59,7 +59,7 @@ export default function NuevoBuscadorFechaHabitaciones({
 
   return (
     <>
-         <div>
+         <div className="ui_marco_opciones_home">
               <div className="ui_barra_busqueda">
               <form className="ui_form_busqueda">
                       <div className="item_input_form">
