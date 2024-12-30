@@ -167,8 +167,7 @@ export default  async function Nosotros() {
                               <p className="detalle">
                               Hemos enviado un correo electrónico con los detalles de tu reserva, incluyendo instrucciones para el check-in, políticas de cancelación y contacto del hotel. Revisa tu bandeja de entrada y la carpeta de SPAM.
 
-Puedes consultar el estado de tu reserva con el
-código <span id="codigo-reserva">xer132</span>.
+ <span id="codigo-reserva"></span>.
 
                               </p>
                             </div>

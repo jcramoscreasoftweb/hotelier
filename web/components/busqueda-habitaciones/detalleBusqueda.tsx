@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 
 import NuevoBuscadorFechaHabitaciones from "./buscadorFechaHabitaciones"
 import { HabitacionesBusqueda } from "./habitacionesBusqueda";
+import { Loadingv2 } from "../generales/loading";
 
 
 
@@ -123,8 +124,8 @@ const children = parseInt(searchParams.get("children") || "0", 10);
 
 //if (loading) return <<div>Cargando habitaciones...</div>>; // Indicador de carga
 //if (error) return <div>Error: {error}</div>;             // Mensaje de error*/
-if (loading) return <></>; // Indicador de carga
-if (error) return <></>;             // Mensaje de error*/
+//if (loading) return <>23123123123</>; // Indicador de carga
+//if (error) return <></>;             // Mensaje de error*/
 
     return (
         <>
@@ -139,7 +140,7 @@ if (error) return <></>;             // Mensaje de error*/
                         ></NuevoBuscadorFechaHabitaciones>
                     </div>
                 </section>
-                {loading && <p>Cargando...</p> }
+                {loading && <Loadingv2></Loadingv2> }
 
                 {!loading && dataHabitaciones &&
                   <>

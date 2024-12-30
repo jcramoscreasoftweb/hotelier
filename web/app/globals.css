@@ -2320,6 +2320,7 @@ font-weight: 600;
   align-items: center;
   gap: 15px;
   margin-bottom: 56px;
+  flex-wrap: wrap;
 }
 
 .ui_formulario_tabs .ui_checkbox a{
@@ -2382,9 +2383,9 @@ font-weight: 600;
   font-weight: bold;
   font-family: "Open-Sans", sans-serif;
 }
-.ui_formulario_tabs .tab_1{
+/*.ui_formulario_tabs .tab_1{
   display: none;
-}
+}*/
 /***** END RECLAMOS ******/
 
 /***** DETALLE RESERVA ******/
@@ -3635,7 +3636,26 @@ text-align: center;
   justify-content: center;
   align-items: center;
 }
+.error-terminos{
+  width: 100%;
+  display: block;
+}
+.error-terminos p{
+  font-size: 12px;
+  color: #EE4D4D;
+  text-align: left;
+  font-style: normal;
+  font-weight: 400;
+  margin: 0;
+  margin-top: 5px;
+}
 
+.inline-load{
+  display: flex;
+  justify-content: center;
+  min-height: 400px;
+  align-items: center;
+}
 @keyframes spinner-zp9dbg {
   to {
      transform: rotate(1turn);

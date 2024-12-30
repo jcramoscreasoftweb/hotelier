@@ -7,3 +7,13 @@ export const Loadingv1=()=>{
         </>
     )
 }
+
+export const Loadingv2=()=>{
+    return (
+        <>
+        <div className="inline-load">
+            <div className="spinner"></div>
+        </div>
+        </>
+    )
+}

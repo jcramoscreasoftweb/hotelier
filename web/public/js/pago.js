@@ -46,6 +46,7 @@ let data=JSON.parse(localStorage.getItem("datareserva"));
 
 
 validarCampos();
+console.log("-----****-----")
 if (allValid) {
   if(data.tipo_pago==2){
     cargo();
@@ -116,6 +117,7 @@ if (allValid) {
  }
 
  async function cargo() {
+  console.log("clickl aqui");
   const first_lastname = document.getElementById('first_lastname');
   const second_lastname = document.getElementById('second_lastname');
   const name = document.getElementById('name');
@@ -133,6 +135,10 @@ if (allValid) {
   dataReserva.aditional_services.map((item)=>{
     detalle_aditional_services.push(item.id)
   })
+ // "date_in":dataReserva.date_in,
+ // "date_out": dataReserva.date_out,
+  let par_date_in=dataReserva.date_in.split("/")
+  let par_date_out=dataReserva.date_out.split("/")
   const data = {
     "contact_name":  name.value ,
     "coupon" : "",
@@ -142,8 +148,10 @@ if (allValid) {
     "code_phone":id_country.value,
     "contact_tpdoc": value_tpdoc,
     "contact_docnumber":doc_number.value,
-    "date_in":dataReserva.date_in,
-    "date_out": dataReserva.date_out,
+    //"date_in":dataReserva.date_in,
+    "date_in":par_date_in[2]+"-"+par_date_in[0]+"-"+par_date_in[1],
+    //"date_out": dataReserva.date_out,
+    "date_out":par_date_out[2]+"-"+par_date_out[0]+"-"+par_date_out[1],
     "id_tp_payment": dataReserva.tipo_pago,
     "import":dataReserva.total_pago,
     "note": "Test note",
@@ -156,6 +164,7 @@ if (allValid) {
     "services" : detalle_aditional_services
 };
 
+console.log(data);
 const username = "#|~4139h*II7yN@"; // Sustituye con tu usuario
 const password = "r)qFV.Ey8W6PX5>"; // Sustituye con tu contraseña
 const credentials = btoa(`${username}:${password}`); // Codifica en Base64

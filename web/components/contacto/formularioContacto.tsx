@@ -16,7 +16,7 @@ type FormData = {
 export const FormularioContacto=({contenidoContacto,phoneCode}:any)=>{
 
 
-  const [loadingContacto, setLoadingContacto] = useState(true);   // Estado para el indicador de carga
+  const [loadingContacto, setLoadingContacto] = useState(false);   // Estado para el indicador de carga
   const [errorContacto, setErrorContacto] = useState(null);
   const [correoEnviado, setCorreoEnviado] = useState(false);
 
@@ -123,7 +123,7 @@ export const FormularioContacto=({contenidoContacto,phoneCode}:any)=>{
 
     return (
         <>
-
+ { loadingContacto && <Loadingv1></Loadingv1>}
         <form onSubmit={handleSubmit} className="formulario-contacto"  method="post">
 <h2 >{contenidoContacto.form_section.title}</h2>
 <p>{contenidoContacto.form_section.subtitle}</p>

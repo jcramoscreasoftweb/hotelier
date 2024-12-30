@@ -35,6 +35,9 @@ export default async function Home() {
   let requestAPI_resena: any = await fetch(url_resenas,{
       method: "GET", // GET es el valor predeterminado
       headers: {
+        'Cache-Control': 'no-cache',
+          Pragma: 'no-cache',
+
           Authorization: `Basic ${auth}`, // Encabezado de autenticación
           "Content-Type": "application/json" // Opcional, depende del servicio
       }
