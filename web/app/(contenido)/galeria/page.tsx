@@ -13,7 +13,7 @@ export const metadata:Metadata={
     keywords:["Galería","Galería"]
 }
 
-export default async function Galeria(){
+export default async function Galeria({ language = 'es' }:any){
     const username = process.env.NEXT_PUBLIC_API_USER;
     const password = process.env.NEXT_PUBLIC_API_PASS;
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -28,7 +28,7 @@ export default async function Galeria(){
         }
     });
     requestAPI = await requestAPI.json();
-    let contenidoGaleria: GaleriaResponse = requestAPI.payload["es"];
+    let contenidoGaleria: GaleriaResponse = requestAPI.payload[language];
 
     return(
         <>
@@ -37,7 +37,7 @@ export default async function Galeria(){
                     backgroundImage: `url("${contenidoGaleria.pincipal_section.image}")`,
                 }}
             >
-                <HeaderSitev1 />
+                <HeaderSitev1 language={language} />
                 <div className="ui_texto_title_banner">
                     <h2>{contenidoGaleria.pincipal_section.title}</h2>
                 </div>
@@ -99,7 +99,7 @@ export default async function Galeria(){
                     </div>
                 </div>
             </section>
-        <FooterSite/>
+        <FooterSite language={language}/>
         </>
     );
 

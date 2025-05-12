@@ -46,7 +46,6 @@ let data=JSON.parse(localStorage.getItem("datareserva"));
 
 
 validarCampos();
-console.log("-----****-----")
 if (allValid) {
   if(data.tipo_pago==2){
     cargo();
@@ -117,7 +116,6 @@ if (allValid) {
  }
 
  async function cargo() {
-  console.log("clickl aqui");
   const first_lastname = document.getElementById('first_lastname');
   const second_lastname = document.getElementById('second_lastname');
   const name = document.getElementById('name');
@@ -138,7 +136,29 @@ if (allValid) {
  // "date_in":dataReserva.date_in,
  // "date_out": dataReserva.date_out,
   let par_date_in=dataReserva.date_in.split("/")
+
+
   let par_date_out=dataReserva.date_out.split("/")
+  console.log(par_date_in[0].length);
+  if(par_date_in[0].length==1){
+    par_date_in[0]="0"+par_date_in[0];
+  }
+  if(par_date_in[1].length==1){
+    par_date_in[1]="0"+par_date_in[1];
+  }
+
+  if(par_date_out[0].length==1){
+    par_date_out[0]="0"+par_date_out[0];
+  }
+  if(par_date_out[1].length==1){
+    par_date_out[1]="0"+par_date_out[1];
+  }
+
+console.log(par_date_in[0])
+console.log(par_date_in[1])
+console.log(par_date_out[0])
+console.log(par_date_out[0])
+
   const data = {
     "contact_name":  name.value ,
     "coupon" : "",
@@ -164,7 +184,7 @@ if (allValid) {
     "services" : detalle_aditional_services
 };
 
-console.log(data);
+
 const username = "#|~4139h*II7yN@"; // Sustituye con tu usuario
 const password = "r)qFV.Ey8W6PX5>"; // Sustituye con tu contraseña
 const credentials = btoa(`${username}:${password}`); // Codifica en Base64
@@ -184,8 +204,7 @@ if (!response.ok) {
 }
 
 const result = await response.json();
-console.log('Response:', result);
-console.log(result.status);
+
 if(result.status==200){
   console.log("aqui")
   $(".modal-gracias").fadeIn();

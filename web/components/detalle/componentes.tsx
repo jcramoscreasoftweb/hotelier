@@ -31,7 +31,7 @@ export const ContenidoDealleReserva=({contenidoDetalle}:any)=>{
           calularMontoInicial(reservaClienteLocal);
           setReservaCliente(reservaClienteLocal)
         }else{
-          console.log("no hay data")
+          //console.log("no hay data")
         }
       }, []);
 
@@ -117,8 +117,8 @@ export const ContenidoDealleReserva=({contenidoDetalle}:any)=>{
        const auth = btoa(`${username}:${password}`);
        const params = new URLSearchParams({
          name: inputCupon.current.value,
-         id_room:"1",
-         id_roomstype:"1"
+         id_room:reservaCliente.id_room,
+         id_roomstype:reservaCliente.id_roomstype
        })
 
        const response = await fetch(`${apiUrl}/api/coupon?${params.toString()}`,{
@@ -206,7 +206,7 @@ export const ContenidoDealleReserva=({contenidoDetalle}:any)=>{
 
 
 
-      console.log(reservaCliente);
+
 
       if(reservaCliente){
           return (<>

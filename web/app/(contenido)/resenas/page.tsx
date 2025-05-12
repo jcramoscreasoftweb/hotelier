@@ -15,7 +15,7 @@ export const metadata:Metadata={
     keywords:["Busqueda","Reserva","Hotel"]
 }
 
-export default async function Resena(){
+export default async function Resena({ language = 'es' }:any){
 
   const username = process.env.NEXT_PUBLIC_API_USER;
   const password = process.env.NEXT_PUBLIC_API_PASS;
@@ -40,7 +40,7 @@ export default async function Resena(){
 
 
         requestAPI = await requestAPI.json();
-        let PageResena: PageResenaResponse = requestAPI.payload["es"];
+        let PageResena: PageResenaResponse = requestAPI.payload[language];
 /*
     let url_resenas = "https://creasoft.com.pe/hotelier_api/pages/list-comments-pag.json"
     let requestAPI_resena: any = await fetch(url_resenas);
@@ -56,7 +56,7 @@ export default async function Resena(){
                     backgroundImage: `url("${PageResena.principal_section.image}")`,
                 }}
             >
-                <HeaderSitev1 />
+                <HeaderSitev1 language={language}/>
                 <div className="ui_texto_title_banner">
                     <h2 dangerouslySetInnerHTML={{ __html:PageResena.principal_section.title}}></h2>
                 </div>
@@ -66,7 +66,7 @@ export default async function Resena(){
 
 
 
-            <FooterSite />
+            <FooterSite language={language}/>
 
 
         </>

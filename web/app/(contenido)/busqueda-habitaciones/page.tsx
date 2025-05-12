@@ -11,17 +11,17 @@ export const metadata:Metadata={
     description:"Resultado de busqueda",
     keywords:["Busqueda","Reserva","Hotel"]
 }
-export default function BusquedaNueva() {
+export default function BusquedaNueva({ language = 'es' }:any) {
 
 
 return(<>
-        <HeaderSitev2 />
+        <HeaderSitev2  language={language}/>
         <Suspense fallback={<div></div>}>
         {/*<ContenidoBusquedaHabitacion></ContenidoBusquedaHabitacion>*/}
-            <DetalleBusqueda></DetalleBusqueda>
+            <DetalleBusqueda  language={language}></DetalleBusqueda>
         </Suspense>
 
-        <FooterSite />
+        <FooterSite  language={language}/>
 
     </>
     )

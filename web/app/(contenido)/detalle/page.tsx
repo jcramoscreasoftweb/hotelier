@@ -15,20 +15,45 @@ export const metadata:Metadata={
     description:"Detalle reserva",
     keywords:["Detalle","reserva","Hotelier"]
 }
-export default  async function Nosotros() {
-  let url = "https://creasoft.com.pe/hotelier_api/pages/page-detalle-reserva.json";
-  let requestAPI: any = await fetch(url);
-  requestAPI = await requestAPI.json();
-  let contenidoDetalle: DetalleReservaResponse = requestAPI.payload["es"];
+export default  async function Detalle({ language = 'es' }:any) {
 
-  let url_phonecode = "https://creasoft.com.pe/hotelier_api/get-phonecode.json";
-  let requestAPI_phone: any = await fetch(url_phonecode);
+  const username = process.env.NEXT_PUBLIC_API_USER;
+  const password = process.env.NEXT_PUBLIC_API_PASS;
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+  const auth = btoa(`${username}:${password}`);
+
+
+  let url =apiUrl+"/api/page-detalle-reserva";
+
+  //let url = "https://creasoft.com.pe/hotelier_api/pages/page-destino.json";
+  let requestAPI: any = await fetch(url,{
+      method: "GET", // GET es el valor predeterminado
+      headers: {
+          Authorization: `Basic ${auth}`, // Encabezado de autenticación
+          "Content-Type": "application/json" // Opcional, depende del servicio
+      }
+  });
+
+  requestAPI = await requestAPI.json();
+  let contenidoDetalle: DetalleReservaResponse = requestAPI.payload[language];
+
+  let url_phonecode =apiUrl+"/api/list-countries";
+  //let requestAPI_phone: any = await fetch(url_phonecode);
+  let requestAPI_phone: any = await fetch(url_phonecode,{
+    method: "GET", // GET es el valor predeterminado
+    headers: {
+        Authorization: `Basic ${auth}`, // Encabezado de autenticación
+        "Content-Type": "application/json" // Opcional, depende del servicio
+    }
+});
+
+
   requestAPI_phone = await requestAPI_phone.json();
-  let phoneCode: PhoneCodeResponse[] = requestAPI_phone.payload["es"];
+  let phoneCode: PhoneCodeResponse[] = requestAPI_phone.payload[language];
 
   return (
     <>
-        <HeaderSitev2 />
+        <HeaderSitev2 language={language}/>
 
 
 
@@ -183,7 +208,7 @@ export default  async function Nosotros() {
                 // Cargar en el <head>
                 //onLoad={() => console.log("Script en el <head> cargado")}
             />
-        <FooterSite />
+        <FooterSite language={language}/>
     </>
   )
 }

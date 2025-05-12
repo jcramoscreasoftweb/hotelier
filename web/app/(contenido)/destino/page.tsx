@@ -14,7 +14,7 @@ export const metadata:Metadata={
     keywords:["Destino","Cusco"]
 }
 
-export default async function Destino(){
+export default async function Destino({ language = 'es' }:any){
     const username = process.env.NEXT_PUBLIC_API_USER;
     const password = process.env.NEXT_PUBLIC_API_PASS;
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -29,7 +29,7 @@ export default async function Destino(){
         }
     });
     requestAPI = await requestAPI.json();
-    let contenidoDestino: DestinoResponse = requestAPI.payload["es"];
+    let contenidoDestino: DestinoResponse = requestAPI.payload[language];
 
     return(
         <>
@@ -38,7 +38,7 @@ export default async function Destino(){
                     backgroundImage: `url("${contenidoDestino.banner_section.image}")`,
                 }}
             >
-                <HeaderSitev1 />
+                <HeaderSitev1 language={language}/>
                 <div className="ui_texto_title_banner">
                     <h2 dangerouslySetInnerHTML={{ __html:contenidoDestino.banner_section.title}}></h2>
                 </div>
@@ -93,7 +93,7 @@ export default async function Destino(){
                 </div>
             </section>
 
-        <FooterSite/>
+        <FooterSite language={language}/>
         </>
     );
 

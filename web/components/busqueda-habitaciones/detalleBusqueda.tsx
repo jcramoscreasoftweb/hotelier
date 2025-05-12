@@ -10,7 +10,7 @@ import { Loadingv2 } from "../generales/loading";
 
 
 
-export const DetalleBusqueda = ()=> {
+export const DetalleBusqueda = ({ language = 'es' }:any)=> {
 
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
     const username = process.env.NEXT_PUBLIC_API_USER;
@@ -72,7 +72,7 @@ const children = parseInt(searchParams.get("children") || "0", 10);
           const result = await response.json();
 
           if(result.records){
-            setDataHabitaciones(result.payload["es"]); // Almacenar los resultados
+            setDataHabitaciones(result.payload[language]); // Almacenar los resultados
           }else{
             setDataHabitaciones(null);
             // no hay registros
@@ -111,7 +111,7 @@ const children = parseInt(searchParams.get("children") || "0", 10);
             //const response = await fetch("https://creasoft.com.pe/hotelier_api/pages/page-busqueda.json?v56");
             if (!response.ok) throw new Error('Error en la solicitud');
             const result = await response.json();
-            setDataPagina(result.payload["es"]); // Asigna los datos obtenidos al estado
+            setDataPagina(result.payload[language]); // Asigna los datos obtenidos al estado
         } catch (error:any) {
             //setError(error?.message);       // Asigna el mensaje de error al estado
         } finally {
