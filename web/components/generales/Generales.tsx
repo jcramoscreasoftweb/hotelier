@@ -2,10 +2,23 @@ import { MenuHeaderResponse, FooterResponse } from "@/interfaces";
 import Image from "next/image";
 import Link from "next/link";
 
+const username = process.env.NEXT_PUBLIC_API_USER;
+const password = process.env.NEXT_PUBLIC_API_PASS;
+
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+const auth = btoa(`${username}:${password}`);
+
 export const HeaderSitev1 = async ({ language = 'es' }:any) => {
-  let url = "https://creasoft.com.pe/hotelier_api/get-header.json";
-  let contenido = await fetch(url);
+  let url = apiUrl+"/api/header";
+  let contenido = await fetch(url,{
+    method: "GET", // GET es el valor predeterminado
+    headers: {
+        Authorization: `Basic ${auth}`, // Encabezado de autenticación
+        "Content-Type": "application/json" // Opcional, depende del servicio
+    }
+});
   let data = await contenido.json();
+
   let menuHeader: MenuHeaderResponse = data.payload[language];
 
   return (
@@ -19,6 +32,7 @@ export const HeaderSitev1 = async ({ language = 'es' }:any) => {
               src="/img/logo_header.png"
               alt="Hotelier site"
             />
+
           </Link>
         </div>
         <nav className="ui_nav_site">
@@ -66,8 +80,15 @@ export const HeaderSitev1 = async ({ language = 'es' }:any) => {
 };
 
 export const HeaderSitev2 = async ({ language = 'es' }:any) => {
-  let url = "https://creasoft.com.pe/hotelier_api/get-header.json";
-  let contenido = await fetch(url);
+  let url = apiUrl+"/api/header";
+  let contenido = await fetch(url,{
+    method: "GET", // GET es el valor predeterminado
+    headers: {
+        Authorization: `Basic ${auth}`, // Encabezado de autenticación
+        "Content-Type": "application/json" // Opcional, depende del servicio
+    }
+});
+
   let data = await contenido.json();
   let menuHeader: MenuHeaderResponse = data.payload[language];
 
@@ -130,8 +151,14 @@ export const HeaderSitev2 = async ({ language = 'es' }:any) => {
 
 export const FooterSite = async({ language = 'es' }:any) => {
 
-  let url = "https://creasoft.com.pe/hotelier_api/get-footer.json";
-  let contenido = await fetch(url);
+  let url = apiUrl+"/api/footer";
+  let contenido = await fetch(url,{
+    method: "GET", // GET es el valor predeterminado
+    headers: {
+        Authorization: `Basic ${auth}`, // Encabezado de autenticación
+        "Content-Type": "application/json" // Opcional, depende del servicio
+    }
+});
   let data = await contenido.json();
   let footer: FooterResponse = data.payload[language];
 
@@ -256,8 +283,14 @@ export const FooterSite = async({ language = 'es' }:any) => {
 
 export const FooterSite_SinDecoracion = async({ language = 'es' }:any) => {
 
-  let url = "https://creasoft.com.pe/hotelier_api/get-footer.json";
-  let contenido = await fetch(url);
+  let url = apiUrl+"/api/footer";
+  let contenido = await fetch(url,{
+    method: "GET", // GET es el valor predeterminado
+    headers: {
+        Authorization: `Basic ${auth}`, // Encabezado de autenticación
+        "Content-Type": "application/json" // Opcional, depende del servicio
+    }
+});
   let data = await contenido.json();
 
   let footer: FooterResponse = data.payload[language];
