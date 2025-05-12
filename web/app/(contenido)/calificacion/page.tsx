@@ -21,7 +21,7 @@ export default async function Calificacion() {
   const auth = btoa(`${username}:${password}`);
 
 
-  let url = apiUrl+"/page-calificacion";
+  let url = apiUrl+"/api/page-calificacion";
   let requestAPI: any = await fetch(url,{
     method: "GET", // GET es el valor predeterminado
     headers: {

@@ -22,7 +22,7 @@ export default async function Contacto({ language = 'es' }:any){
 
 
 
-    let url = apiUrl+"/page-contacto";
+    let url = apiUrl+"/api/page-contacto";
     let requestAPI: any = await fetch(url,{
         method: "GET", // GET es el valor predeterminado
         headers: {
@@ -34,7 +34,7 @@ export default async function Contacto({ language = 'es' }:any){
     let contenidoContacto: ContactoResponse = requestAPI.payload[language];
 
 
-    let url_phonecode =apiUrl+"/get-phonecode";
+    let url_phonecode =apiUrl+"/api/list-countries";
     let requestAPI_phone: any = await fetch(url_phonecode,{
         method: "GET", // GET es el valor predeterminado
         headers: {
