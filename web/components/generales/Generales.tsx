@@ -2,11 +2,11 @@ import { MenuHeaderResponse, FooterResponse } from "@/interfaces";
 import Image from "next/image";
 import Link from "next/link";
 
-export const HeaderSitev1 = async () => {
+export const HeaderSitev1 = async ({ language = 'es' }:any) => {
   let url = "https://creasoft.com.pe/hotelier_api/get-header.json";
   let contenido = await fetch(url);
   let data = await contenido.json();
-  let menuHeader: MenuHeaderResponse = data.payload["es"];
+  let menuHeader: MenuHeaderResponse = data.payload[language];
 
   return (
     <>
@@ -52,7 +52,7 @@ export const HeaderSitev1 = async () => {
             <div className="ui_nav_pages">
               {menuHeader.titles.map((item) => {
                 return (
-                    <Link key={item.name} href={`${item.link}`} dangerouslySetInnerHTML={{ __html: item.name }}></Link> 
+                    <Link key={item.name} href={`${item.link}`} dangerouslySetInnerHTML={{ __html: item.name }}></Link>
                 );
               })}
 
@@ -65,11 +65,11 @@ export const HeaderSitev1 = async () => {
   );
 };
 
-export const HeaderSitev2 = async () => {
+export const HeaderSitev2 = async ({ language = 'es' }:any) => {
   let url = "https://creasoft.com.pe/hotelier_api/get-header.json";
   let contenido = await fetch(url);
   let data = await contenido.json();
-  let menuHeader: MenuHeaderResponse = data.payload["es"];
+  let menuHeader: MenuHeaderResponse = data.payload[language];
 
   return (
     <>
@@ -115,7 +115,7 @@ export const HeaderSitev2 = async () => {
             <div className="ui_nav_pages">
               {menuHeader.titles.map((item) => {
                 return (
-                    <Link key={item.name} href={`${item.link}`} dangerouslySetInnerHTML={{ __html: item.name }}></Link> 
+                    <Link key={item.name} href={`${item.link}`} dangerouslySetInnerHTML={{ __html: item.name }}></Link>
                 );
               })}
 
@@ -128,12 +128,12 @@ export const HeaderSitev2 = async () => {
   );
 };
 
-export const FooterSite = async() => {
+export const FooterSite = async({ language = 'es' }:any) => {
 
   let url = "https://creasoft.com.pe/hotelier_api/get-footer.json";
   let contenido = await fetch(url);
   let data = await contenido.json();
-  let footer: FooterResponse = data.payload["es"];
+  let footer: FooterResponse = data.payload[language];
 
   // console.log(footer);
   return (
@@ -254,12 +254,13 @@ export const FooterSite = async() => {
   );
 };
 
-export const FooterSite_SinDecoracion = async() => {
+export const FooterSite_SinDecoracion = async({ language = 'es' }:any) => {
 
   let url = "https://creasoft.com.pe/hotelier_api/get-footer.json";
   let contenido = await fetch(url);
   let data = await contenido.json();
-  let footer: FooterResponse = data.payload["es"];
+
+  let footer: FooterResponse = data.payload[language];
 
   // console.log(footer);
   return (

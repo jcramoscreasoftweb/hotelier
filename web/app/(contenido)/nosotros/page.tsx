@@ -14,7 +14,7 @@ export const metadata:Metadata={
     description:"Page Nosotros",
     keywords:["Nosotros","Saccha","Hotelier"]
 }
-export default  async function Nosotros() {
+export default  async function Nosotros({ language = 'es' }:any) {
 
   const username = process.env.NEXT_PUBLIC_API_USER;
   const password = process.env.NEXT_PUBLIC_API_PASS;
@@ -32,7 +32,7 @@ export default  async function Nosotros() {
     }
 });
   requestAPI = await requestAPI.json();
-  let contenidoNosotros: NosotrosResponse = requestAPI.payload["es"];
+  let contenidoNosotros: NosotrosResponse = requestAPI.payload[language];
 
   return (
     <>
@@ -41,7 +41,7 @@ export default  async function Nosotros() {
             backgroundImage: `url("${contenidoNosotros.pincipal_section.image}")`,
           }}
         >
-          <HeaderSitev1 />
+          <HeaderSitev1 language={language}/>
           <div className="ui_texto_title_banner">
             <h2 dangerouslySetInnerHTML={{ __html:contenidoNosotros.pincipal_section.title}}></h2>
           </div>
@@ -120,7 +120,7 @@ export default  async function Nosotros() {
           </div>
         </section>
 
-        <FooterSite_SinDecoracion />
+        <FooterSite_SinDecoracion language={language}/>
     </>
   )
 }

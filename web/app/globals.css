@@ -3567,6 +3567,7 @@ font-weight: 600;
 
 .contenido-modal-gracias .ico-check{
   width: 66px;
+  height:auto;
   margin-bottom: 10px;
   display: inline-block;
 }

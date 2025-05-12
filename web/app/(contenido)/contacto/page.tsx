@@ -13,16 +13,16 @@ export const metadata:Metadata={
     keywords:["Contacto","Contacto"]
 }
 
-export default async function Contacto(){
+export default async function Contacto({ language = 'es' }:any){
     let url = "https://creasoft.com.pe/hotelier_api/pages/page-contacto.json";
     let requestAPI: any = await fetch(url);
     requestAPI = await requestAPI.json();
-    let contenidoContacto: ContactoResponse = requestAPI.payload["es"];
+    let contenidoContacto: ContactoResponse = requestAPI.payload[language];
 
     let url_phonecode = "https://creasoft.com.pe/hotelier_api/get-phonecode.json";
     let requestAPI_phone: any = await fetch(url_phonecode);
     requestAPI_phone = await requestAPI_phone.json();
-    let phoneCode: PhoneCodeResponse[] = requestAPI_phone.payload["es"];
+    let phoneCode: PhoneCodeResponse[] = requestAPI_phone.payload[language];
 
     return(
         <>
@@ -31,7 +31,7 @@ export default async function Contacto(){
                     backgroundImage: `url("${contenidoContacto.banner_section.image}")`,
                 }}
             >
-                <HeaderSitev1 />
+                <HeaderSitev1 language={language}/>
                 <div className="ui_texto_title_banner">
                     <h2>{contenidoContacto.banner_section.title}</h2>
                 </div>
@@ -93,7 +93,7 @@ export default async function Contacto(){
 
             {/* <!-- END MODAL CONTACTO--> */}
 
-            <FooterSite/>
+            <FooterSite language={language}/>
         </>
     );
 

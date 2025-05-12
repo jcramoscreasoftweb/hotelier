@@ -12,7 +12,7 @@ export const metadata:Metadata={
     keywords:["Políticas","sostenibilidad"]
 }
 
-export default  async function PoliticaSostenibilidad(){
+export default  async function PoliticaSostenibilidad({ language = 'es' }:any){
     const username = process.env.NEXT_PUBLIC_API_USER;
     const password = process.env.NEXT_PUBLIC_API_PASS;
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -30,7 +30,7 @@ export default  async function PoliticaSostenibilidad(){
         }
     });
     requestAPI = await requestAPI.json();
-    let contenidoSostenibilidad: SostenibilidadResponse = requestAPI.payload["es"];
+    let contenidoSostenibilidad: SostenibilidadResponse = requestAPI.payload[language];
 
 
     return(
@@ -40,7 +40,7 @@ export default  async function PoliticaSostenibilidad(){
                 backgroundImage: `url("${contenidoSostenibilidad.pincipal_section.image}")`,
             }}
         >
-          <HeaderSitev1 />
+          <HeaderSitev1 language={language}/>
           <div className="ui_texto_title_banner">
             <h2 dangerouslySetInnerHTML={{ __html:contenidoSostenibilidad.pincipal_section.title}}></h2>
           </div>
@@ -116,7 +116,7 @@ export default  async function PoliticaSostenibilidad(){
             </div>
         </section>
 
-        <FooterSite />
+        <FooterSite language={language}/>
         </>
     );
 }

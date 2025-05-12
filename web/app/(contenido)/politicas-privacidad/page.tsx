@@ -12,7 +12,7 @@ export const metadata:Metadata={
     keywords:["Políticas","privacidad"]
 }
 
-export default async function PoliticaPrivacidad(){
+export default async function PoliticaPrivacidad({ language = 'es' }:any){
     const username = process.env.NEXT_PUBLIC_API_USER;
     const password = process.env.NEXT_PUBLIC_API_PASS;
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -27,7 +27,7 @@ export default async function PoliticaPrivacidad(){
         }
     });
     requestAPI = await requestAPI.json();
-    let contenidoPrivacidad: PrivacidadResponse = requestAPI.payload["es"];
+    let contenidoPrivacidad: PrivacidadResponse = requestAPI.payload[language];
 
     return(
         <>
@@ -36,7 +36,7 @@ export default async function PoliticaPrivacidad(){
                     backgroundImage: `url("${contenidoPrivacidad.pincipal_section.image}")`,
                 }}
             >
-                <HeaderSitev1 />
+                <HeaderSitev1  language={language}/>
                 <div className="ui_texto_title_banner">
                     <h2 dangerouslySetInnerHTML={{ __html:contenidoPrivacidad.pincipal_section.title}}></h2>
                 </div>
@@ -55,7 +55,7 @@ export default async function PoliticaPrivacidad(){
                 </div>
             </section>
 
-        <FooterSite/>
+        <FooterSite language={language}/>
         </>
     );
 
