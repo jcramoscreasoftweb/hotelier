@@ -38,7 +38,7 @@ export default  async function Detalle({ language = 'es' }:any) {
   let contenidoDetalle: DetalleReservaResponse = requestAPI.payload[language];
 
   let url_phonecode =apiUrl+"/api/list-countries";
-  //let requestAPI_phone: any = await fetch(url_phonecode);
+
   let requestAPI_phone: any = await fetch(url_phonecode,{
     method: "GET", // GET es el valor predeterminado
     headers: {
